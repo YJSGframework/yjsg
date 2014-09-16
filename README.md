@@ -32,7 +32,7 @@ Have a bug or a request? Please open an issue here https://github.com/YJSGframew
 
 ##Credits
 
-  * FontAwesome.
+  * FontAwesome
   * normalize.css
   * jQuery
   * magnific-popup
