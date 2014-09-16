@@ -1,0 +1,63 @@
+@import url("../../assets/css/font-awesome.min.css");
+.yjsg-shortcodes {
+	display:block;
+	overflow:hidden;
+	clear:both;
+	padding:30px 0;
+	margin:30px 0 0 0;
+}
+.yjsg-shortcodes h3{
+	text-transform:uppercase;
+	color:#428bca;
+	font-size:20px;
+	font-weight:bold;
+}
+a.yjsg-shortcode-link,
+a.yjsg-shortcode-link:hover,
+a.yjsg-shortcode-link:focus {
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border-radius: 4px;
+	color: #fff!important;
+	background-color: #428bca;
+	border-color: #357ebd;
+	margin-right:10px;
+	text-decoration:none!important;
+	-webkit-box-shadow:none;
+	-khtml-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+	text-shadow:none;
+}
+a.yjsg-shortcode-link:hover,
+a.yjsg-shortcode-link:focus{
+	color: #121212!important;
+}
+/* admin template reset */
+.icon-32-apply {
+	background-image: url(../../../../../administrator/templates/bluestork/images/toolbar/icon-32-apply.png)!important;
+}
+.icon-32-save {
+	background-image: url(../../../../../administrator/templates/bluestork/images/toolbar/icon-32-save.png)!important;
+}
+.icon-32-cancel {
+	background-image: url(../../../../../administrator/templates/bluestork/images/toolbar/icon-32-cancel.png)!important;
+}
+.icon-32-help {
+	background-image: url(../../../../../administrator/templates/bluestork/images/toolbar/icon-32-help.png)!important;
+}
+.icon-32-save-new {
+	background-image: url(../../../../../administrator/templates/bluestork/images/toolbar/icon-32-save-new.png)!important;
+}
+.icon-32-save-copy {
+	background-image: url(../../../../../administrator/templates/bluestork/images/toolbar/icon-32-save-copy.png)!important;
+}

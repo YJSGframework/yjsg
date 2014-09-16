@@ -1,0 +1,36 @@
+// bootstrap only 
+& when ( @loadbootstrap = true ) and ( @loadall = false ){ 
+
+	@import "@{bootstrap}";
+	@import "variables.less";
+	@import "@{yjsgless}"; 
+	@import (less) "../css/bootstrap-responsive.min.css";
+	@import (less) "@{custom_css}";
+	
+}
+
+// everything
+& when ( @loadall = true ) and ( @loadbootstrap = true ){ 
+
+	@import "@{bootstrap}";
+	@import "variables.less";
+	@import "@{yjsgless}"; 
+	& when ( @legacy = false ){ 
+		@import (less) "@{normalize}";
+	}
+	@import (less) "@{yjsg_layout}";
+	@import (less) "@{newsitems}";
+	@import (less) "@{typo}";
+	& when ( @legacy = true ){ 
+		@import (less) "@{joomladefaults}";
+	}
+	@import (less) "@{template_css}";
+	@import (less) "@{menus_css}";
+	@import (less) "@{layout_css}";
+	@import (less) "@{yjsg_responsive}";
+	@import (less) "../css/bootstrap-responsive.min.css";
+	@import (less) "@{custom_responsive}";
+	@import (less) "@{template_style}";
+	@import (less) "@{custom_css}"; 
+	
+}

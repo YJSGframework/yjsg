@@ -1,0 +1,83 @@
+@import url("../../assets/css/font-awesome.min.css");
+body {
+	font-size:14px!important;
+}
+legend {
+	width:auto;
+	border:none;
+}
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+	cursor: not-allowed!important;
+	background-color: #eee!important;
+}
+.update_template {
+	display:block;
+	overflow:hidden;
+	clear:both;
+	margin:20px 0 0 0;
+	padding:20px 0;
+}
+.update_msg {
+	margin:15px 0 15px 0;
+	line-height:25px;
+}
+.error {
+	margin:10px 0;
+	padding:20px;
+	background:#ffe2e2;
+	border:1px solid #e68383!important;
+}
+.updatebuttons{
+	display:none;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	margin-right:15px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.428571429;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	color: #ffffff!important;
+	background-color: #4696D4;
+	border-color: #2C7EBD;
+	text-decoration:none!important;
+}
+.updatebuttons:hover,
+.updatebuttons:focus {
+	color: #ffffff;
+	background-color: #5498CC;
+	border-color: #2C7EBD;
+}
+.update_msg h4{
+	color:red;
+	padding:0;
+	margin:0;
+}
+/* admin template reset */
+.icon-32-apply {
+background-image: url(../../../../../administrator/templates/bluestork/images/toolbar/icon-32-apply.png)!important;
+}
+.icon-32-save {
+background-image: url(../../../../../administrator/templates/bluestork/images/toolbar/icon-32-save.png)!important;
+}
+.icon-32-cancel {
+background-image: url(../../../../../administrator/templates/bluestork/images/toolbar/icon-32-cancel.png)!important;
+}
+.icon-32-help {
+background-image: url(../../../../../administrator/templates/bluestork/images/toolbar/icon-32-help.png)!important;
+}

@@ -1,0 +1,11 @@
+li .yjsg-md,
+li .yjsg-md-types,
+li .yjsg-md-position,
+li .yjsg-md-ratingtype,
+li .yjsg-md-enabled{
+	font-size:16px;
+}
+li input.yjsg-md[type=text]{
+	width:100%;
+	max-width:240px;
+}

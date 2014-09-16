@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="attribs" addfieldpath="/plugins/system/yjsg/includes/yjsgmicrodata/elements">
+		<fieldset name="YJSG_MICRODATA" label="Yjsg Rich Snippets">
+			<field name="yjsgmdatahandler" type="yjsgmdatahandler" />
+			<field name="yjsg_microdata_enabeled" type="list" default="0"  class="yjsg-md-enabled" label="Activate Rich Snippets" description="Activate Rich Snippets for this article">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			
+			<field name="yjsg_microdata_position" type="list" default="0"  class="yjsg-md-position" label="Rich Snippets position" description="Select the position for your rich snippets. They can be under the article body or in article header.( under date, hits etc )">
+				<option value="0">Article header</option>
+				<option value="1">After article text</option>
+			</field>
+			
+			<field name="yjsg_microdata_ratingtype" type="list" default="0"  class="yjsg-md-ratingtype" label="Rating type" description="If Joomla voting system is enabled , you can use it to generate AggregateRating rich snippets for this article. Here you can select what type of AggregateRating this will be. Note that reviewCount can be used on product, recipe, movie and book only. All other cases should use ratingCount.">
+				<option value="none">Don't use</option>
+				<option value="ratingCount">Rating count</option>
+				<option value="reviewCount">Review count</option>
+			</field>
+						
+			<field name="yjsg_article_microdata" type="list" default="article"  class="yjsg-md-types" label="Rich Snippet type" description="Select Rich Snippet type">
+				<option value="Article">Article</option>
+				<option value="BlogPosting">Blog Posting</option>
+				<option value="NewsArticle">News Article</option>
+				<option value="MedicalScholarlyArticle">Medical Scholarly Article</option>
+				<option value="TechArticle">Tech Article</option>
+				<option value="VideoObject">Video</option>
+				<option value="Event">Event</option>
+				<option value="Product">Product</option>
+				<option value="Recipe">Recipe</option>
+				<option value="Movie">Movie</option>
+				<option value="Book">Book</option>
+			</field>
+			
+			<!-- video vars -->
+			
+			<field name="yjsg_md_video_link" type="text" default=""  class="yjsg-md-video yjsg-md"  label="Video link" description="Full path to video" />
+			<field name="yjsg_md_video_thumb" type="text" default=""  class="yjsg-md-video yjsg-md"  label="Video thumbnail" description="Full path to video thumbnail image" />
+			<field name="yjsg_md_video_duration" type="text" default=""  class="yjsg-md-video yjsg-md"  label="Video duration" description="Video duration. Please use following format for valid rich snippet:T1M33S or T1M or T33S" />
+			
+			<!-- event vars -->
+			<field name="yjsg_md_event_start" type="calendar" format="%Y-%m-%d %H:%M:%S" default="" class="yjsg-md-event yjsg-md" label="Event start" description="Event start" />
+			<field name="yjsg_md_event_end" type="calendar" format="%Y-%m-%d %H:%M:%S" default="" class="yjsg-md-event yjsg-md"  label="Event end" description="Event end" />
+			<field name="yjsg_md_event_streetadress" type="text" default=""  class="yjsg-md-event yjsg-md"  label="Street adress" description="Event street adress" />
+			<field name="yjsg_md_event_adresslocality" type="text" default=""  class="yjsg-md-event yjsg-md"  label="City" description="Event city. eq:Tampa" />
+			<field name="yjsg_md_event_adressregion" type="text" default=""  class="yjsg-md-event yjsg-md"  label="State or region" description="Event state or region. eq:FL" />
+			<field name="yjsg_md_event_postalcode" type="text" default=""  class="yjsg-md-event yjsg-md"  label="Zip code" description="Event zip code. eq:33714" />
+			<field name="yjsg_md_event_price" type="text" default=""  class="yjsg-md-event yjsg-md"  label="Ticket price" description="Price" />
+			<field name="yjsg_md_event_tickets" type="text" default=""  class="yjsg-md-event yjsg-md"  label="Ticket purchase link" description="Link to tickets purchase" />
+			
+			<!-- product vars -->
+			<field name="yjsg_md_product_price" type="text" default=""  class="yjsg-md-product yjsg-md"  label="Product price" description="Price" />
+			<field name="yjsg_md_product_availability" type="list" default="0"  class="yjsg-md-product yjsg-md" label="Availability" description="Select availability option">
+				<option value="na">Don't display</option>
+				<option value="Discontinued">Discontinued</option>
+				<option value="InStock">In Stock</option>
+				<option value="InStoreOnly">In Store Only</option>
+				<option value="LimitedAvailability">Limited Availability</option>
+				<option value="OnlineOnly">Online Only</option>
+				<option value="OutOfStock">Out Of Stock</option>
+				<option value="PreOrder">Pre Order</option>
+				<option value="SoldOut">Sold Out</option>
+			</field>
+			<!-- recipe vars -->
+			
+			<field name="yjsg_md_recipe_preptime" type="text" default=""  class="yjsg-md-recipe yjsg-md"  label="Prep Time" description="Prep time. Please use following format for valid rich snippet:1H or 1H30M" />
+			<field name="yjsg_md_recipe_cooktime" type="text" default=""  class="yjsg-md-recipe yjsg-md"  label="Cook Time" description="Cook time. Please use following format for valid rich snippet:1H or 1H30M" />
+			<field name="yjsg_md_recipe_totaltime" type="text" default=""  class="yjsg-md-recipe yjsg-md"  label="Total Time" description="Total time. Please use following format for valid rich snippet:1H or 1H30M" />
+			<field name="yjsg_md_recipe_ingredients" type="textarea" default="" rows="8" cols="40"  class="yjsg-md-recipe yjsg-md"  label="Ingredients" description="Add one Ingredient per row" />
+			
+			<!-- movie vars -->
+			
+			<field name="yjsg_md_movie_directors" type="textarea" default="" rows="8" cols="40" class="yjsg-md-movie yjsg-md"  label="Directors" description="Add one director per row" />
+			<field name="yjsg_md_movie_writters" type="textarea" default="" rows="8" cols="40" class="yjsg-md-movie yjsg-md"  label="Writters" description="Add one writter per row" />
+			<field name="yjsg_md_movie_stars" type="textarea" default="" rows="8" cols="40" class="yjsg-md-movie yjsg-md"  label="Movie Stars" description="Add one actor per row" />
+			
+			<!-- book vars -->
+			<field name="yjsg_md_book_price" type="text" default=""  class="yjsg-md-book yjsg-md"  label="Book price" description="Price" />
+			<field name="yjsg_md_book_availability" type="list" default="0"  class="yjsg-md-book yjsg-md" label="Availability" description="Select availability option">
+				<option value="na">Don't display</option>
+				<option value="Discontinued">Discontinued</option>
+				<option value="InStock">In Stock</option>
+				<option value="InStoreOnly">In Store Only</option>
+				<option value="LimitedAvailability">Limited Availability</option>
+				<option value="OnlineOnly">Online Only</option>
+				<option value="OutOfStock">Out Of Stock</option>
+				<option value="PreOrder">Pre Order</option>
+				<option value="SoldOut">Sold Out</option>
+			</field>
+			<field name="yjsg_md_book_pages" type="text" default=""  class="yjsg-md-book yjsg-md"  label="Number of pages" description="Number of pages" />
+			<field name="yjsg_md_book_author" type="text" default=""  class="yjsg-md-book yjsg-md"  label="Book author" description="Book author" />
+			<field name="yjsg_md_book_publisher" type="text" default=""  class="yjsg-md-book yjsg-md"  label="Book publisher" description="Book publisher" />
+			<field name="yjsg_md_book_language" type="text" default=""  class="yjsg-md-book yjsg-md"  label="Book language" description="Book language" />
+		</fieldset>
+	</fields>
+</form>

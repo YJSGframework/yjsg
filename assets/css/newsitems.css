@@ -1,0 +1,466 @@
+/*======================================================================*\
+|| #################################################################### ||
+|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
+|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
+|| # license - PHP files are licensed under  GNU/GPL V2                 ||
+|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
+|| # bound by Proprietary License of Youjoomla.com                      ||
+|| # for more information visit http://www.youjoomla.com/license.html   ||
+|| # Redistribution and  modification of this software                  ||
+|| # is bounded by its licenses                                         ||
+|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
+|| #################################################################### ||
+\*======================================================================*/
+.pagetitle {
+	margin:0 0 20px 0;
+}
+.yjsgarticle {
+	display:block;
+	position:relative;
+	padding:0;
+	margin:0;
+}
+/* article title */
+.article_title {
+	word-break: break-all;
+	margin:0 0 20px 0;
+}
+/* newsitem_tools */
+.newsitem_tools {
+	display: block;
+	width:100%;
+	margin:0;
+	clear:both;
+	padding:0;
+	margin:0 0 25px 0;
+	font-size:90%;
+}
+.newsitem_tools [class^="icon-"],
+.newsitem_tools [class^="fa"] {
+	font-size:14px;
+}
+/* newsitem_info */
+.newsitem_info {
+	display: block;
+	float:left;
+}
+.newsitem_info span.details {
+	display:block;
+	margin:0;
+	padding:0;
+	float:none;
+}
+.newsitem_info span.createdby,
+.newsitem_info span.newsitem_hits {
+	float:left;
+	margin-right:10px;
+}
+/* article tools: print, email , edit */
+ul.dropdown-menu.articletools {
+	margin:0;
+	padding:0
+}
+.bootstrapoff ul.dropdown-menu.articletools li {
+	display:inline-block;
+	padding:0;
+	margin:0px 5px 0 0;
+	float:right;
+}
+ul.dropdown-menu.articletools em {
+	font-style:normal;
+}
+.bootstrapoff .articletools em {
+	display:none;
+}
+div.actiongroup a.btn-mini{
+	font-size:14px;
+	padding: 2px 6px;
+	line-height: 16px;
+}
+/* newsitem text */
+.newsitem_text {
+	display:block;
+	padding:0;
+	margin:0;
+}
+/* readon */
+a.readon {
+	padding:0 0 0 10px;
+	font-size: 100%;
+	line-height: 34px;
+	display:inline-block;
+	border:none;
+	margin-top:20px;
+	margin-bottom:0px;
+}
+a.readon span {
+	display:block;
+	line-height:34px;
+	padding:0px 10px 0px 0px;
+}
+/* separators */
+span.row-separator {
+	clear:both;
+	display:block;
+	height:1px;
+	overflow:hidden;
+}
+span.article_separator {
+	display: block;
+	height: 15px;
+	clear: both;
+}
+/* MAIN FLOATS */
+div.yjsg-newsitems .float-left {
+	float: left;
+	overflow: hidden;
+}
+div.yjsg-newsitems .float-right {
+	float: right;
+	overflow: hidden;
+}
+div.yjsg-newsitems .width20 {
+	width: 20%;
+}
+div.yjsg-newsitems .width25 {
+	width: 25%;
+}
+div.yjsg-newsitems .width33 {
+	width: 33.333%;
+}
+div.yjsg-newsitems .width50 {
+	width: 50%;
+}
+div.yjsg-newsitems .width100 {
+	width: 100%;
+}
+/* MULTI ITEMS ROW SPACING */
+div.yjsg-newsitems div.multicolumns .yjsgarticle {
+	margin: 0px 15px 15px 0px;/* multi row newsitem spacing*/
+}
+/* FIRST ITEM IN A ROW SPACING */
+div.yjsg-newsitems div.multicolumns div.first .yjsgarticle {
+	margin-left: 0px;
+}
+/* LAST ITEM IN A ROW SPACING */
+div.yjsg-newsitems div.multicolumns div.last .yjsgarticle {
+	margin-right: 0px;
+}
+/* more articles links */
+div.yjsg-morearticles {
+	margin:10px 0;
+	display:block;
+}
+ul.yjsg-more-articles-links{
+	margin:0;
+	padding:0;
+	list-style:none;
+	border:1px solid #ddd;
+	border-bottom:none;
+	display:block;
+}
+ul.yjsg-more-articles-links li{
+	display:block;
+	margin:0;
+	padding:0;
+	border-bottom:1px solid #ddd;
+}
+ul.yjsg-more-articles-links li a{
+	padding:8px;
+	display:block;
+}
+/* article paginations */
+div.yjsgarticle .pagenav {
+	display:block;
+	clear:both;
+	overflow:hidden;
+}
+/* article index */
+#article-index,
+.article-index ul {
+	margin:0 0 20px 0;
+	padding:0;
+	width:100%;
+	max-width:240px;
+	float: right;
+}
+#article-index ul {
+	list-style:none;
+	padding:0;
+	-webkit-border-radius:3px;
+	-khtml-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+}
+#article-index ul li {
+	background:none;
+}
+#article-index a.toclink {
+	padding:5px;
+	display:block;
+	margin:0;
+}
+#article-index ul li:last-child {
+	border:none;
+}
+/* article index pager and articles pager */
+.yjsg-pager-links {
+	display:block;
+	clear:both;
+	padding:0;
+	margin:0;
+}
+.yjsg-pager-links ul li {
+	padding-left:0;
+	background-image:none;
+}
+.yjsg-pager-links .pager {
+	padding-left: 0;
+	margin:10px 0;
+	list-style: none;
+	text-align: center;
+}
+.yjsg-pager-links .pager:before,
+.yjsg-pager-links .pager:after {
+	display: table;
+	content: "";
+	line-height: 0;
+}
+.yjsg-pager-links .pager li {
+	display: inline;
+}
+.yjsg-pager-links .pager li > a,
+.yjsg-pager-links .pager li > span {
+	display: inline-block;
+	padding: 5px 14px;
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+}
+.yjsg-pager-links .pager li > a:hover,
+.yjsg-pager-links .pager li > a:focus {
+	text-decoration: none;
+	background-color: #eeeeee;
+}
+.yjsg-pager-links .pager .next > a,
+.yjsg-pager-links .pager .next > span {
+	float: right;
+}
+.yjsg-pager-links .pager .previous > a,
+.yjsg-pager-links .pager .previous > span {
+	float: left;
+}
+.yjsgarticle .pagenavcounter {
+	font-size:90%;
+	font-weight:bold;
+}
+/* page navigations */
+div.yjsg-pagination {
+	text-align: center;
+	clear:both;
+	margin:0 auto;
+}
+.yjsg-pagination-counter {
+	display:block;
+	margin-top:10px;
+}
+ul.yjsg-pagination-links {
+	display: inline-block;
+	padding-left: 0;
+	margin:0 auto;
+	border-radius: 4px;
+}
+ul.yjsg-pagination-links > li {
+	display: inline;
+}
+ul.yjsg-pagination-links > li > a,
+ul.yjsg-pagination-links > li > span {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	line-height: 1.42857143;
+	text-decoration: none;
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	margin-left: -1px;
+}
+ul.yjsg-pagination-links > li:first-child > a,
+ul.yjsg-pagination-links > li:first-child > span {
+	margin-left: 0;
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+}
+ul.yjsg-pagination-links > li:last-child > a,
+ul.yjsg-pagination-links > li:last-child > span {
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+ul.yjsg-pagination-links > li > a:hover,
+ul.yjsg-pagination-links > li > span:hover,
+ul.yjsg-pagination-links > li > a:focus,
+ul.yjsg-pagination-links > li > span:focus {
+	background-color: #eeeeee;
+	border-color: #dddddd;
+}
+/* image captions */
+.img_caption {
+	text-align:center;
+}
+.img_caption.left {
+	float: left;
+	margin-right: 1em;
+}
+.img_caption.right {
+	float: right;
+	margin-left: 1em;
+}
+.img_caption.left p {
+	clear: left;
+	text-align: center;
+	padding:3px;
+}
+.img_caption.right p {
+	clear: right;
+	text-align: center;
+	padding:3px;
+}
+.contentdescription img {
+	padding:5px;
+	margin:0px;
+}
+/* IMAGE CAPTIONS */
+p.img_caption {
+	padding:5px 0;
+	background:#efefef;
+	color:#5F5F5F;
+}
+/* rich snippets */
+.yjsg-rich-snippets,
+.yjsg-rich-snippets span{
+	display:block;
+	margin:0;
+	padding:0;
+	float:none;
+	clear:both;
+}
+.yjsg-rich-snippets.yjrs-article{
+	margin:20px 0;
+}
+.yjsg-md-offers span > span,
+.yjsg-md-book span > span{
+	display:inline-block;
+	clear:none;
+}
+.yjsg-md-video{
+	padding-top:5px;
+}
+.yjsg-md-video a{
+	width:120px;
+	height:auto;
+	overflow:hidden;
+	display:block;
+	margin-top:10px;
+	padding:5px;
+	border:1px solid #ddd;
+}
+.yjsg-md-video-link a img{
+	max-width:120px;
+	display:block;
+	height:auto;
+}
+.yjsg-md-sep{
+	font-weight:bold;
+}
+/* yjsg rating */
+.yjsg-rating{
+	display:block;
+	margin-bottom:10px;
+	color:#888;
+}
+.yjsg-rating span{
+	float:left;
+	display:inline-block;
+	line-height:normal;
+	margin:0;
+	padding:0;
+	font-size:14px;
+}
+.yjsg-rating .fa-star{
+	color:#ccc;
+	float:left;
+	margin-right:3px;
+
+}
+.yjsg-rating .yjsg-rating-count{
+	margin-top:-2px;
+	margin-left:5px;
+}
+.yjsg-rating-count,
+.yjsg-rating-count .fa:before{
+	color:#ccc;
+}
+.yjsg-rating-count span{
+	float:none;
+}
+.view-article .yjsg-rating:hover .fa-star,.fa-star.rated{
+  color:#FC0;
+}
+.view-article .yjsg-rating:hover{
+	cursor:pointer;
+}
+.view-article .yjsg-rating .fa-star:hover ~ .fa-star{
+   color:#ccc;
+}
+form.yjsg-rating-form{
+	display:none;
+}
+/* clear */
+.yjsg-rating:before,
+.yjsg-rating:after,
+.yjsg-rich-snippets:before,
+.yjsg-rich-snippets:after,
+div.yjsg-morearticles:after,
+div.yjsg-morearticles ul:after,
+.jb_pagin:after,
+.modifydate:after,
+.newsitem_category:after,
+.newsitem_published:after,
+.yjsgarticle:after,
+.newsitem_text:after,
+.newsitem_tools:after,
+.newsitem_info:after {
+	display:table;
+	content:"";
+	clear:both;
+}
+/* RTL */
+.yjsgrtl .yjsg-rating {
+	float:right;
+}
+.yjsgrtl .yjsg-rate {
+	float:right;
+	margin-right:0;
+	margin-left:3px;
+}
+.yjsgrtl .yjsg-rating-count {
+	float:right;
+}
+.yjsgrtl .newsitem_info {
+	float:right;
+}
+.yjsgrtl #article-index,
+.yjsgrtl .article-index ul {
+	float:left;
+}
+.yjsgrtl .newsitem_info span.createdby,
+.yjsgrtl .newsitem_info span.newsitem_hits {
+	margin-right:0;
+	margin-left:10px;
+}
+.yjsgrtl .yjsg-pager-links .pager .next > a,
+.yjsgrtl .yjsg-pager-links .pager .next > span {
+	float: left;
+}
+.yjsgrtl .yjsg-pager-links .pager .previous > a,
+.yjsgrtl .yjsg-pager-links .pager .previous > span {
+	float: right;
+}

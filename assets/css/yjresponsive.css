@@ -1,0 +1,158 @@
+/*======================================================================*\
+|| #################################################################### ||
+|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
+|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
+|| # license - PHP files are licensed under  GNU/GPL V2                 ||
+|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
+|| # bound by Proprietary License of Youjoomla.com                      ||
+|| # for more information visit http://www.youjoomla.com/license.html   ||
+|| # Redistribution and  modification of this software                  ||
+|| # is bounded by its licenses                                         ||
+|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
+|| #################################################################### ||
+\*======================================================================*/
+#mmenu_holder {
+	display:none;
+	width:100%;
+	max-width:240px;
+	padding:0;
+	margin:0 auto;
+	text-align:center;
+	position:relative;
+	height:38px;
+	line-height:38px;
+}
+#mmenu {
+	cursor:pointer;
+	display:block;
+	width:100%;
+	overflow:hidden;
+	height:inherit;
+	margin:0 auto;
+	position:relative;
+	opacity: 0;
+	z-index: 5;
+}
+.yjmm_select{
+	position:absolute;
+	display:block;
+	left:0;
+	width:100%;
+	padding:0;
+	margin:0;
+	height:inherit;
+	line-height:inherit;
+	font-size:18px;
+	cursor:pointer;
+}
+.yjmm_select:after{
+	font-family:FontAwesome;
+	position:absolute;
+	right:15px;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1220px) {
+	
+	div.yjsgsitew{
+		max-width:1160px;
+	}
+}
+
+@media only screen and (min-width: 1040px) and (max-width: 1199px) {
+	
+	div.yjsgsitew{
+		max-width:1000px;
+	}
+}
+
+@media only screen and (min-width: 980px) and (max-width: 1039px) {
+
+	div.yjsgsitew{
+		max-width:950px;
+	}
+	
+}
+
+@media screen and (max-width: 979px) {
+	
+	div.yjsgsitew{
+		width:auto;
+	}
+	
+	div#header{
+		display:block;
+	}
+	div#logoholder {
+		display:block;
+		margin:0 auto;
+	}
+	div#logoholder + div#yjsgheadergrid{
+		margin-left:-15px;
+		margin-right:-15px;
+	}
+	#mmenu_holder{
+		display:block;
+	}
+	#mmenu_holder + div {
+		visibility:hidden;
+		height:0;
+		font-size:0;
+	}
+	div.yjsgxhtml {
+		width:50%!important;
+	}
+	div.sidebars{
+		margin-bottom:15px;
+		width:auto!important;
+		float: none!important;
+		clear:both!important;
+	}
+	
+	/* 3rd module in group of 4*/
+	div.yjsgclearrow{
+		clear:left!important;
+	}
+	
+	/* last and only module */
+	div.yjsgxhtml.last_mod,
+	div.yjsgxhtml.only_mod {
+		width:auto!important;
+		float:none;
+	}
+	
+	[data-sticky-block]{
+		display:none!important;
+	}
+}
+@media screen and (max-width: 768px) {
+	.yjsg-font-mega,
+	.yjsg-font-jumbo{
+		font-size:36px;
+	}
+}
+@media screen and (max-width: 720px) {
+	
+	div.yjsg-newsitems .float-left,
+	div.yjsgxhtml {
+		width:auto!important;
+		float: none!important;
+		clear:both!important;
+	}
+	
+	#footer div,
+	.yjsglogo{
+		display:block;
+		clear:both;
+		text-align:center;
+		position:relative;
+		margin:0 auto;
+	}
+	.yjsglogo{
+		right:auto;
+		margin-top:15px;
+	}
+
+
+}
+/* IE10 scroll-x overlap fix */
+@-ms-viewport{ width: auto !important; }

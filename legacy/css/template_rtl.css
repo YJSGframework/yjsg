@@ -1,0 +1,675 @@
+/*======================================================================*\
+|| #################################################################### ||
+|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
+|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
+|| # license - PHP files are licensed under  GNU/GPL V2                 ||
+|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
+|| # bound by Proprietary License of Youjoomla.com                      ||
+|| # for more information visit http://www.youjoomla.com/license.html   ||
+|| # Redistribution and  modification of this software                  ||
+|| # is bounded by its licenses                                         ||
+|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
+|| #################################################################### ||
+\*======================================================================*/
+html,
+body {
+	direction: rtl;
+	text-align:right;
+}
+p,
+div,
+li,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+th,
+td,
+tr,
+input {
+	text-align:right;
+}
+/* layout1.php , layout2.php, layout3.php reset and layout1.php main floats. layout 1 does not contain insettop and insetbottom*/
+#leftblock,
+#midblock,
+#rightblock,
+#insetblock,
+#insetsholder_2t,
+#insetsholder_2b,
+#insetsholder_3t,
+#insetsholder_3b {
+	text-align:right;
+	float:right;
+}
+/* layout3.php*/
+#holder2 #midblock {
+	float:right;
+}
+#holder2 #leftblock,
+#holder2 #rightblock,
+#holder2 #insetblock {
+	float:left;
+}
+#holder2 #insetsholder_2t {
+	float:right;
+}
+#holder2 #insetsholder_2b {
+	float:left;
+}
+/*layout3.php*/
+#holder3 #midblock {
+	float:left;
+}
+#holder3 #leftblock,
+#holder3 #rightblock,
+#holder3 #insetblock {
+	float:right;
+}
+#holder3 #insetsholder_3t {
+	float:left;
+}
+#holder3 #insetsholder_3b {
+	float:right;
+}
+.yjsgxhtml {
+	float:right;
+	clear:left;
+	text-align:left;
+	margin:0;
+	padding:0;
+}
+div.title h1 {
+	width:100%;
+	display:block;
+}
+.readon {
+	float:right;
+}
+#logo a {
+	line-height:900px;
+}
+.yjsglogo {
+	left:0px;
+	right:auto;
+}
+.validators {
+	float:right;
+	text-align:right;
+}
+#footmod ul.menu-nav {
+	text-align:right;
+}
+#footmod ul li {
+	padding:0 0 0 15px;
+	text-align:right;
+}
+#tools {
+	left:3px;
+	right:auto;
+	bottom:40px;
+}
+/* k2*/
+div.itemHeader span.itemDateCreated {
+	position:absolute;
+	top:34px;
+	right:160px;
+}
+div.k2ItemsBlock ul li img.moduleItemAuthorAvatar {
+	display:block;
+	position:absolute;
+	left:10px;
+	float:left;
+}
+div.k2LatestCommentsBlock ul li img.lcAvatar,
+div.k2ItemsBlock ul li p.moduleItemIntrotext a.moduleItemImage img {
+	float:right;
+	margin:2px 0 4px 4px;
+}
+/* Rating --- */
+.itemRatingForm {
+	float: right;
+}
+.itemRatingLog {
+	padding: 0 4px 0 0;
+	float: right;
+}
+div.itemRatingForm .formLogLoading {
+	background-position: right center;
+	padding: 0 20px 0 0;
+}
+.itemRatingList,
+.itemRatingList a:hover,
+.itemRatingList .itemCurrentRating {
+	background-position: right -1000px;
+}
+.itemRatingList {
+	float: right;
+	background-position: right top;
+	direction: ltr;
+}
+.itemRatingList a,
+.itemRatingList .itemCurrentRating {
+	left: auto;
+	right: 0;
+}
+.itemRatingList a:hover {
+	background-position: right bottom;
+}
+.itemRatingList .itemCurrentRating {
+	background-position: right center;
+}
+#k2Container .itemRatingList .itemCurrentRating {
+	background-position: right -26px;
+}
+ul.itemRatingList li a {
+	line-height:500px;
+}
+div.itemRatingBlock span {
+	float:right;
+	margin:3px 0 0 0;
+}
+/* Item image in item view */
+.itemImageBlock,
+.itemImageBlock .itemImage,
+.itemImageBlock .itemImage img {
+	float:right;
+}
+div.itemExtraFields ul li span.itemExtraFieldsLabel {
+	float:right;
+	text-align:right;
+}
+div.itemExtraFields ul li span.itemExtraFieldsValue {
+	float:right;
+	text-align:right;
+}
+div.itemSocialLinksBlock {
+	float:right;
+	text-align:right;
+}
+div.itemCommentsForm form input.inputbox,
+div.itemCommentsForm form textarea.inputbox {
+	float:right;
+	text-align:right;
+}
+div.itemCommentsForm form label.formName,
+div.itemCommentsForm form label.formEmail,
+div.itemCommentsForm form label.formUrl {
+	text-align:right;
+	clear:both;
+	display:block;
+	margin:12px 5px 0 0;
+}
+div.itemCommentsForm form input.button {
+	float:right;
+	margin:5px 0 25px 0;
+}
+.itemBackToTop {
+	float:left;
+}
+div.itemToolbar {
+	text-align:right;
+}
+div.itemToolbar ul {
+	text-align:right;
+	float:right;
+}
+#mainlevel li a,
+.menu li a,
+a.mainlevel,
+.k2CategoriesListBlock ul li a,
+.k2CategoriesListBlock ul li a:hover,
+div.k2CategoriesListBlock ul li.activeCategory ul.level1 a,
+.yjsquare li.active ul li a:hover,
+.yjsquare li.active ul li.active a {
+	background-position: right top;
+}
+#mainlevel li a:hover,
+#mainlevel a#active_menu:link,
+#mainlevel a#active_menu:visited,
+a.mainlevel:hover,
+a.mainlevel#active_menu,
+#mainlevel li a:hover,
+#mainlevel a#active_menu:link,
+#mainlevel a#active_menu:visited,
+.menu li a:hover,
+.menu li.active a,
+div.k2CategoriesListBlock ul li.activeCategory a,
+div.k2CategoriesListBlock ul li.activeCategory ul.level1 a:hover {
+	background-position: right bottom;
+}
+.k2CategoriesListBlock ul li,
+.k2CategoriesListBlock ul li:hover {
+	text-align:right;
+}
+.k2CategoriesListBlock ul.level0 a {
+	padding:5px 20px 0 0;
+}
+.k2CategoriesListBlock ul.level1 a {
+	padding:5px 30px 0 0;
+}
+span.catItemImage img {
+	float:right;
+}
+/* side menu */
+a.mainlevel,
+.yjsquare ul.menu li a {
+	padding:5px 0px 0 0;
+}
+a.sublevel {
+	padding: 2px 15px 0px 4px;
+}
+/* poll */
+table.pollstableborder {
+	text-align: right;
+}
+dl.poll dt {
+	clear: right;
+}
+dl.poll dd {
+	clear:left;
+}
+dl.poll dt,
+dl.poll dd {
+	float: right;
+}
+.poll input {
+	float: right;
+	margin:3px 0 0 5px;
+}
+.poll br {
+	clear: both;
+}
+.newsitem_tools {
+	text-align:right;
+}
+.newsitem_info,
+.newsitem_category,
+.newsitem_published,
+.createby,
+.newsitem_hits {
+	float:right;
+	text-align:right;
+}
+.yjsg-blog_c .newsitem_category {
+	padding-right:8px;
+}
+/* buttonheading  CONTAINS PRINT,EMAIL , PDF BITTONS */
+.buttonheading {
+	float:left;
+}
+.buttonheading .email,
+.buttonheading .print,
+.buttonheading .pdf {
+	float:left;
+	margin:0 4px 0 4px;
+}
+.readb {
+	float:left;
+	display:block;
+	line-height:500px;
+}
+#yjsg1 .readon {
+	float:left;
+}
+/* typo*/
+.dropcap {
+	float:right;
+	padding:4px 0 0 8px;
+}
+p.sticky,
+p.pin,
+p.clip,
+p.down {
+	padding:20px 40px 10px 20px;
+	background-position: right center;
+}
+.bignumber {
+	float:right;
+	text-align:right;
+}
+ul.video li,
+li.video,
+li.video:hover,
+ul.check li,
+li.check,
+li.check:hover,
+ul.star li,
+li.star,
+li.star:hover {
+	padding-right:25px;
+}
+.error,
+.message,
+.tips {
+	background-position: right center;
+	padding:5px 20px 5px 0px !Important;
+	text-indent:0;
+}
+body ul.star li,
+body li.star {
+	background-position: right 1px;
+}
+body ul.video li,
+body li.video,
+body li.video:hover {
+	background-position: right 0;
+}
+/*RTL  rounded corners*/
+.yjround {
+	margin:0px auto;
+	margin-right:10px!Important;  /* default, width of left corner */
+	margin-left:0!Important;
+}
+.yjround .content {
+	padding:0px 0px 0px 10px!Important;
+}
+.yjround .content,
+.yjround .t,
+.yjround .b,
+.yjround .b div.bin {
+	background-position:top left!Important;
+}
+.yjround .t {
+	/* top+left vertical slice */
+ position:absolute;
+	left:auto!Important;
+	right:0px!Important;
+	margin-right:-10px!Important;
+	margin-left:0!Important;
+	background-position:top right!Important;
+}
+.yjround .b {
+	background-position:bottom left!Important;
+}
+.yjround .b div.bin {
+	position:relative;
+	width:10px!Important; /* bottom right corner width */
+	margin-right:-10px!Important;
+	margin-left:0!Important;
+	background-position:bottom right!Important;
+}
+ul.subul_main li.haschild span.child a:hover,
+ul.subul_main ul.subul_main li.haschild span.child a:hover,
+ul.subul_main ul.subul_main ul.subul_main li.haschild span.child a:hover,
+ul.subul_main ul.subul_main ul.subul_main ul.subul_main li.haschild span.child a:hover {
+	background-repeat:no-repeat!important;
+	background-repeat:no-repeat!important;
+	background-position:5% 50%!important;
+}
+/* TOP MENUS*/
+.horiznav ul li {
+	float:right;
+}
+.horiznav li li {
+	float:right;
+}
+.YJSG_listContainer ul {
+	float:right;
+	width:100%;
+}
+.YJSG_listContainer ul li {
+	width:100%;
+}
+/* IMAGE AND DESC*/
+span.yjm_has_all {
+	background-position:99% 5px;
+	background-repeat:no-repeat;
+	padding:0 30px 0 0px;
+}
+/* ul ul style */
+ul.subul_main span.yjm_has_all {
+	background-position:99% 5px;
+	padding:0px 30px 5px 10px;
+	margin-right:8px;
+	margin-left:0;
+}
+ul.subul_main span.yjm_has_all span.yjm_title {
+	padding:0 5px 0 0px;
+}
+ul.subul_main.group_holder span.yjm_has_all {
+	margin-right:0;
+}
+/* IMAGE ONLY*/
+span.yjm_has_image {
+	background-position:99% 5px;
+	background-repeat:no-repeat;
+	padding:0 30px 0 0px;
+}
+/* ul ul style */
+ul.subul_main span.yjm_has_image {
+	background-position:99% 5px;
+	padding:0px 30px 0px 10px;
+	margin-right:8px;
+	margin-left:0;
+}
+ul.subul_main.group_holder span.yjm_has_image {
+	margin-right:5px;
+}
+/* ONLY DESCRIPTION HOLDER*/
+/* ul ul style */
+ul.subul_main span.yjm_has_desc {
+	margin-right:8px;
+	margin-left:0;
+	padding:0 10px 5px 10px;
+}
+ul.subul_main span.yjm_has_desc span.yjm_title {
+	padding:0 5px 0 0px;
+}
+/* ONLY TITLE HOLDER*/
+ul.subul_main span.yjm_has_none span.yjm_title {
+	line-height:32px;
+	padding:0 10px 0 0px;
+	margin-right:8px;
+	margin-left:0;
+}
+ul.subul_main.group_holder span.yjm_has_none span.yjm_title {
+	margin-right:0;
+}
+/* DESCRIPTION*/
+span.yjm_desc {
+	display:block;
+	font-weight:normal;
+	font-size:11px;
+	line-height:10px;
+	text-transform:capitalize;
+}
+/*ul ul style*/
+ul.subul_main span.yjm_desc {
+	line-height:17px;
+	padding:0 5px 0 0px;
+}
+ul.subul_main span.child span.yjm_has_all span.yjm_title,
+ul.subul_main span.child span.yjm_has_all span.yjm_desc {
+	padding-left:20px;
+	padding-right:0;
+}
+ul.subul_main.dropline div.yj_menu_module_holder {
+	margin-right:0px;
+	margin-left:20px;
+}
+/*TOP LEFT*/
+.horiznav li.tl,
+.horiznav li.tl:hover {
+	display:block;
+	position:absolute;
+	width:20px;
+	height:26px;
+	line-height:20px;
+	padding:0px;
+	margin:0px;
+	z-index:100;
+	top:-13px;
+	left:-10px;
+}
+/* TOP RIGHT AND BOTTOM RIGHT*/
+.horiznav li.tr,
+.horiznav li.br {
+	width:100%;
+	height:20px;
+	display:block;
+	position:absolute;
+	padding:0px;
+	margin:0px;
+	z-index:90;
+}
+.horiznav li.tr,
+.horiznav li.tr:hover {
+	top:-13px;
+	left:10px;
+}
+.horiznav li.br,
+.horiznav li.br:hover {
+	bottom:-13px;
+	left:10px;
+}
+/* BOTTOM LEFT AND RIGHT MIDDLE*/
+.horiznav li.bl,
+.horiznav li.bl:hover,
+.horiznav li.right,
+.horiznav li.right:hover {
+	height:100%;
+	width:20px;
+	display:block;
+	position:absolute;
+	padding:0px;
+	margin:0px;
+	z-index:900;
+}
+.horiznav li.bl,
+.horiznav li.bl:hover {
+	left:-10px;
+	top:13px;
+	right:auto;
+}
+.horiznav li.right,
+.horiznav li.right:hover {
+	left:auto;
+	top:7px;
+	right:-10px;
+}
+/* REMOVE LI BORDERS FROM CORNERS*/
+li.tl,
+li.tr,
+li.bl,
+li.br,
+li.right {
+	border:none!important;
+}
+/* DROPLINE*/
+.horiznav ul ul.subul_main.dropline {
+	float:right!important;
+}
+.horiznav ul ul.subul_main.dropline li {
+	float:right!important;
+}
+.horiznav ul ul.subul_main.dropline li a,
+.horiznav ul ul.subul_main.dropline li a:hover {
+	padding-right:0;
+	padding-left:20px;
+}
+.horiznav ul li ul ul.subul_main.dropline li,
+.horiznav ul li ul ul.subul_main.dropline li:hover,
+.horiznav ul li ul ul.subul_main.dropline a,
+.horiznav ul li ul ul.subul_main.dropline a:hover {
+	padding:0!important;
+}
+.horiznav li li li:hover ul.subul_main.dropline {
+	/*	margin-right:95%!important;*/
+	margin-left:0!important;
+}
+/*FIRST SUB LEVEL PARENT ITEM ARROWS*/
+ ul.subul_main.dropline li.haschild span.child a,
+ ul.subul_main.dropline li.haschild span.child a:hover {
+	background-position:5% 12px!important;
+}
+/* Menu item with image only , no text*/
+
+/* all other levels*/
+ul.subul_main span.no_text {
+	padding:3px 10px 3px 0px!important;
+}
+/* flip top*/
+#topmenu_holder {
+/*	float:left;
+	text-align:left;
+	*width:100%;
+	display:inline-block;
+	clear:both;*/
+}
+#logo {
+	left:auto;
+	right:0;
+	float:right;
+}
+#yjsgheadergrid {
+	right:auto;
+	left:0;
+	float:left;
+	text-align:left;
+}
+/* pathway */
+.icon-yjsg-pathway:before {
+	content: "\f053";
+}
+.yjsgcenter,
+.yjsgcenter h1,
+.yjsgcenter h2,
+.yjsgcenter h3,
+.yjsgcenter h4,
+.yjsgcenter h5,
+.yjsgcenter h6,
+.yjsgcenter p {
+	text-align:center!important;
+}
+.popover {
+	text-align:right;
+}
+ul.yjsg-article-category li a:after {
+	content: "\f053";
+	left:auto;
+	right:-15px;
+}
+span#yjmm_selectid {
+	background-position:left center!important;
+}
+.yjmm_select {
+	text-align:center;
+}
+
+.defaultmenu ul li{
+	padding-left:0;
+	padding-right:15px;
+}
+/* tabsleft */
+.yjsgrtl .tabsright .yjsgShortcodeTabs li {
+	float:none;
+	margin-right:0;
+	margin-left:-1px;
+}
+.yjsgrtl .tabsleft .yjsgShortcodeTabs li {
+	float:none;
+	margin-right:-1px;
+	margin-left:0;
+}
+.yjsgrtl .yjsg-text-left{
+	text-align:right;
+}
+.yjsgrtl .yjsg-text-right{
+	text-align:left;
+}
+/* off canvas */
+.yjsgrtl .site-offc {
+	left:auto;
+	right:5px;
+}
+.yjsgrtl .yjsg-off_canvas_in .closeCanvas {
+	right:auto;
+	left:5px;
+}
+.yjsgrtl .menu{
+	text-align:right;
+}

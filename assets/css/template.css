@@ -1,0 +1,506 @@
+/*======================================================================*\
+|| #################################################################### ||
+|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
+|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
+|| # license - PHP files are licensed under  GNU/GPL V2                 ||
+|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
+|| # bound by Proprietary License of Youjoomla.com                      ||
+|| # for more information visit http://www.youjoomla.com/license.html   ||
+|| # Redistribution and  modification of this software                  ||
+|| # is bounded by its licenses                                         ||
+|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
+|| #################################################################### ||
+\*======================================================================*/
+@import url("normalize.css");
+@import url("yjsg_layout.css");
+@import url("newsitems.css");
+@import url("typo.css");
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height:1.618;
+	color: #333;
+	background-color: #fff;
+}
+a,a:hover{
+	text-decoration: none;
+}
+a:focus,
+textarea:focus, 
+input:focus,
+button:focus,
+select:focus{
+    outline: none;
+}
+ul,ol{
+	  padding-left:0;
+	  list-style-position: inside; 
+}
+ul ul, ol ul { 
+   padding-left: 15px; 
+}
+p{
+	margin:0 0 10px 0;
+}
+/* headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+h1 {font-size: 36px;}
+h2 {font-size: 30px;}
+h3 {font-size: 24px;}
+h4 {font-size: 18px;}
+h5 {font-size: 14px;}
+h6 {font-size: 12px;}
+
+h1,h2,h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+h4,h5,h6 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+/* h small */
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small{
+	font-weight: normal;
+	line-height: 1;
+	color: #999999;
+}
+h1 small,
+h2 small,
+h3 small {
+	font-size: 65%;
+}
+h4 small,
+h5 small,
+h6 small {
+	font-size: 75%;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-bottom: 0;
+}
+
+/* css font family */
+#stylef1 {
+	font-family:"Bookman Old Style", serif;
+}
+#stylef2 {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+#stylef3 {
+	font-family: "Times New Roman", Times, serif;
+}
+#stylef4 {
+	font-family:"Century Gothic", sans-serif;
+}
+#stylef5 {
+	font-family:"Lucida Grande", sans-serif;
+}
+#stylef6 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#stylef7 {
+	font-family: Tahoma, Geneva, sans-serif;
+}
+#stylef8 {
+	font-family: Verdana, Geneva, sans-serif;
+}
+#stylef9 {
+	font-family: "Copperplate Gothic Light", sans-serif;
+}
+#stylef10 {
+	font-family:"Lucida Console", Monaco, monospace;
+}
+#stylef11 {
+	font-family: "Gill Sans MT", sans-serif;
+}
+#stylef12 {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+#stylef13 {
+	font-family: "Courier New", Courier, monospace;
+}
+#stylef14 {
+	font-family: Cambria, serif;
+}
+#stylef15 {
+	font-family: Georgia, Serif;
+}
+/* form elements */
+fieldset {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	min-width: 0;
+}
+legend {
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin-bottom: 20px;
+	font-size: 21px;
+	line-height: inherit;
+	color: #333333;
+	border: 0;
+	border-bottom: 1px solid #e5e5e5;
+}
+.yjsg-element-holder input,
+.yjsg-element-holder select,
+.yjsg-element-holder textarea,
+.yjsg-form .yjsg-form-element,
+.yjsg-form .yjsg-form-prepend,
+.yjsg-form .inputbox,
+button,
+.button {
+	font-size:100%;
+	display: block;
+	margin-bottom:10px;
+	width: 100%;
+	height:34px;
+	padding:6px 12px;
+	color: #555555;
+	line-height: 1.42857143;
+	background-color: #ffffff;
+	background-image: none;
+	vertical-align: middle;
+}
+button,
+.button {
+	display: inline-block;
+	border:1px solid transparent;
+	cursor: pointer;
+	text-align:center;
+	width: auto;
+}
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+	width: auto;
+}
+input[type=radio],
+input[type=checkbox] {
+	display:inline-block;
+	margin-top:0;
+	line-height: normal;
+	vertical-align: middle;
+}
+textarea,
+select[multiple],
+select[size],
+.yjsg-form textarea.yjsg-form-element,
+.yjsg-form select[multiple].yjsg-form-element,
+.yjsg-form select[size].yjsg-form-element,
+.yjsg-form select[multiple],
+.yjsg-form select[size] {
+	height:auto;
+}
+input[type="radio"] + label,
+label.checkbox-label,
+label.radiobtn,
+label.radio,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"],
+#jform_contact_email_copy-lbl {
+	cursor: pointer;
+}
+.yjsg-form-fieldset {
+	display:block;
+}
+/* inline form elements */
+.yjsg-form-group,
+.yjsg-form-group-inline,
+.yjsg-element-holder {
+	display:block;
+}
+.yjsg-form-group-inline .yjsg-element-holder {
+	display: inline-block;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+.yjsg-form-group-inline input[type="radio"],
+.yjsg-form-group-inline input[type="checkbox"] {
+	display:inline-block;
+}
+.yjsg-form-group > label {
+	display:block;
+	margin-bottom:10px;
+}
+.yjsg-form-group-inline label {
+	display:inline-block;
+	min-height: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right:15px;
+}
+.yjsg-form-fieldset:after,
+.yjsg-form-group:after,
+.yjsg-form-group-inline:after {
+	display:table;
+	content:"";
+	clear:both;
+}
+.yjsg-form .yjsg-element-holder + .yjsg-element-holder{
+	margin-left:5px;
+}
+/* prepend /append */
+.yjsg-form-group-addon {
+	position: relative;
+	display: table;
+	border-collapse: separate;
+	margin-bottom:10px;
+}
+.yjsg-form .yjsg-form-prepend + .yjsg-form-element {
+	position: relative;
+	z-index: 2;
+	float: left;
+	width: 100%;
+	margin-bottom: 0;
+	margin-left:-1px;
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+.yjsg-form .yjsg-form-prepend {
+	position: relative;
+	z-index: 3;
+	width: 1%;
+	white-space: nowrap;
+	color: #555;
+	text-align: center;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	display: table-cell;
+	height:auto;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+/* invalid form element */
+.yjsg-form-element.invalid {
+	border-color:red;
+}
+/* disabled */
+fieldset[disabled],
+input[readonly],
+input[disabled],
+select[disabled],
+textarea[disabled] {
+	cursor: not-allowed;
+	background-color: #eee;
+}
+
+/* com_finder view-search */
+.yjsg-form .com_finder_filter ul {
+	margin:20px 0 0 0;
+	padding:0;
+	list-style:none;
+	display:block;
+}
+.yjsg-form .com_finder_filter ul li{
+	display:block;
+}
+.yjsg-form .com_finder_filter ul li:after,
+.yjsg-form .com_finder_filter ul:after {
+	display:table;
+	content:"";
+	clear:both;
+}
+.yjsg-form .com_finder_filter ul li label,
+.yjsg-form .com_finder_filter ul li select {
+	display:inline-block;
+	width:auto;
+}
+
+.yjsg-form .com_finder_filter ul li label {
+	width:100%;
+	max-width:200px;
+}
+/* TABLES */
+/* table structure */
+table.yjsg-table-bordered {
+	width: 100%;
+	max-width: 100%;
+	margin-top:10px;
+	border-collapse: separate;
+	background-color: transparent;
+}
+table.yjsg-table-bordered tr td {
+	height: 40px;
+	padding: 0 10px;
+	line-height:40px;
+	vertical-align: top;
+}
+table.yjsg-table-bordered {
+	border-style:solid;
+	border-width:1px;
+	border-bottom-width:0px;
+}
+table.yjsg-table-bordered td {
+	border-style:solid;
+	border-width:0px;
+	border-bottom-width:1px;
+	border-right-width:1px;
+}
+table.yjsg-table-bordered th {
+	border-style:solid;
+	border-width:0px;
+	border-bottom-width:1px;
+	text-align: left;
+}
+table.yjsg-table-bordered > thead > tr > th,
+table.yjsg-table-bordered > tbody > tr > th,
+table.yjsg-table-bordered > tfoot > tr > th,
+table.yjsg-table-bordered > thead > tr > td,
+table.yjsg-table-bordered > tbody > tr > td,
+table.yjsg-table-bordered > tfoot > tr > td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	font-weight: normal;
+}
+table.yjsg-table-bordered > thead > tr > th {
+	vertical-align: bottom;
+}
+table.yjsg-table-bordered > thead:first-child > tr:first-child > th,
+table.yjsg-table-bordered > thead:first-child > tr:first-child > td {
+	border-top: 0;
+}
+table.yjsg-table-bordered tr td:last-child {
+	border-right:0;
+}
+/* table border radius */
+table.yjsg-table-bordered {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+table.yjsg-table-bordered thead:first-child tr:first-child > th:first-child,
+table.yjsg-table-bordered tbody:first-child tr:first-child > td:first-child,
+table.yjsg-table-bordered tbody:first-child tr:first-child > th:first-child {
+	-webkit-border-top-left-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	border-top-left-radius: 4px;
+}
+table.yjsg-table-bordered thead:first-child tr:first-child > th:last-child,
+table.yjsg-table-bordered tbody:first-child tr:first-child > td:last-child,
+table.yjsg-table-bordered tbody:first-child tr:first-child > th:last-child {
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-right-radius: 4px;
+}
+table.yjsg-table-bordered thead:last-child tr:last-child > th:first-child,
+table.yjsg-table-bordered tbody:last-child tr:last-child > td:first-child,
+table.yjsg-table-bordered tbody:last-child tr:last-child > th:first-child,
+table.yjsg-table-bordered tfoot:last-child tr:last-child > td:first-child,
+table.yjsg-table-bordered tfoot:last-child tr:last-child > th:first-child {
+	-webkit-border-bottom-left-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-left-radius: 4px;
+}
+table.yjsg-table-bordered thead:last-child tr:last-child > th:last-child,
+table.yjsg-table-bordered tbody:last-child tr:last-child > td:last-child,
+table.yjsg-table-bordered tbody:last-child tr:last-child > th:last-child,
+table.yjsg-table-bordered tfoot:last-child tr:last-child > td:last-child,
+table.yjsg-table-bordered tfoot:last-child tr:last-child > th:last-child {
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-bottom-right-radius: 4px;
+}
+table.yjsg-table-bordered tfoot + tbody:last-child tr:last-child td:first-child {
+	-webkit-border-bottom-left-radius: 0;
+	-moz-border-radius-bottomleft: 0;
+	border-bottom-left-radius: 0;
+}
+table.yjsg-table-bordered tfoot + tbody:last-child tr:last-child td:last-child {
+	-webkit-border-bottom-right-radius: 0;
+	-moz-border-radius-bottomright: 0;
+	border-bottom-right-radius: 0;
+}
+/* table colors */
+table.yjsg-table-bordered,
+table.yjsg-table-bordered td,
+table.yjsg-table-bordered th {
+	border-color:#DDD;
+	background-color: #fff;
+}
+tr.sectiontableentry1 td {
+	background-color: #fafafa;
+}
+tr.sectiontableentry1:hover td,
+tr.sectiontableentry2:hover td {
+	background-color: #f7f7f7;
+}
+/* border radius and reset for text shadows */
+.readon,
+.inputbox,
+.yjsg-form-element,
+.button,
+input,
+select,
+#pathway .breadcrumb,
+.pager li > a,
+.pager li > span,
+.yjsg-more-articles-links{
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	text-shadow:none;
+	-webkit-box-shadow:none;
+	-khtml-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+
+/* RTL */
+.yjsgrtl {
+	direction: rtl;
+	unicode-bidi:embed;
+}
+.yjsgrtl ul,
+.yjsgrtl ol {
+	padding-right:0;
+}
+.yjsgrtl ul ul,
+.yjsgrtl ol ul {
+	padding-right: 15px;
+}

@@ -1,0 +1,391 @@
+/*======================================================================*\
+|| #################################################################### ||
+|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
+|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
+|| # license - PHP files are licensed under  GNU/GPL V2                 ||
+|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
+|| # bound by Proprietary License of Youjoomla.com                      ||
+|| # for more information visit http://www.youjoomla.com/license.html   ||
+|| # Redistribution and  modification of this software                  ||
+|| # is bounded by its licenses                                         ||
+|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
+|| #################################################################### ||
+\*======================================================================*/
+/*select menu */
+#mmenu_holder {
+	display:none;
+	width:100%;
+	background:#000;
+	padding:0;
+	margin:0 auto;
+	text-align:center;
+	overflow:hidden;
+	position:relative;
+	height:38px;
+}
+select#mmenu {
+	margin:0 auto;
+	cursor:pointer;
+	display:block;
+	width:100%;
+	overflow: hidden;
+	height:35px;
+	padding:5px 0;
+}
+span#yjmm_selectid {
+	position:absolute;
+	display:block;
+	left:0;
+	width:99%;
+	height:35px;
+	padding:0;
+	margin:0;
+	line-height:35px;
+	color: #fff;
+	font-size:18px;
+	font-weight:bold;
+	color:#ccc;
+	overflow: hidden;
+	cursor:pointer;
+	background:url(../../../../../plugins/system/yjsg/assets/images/mm_arrow.png) no-repeat right center;
+}
+select.yjstyled {
+	position: relative;
+	opacity: 0;
+	z-index: 5;
+}
+
+@media screen and (max-width: 1500px) {
+	body,
+	html {
+	/*overflow-x: hidden;*/
+	}
+	#topmenu_holder.dropped {
+		width:auto!important;
+		float: none!important;
+		clear:both!important;
+		margin:0 auto!important;
+	}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1220px) {
+	
+	div.yjsgsitew{
+		max-width:1160px;
+	}
+}
+
+
+@media only screen and (min-width: 1040px) and (max-width: 1199px) {
+	body,
+	p,
+	img,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		transition:all .3s linear;
+		-o-transition:all .3s linear;
+		-moz-transition:all .3s linear;
+		-webkit-transition:all .3s linear;
+	}
+	#header,
+	#header_in,
+	#centertop,
+	#centerbottom,
+	#yjsg1,
+	#yjsg2,
+	#yjsg3,
+	#yjsg4,
+	#yjsg5,
+	#yjsg6,
+	#yjsg7,
+	#footer,
+	#joomlacredit,
+	.yjsgsitew{
+		max-width:1000px;
+	}
+	.top_menu,
+	.top_menu_poz_navbar,
+	.top_menu_poz.navpills {
+		max-width:1000px;
+	}
+}
+ @media only screen and (min-width: 981px) and (max-width: 1039px) {
+	#header,
+	#header_in,
+	#centertop,
+	#centerbottom,
+	#yjsg1,
+	#yjsg2,
+	#yjsg3,
+	#yjsg4,
+	#yjsg5,
+	#yjsg6,
+	#yjsg7,
+	#footer,
+	#joomlacredit,
+	.yjsgsitew {
+		max-width:960px;
+	}
+	.top_menu,
+	.top_menu_poz_navbar,
+	.top_menu_poz.navpills {
+		max-width:960px;
+	}
+}
+ @media screen and (max-width: 980px) {
+	.top_menu_poz_navbar {
+		width:100%!important;
+	}
+	.topmodpoz_navbar #mmenu_holder {
+		display:none!important;
+	}
+	.top_menu,
+	.top_menu_poz {
+		visibility:hidden!important;
+		height:0!important;
+		overflow:hidden!important;
+	}
+	.top_menu.showmenu,
+	.top_menu_poz.showmenu {
+		visibility:visible!important;
+		height:auto!important;
+		overflow:visible!important;
+	}
+	#logo {
+		visibility:hidden;
+	}
+	#logo.lfloat {
+		margin:0 auto!important;
+		float:none!important;
+		visibility:visible!important;
+	}
+	/*	body,
+		 html {
+			overflow-x: hidden;
+		}*/
+		#header {
+		overflow:hidden;
+	}
+	#header.dropped {
+		overflow:hidden;
+		height: auto!important;
+	}
+	#centertop,
+	#header_in,
+	#centerbottom,
+	#yjsgheadergrid,
+	#yjsg1,
+	#yjsg2,
+	#yjsg3,
+	#yjsg4,
+	#yjsg5,
+	#yjsg6,
+	#yjsg7,
+	#midblock,
+	#rightblock,
+	#leftblock,
+	#insetblock,
+	#insetsholder_2t,
+	#insetsholder_2b,
+	#insetsholder_3t,
+	#insetsholder_3b,
+	#footer,
+	#footmod,
+	#joomlacredit,
+	.validators,
+	.yjsgcp,
+	.yjsglogo,
+	.yjsgsitew{
+		width:auto!important;
+		float: none!important;
+		clear:both!important;
+	}
+	/* mods*/
+	.yjsgxhtml {
+		width:50%!important;
+	}
+	/* 3rd mod in group of 4*/
+	.yjsgclearrow{
+		clear:left!important;
+	}
+	.yjsgxhtml.last_mod,
+	.yjsgxhtml.only_mod {
+		width:100%!important;
+	}
+	embed,
+	object {
+		width: 100%!important;
+		height: auto!important;
+	}
+	img {
+		max-width: 100%!important;
+	}
+	.yjsglogo {
+		position:static!important;
+		display:block!important;
+	}
+	div.yjsg-newsitems .float-left {
+		width:50%!important;
+	}
+	div.yjsg-newsitems .float-left.width100,
+	 .last.float-left.width33,
+	 .last.float-left.width20 {
+		width:100%!important;
+	}
+	div.subCategory {
+		height: auto!important;
+	}
+	[data-sticky-block]{
+		display:none!important;
+	}
+}
+ @media screen and (max-width: 768px) {
+	body {
+		padding-right:0!important;
+		padding-left:0!important;
+	}
+	.yjsg-split,
+	.yjsg-split-in {
+		width:100%!important;
+		float:none;
+		clear:both;
+		margin-left:0;
+		margin-right:0;
+		padding-left:0!important;
+		padding-right:0!important;
+	}
+	.yjsg-split  .navContainer {
+		width: 98%!important;
+	}
+	.subCategoryContainer,
+	.itemImageBlock,
+	.itemContainer,
+	.catItemImageBlock,
+	div.subCategory a.subCategoryImage img,
+	div.subCategory a.subCategoryImage {
+		width:auto!important;
+		float: none!important;
+		clear:both!important;
+	}
+	.itemToolbar ul li {
+		padding:0 5px 0 0!important;
+	}
+	#go_right,
+	#go_left {
+		width:100%;
+		clear:both;
+		position:static!important;
+	}
+	#go_right .affix,
+	.yjsg-example-sidebar {
+		position:static!important;
+	}
+	.yjsg-font-mega,
+	.yjsg-font-jumbo{
+		font-size:36px;
+	}
+}
+@media screen and (max-width: 640px) {
+	h1 {
+		font-size: 2em;
+		line-height: 1.7em!important;
+	}
+	h2 {
+		font-size: 1.8em;
+		line-height: 1.7em!important;
+	}
+	h3 {
+		font-size: 1.5em;
+		line-height: 1.7em!important;
+	}
+	h4 {
+		font-size: 1.3em;
+		line-height: 1.7em!important;
+	}
+	h5 {
+		font-size: 1.2em;
+		line-height: 1.7em!important;
+	}
+	h6 {
+		font-size: 1.1em;
+		line-height: 1.7em!important;
+	}
+	h1 small {
+		font-size: 20px;
+	}
+	h2 small {
+		font-size: 15px;
+	}
+	h3 small {
+		font-size: 12px;
+	}
+	h4 small {
+		font-size: 12px;
+	}
+	.userpages,
+	#userpages {
+		width:auto!important;
+		float: none!important;
+		clear:both!important;
+	}
+}
+@media screen and (max-width: 480px) {
+	div.yjsg-newsitems .float-left,
+	.yjsgxhtml {
+		width:auto!important;
+		float: none!important;
+		clear:both!important;
+	}
+	textarea,
+	 .inputbox {
+		width: 90%!important;
+		height: auto!important;
+	}
+	.itemToolbar,
+	.itemToolbar ul,
+	.itemToolbar ul li {
+		display:block!important;
+		clear:both!important;
+		float:none!important;
+		padding:0!important;
+		text-align:left!important;
+		border:none!important;
+	}
+	.yjsg-example #myCarousel {
+		width:100%;
+		margin:0 auto;
+	}
+}
+@media screen and (max-width: 320px) {
+	.contact.component textarea,
+	.contact.component input {
+		width:95%!important;
+	}
+	#recaptcha_area {
+		width:95%!important;
+	}
+	#recaptcha_area {
+		width:95%!important;
+	}
+	#recaptcha_image {
+		width:100% !important;
+		height:auto !important
+	}
+	#recaptcha_area input {
+		width:180px!important;
+	}
+	#recaptcha_logo {
+		display:none!important;
+	}
+}
+@media screen and (max-width: 240px) {
+	.navContainer {
+		width: 95%!important;
+	}
+}
+/* IE10 scroll-x overlap fix */
+@-ms-viewport{ width: auto !important; }

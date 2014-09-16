@@ -1,0 +1,489 @@
+/*======================================================================*\
+|| #################################################################### ||
+|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
+|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
+|| # license - PHP files are licensed under  GNU/GPL V2                 ||
+|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
+|| # bound by Proprietary License of Youjoomla.com                      ||
+|| # for more information visit http://www.youjoomla.com/license.html   ||
+|| # Redistribution and  modification of this software                  ||
+|| # is bounded by its licenses                                         ||
+|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
+|| #################################################################### ||
+\*======================================================================*/
+#topmenu_holder {
+	display:block;
+	position:relative;
+	padding:0;
+	z-index:990;
+	margin:0 auto;
+}
+.top_menu {
+	width:100%;
+	display:block;
+	position:relative;
+	z-index:991;
+	padding-top:0;
+	padding-bottom:0;
+	margin:0 auto;
+}
+.horiznav {
+	display:block;
+	float:none;
+}
+/* dropdown */
+ul.yjsgmenu,
+ul.yjsgmenu li,
+ul.yjsgmenu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.yjsgmenu {
+	position: relative;
+	z-index:777;
+}
+ul.yjsgmenu li {
+	float: left;
+	min-height: 1px;
+	vertical-align: middle;
+	background-image:none;
+	position: relative;
+	z-index:1;
+}
+ul.yjsgmenu li.level0 a {
+	z-index:780;
+}
+ul.yjsgmenu li.hover,
+ul.yjsgmenu li:hover {
+	position: relative;
+	z-index:779;
+	cursor: default;
+}
+ul.yjsgmenu li a,
+ul.yjsgmenu.megadropline a.dlevel1a,
+ul.yjsgmenu.megadropline .cleardropline,
+ul.yjsgmenu.megadropline .cleardropline {
+	display:block;
+	margin:0;
+	padding:0px 25px;
+	height:40px;
+	line-height:40px;
+}
+ul.yjsgmenu ul li a {
+	line-height:35px;
+}
+ul.yjsgmenu li a span {
+	display:block;
+	clear:both;
+}
+ul.yjsgmenu span.child a {
+	position:relative;
+}
+ul.yjsgmenu span.child a:after {
+	font-family: 'FontAwesome';
+	position: absolute;
+	top:0;
+	right:3px;
+}
+ul.yjsgmenu ul span.child a:after {
+	right:10px;
+}
+ul.yjsgmenu li a span.yjm_desc {
+	font-size:80%;
+}
+ul.yjsgmenu a span.yjm_has_desc,
+ul.yjsgmenu a span.yjm_has_all,
+ul.yjsgmenu.megadropline a.dlevel1a span.yjm_has_desc,
+ul.yjsgmenu.megadropline a.dlevel1a span.yjm_has_all {
+	line-height:normal;
+	padding:5px 0;
+}
+ul.yjsgmenu ul a span.yjm_has_desc,
+ul.yjsgmenu ul a span.yjm_has_all {
+	line-height:normal;
+	padding:10px 0;
+}
+ul.yjsgmenu li a span.yjm_has_all,
+ul.yjsgmenu.megadropline a.dlevel1a span.yjm_has_all {
+	background-position:left center;
+	background-repeat:no-repeat;
+	padding-left:30px;
+}
+ul.yjsgmenu ul {
+	display: block;
+	position:relative;
+	width:100%;
+	margin:0;
+}
+/* push ul's down/up */
+ul.yjsgmenu ul.level1,
+ul.yjsgmenu.megadropline ul.level2 {
+	margin-left:0px;
+}
+ul.yjsgmenu ul ul {
+	margin-top:0px;
+}
+/* end push */
+ul.yjsgmenu div.ulholder {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 778;
+}
+ul.yjsgmenu ul li {
+	float: none;
+	display:block;
+}
+ul.yjsgmenu ul li a {
+	height:auto;
+	padding:0 0 0 10px;
+}
+ul.yjsgmenu ul div.ulholder {
+	top:0px;
+}
+ul.yjsgmenu li:hover > div.ulholder,
+ul.yjsgmenu.megadropline li.active > div.ulholder.dlevel1,
+ul.yjsgmenu li.holdsgroup ul li:hover > div.ulholder {
+	display:block;
+	z-index:785;
+}
+/* group holders */
+ul.yjsgmenu.group_holder{
+	display:table;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;   
+	box-sizing: border-box; 
+}
+ul.yjsgmenu li.holdsgroup {
+	display:table-cell;
+	vertical-align:top;
+}
+ul.yjsgmenu li.holdsgroup div.ulgroup {
+	display:block;
+	position:static;
+	width:auto;
+	padding:5px 5px;
+}
+ul.yjsgmenu li.holdsgroup div.ulgroup ul.ulgroup {
+	width:auto;
+	border:none;
+	margin:0;
+	left:0;
+	top:0;
+	-webkit-border-radius:0px;
+	-khtml-border-radius:0px;
+	-moz-border-radius:0px;
+	border-radius:0px;
+	-webkit-box-shadow:none;
+	-khtml-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+ul.yjsgmenu a.holdsgroupTitle {
+	margin:10px 5px;
+}
+/* specific styles */
+ul.yjsgmenu li.lilast,
+ul.yjsgmenu li.holdsgroup {
+	border-bottom:none;
+}
+ul.yjsgmenu li:hover a.holdsgroupTitle,
+ul.yjsgmenu a.holdsgroupTitle:hover {
+	background:none;
+}
+ul.yjsgmenu li:hover a.holdsgroupTitle:after {
+	content: "";
+	display:none;
+}
+/* clearing */
+.horiznav:after,
+ul.yjsgmenu:after,
+ul.yjsgmenu div.ulholder:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+/* menu module */
+ul.yjsgmenu div.yj_menu_module_holder {
+	padding:10px;
+}
+body ul.yjsgmenu li div.yj_menu_module_holder ul,
+body ul.yjsgmenu li div.yj_menu_module_holder li,
+body ul.yjsgmenu li div.yj_menu_module_holder a,
+ul.yjsgmenu.megadropline li:hover > div.ulholder ul.dlevel1,
+ul.yjsgmenu.megadropline li.active > div.ulholder ul.dlevel1 {
+	border:inherit;
+	-webkit-border-radius:0px;
+	-khtml-border-radius:0px;
+	-moz-border-radius:0px;
+	border-radius:0px;
+	-webkit-box-shadow:none;
+	-khtml-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+	background:none;
+	text-transform:none;
+	padding:0px;
+	margin:0px;
+	line-height:inherit;
+	width:auto;
+	float:none;
+}
+ul.yjsgmenu div.yj_menu_module_holder .yjsg-form-group-inline .yjsg-form-element,
+ul.yjsgmenu div.yj_menu_module_holder .yjsg-form-group-inline .button {
+	margin-bottom:0;
+}
+/* dropline */
+ul.yjsgmenu.megadropline .cleardropline {
+	display:none;
+}
+ul.yjsgmenu.megadropline li.haschild.level0:hover .cleardropline,
+ul.yjsgmenu.megadropline li.haschild.level0.active .cleardropline {
+	display:block;
+}
+ul.yjsgmenu.megadropline li.level0 {
+	position:static;
+}
+ul.yjsgmenu.megadropline li.haschild:hover div.ulholder.level1,
+ul.yjsgmenu.megadropline li.haschild.active div.ulholder.level1 {
+	top:50%;
+	width:100%;
+}
+ul.yjsgmenu.megadropline li.haschild.active div.ulholder.level1 {
+	z-index:776;
+}
+ul.yjsgmenu.megadropline li.active > div.ulholder ul.dlevel1 li.level1,
+ul.yjsgmenu.megadropline li:hover > div.ulholder ul.dlevel1 li.level1 {
+	border:none;
+	display:inline-block;
+	position:relative;
+}
+ul.yjsgmenu.megadropline div.ulholder.level2 {
+	left:0;
+	top:100%;
+}
+ul.yjsgmenu li.yjsgmenu-hide-indicator > span.child a:after {
+	display:none;
+}
+
+/* li flip */
+ul.yjsgmenu li.flip div.ulholder {
+	left:auto;
+	right:100%;
+}
+ul.yjsgmenu.megadropdown li.flip.level0 > div.ulholder,
+ul.yjsgmenu.megadropline li.flip.level1 > div.ulholder {
+	left:auto;
+	right:0;
+}
+ul.yjsgmenu li.flip div.ulholder > ul {
+	margin-right:10px;
+}
+ul.yjsgmenu.megadropdown li.flip.level0 > div.ulholder > ul,
+ul.yjsgmenu.megadropline li.flip.level1 > div.ulholder > ul {
+	margin-right:0;
+	margin-left:0;
+}
+/*default menu*/
+ul.defaultmenu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.defaultmenu ul {
+	list-style: none;
+	padding-left:20px;
+}
+ul.defaultmenu li a {
+	line-height:32px;
+	display: block;
+}
+ul.defaultmenu li a img {
+	margin-right:10px;
+}
+ul.defaultmenu li a:before,
+ul.defaultmenu li a:after {
+	font-size:10px;
+}
+.defaultmenu li a:before {
+	font-family: 'FontAwesome';
+	margin-right:5px;
+}
+ul.defaultmenu a.alast {
+	border-bottom:none;
+}
+/* inline menu */
+ul.defaultmenu.inline {
+	margin:0;
+	padding:0;
+}
+ul.defaultmenu.inline li {
+	display:inline-block;
+	margin:0 10px 0 0;
+	height:auto;
+	padding:0;
+	border:none;
+	background:none;
+}
+ul.defaultmenu.inline li a {
+	padding:0;
+	margin:0;
+	text-indent:0;
+	height:auto;
+	border:none;
+	background:none;
+	line-height:normal;
+}
+ul.defaultmenu.inline li a:after,
+ul.defaultmenu.inline li a:before {
+	display:none;
+}
+/* bootstrap menus */
+.yjsg-bsmenu .container,
+.yjsg-bsmenu .collapse,
+.yjsg-bsmenu.nav,
+.yjsg-bsmenu.navbar {
+	margin:0px;
+	padding:0px;
+}
+.yjsg-bsmenu.navbar {
+	min-height:30px;
+}
+.yjsg-bsmenu.navbar .btn {
+	margin:5px;
+}
+.yjsg-bsmenu .navbar-inner {
+	padding-left:0;
+	padding-right:0;
+	min-height:30px;
+}
+.yjsg-bsmenu .dropdown-submenu img {
+	margin-right:5px;
+}
+/* top level */
+.yjsg-bsmenu .nav > li > a,
+.yjsg-bsmenu.nav > li > a {
+	line-height:25px;
+}
+/* sub levels */
+.yjsg-bsmenu .dropdown-menu {
+	margin:0px;
+	padding:0px;
+}
+.yjsg-bsmenu .dropdown-menu > li > a {
+	padding:10px 15px;
+}
+/* top menu specific */
+.bootstrap3 #topmenu_holder .dropdown-menu,
+#topmenu_holder .navbar,
+#topmenu_holder .navbar-inner {
+	-webkit-border-radius:0px;
+	-khtml-border-radius:0px;
+	-moz-border-radius:0px;
+	border-radius:0px;
+}
+#topmenu_holder .navbar-inner,
+#topmenu_holder .navbar-default {
+	border-width:0px;
+	background-image:none;
+	-webkit-box-shadow:none;
+	-khtml-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+}
+#topmenu_holder .navbar-only .navbar-inner {
+	background-color:#F7F7F7;
+}
+@media screen and (max-width: 979px) {
+	#topmenu_holder .navbar-inner {
+		border-width:1px;
+	}
+	div#topmenu_holder {
+		background-color:transparent;
+	}
+	div.top_menu_poz_navbar {
+		max-width:90%!important;
+		width:90%!important;
+	}
+	div.top_menu_poz_navbar .navbar-collapse {
+		margin-left:0;
+		margin-right:0;
+	}
+}
+/* RTL */
+/* top menu */
+.yjsgrtl ul.yjsgmenu ul ul {
+	margin-left:0;
+}
+.yjsgrtl ul.yjsgmenu.megadropline div.ulholder.level2 {
+	left:auto;
+	right:0;
+}
+.yjsgrtl ul.yjsgmenu,
+.yjsgrtl ul.yjsgmenu ul{
+	padding-right:0;
+}
+.yjsgrtl ul.yjsgmenu,
+.yjsgrtl ul.yjsgmenu li {
+	float: right;
+}
+.yjsgrtl ul.yjsgmenu ul li {
+	float:none;
+}
+.yjsgrtl ul.yjsgmenu ul li a {
+	padding:0px 10px 0 0px;
+}
+.yjsgrtl ul.yjsgmenu div.ulholder {
+	left:auto;
+	right:0;
+}
+.yjsgrtl ul.yjsgmenu ul div.ulholder {
+	left:auto;
+	right:100%;
+}
+.yjsgrtl ul.yjsgmenu li.holdsgroup ul {
+	right:0;
+}
+.yjsgrtl ul.yjsgmenu li a span.yjm_has_all {
+	background-position:right center;
+	padding-left:0px;
+	padding-right:30px;
+}
+/* li flip */
+.yjsgrtl ul.yjsgmenu li.flip div.ulholder {
+	left:100%;
+	right:auto;
+}
+.yjsgrtl ul.yjsgmenu li.flip.level0 > div.ulholder,
+.yjsgrtl ul.yjsgmenu.megadropline li.flip.level1 > div.ulholder {
+	left:0;
+	right:auto;
+}
+.yjsgrtl ul.yjsgmenu li.flip div.ulholder > ul {
+	margin-right:0;
+	margin-left:10px;
+}
+/* has child arrows */
+.yjsgrtl ul.yjsgmenu ul span.child a:after {
+	right:auto;
+	left:10px;
+}
+/*inline menu */
+.yjsgrtl ul.defaultmenu.inline li {
+	margin-right:0;
+	margin-left:10px;
+}
+/* side menu */
+.yjsgrtl ul.defaultmenu li a img {
+	margin-right:0px;
+	margin-left:10px;
+}
+.yjsgrtl ul.defaultmenu *{
+	unicode-bidi: bidi-override;
+}
+.yjsgrtl ul.defaultmenu li a:before{
+	margin-right:0px;
+	margin-left:5px;
+}

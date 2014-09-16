@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params" addfieldpath="/plugins/system/yjsg/includes/yjsgmoduleoptions/elements">
+		<fieldset name="YJSG_MENU_MODULE_OPTIONS" label="Yjsg Menu Options">
+			<field name="yjsg_menu_module_type" type="list" default="default"  class="yjsg-accordion" label="Select menu type" description="These are additional menu types that you can choose from. Please note that Bootstrap menus as well as inline menu need more space and it is best to publish them in a full page width module position.">
+				<option value="default">Default</option>
+				<option value="inline">Inline menu</option>
+				<option value="accordion">Accordion</option>
+				<option value="accordion_notoggle">Accordion no toggle</option>
+				<option value="navbar">Bootstrap navbar</option>
+				<option value="navbarinverse">Bootstrap navbar inverse</option>
+				<option value="navpills">Bootstrap nav pills</option>
+			</field>
+		</fieldset>
+	</fields>
+</form>

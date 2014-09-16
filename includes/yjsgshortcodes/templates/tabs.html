@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="../../../assets/bootstrap3/css/bootstrap.min.css" />
+<script type="text/javascript" src="../../../assets/src/libraries/jquery.min.js"></script>
+<script type="text/javascript" src="../../../assets/bootstrap3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="tabs.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2> Tabs shortcode </h2>
+        <form role="form">
+            <div class="form-group">
+                <label for="tabtype" for="title" data-toggle="tooltip" data-placement="top" title="Select tabs type">Tabs type</label>
+                <select class="form-control" id="tabtype" name="tabtype">
+                    <option value="tabnav" selected>Tab nav</option>
+                    <option value="tabpills">Tab pills</option>
+					<option value="tabsleft">Tabs left</option>
+					<option value="tabsright">Tabs right</option>
+					<option value="tabscentered">Tabs centered</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tabid" for="title" data-toggle="tooltip" data-placement="top" title="Add tab group id. This should be unique for every instance."> Tab id </label>
+                <input type="text" class="form-control" id="tabid" name="tabid" placeholder="tab id" onClick="this.select()" />
+            </div>
+            <div class="form-group poster">
+                <label for="tabs" for="title" data-toggle="tooltip" data-placement="top" title="Number of tabs">Number of tabs</label>
+                <input type="text" class="form-control" id="tabs" name="tabs" value="3" onClick="this.select()"/>
+            </div>
+            <div class="form-group">
+                <label for="activetab" data-toggle="tooltip" data-placement="top" title="Set active tab index. The count begins at 0. Example;0,1,2">Active tab</label>
+                <input type="text" class="form-control" id="activetab" name="activetab" value="0" onClick="this.select()" />
+            </div>
+            <button type="submit" id="addshortcode" class="btn btn-primary">Insert shortcode</button>
+        </form>
+    </div>
+</body>
+</html>

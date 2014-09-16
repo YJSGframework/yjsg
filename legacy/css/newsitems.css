@@ -1,0 +1,329 @@
+/*======================================================================*\
+|| #################################################################### ||
+|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
+|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
+|| # license - PHP files are licensed under  GNU/GPL V2                 ||
+|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
+|| # bound by Proprietary License of Youjoomla.com                      ||
+|| # for more information visit http://www.youjoomla.com/license.html   ||
+|| # Redistribution and  modification of this software                  ||
+|| # is bounded by its licenses                                         ||
+|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
+|| #################################################################### ||
+\*======================================================================*/
+/* HOLDING CLASS OF VIEWS. WHEN YOU ADD PAGE SUFFIX IT WILL AFFECT THIS DIV.
+   STYLE HOLDING CLASSES ACCORDING TO THIS DIV */
+div.yjsg-newsitems {
+}
+/* MAIN NEWS ITEMS HOLDERS FOR FRONTPAGE, CATEGORY. 
+*/
+div.yjsg-newsitems .yjsg-blog_f, div.yjsg-newsitems .yjsg-blog_c, div.yjsg-newsitems .yjsg-blog_s {
+	padding:0 5px;
+}
+/* FRONTPAGE NEWS ITEM HOLDER */
+.news_item_f {
+	margin:0 3px;
+	position:relative;
+}
+/* CATEGORY NEWS ITEM HOLDER */
+.news_item_c {
+	margin:0 0px;
+	position:relative;
+}
+/* ARTICLE VIEW NEWS ITEM HOLDER */
+.news_item_a {
+	margin:0px 0px 0 0px!Important;
+	padding:0px 5px;
+	overflow:hidden;
+	position:relative;
+}
+.news_item_a .pagenav{
+	display:block;
+	clear:both;
+	overflow:hidden;
+}
+/* ROW SEPARATOR*/
+.row-separator {
+	clear:both;
+	display:block;
+	height:3px;
+	overflow:hidden;
+}
+/* ARTICLE TITLE
+h1 in article view and h2 in frontpage/featured, category*/
+h1.article_title {
+	margin-top:0;
+}
+/* THIS DIV HOLDS NEWS ITEM TEXT ONLY */
+.newsitem_text {
+	display:block;
+	padding:0px 3px 0px 3px;
+}
+/* newsitem_tools  CONTAINS , CREATED BY , CREATE DATE , PRINT,EMAIL , PDF BUTTONS */
+.newsitem_tools {
+	display: block;
+	width:100%;
+	margin:0 0 0 0 !Important;
+	clear:both;
+	padding:3px 0 10px 0;
+	margin:0;
+}
+.newsitem_tools [class^="icon-"],
+.newsitem_tools [class^="fa"]{
+	font-size:14px;
+}
+/* newsitem_info  CONTAINS , CREATED BY , CREATE DATE */
+.newsitem_info {
+	width: 70%;
+	display: block;
+	float:left;
+	
+}
+.newsitem_info span{
+	padding-left:3px;
+}
+.newsitem_info span > span{
+	padding:0;
+}
+/* buttonheading  CONTAINS PRINT,EMAIL , PDF BUTTONS */
+ul.dropdown-menu.buttonheading {
+	margin:0;
+	padding:0
+}
+/* print and email icons holder*/
+div.actiongroup li {
+	background-image:none;
+}
+.bootstrap3 div.actiongroup a.btn-mini{
+	font-size:14px;
+	padding: 2px 6px;
+	line-height: 16px;
+}
+div.actiongroup .btn-mini [class^="icon-"], 
+div.actiongroup .btn-mini [class*=" icon-"] {
+	margin-top:0px;
+	line-height:1.1;
+}
+
+ul.dropdown-menu.buttonheading img {
+	border:0;
+}
+.buttonheading .email, .buttonheading .print, .buttonheading .pdf {
+	float:right;
+	margin:0px 2px 0 0;
+	width:16px;
+}
+.buttonheading em{
+	font-style:normal;
+}
+.bootstrapoff .buttonheading em{
+	display:none;
+}
+.createby {
+	padding:0 3px 0 0px;
+		float:left;
+}
+.createdate {
+	padding:0 3px 0 0px;
+}
+.modifydate {
+}
+/* CATEGORY NAME HOLDER*/
+.newsitem_category, .newsitem_parent_category {
+	padding:0 3px 0 0px;
+	float:left;
+}
+.newsitem_category a, .newsitem_parent_category a {
+	padding:0 3px 0 0px;
+}
+.newsitem_hits {
+	padding:0 0 0 0;
+	display:block;
+	float:left;
+}
+.newsitem_published {
+	padding:0 10px 0 0;
+	display:block;
+	float:left;
+}
+/* end*/
+
+/* MAIN FLOATS */
+div.yjsg-newsitems .float-left {
+	float: left;
+	overflow: hidden;
+}
+div.yjsg-newsitems .float-right {
+	float: right;
+	overflow: hidden;
+}
+div.yjsg-newsitems .width20 {
+	width: 20%;
+}
+div.yjsg-newsitems .width25 {
+	width: 25%;
+}
+div.yjsg-newsitems .width33 {
+	width: 33.333%;
+}
+div.yjsg-newsitems .width50 {
+	width: 50%;
+}
+div.yjsg-newsitems .width100 {
+	width: 100%;
+}
+div.yjsg-newsitems .yjsg-leadingarticles {
+	overflow: hidden;
+}
+.yjsg-morearticles {
+	margin: 10px 0px 10px 0px;
+	clear:both;
+	display:block;
+}
+div.yjsg-pagination {
+	text-align: center;
+	clear:both;
+	margin:0 auto;
+}
+/* CATEGORY NEWS ITEMS LIST HOLDER*/
+.categorylist {
+	padding:0 5px;
+}
+/* CATEGORY DESCRIPTION HOLDER DIV */
+.yjsg-categorydesc {
+	overflow:hidden;
+	padding:5px;
+}
+.yjsg-categorydesc img{
+ float:left;margin:0 10px 0 0;
+}
+span.article_separator {
+	display: block;
+	height: 7px;
+	clear: both;
+}
+/* CATEGORIES VIEW */
+.categories_view li {
+	margin-top:5px;
+	overflow:hidden;
+	clear:both;
+}
+.catitem_title {
+	clear:both;
+}
+.article-count {
+	clear:both;
+	overflow:auto;
+	display:block;
+}
+/* ARCHIVED VIEW*/
+.archived_view {
+	padding:10px;
+}
+div.yjsg-newsitems div.yjsg-pagination p.yjsg-results {
+}
+/* MULTI ITEMS ROW SPACING */
+div.yjsg-newsitems div.multicolumns div.news_item_f, div.yjsg-newsitems div.multicolumns div.news_item_c, div.yjsg-newsitems div.multicolumns div.news_item_s {
+	margin: 0px 5px 5px 5px;/* multi row newsitem spacing*/
+}
+/* FIRST ITEM IN A ROW SPACING */
+div.yjsg-newsitems div.multicolumns div.first div.news_item_f, div.yjsg-newsitems div.multicolumns div.first div.news_item_c, div.yjsg-newsitems div.multicolumns div.first div.news_item_s {
+	margin-left: 0px;
+}
+/* LAST ITEM IN A ROW SPACING */
+div.yjsg-newsitems div.multicolumns div.last div.news_item_f, div.yjsg-newsitems div.multicolumns div.last div.news_item_c, div.yjsg-newsitems div.multicolumns div.last div.news_item_s {
+	margin-right: 0px;
+}
+div.yjsg-newsitems div.yjsg-morearticles {
+	margin: 10px 0px 10px 0px;
+}
+
+/* rich snippets */
+.yjsg-rich-snippets,
+.yjsg-rich-snippets span{
+	display:block;
+	margin:0;
+	padding:0;
+	float:none;
+	clear:both;
+}
+.yjsg-rich-snippets.yjrs-article{
+	margin:20px 0;
+}
+.yjsg-md-offers span > span,
+.yjsg-md-book span > span{
+	display:inline-block;
+	clear:none;
+}
+.yjsg-md-video{
+	padding-top:5px;
+}
+.yjsg-md-video a{
+	width:120px;
+	height:auto;
+	overflow:hidden;
+	display:block;
+	margin-top:10px;
+	padding:5px;
+	border:1px solid #ddd;
+}
+.yjsg-md-video-link a img{
+	max-width:120px;
+	display:block;
+	height:auto;
+}
+.yjsg-md-sep{
+	font-weight:bold;
+}
+/* yjsg rating */
+.yjsg-rating{
+	display:block;
+	margin-bottom:10px;
+	color:#888;
+}
+.yjsg-rating span{
+	float:left;
+	display:inline-block;
+	line-height:normal;
+	margin:0;
+	padding:0;
+	font-size:14px;
+}
+.yjsg-rating .fa-star{
+	color:#ccc;
+	float:left;
+	margin-right:3px;
+
+}
+.yjsg-rating .yjsg-rating-count{
+	margin-top:-2px;
+	margin-left:5px;
+}
+.yjsg-rating-count,
+.yjsg-rating-count .fa:before{
+	color:#ccc;
+}
+.yjsg-rating-count span{
+	float:none;
+}
+.view-article .yjsg-rating:hover .fa-star,.fa-star.rated{
+  color:#FC0;
+}
+.view-article .yjsg-rating:hover{
+	cursor:pointer;
+}
+.view-article .yjsg-rating .fa-star:hover ~ .fa-star{
+   color:#ccc;
+}
+form.yjsg-rating-form{
+	display:none;
+}
+/* clear */
+.yjsg-rating:before,
+.yjsg-rating:after,
+.yjsg-rich-snippets:before,
+.yjsg-rich-snippets:after{
+	display:table;
+	content:"";
+	clear:both;
+}

@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<base target="_parent" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/redmond/jquery-ui.css" />
+<link rel="stylesheet" href="../../../assets/bootstrap3/css/bootstrap.min.css" />
+<script type="text/javascript" src="../../../assets/src/libraries/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../../../assets/bootstrap3/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" src="images.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2> Images shortcode </h2><br/>
+		<form role="form">
+		<div class="form-inline">
+			<div class="form-group">
+				<label for="type" data-toggle="tooltip" data-placement="top" title="Select style type">Type</label>
+				<select class="form-control" id="type" name="type">
+					<option value="" selected>Default</option>
+					<option value="yjt_polaroid">Polaroid</option>
+					<option value="bthin">Thin border</option>
+					<option value="bthick">Thick border</option>
+					<option value="bspace">Thin border with space</option>
+					<option value="bspacethick">Thick border with space</option>
+				</select>
+			</div>
+				
+				<div class="form-group group hide">
+					<label for="group" data-toggle="tooltip" data-placement="top" title="If selected yes, each polaroid in a row will be tilted towards eachother">Group</label>
+					<select class="form-control" id="group" name="group">
+						<option value="" selected>No</option>
+						<option value=" yjt_group">Yes</option>
+					</select>
+				</div>
+				
+			<div class="form-group">
+					<label for="radius" data-toggle="tooltip" data-placement="top" title="Choose border radius">Radius</label>
+					<select class="form-control" id="radius" name="radius">
+						<option value=" " selected>None</option>
+						<option value=" radiusb2">2px</option>
+						<option value=" radiusb3">3px</option>
+						<option value=" radiusb4">4px</option>
+						<option value=" radiusb5">5px</option>
+						<option value=" radiusb6">6px</option>
+						<option value=" radiusb7">7px</option>
+						<option value=" radiusb8">8px</option>
+						<option value=" radiusb9">9px</option>
+						<option value=" radiusb10">10px</option>
+					</select>
+				</div>
+					</div>
+					<br/>
+			<div class="form-inline">
+				<div class="form-group">
+					<label for="effect" data-toggle="tooltip" data-placement="top" title="Choose desired hover effect">Hover effect</label>
+					<select class="form-control" id="effect" name="effect">
+						<option value="none" selected>None</option>
+						<option value="morph">Morph</option>
+						<option value="tilt">Tilt</option>
+						<option value="fade">Fade</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="lightbox" data-toggle="tooltip" data-placement="top" title="If yes, image link will be opened in lightbox popup. Link to full lightbox image is required">Lightbox</label>
+					<select class="form-control" id="lightbox" name="lightbox">
+						<option value="" selected>No</option>
+						<option value=" yjsg-lightbox">Single image lightbox</option>
+						<option value=" yjsg-lightbox-items">Lightbox gallery</option>
+					</select>
+				</div>
+				<div class="form-group efade hide">
+					<label for="fadeto">Fade to</label>
+					<input type="text" class="form-control" id="fadeto" name="fadeto" placeholder="eg: 0.5" onClick="this.select()" />
+				</div>
+				<div class="form-group efade hide">
+					<label for="fadespeed">Fade speed</label>
+					<input type="text" class="form-control" id="fadespeed" name="fadespeed" placeholder="eg: 800" onClick="this.select()" />
+				</div>
+
+
+				
+
+
+				
+			</div><br/>
+			<div class="form-group">
+				<label for="title" data-toggle="tooltip" data-placement="top" title="Add title. If this is lightbox element title will be shown under the lightbox image.">Title</label>
+				<input type="text" class="form-control" id="title" name="title" placeholder="title" onClick="this.select()" />
+			</div>
+			<div class="form-group alink">
+				<label for="alink" data-toggle="tooltip" data-placement="top" title="Add link">A Link</label>
+				<input type="text" class="form-control" id="alink" name="alink" placeholder="#" onClick="this.select()" />
+			</div>
+				<div class="form-group atarget">
+					<label for="target" data-toggle="tooltip" data-placement="top" title="Open link in same window or new window">Target</label>
+					<select class="form-control" id="target" name="target">
+						<option value="" selected>Same window</option>
+						<option value="blank">New window</option>
+					</select>
+				</div>
+			<br />
+			<div class="form-inline">
+				<div class="form-group">
+					<label for="imagelink" data-toggle="tooltip" data-placement="top" title="Select image">Image</label>
+					<input type="text" class="form-control" id="imagelink" name="imagelink" placeholder="image.jpg" onClick="this.select()" />
+				</div>
+				<a id="addimage" class="btn btn-primary add_image">
+					Select image
+				</a>
+			</div>
+			<br />
+			
+			<div class="form-inline lighboximage hide">
+				<div class="form-group">
+					<label for="lightboximage" data-toggle="tooltip" data-placement="top" title="Select lightbox image. This is the image that will be shown once the link is clicked.">Lightbox image</label>
+					<input type="text" class="form-control" id="lightboximage" name="lightboximage" placeholder="lightboximage.jpg" onClick="this.select()" />
+				</div>
+				<a id="addlightboximage" class="btn btn-primary add_image">
+					Select image
+				</a>
+			</div>
+			
+			<br />
+			<br />
+			<button type="submit" id="addshortcode" class="btn btn-primary">Insert shortcode</button>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+/* compat BS3
+------------------------- */
+
+// slider fix
+.glyphicon-chevron-left:before{
+	font-family:'FontAwesome';
+	font-size:28px;
+	content: "\f053";
+}
+.glyphicon-chevron-right:before{
+	font-family:'FontAwesome';
+	font-size:28px;
+	content: "\f054";
+}
+.carousel-indicators li{
+	padding:0;
+}
+// nav
+
+.nav-pills > li > a{
+	margin-top:2px;
+	margin-bottom:2px;
+}
+
+// STACKED NAV
+// -----------
+
+// Stacked tabs and pills
+.nav-stacked > li {
+  float: none;
+  margin-bottom: -3px;
+}
+.nav-stacked > li > a {
+  margin-right: 0; // no need for the gap between nav items
+}
+
+// Tabs
+.nav-tabs.nav-stacked {
+  border-bottom: 0;
+}
+.nav-tabs.nav-stacked > li > a{
+  border: 1px solid #ddd;
+  border-radius: 0;
+  padding-top:10px;
+  padding-bottom:10px;
+  
+}
+.nav-tabs.nav-stacked > li:first-child > a {
+  .border-top-radius(4px);
+}
+.nav-tabs.nav-stacked > li:last-child > a {
+  .border-bottom-radius(4px);
+}
+.nav-tabs.nav-stacked > li > a:hover {
+  border-color: #ddd;
+  z-index: 2;
+}
+a.modal{
+	position:relative;
+}
+label, input, button, select, textarea {
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 20px;
+}
+.radio.inline, .checkbox.inline {
+	padding-right:18px;
+}
+// FORM
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  .transition(~"border linear .2s, box-shadow linear .2s");
+
+  // Focus state
+  &:focus {
+    border-color: rgba(82,168,236,.8);
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+    .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6)");
+  }
+}
+
+// HTML5 invalid states
+input:focus:required:invalid,
+textarea:focus:required:invalid,
+select:focus:required:invalid {
+  color: #b94a48;
+  border-color: #ee5f5b;
+  &:focus {
+    border-color: darken(#ee5f5b, 10%);
+    .box-shadow(0 0 6px lighten(#ee5f5b, 20%));
+  }
+}
+
+.form-horizontal .control-label {
+	float: left;
+	width: 140px;
+	padding-top: 5px;
+	text-align: right;
+}
+.form-horizontal .controls {
+	margin-left: 160px;
+	margin-bottom:20px;
+}
+
+/* multilevel dropdown menu */
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+.dropdown-menu{
+	margin:0;
+}
+
+/* navbar fix */
+.topmodpoz_navbar .navbar{
+	border:none;
+}
+.topmodpoz_navbar .container{
+	padding:0;
+	margin:0;
+}
+.topmodpoz_navbar .navbar .nav > .active{
+	background-color:#eee;
+}
+/* captcha */
+#midblock #recaptcha_area table,
+.recaptcha_image_cell{
+	-webkit-border-radius:5px;
+	-khtml-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #ccc;
+}
+/* table .category left border reset */
+.category.table-bordered{
+	border-left:0;
+}
+/* archived articles filter button */
+.filter-search .button{
+	vertical-align:top;
+}
+/* remove pathway bs3 dash */
+#pathway .breadcrumb li:before{
+	display:none;
+}
+/* bs3 reset box sizing and 
+set it to specific elements only */
+* {
+  .box-sizing(content-box);
+}
+form,
+div,
+img,
+table,
+th,
+tr,
+td,
+p,
+article, 
+aside, 
+details, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+main, 
+nav, 
+section, 
+summary,
+audio,
+canvas,
+progress,
+video,
+input,
+select,
+radio,
+label,
+textarea,
+button,
+.button,
+[class^="container-"], 
+[class^="container-"] *,
+[class^="col-"], 
+[class^="col-"] *,
+[class^="form-"],
+[class^="form-"] *,
+[class^="bg-"],
+[class^="bg-"] *,
+[class^="navbar"],
+[class^="navbar"] *,
+[class^="nav"],
+[class^="nav"] *,
+[class^="row"],
+[class^="row"] * {
+  .box-sizing(border-box);
+}
