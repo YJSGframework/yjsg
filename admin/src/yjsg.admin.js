@@ -1433,7 +1433,6 @@
 
             $('#toolbar-reset').on('click', function (e) {
                 e.preventDefault();
-                //e.stopImmediatePropagation();
                 self.yjsgresetForm();
                 $(self.settings.containers).trigger('mouseleave');
                 $('.yjsgmultideselect').trigger('click');
@@ -1456,8 +1455,7 @@
 
             $('#toolbar-save-copy').on('click', function (e) {
                 e.preventDefault();
-                self.yjsgTime();
-                self.yjsgValidate('style.save2copy');
+			    self.adminUpdate('copyTemplate');
 
             });
 
@@ -1551,6 +1549,12 @@
                             if (typeof data.bootstrap == 'undefined') {
                                 self.addMessage(response);
                             }
+							
+							 if (typeof data.newtemplateid != 'undefined') {
+								 
+								 window.location = self.sitepath+'administrator/index.php?option=com_templates&task=style.edit&id='+data.newtemplateid;
+							 }
+							
 							
                             if (typeof data.addclass != 'undefined') {
 								
