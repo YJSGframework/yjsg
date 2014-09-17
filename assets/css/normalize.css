@@ -234,7 +234,15 @@ button,
           box-sizing: border-box;
 }
 #colorbox,
-#colorbox *{
+#colorbox *,
+.yjnewsflashu,
+.yjnewsflashu *,
+.accslide_holder_instance,
+.accslide_holder_instance *,
+calendar,
+.calendar *,
+#sbox-window,
+#sbox-window *{
   -webkit-box-sizing: content-box;
      -moz-box-sizing: content-box;
           box-sizing: content-box;
