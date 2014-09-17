@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
 	<fields name="attribs" addfieldpath="/plugins/system/yjsg/includes/yjsgarticle/elements">
-		<fieldset name="YJSG_ARTICLE" label="Yjsg Article Options">
-			<field name="yjsg_module_positons" type="list" default="0" label="Use for module positons" description="If this is set to yes , this article will be used to present all available template module positons. You dont need to publish any module on this page. All positions will be visible. Any article content will be replaced with manibody box. Note that this option is available for templates released after YJSG 2.0.0">
+		<fieldset name="YJSG_ARTICLE" label="YJSG_ARTICLE_OPTIONS" yjsgextra="yjsgarticle">
+			<field name="yjsg_module_positons" type="list" default="0" label="YJSG_MODULE_POSITIONS" description="YJSG_MODULE_POSITIONS_DESC">
 				<option value="0">JNO</option>
 				<option value="1">JYES</option>
 			</field>
