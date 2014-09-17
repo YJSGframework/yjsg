@@ -983,6 +983,9 @@ div.yjsgSimpleTabs.yjsgtabsnav ul.yjsgShortcodeTabs li.active a{
 	word-wrap: break-word;
 	overflow:hidden;
 }
+.yjsg-edit-form .yjsgTabContent{
+	overflow:visible;
+}
 .yjsgTabContent img,
 .yjsgTabContent video,
 .yjsgTabContent audio,
@@ -1100,6 +1103,11 @@ div.top_menu ul.megalegacy ul.dlevel1 li.haschild span.child a.dlevel1a:after {
 }
 body.style_blue div.top_menu ul.subul_main.dropline.dlevel1{
 	margin-top:0;
+}
+/* text separator fix */
+.top_menu li span.separator {
+	color:inherit;
+	background:inherit;
 }
 img {
 	max-width: 100%;

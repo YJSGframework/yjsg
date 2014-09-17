@@ -410,7 +410,6 @@ a.fs {
 	font-family: 'FontAwesome';
 	content: "\f054";
 }
-
 .yjsg-article-category ul li:last-child a {
 	border:none;
 }
@@ -699,6 +698,9 @@ div.yjsgSimpleTabs.yjsgtabsnav ul.yjsgShortcodeTabs li.active a {
 	word-wrap: break-word;
 	overflow:hidden;
 }
+.yjsg-edit-form .yjsgTabContent{
+	overflow:visible;
+}
 .yjsgTabContent img,
 .yjsgTabContent video,
 .yjsgTabContent audio,
@@ -862,6 +864,17 @@ div.yjsgSimpleTabs.tabsright ul.yjsgShortcodeTabs li.active a {
 	display:block;
 	text-align:center;
 }
+.yjsg-userpages.user dt {
+	font-weight: bold;
+	padding: 5px;
+	margin: 0 0 5px 0;
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+}
+.yjsg-userpages.user dd {
+	padding: 5px;
+	margin: 0;
+}
 /* com_content view-category */
 .category_description {
 	display:block;
@@ -957,9 +970,9 @@ html.view-form div#sbox-window {
 	max-width:75%;
 }
 @media screen and (max-width: 979px) {
-	.yjsg-module-positions{
-		margin-bottom:20px;
-	}
+.yjsg-module-positions {
+	margin-bottom:20px;
+}
 }
 /* columns system */
 .yjsg-row {
@@ -1072,7 +1085,8 @@ ul.yjsgsliderPaginationTabs:after,
 .yjsgaccContent:after,
 .tpl_component:after,
 .top_menu_poz:after,
-.yjsg-userpages {
+.yjsg-userpages:after,
+.yjsgTabContent:after{
 	display:table;
 	content: "";
 	clear: both;
@@ -1157,6 +1171,7 @@ ul.yjsgsliderPaginationTabs:after,
 .yjsgrtl .yjsg-article-category ul li a:after {
 	font-family: 'FontAwesome';
 	content: "\f053";
+	font-size: 10px;
 }
 /* tabsright */
 .yjsgrtl .tabsright .yjsgShortcodeTabs li {
@@ -1169,4 +1184,21 @@ ul.yjsgsliderPaginationTabs:after,
 	float:none;
 	margin-right:-1px;
 	margin-left:0;
+}
+/* table */
+.yjsgrtl table.yjsg-table-bordered td {
+	border-right-width:0;
+}
+.yjsgrtl table.yjsg-table-bordered thead:last-child tr:last-child > th:first-child,
+.yjsgrtl table.yjsg-table-bordered tbody:last-child tr:last-child > td:first-child,
+.yjsgrtl table.yjsg-table-bordered tbody:last-child tr:last-child > th:first-child,
+.yjsgrtl table.yjsg-table-bordered tfoot:last-child tr:last-child > td:first-child,
+.yjsgrtl table.yjsg-table-bordered tfoot:last-child tr:last-child > th:first-child {
+	-webkit-border-radius:0px;
+	-khtml-border-radius:0px;
+	-moz-border-radius:0px;
+	border-radius:0px;
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-bottom-right-radius: 4px;
 }
