@@ -59,7 +59,7 @@ class plgSystemYjsg extends JPlugin {
      * Plugin based template
      *
      * is plugin based template
-     * @return	string	- 
+     * @return	string
      * @since 2.0.0
      */
     
@@ -74,8 +74,6 @@ class plgSystemYjsg extends JPlugin {
      */
     
     public $yjsg_convert_check = 0;
-    
-    
     
     /**
      * Get application
@@ -94,8 +92,6 @@ class plgSystemYjsg extends JPlugin {
     
     public $input = "";
     
-    
-    
     /**
      * Get template view
      *
@@ -105,7 +101,6 @@ class plgSystemYjsg extends JPlugin {
     
     public $templateView = false;
     
-    
     /**
      * Run plugin
      *
@@ -114,11 +109,7 @@ class plgSystemYjsg extends JPlugin {
      */
     
     public $run_plg = 0;
-    
-    
-    
-    
-    
+        
     /**
      * Construct
      *
@@ -127,6 +118,7 @@ class plgSystemYjsg extends JPlugin {
     
     public function __construct($subject, $config) {
         
+		
         parent::__construct($subject, $config);
         
         JLoader::register('Yjsg', dirname(__FILE__) . '/includes/yjsgcore/classes/yjsg.class.php', true);
@@ -274,12 +266,14 @@ class plgSystemYjsg extends JPlugin {
 					
 				   require_once YJSGEXTEND . "25" . YJDS . 'html' . YJDS . 'message.php';
 					
-				}else if(version_compare(JVERSION, '2.5', '>') && !function_exists('renderMessage') && !JFile::exists(YJSGTEMPLATEPATH.'html'. YJDS . 'message.php')){
+				}else if(version_compare(JVERSION, '2.5', '>') 
+						&& !function_exists('renderMessage') 
+						&& !JFile::exists(YJSGTEMPLATEPATH.'html'. YJDS . 'message.php')){
 					
 					require_once YJSGEXTEND . "30" . YJDS . 'html' . YJDS . 'message.php';					
 					
 				}
-			}//
+			}
 			
         }
         
@@ -313,6 +307,8 @@ class plgSystemYjsg extends JPlugin {
 	
     /**
      * Cleanup old classes on updates
+	 *
+	 * @return  void
      */
     protected function YjsgCleanup() {
 		
@@ -334,6 +330,7 @@ class plgSystemYjsg extends JPlugin {
     /**
      * Extend J classes
      *
+	 * @return  void
      */
     
     public function yjsgExtendJoomla() {
@@ -362,6 +359,7 @@ class plgSystemYjsg extends JPlugin {
 			$YjsgJPaginationDefaultRead   = JPATH_LIBRARIES . '/cms/pagination/pagination.php';
 			$YjsgJDocumentHTMLDefaultRead = JPATH_LIBRARIES . '/joomla/document/html/html.php';
 			$YjsgJFormFieldDefaultRead    = JPATH_LIBRARIES . '/joomla/form/field.php';
+			$YjsgJLayoutFileDefaultRead   = JPATH_LIBRARIES . '/cms/layout/file.php';
 		}
 		
 		
@@ -372,6 +370,7 @@ class plgSystemYjsg extends JPlugin {
 		$YjsgJPaginationDefaultFile   = YJSGEXTEND . "classes" . YJDS . "YjsgJPaginationDefault" . $IsJversion . ".php";
 		$YjsgJDocumentHTMLDefaultFile = YJSGEXTEND . "classes" . YJDS . "YjsgJDocumentHTMLDefault" . $IsJversion . ".php";
 		$YjsgJFormFieldDefaultFile    = YJSGEXTEND . "classes" . YJDS . "YjsgJFormFieldDefault" . $IsJversion . ".php";
+		$YjsgJLayoutFileDefaultFile   = YJSGEXTEND . "classes" . YJDS . "YjsgJLayoutFileDefault" . $IsJversion . ".php";
 		
 		
 		//extend JModuleHelper library class
@@ -426,15 +425,23 @@ class plgSystemYjsg extends JPlugin {
 			
 		}
 		
+		//extend JLayoutFile class
+		if ($this->app->isSite() && version_compare(JVERSION, '3.1', '>')) {
+			if (!JFile::exists($YjsgJLayoutFileDefaultFile)) {
+				$YjsgJLayoutFileDefault = JFile::read($YjsgJLayoutFileDefaultRead);
+				$YjsgJLayoutFileDefault = str_replace('class JLayoutFile', 'class YjsgJLayoutFileDefault', $YjsgJLayoutFileDefault);
+				JFile::write($YjsgJLayoutFileDefaultFile, $YjsgJLayoutFileDefault);
+			}	
+			
+			require_once($YjsgJLayoutFileDefaultFile);
+			JLoader::register('JLayoutFile', YJSGEXTEND . $IsJversion . '/layout/file.php', true);	
+		}
 		
 		//extend JPagination library class
 		
 		if (!JFile::exists($YjsgJPaginationDefaultFile)) {
 			$YjsgJPaginationDefault = JFile::read($YjsgJPaginationDefaultRead);
-			$YjsgJPaginationDefault = str_replace('class JPagination', 'class YjsgJPaginationDefault', $YjsgJPaginationDefault);
-			if (version_compare(JVERSION, '3.0', '<')) {
-				$YjsgJPaginationDefault = str_replace('new JPagination', 'new YjsgJPaginationDefault', $YjsgJPaginationDefault);
-			}
+			$YjsgJPaginationDefault = preg_replace('/class JPagination\b/i','class YjsgJPaginationDefault',$YjsgJPaginationDefault);
 			JFile::write($YjsgJPaginationDefaultFile, $YjsgJPaginationDefault);
 		}
 		
@@ -448,6 +455,8 @@ class plgSystemYjsg extends JPlugin {
     /**
      * Constants
      * 
+	 * @return  void
+	 *
      * @since 2.0.0
      */
     
@@ -482,7 +491,7 @@ class plgSystemYjsg extends JPlugin {
             /**
              * make constants out of all files inside layouts folder
              *
-             * @return	yjsg_filename - YJSG_FILENAME name.
+             * yjsg_filename - YJSG_FILENAME name.
              * @since 2.0.0
              */
             $constants = array();
@@ -655,13 +664,25 @@ class plgSystemYjsg extends JPlugin {
         
         $document = JFactory::getDocument();
         
-        // add bootstrap css to  modal	iframe and element is ours	
+        // add bootstrap css to  modal	iframe if element is ours	
         if ($this->canEdit && $this->app->isAdmin() 
 		&& intval(JVERSION) < 3 && $this->option == 'com_media' 
 		&& $this->view == 'images' && $this->Input('author') == 'yjsg') {
             $document->addStyleSheet(YJSGSITE_PLG_PATH . 'assets/bootstrap3/css/bootstrap.min.css');
         }
         
+		
+		// check if template mootols is disabled:
+		// TO DO: not able to do this since 3.x still depends on moo in some areas.
+/*		$checkmootools   = Yjsg::tplParam('mootools_on');
+		if(isset($checkmootools) && $checkmootools == 0
+		&& ($this->view != 'images' && $this->view != 'form'))
+		{
+			unset($document->_scripts[JUri::root(true) . '/media/system/js/mootools-core.js']);
+			unset($document->_scripts[JUri::root(true) . '/media/system/js/mootools-more.js']);
+		}*/
+		
+		
         //yjsg rearange frontend css files, set yjsg styles last
         
         if ($this->app->isSite() && $this->run_plg == 1) {
@@ -712,7 +733,7 @@ class plgSystemYjsg extends JPlugin {
             // moving css files done
             
             
-            // k2, vm, mioshop joomla 3.x jquery load check
+            // k2, vm, mijoshop joomla 3.x jquery load check
             $last_jsfiles_array = array();
             $k2check            = JPluginHelper::getPlugin('system', 'k2');
 			$micheck            = JPluginHelper::getPlugin('system', 'mijoshopjquery');
@@ -725,7 +746,7 @@ class plgSystemYjsg extends JPlugin {
                 $unsetjq = true;
             }
             
-            if ($k2check) {
+            if ($k2check && $this->Input('tmpl') !='component'){
                 $k2params = $this->app->getParams('com_k2');
                 $k2jq     = str_replace('remote', '', $k2params->get('jQueryHandling'));
                 
@@ -756,8 +777,12 @@ class plgSystemYjsg extends JPlugin {
 			$defaultJsFiles 	= array();
 			$newJs				= array();
 			$defaultJsFiles[] 	= 'templates/' . $document->template;
+			$defaultJsFiles[] 	= 'elements/src';
 			
-			if ($k2check){
+			// move require js to avoid cookie define conflict
+			$defaultJsFiles[] 	= 'require.js';
+			
+			if ($k2check && $this->Input('tmpl') !='component'){
 				
 				$defaultJsFiles[] 	= 'k2.noconflict.js';
 				$defaultJsFiles[] 	= 'k2.js';
@@ -801,7 +826,35 @@ class plgSystemYjsg extends JPlugin {
     
     function onAfterRender() {
         
-        
+
+		  // in case someone is overriding form field
+		  
+		  if ($this->app->isAdmin() &&  $this->run_plg == 1 && $this->templateView  ) {
+			  
+			 $body 		 	= Yjsg::getBody();
+			 
+			 
+			 if(version_compare(JVERSION, '3.0', '<')){
+			 // bug in usergroup field type output
+				 $body 			= str_replace('jformparams', "jform_params_", $body);
+			 }
+			 
+			  if(version_compare(JVERSION, '3.0', '<')){
+				  
+					$body 	= preg_replace('/title="(.*?)::(.*?)">/','data-original-title="$1" data-content="$2">', $body);
+					$body 	= str_replace('hasTip', "adminLabel", $body);
+					
+			  }else{
+				  
+					$body 	= preg_replace('/title="(.*?)<\/strong><br \/>(.*?)">/','data-original-title="$1</strong>" data-content="$2">', $body);
+					$body 	= str_replace('hasTooltip', "adminLabel", $body);
+				  
+			  }
+			  Yjsg::setBody($body);
+			
+		 }
+		 
+      
         if ($this->app->isSite() && $this->run_plg == 1) {
             
             // add before and after body custom codes
@@ -890,10 +943,28 @@ class plgSystemYjsg extends JPlugin {
 
 	
 	public function onContentBeforeDisplay($context, $article, $params ){
+
+		
+		$ret_content ='';
+		
+		
+		// present module positions page
+		if($this->app->isSite() && $this->run_plg == 1 
+		&& $this->Input('option') =='com_content'
+		&& $context == 'com_content.article'
+		&& $article->params->get('yjsg_module_positons') == 1 
+		&& !$this->yjsg->preplugin()){
+		
+			$jinput = JFactory::getApplication()->input;
+			$jinput->set("modulepositions","1"); 
+			
+		}
+
 		
 		// voting
 		if ($this->app->isSite()
 			&& $this->run_plg == 1
+			&& $this->Input('option') =='com_content'
 			&& ( $context == 'com_content.featured' || $context == 'com_content.article' || $context == 'com_content.category') 
 			&& ( $article->params->get('show_vote') || $params->get('show_vote'))) {
 				
@@ -909,19 +980,9 @@ class plgSystemYjsg extends JPlugin {
 				}
 				
 			require_once YJSGPATH . 'includes/yjsgvote/yjsg_vote.php';
-			return yjsg_vote($article, $params);
+			$ret_content .= yjsg_vote($article, $params);
+			return $ret_content;
 				
-		}
-		
-		// module positions
-		if($this->app->isSite() && $this->run_plg == 1 
-		&& $context == 'com_content.article'
-		&& $article->params->get('yjsg_module_positons') == 1 
-		&& !$this->yjsg->preplugin()){
-			
-			$jinput = JFactory::getApplication()->input;
-			$jinput->set("modulepositions","1"); 
-			
 		}
 
 	}
@@ -970,7 +1031,7 @@ class plgSystemYjsg extends JPlugin {
 	}
 	
 	
-	// on k2 admin form add shortcodes
+	// add shortcodes on k2 admin form 
 	function onRenderAdminForm (){
 		
 		$this->addShortcodes();
@@ -1048,8 +1109,12 @@ class plgSystemYjsg extends JPlugin {
         // template form
         if ($this->run_plg == 1 && $this->templateView) {
             
-			
-			
+			// Check if JSN admin helper exists and disable adminbar
+			if (class_exists('JSNConfigHelper')) {
+				$jsnconfig = JSNConfigHelper::get('com_poweradmin');
+				$jsnconfig->set('enable_adminbar', false);
+			}
+
 			// Template defaults
 			JForm::addFormPath(JPATH_PLUGINS . YJDS . 'system' . YJDS . 'yjsg' . YJDS . 'includes' . YJDS . 'xml');
 			
@@ -1101,7 +1166,9 @@ class plgSystemYjsg extends JPlugin {
             
             $db_default = Yjsg::getDbParams($this->Int('id'));
 
-			
+			if(empty($db_default)){
+				$db_default='{}';
+			}
 				foreach($form->getGroup('params') as $field){
 					
 					if (!in_array( strtolower($field->type), $skip_types)) {
