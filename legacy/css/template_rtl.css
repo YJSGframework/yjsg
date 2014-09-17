@@ -628,11 +628,6 @@ ul.subul_main span.no_text {
 .popover {
 	text-align:right;
 }
-ul.yjsg-article-category li a:after {
-	content: "\f053";
-	left:auto;
-	right:-15px;
-}
 span#yjmm_selectid {
 	background-position:left center!important;
 }
@@ -672,4 +667,76 @@ span#yjmm_selectid {
 }
 .yjsgrtl .menu{
 	text-align:right;
+}
+
+/* tabs */
+.yjsgrtl ul.yjsgsliderPaginationTabs li,
+.yjsgrtl ul.yjsgsliderPagination li {
+	float:right;
+	margin-right:0px;
+	margin-left:5px;
+}
+/* panels */
+.yjsgrtl #yjsg_botpanel .yjsg-panel-open {
+	right:auto;
+	left:15px;
+}
+.yjsgrtl #yjsg_sidepanel_slide {
+	margin-left:0;
+	margin-right:30px;
+	border-left:none;
+	border-right:1px solid #e2e2e2;
+}
+.yjsgrtl #yjsg_sidepanel .yjsg-panel-open {
+	border-left:none;
+	border-right:1px solid #e2e2e2;
+	-webkit-border-radius:0px;
+	-khtml-border-radius:0px;
+	-moz-border-radius:0px;
+	border-radius:0px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+/* cat menu */
+.yjsgrtl .yjsg-article-category ul li a:before {
+	font-family:inherit;
+	content: "";
+}
+.yjsgrtl .yjsg-article-category ul li a:after {
+	font-family: 'FontAwesome';
+	content: "\f053";
+	font-size: 10px;
+}
+/* tabsright */
+.yjsgrtl .tabsright .yjsgShortcodeTabs li {
+	float:none;
+	margin-right:0;
+	margin-left:-1px;
+}
+/* tabsleft */
+.yjsgrtl .tabsleft .yjsgShortcodeTabs li {
+	float:none;
+	margin-right:-1px;
+	margin-left:0;
+}
+/* table */
+.yjsgrtl table.yjsg-table-bordered td {
+	border-right-width:0;
+}
+.yjsgrtl table.yjsg-table-bordered thead:last-child tr:last-child > th:first-child,
+.yjsgrtl table.yjsg-table-bordered tbody:last-child tr:last-child > td:first-child,
+.yjsgrtl table.yjsg-table-bordered tbody:last-child tr:last-child > th:first-child,
+.yjsgrtl table.yjsg-table-bordered tfoot:last-child tr:last-child > td:first-child,
+.yjsgrtl table.yjsg-table-bordered tfoot:last-child tr:last-child > th:first-child {
+	-webkit-border-radius:0px;
+	-khtml-border-radius:0px;
+	-moz-border-radius:0px;
+	border-radius:0px;
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-bottom-right-radius: 4px;
 }
