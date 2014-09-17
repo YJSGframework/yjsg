@@ -538,11 +538,6 @@ YJSC_MAN_EXT="Click here to manage this extension."', $readFile);
     
     // add new lang file
     JFile::copy($templateFolder . '/language/en-GB/en-GB.tpl_' . YJSGDEFT . '.ini', JPATH_ROOT . '/language/en-GB/en-GB.tpl_' . YJSGDEFT . '.ini');
-    
-	
-	if (JFile::exists(YJSGPATH.'elements'.YJDS.'patch'.YJDS.'yjsgZip.php')) {
-		
-		include('yjsgZip.php');
-		
-	}
+
+
 ?>
