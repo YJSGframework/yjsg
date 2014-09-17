@@ -31,6 +31,7 @@ a.yjsg-shortcode-link:focus {
 	background-color: #428bca;
 	border-color: #357ebd;
 	margin-right:10px;
+	margin-bottom:10px;
 	text-decoration:none!important;
 	-webkit-box-shadow:none;
 	-khtml-box-shadow:none;
