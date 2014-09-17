@@ -210,6 +210,67 @@ if(isset($_POST['task']))	{
 		exit();
 	}
 	
+	//copyTemplate
+	if($task == 'copyTemplate'){
+		
+		$newName = JString::increment($template_title);
+		// get new template id to be opened via ajax return
+		function newtemplateId($newName){
+			
+			$db 	= JFactory::getDbo();
+			$query = "SELECT id FROM #__template_styles WHERE title = '".$newName."'";
+			$db->setQuery($query);
+			$newtemplateID = $db->loadResult();
+			
+			return $newtemplateID;
+		}		
+		try{		
+		
+
+				$db 	= JFactory::getDbo();
+				$query = "INSERT INTO #__template_styles( template, client_id, title,params)
+							SELECT '".$template_name."',client_id,'".$newName."','".$params."'
+							FROM #__template_styles
+							WHERE id =".$template_id."
+						";
+				$db->setQuery($query);
+				$db->query();	
+				
+				if(intval(JVERSION) < 3 ){
+					
+					$errorMsg = preg_replace('/(\'{(.*?)}\')/s', '', $db->getErrorMsg());
+					$errorMsg = str_replace('\'', '', $errorMsg);
+
+					if ($db->getErrorNum()) {
+						$response = array('error'=>JText::_( 'YJSG_TEMPLATE_COPIED_ERROR' ),'addclass'=>'alert-danger','templatecopy_error'=>$errorMsg);
+						$json = new JSON($response);
+						echo $json->result;
+						exit;
+					}
+				}
+
+				$response = array('message'=> JText::_( 'YJSG_TEMPLATE_COPIED' ),'newtemplateid'=>newtemplateId($newName));	
+				$json = new JSON($response);
+				echo $json->result;
+				exit();			
+				
+		}catch (Exception $e){
+			
+					$errorMsg = preg_replace('/(\'{(.*?)}\')/s', '', $e->getMessage());
+					$errorMsg = str_replace('\'', '', $errorMsg);
+			
+					$response = array('error'=> JText::_( 'YJSG_TEMPLATE_COPIED_ERROR' ),'addclass'=>'alert-danger','templatecopy_error'=>$errorMsg);
+					$json = new JSON($response);
+					echo $json->result;
+					exit;
+		}
+
+
+	
+	}
+	
+	
+	
 	// clear compiler cache
 	if($task == 'clearCache'){
 		// clear log
