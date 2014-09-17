@@ -251,6 +251,7 @@
 				<option value="1">Yes</option>
 				<option value="0">No</option>
 			</field>
+			<field name="YJSG_OFFCANVAS_YJ_LABEL" type="yjsgparamtitle" default="YJSG_OFFCANVAS_YJ_LABEL"/>
 			<field name="offcanvas_width" type="yjsgtext" default="250px" label="YJSG_OFFCANVAS_WIDTH_LABEL" description="YJSG_OFFCANVAS_WIDTH_DESC" />
 			<field name="offcanvas_visible" type="yjsgtext" default="979px" label="YJSG_OFFCANVAS_VISIBLE_LABEL" description="YJSG_OFFCANVAS_VISIBLE_DESC" />
 			<!-- compiler options -->
@@ -280,6 +281,7 @@
 			</field>
 			<field name="fp_chars_limit" type="yjsgtext" default="3000" size="10" label="YJSG_FP_CHARS_LIMIT_LABEL" description="YJSG_FP_CHARS_LIMIT_DESC" />
 			<field name="fp_after_text" type="yjsgtext" default="" size="10" label="YJSG_FP_AFTER_CHARS_LABEL" description="YJSG_FP_AFTER_CHARS_DESC" />
+			<field name="yjsg_article_options" type="usergroup" class="yjsgmultiselect" multiple="multiple" default="0" label="YJSG_SHOW_ARTICLE_OPTIONS" description="YJSG_SHOW_ARTICLE_OPTIONS_DESC" />
 			<field name="YJSG_COMPONENT_OFF_YJ_LABEL" type="yjsgparamtitle" default="YJSG_COMPONENT_OFF_YJ_LABEL" />
 			<field name="component_switch" type="menuitem" class="yjsgmultiselect" multiple="multiple" default="0" label="YJSG_COMPONENT_OFF_LABEL" description="YJSG_COMPONENT_OFF_DESC" />
 			<field name="admin_css_time" type="yjsgtime" default="0" />
