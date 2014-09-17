@@ -151,6 +151,17 @@ ol ol {
 	font-family: Georgia, Serif;
 }
 /* form elements */
+.yjsg-form,.yjsg-form *{
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.yjsg-form-element, 
+.yjsg-form-element .inputbox,
+.yjsg-form select{
+	background: #fff;
+	border: 1px solid #dcdcdc;
+}
 fieldset {
 	padding: 0;
 	margin: 0;
@@ -173,6 +184,7 @@ legend {
 .yjsg-element-holder textarea,
 .yjsg-form .yjsg-form-element,
 .yjsg-form .yjsg-form-prepend,
+.yjsg-form .yjsg-form-append,
 .yjsg-form .inputbox,
 button,
 .button {
@@ -244,6 +256,7 @@ input[type="checkbox"],
 .yjsg-form-group-inline,
 .yjsg-element-holder {
 	display:block;
+	margin-bottom:10px;
 }
 .yjsg-form-group-inline .yjsg-element-holder {
 	display: inline-block;
@@ -264,6 +277,10 @@ input[type="checkbox"],
 	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-right:15px;
+	min-width:170px;
+}
+.yjsg-element-holder fieldset label{
+	min-width:5px;
 }
 .yjsg-form-fieldset:after,
 .yjsg-form-group:after,
@@ -281,13 +298,14 @@ input[type="checkbox"],
 	display: table;
 	border-collapse: separate;
 	margin-bottom:10px;
+	width:100%;
 }
 .yjsg-form .yjsg-form-prepend + .yjsg-form-element {
 	position: relative;
 	z-index: 2;
 	float: left;
 	width: 100%;
-	margin-bottom: 0;
+	margin-bottom:0;
 	margin-left:-1px;
 	-webkit-border-top-left-radius: 0px;
 	-webkit-border-bottom-left-radius: 0px;
@@ -296,23 +314,55 @@ input[type="checkbox"],
 	border-top-left-radius: 0px;
 	border-bottom-left-radius: 0px;
 }
-.yjsg-form .yjsg-form-prepend {
+.yjsg-form-group-addon .yjsg-form-element{
+	margin-bottom:0;
+	display:table-cell;
+	width:auto;
+}
+.yjsg-form .yjsg-form-prepend,
+.yjsg-form .yjsg-form-append {
 	position: relative;
+	left:auto;
+	top:auto;
+	right:auto;
+	bottom:auto;
+	overflow:hidden;
 	z-index: 3;
-	width: 1%;
+	height:34px;
+	width:34px;
+	padding:6px 8px;
+	margin-bottom:0;
 	white-space: nowrap;
 	color: #555;
 	text-align: center;
 	background-color: #eee;
 	border: 1px solid #ccc;
 	display: table-cell;
-	height:auto;
 	-webkit-border-top-left-radius: 4px;
 	-webkit-border-bottom-left-radius: 4px;
 	-moz-border-radius-topleft: 4px;
 	-moz-border-radius-bottomleft: 4px;
 	border-top-left-radius: 4px;
 	border-bottom-left-radius: 4px;
+}
+.yjsg-form .yjsg-form-append {
+	right:5px;
+	-webkit-border-top-right-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-topright: 4px;
+	-moz-border-radius-bottomright: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+.yjsg-form .yjsg-form-append + .yjsg-form-append{
+	z-index:4;
+	right:8px;
 }
 /* invalid form element */
 .yjsg-form-element.invalid {
@@ -321,11 +371,12 @@ input[type="checkbox"],
 /* disabled */
 fieldset[disabled],
 input[readonly],
+input.yjsg-form-element[readonly],
 input[disabled],
 select[disabled],
 textarea[disabled] {
 	cursor: not-allowed;
-	background-color: #eee;
+	background-color: #f5f5f5;
 }
 
 /* com_finder view-search */
@@ -353,6 +404,37 @@ textarea[disabled] {
 .yjsg-form .com_finder_filter ul li label {
 	width:100%;
 	max-width:200px;
+}
+/* edit calendar */
+.calendar .button{
+	display:table-cell;
+	-webkit-border-radius:0px;
+	-khtml-border-radius:0px;
+	-moz-border-radius:0px;
+	border-radius:0px;
+	line-height:inherit;
+	height:auto;
+	background:none;
+}
+.calendar .label{
+	padding:0;
+	background:none;
+	color:inherit;
+	text-shadow:none;
+}
+.calendar .combo .hilite {
+	background: #fc8;
+}
+.calendar .combo .active {
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	background: #efefef;
+	font-weight: bold;
+}
+img.calendar{
+	width:16px;
+	height:16px;
+	max-width:16px;
 }
 /* TABLES */
 /* table structure */
