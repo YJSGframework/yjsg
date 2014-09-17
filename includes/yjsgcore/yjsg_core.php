@@ -220,7 +220,8 @@ $inset                  			= $this->countModules( 'inset' );
 $component_switch          			= $this->params->get ("component_switch");
 
 
-
+// TURN MOOTOOLS ON
+$mootools_on          				= $this->params->get ("mootools_on",1);
 
 
 // TEMPLATE REQUIRED FILES
