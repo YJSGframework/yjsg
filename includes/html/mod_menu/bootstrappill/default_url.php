@@ -51,7 +51,7 @@ switch ($item->browserNav) :
 		break;
 	case 2:
 		// window.open
-		$options = 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,'.$params->get('window_open');
-			?><a <?php echo $aproperties; ?>href="<?php echo $flink; ?>" onclick="window.open(this.href,'targetWindow','<?php echo $options;?>');return false;" <?php echo $title; ?>><?php echo $linktype; ?><?php echo $bcaret; ?></a><?php
+		$openoptions = 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,'.$params->get('window_open');
+			?><a <?php echo $aproperties; ?>href="<?php echo $flink; ?>" onclick="window.open(this.href,'targetWindow','<?php echo $openoptions;?>');return false;" <?php echo $title; ?>><?php echo $linktype; ?><?php echo $bcaret; ?></a><?php
 		break;
 endswitch;
