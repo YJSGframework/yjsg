@@ -25,6 +25,7 @@
 			var fadespeed 		= $('input[name=fadespeed]').val();
 			var effect 			= $('select[name=effect]').val();
             var group 			= $('select[name=group]').val();
+			var hideptitle 		= $('select[name=hideptitle]').val();
             var type 			= $('select[name=type]').val();
             var title 			= $('input[name=title]').val();
 			var alink 			= $('input[name=alink]').val();
@@ -33,7 +34,7 @@
 			var lightbox 		= $('select[name=lightbox]').val();
 			var lightboximage 	= $('input[name=lightboximage]').val();
 			
-			var imageeffectclass = type + radius +  group + lightbox ;
+			var imageeffectclass = type + radius +  group + lightbox + hideptitle;
 			
 			
 			var effectparams = effect;
@@ -137,9 +138,9 @@
 		
         $('select[name=type]').change(function () {
             if ($(this).val() == 'yjt_polaroid') {
-                $('.group').removeClass('hide');
+                $('.group,.hideptitle').removeClass('hide');
             } else {
-                $('.group').addClass('hide');
+                $('.group,.hideptitle').addClass('hide');
             }
         });
 		
