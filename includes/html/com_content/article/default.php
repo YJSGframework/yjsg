@@ -226,9 +226,9 @@ if (!empty($this->item->pagination) AND $this->item->pagination AND $this->item-
 	$link = new JURI($link1);?>
 		<a class="readon" href="<?php echo $link; ?>">
 			<span>
-			<?php $attribs = json_decode($this->item->attribs);  ?>
+			<?php $attribs_article = json_decode($this->item->attribs);  ?>
 			<?php 
-	if ($attribs->alternative_readmore == null) :
+	if ($attribs_article->alternative_readmore == null) :
 		echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
 	elseif ($readmore = $this->item->alternative_readmore) :
 		echo $readmore;
