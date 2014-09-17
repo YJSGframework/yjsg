@@ -50,7 +50,7 @@ if($isAdmin && isset($_POST['task']) && ($_POST['task'] =='convertTemplate' || $
 	$backupFolder			= JPATH_ROOT.'/templates/'.$newFolderName;
 	$yjsg					= Yjsg::getInstance();
 	$templateVersion		= $yjsg->tmplVersion(YJSGDEFT);
-	
+	$versionsArray 			= array();	
 	
 	if($task == 'checkTemplate'){
 		
@@ -77,9 +77,8 @@ if($isAdmin && isset($_POST['task']) && ($_POST['task'] =='convertTemplate' || $
 		  exit();	
 			
 		}
-		
-		
-		if($templateVersion == '1.0.16'){
+
+		if($templateVersion == '1.0.16' || in_array($templateVersion,$versionsArray)){
 			
 			$response = array('message'=> JText::_( 'YJSG_TUPDATE_AVAILABLE' ).JText::_( 'YJSG_TUPDATE_AVAILABLE2' ).'<b>'.$backupFolder.'</b>'.JText::_( 'YJSG_TUPDATE_AVAILABLE3' ),'tupdate'=>'yes');
 			
@@ -134,6 +133,11 @@ if($isAdmin && isset($_POST['task']) && ($_POST['task'] =='convertTemplate' || $
 			  include ('patch/1016to20.php');
 			  $response = array('message'=> JText::_( 'YJSG_TUPDATE_COMPLETE' ).'<b>'.$backupFolder.'</b>','tupdate'=>'done');
 			  
+		  }elseif(in_array($templateVersion,$versionsArray)){
+			  
+			  include ('patch/versionpatch.php');
+			  $response = array('message'=> JText::_( 'YJSG_TUPDATE_COMPLETE' ).'<b>'.$backupFolder.'</b>','tupdate'=>'done');
+			  
 		  }elseif($templateVersion == YJSGV){
 			 
 			 $response = array('message'=> JText::_( 'YJSG_NO_TUPDATE' ).YJSGV,'tupdate'=>'no');
@@ -161,7 +165,6 @@ if($isAdmin && isset($_POST['task']) && ($_POST['task'] =='convertTemplate' || $
 		}
 		if (is_writable($templateFolder)){
 			@JFolder::delete($templateFolder);
-			//@JFolder::move($backupFolder,$templateFolder);
 			@rename($backupFolder,$templateFolder);
 			@JFile::copy($templateFolder.'/language/en-GB/en-GB.tpl_'.YJSGDEFT.'.ini',JPATH_ROOT.'/language/en-GB/en-GB.tpl_'.YJSGDEFT.'.ini');
 		}
