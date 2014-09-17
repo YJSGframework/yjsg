@@ -143,6 +143,11 @@ ul.yjsgmenu ul li a {
 ul.yjsgmenu ul div.ulholder {
 	top:0px;
 }
+/* text separator */
+ul.yjsgmenu li .separator{
+	border-bottom:none;
+	padding:0 10px;
+}
 ul.yjsgmenu li:hover > div.ulholder,
 ul.yjsgmenu.megadropline li.active > div.ulholder.dlevel1,
 ul.yjsgmenu li.holdsgroup ul li:hover > div.ulholder {
