@@ -18,7 +18,10 @@ eb6a5a
 @font-face {
 	font-family: 'francois_oneregular';
 	src: url('fonts/francoisone-webfont.eot');
-	src: url('fonts/francoisone-webfont.svg#francois_oneregular') format('svg'), url('fonts/francoisone-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/francoisone-webfont.woff') format('woff'), url('fonts/francoisone-webfont.ttf') format('truetype');
+	src: url('fonts/francoisone-webfont.svg#francois_oneregular') format('svg'), 
+		 url('fonts/francoisone-webfont.eot?#iefix') format('embedded-opentype'), 
+		 url('fonts/francoisone-webfont.woff') format('woff'), 
+		 url('fonts/francoisone-webfont.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 	-webkit-text-stroke: 0.3px;
@@ -641,6 +644,9 @@ ul.menu-links {
 }
 #yjsgBox .infoText .showIcon:before {
 	content: "\e610";
+	color:#eb6a5a;
+}
+#yjsgBox .infoicons{
 	color:#eb6a5a;
 }
 #yjsgBox.updateavailable {
