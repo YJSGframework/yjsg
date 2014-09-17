@@ -40,11 +40,7 @@ class JFormFieldYjsgmdatahandler extends JFormField
 		}
 		$document->addScript(JURI::root( true ).'/plugins/system/yjsg/elements/src/yjsgmicrodata.js');
 		$document->addStyleSheet(JURI::root( true ).'/plugins/system/yjsg/elements/css/yjsgmicrodata.css');
-	
 
-		
-		
-       //	return $html;
 	}
 	
 	
