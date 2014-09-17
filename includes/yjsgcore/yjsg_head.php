@@ -15,8 +15,13 @@
 defined( '_JEXEC' ) or die( 'Restricted index access' );
 echo $cc_after_headtag;
 // load mootools with mootools more , without true , more is not loaded
-JHtml::_('behavior.framework',true);
+if($mootools_on == 1){
+	JHtml::_('behavior.framework',true);
+}
 
+if (intval(JVERSION) > 2) {
+	JHtml::_('jquery.framework');
+}
 // default css
 $document->addStyleDeclaration("body{font-size:".$css_font.";}#logo,#logoholder{width:$logo_out;height:$logo_height;}.yjsgsitew{width:".$css_width.$css_widthdefined.";}".$midblockWidth.$leftblockWidth.$rightblockWidth.$insetblockWidth.$insetWidth."");
 
@@ -48,9 +53,12 @@ $document->addScript(YJSG_ASSETS.'src/libraries/jquery-noconflict.js');
 $document->addScript(YJSG_ASSETS.'src/yjsg.jquicustom.min.js');
 
 if($bootstrap_here){
+	
 	$document->addScript(YJSG_ASSETS.$bootstrap_version.'/js/bootstrap.min.js');
-	// use bs tips 
-	$document->_script = str_replace('hasTip','nomoretips',$document->_script);
+	
+}else{
+	
+	$document->addScript(YJSG_ASSETS.'src/tooltip.popover.min.js');
 }
 
 

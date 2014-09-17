@@ -44,10 +44,15 @@ if ($this->countModules('offcanvas')) {
 $document->addScript(YJSG_ASSETS.'src/libraries/jquery.min.js');
 $document->addScript(YJSG_ASSETS.'src/libraries/jquery-noconflict.js');
 $document->addScript(YJSG_ASSETS.'src/yjsg.jquicustom.min.js');
+
+
 if($bootstrap_here){
+	
 	$document->addScript(YJSG_ASSETS.$bootstrap_version.'/js/bootstrap.min.js');
-	// use bs tips 
-	$document->_script = str_replace('hasTip','nomoretips',$document->_script);
+	
+}else{
+	
+	$document->addScript(YJSG_ASSETS.'src/tooltip.popover.min.js');
 }
 
 
