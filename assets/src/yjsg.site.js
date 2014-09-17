@@ -745,7 +745,7 @@
 
 
             // mootools bootstrap 3 show/hide/carousel/dropdown fix
-            if (self.bsversion == 'bootstrap3' && window.MooTools && window.MooTools.More && Element && Element.implement) {
+            if ((self.bsversion == 'bootstrap3' || self.bsversion == 'bootstrapoff') && window.MooTools && window.MooTools.More && Element && Element.implement) {
                 $('.collapse, .hasTooltip,.modal,.hasTip,.popover,.addtips,.yjpopover,.noHtmlTip').each(function () {
                     this.show = null;
                     this.hide = null
