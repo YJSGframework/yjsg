@@ -14,8 +14,7 @@ defined('_JEXEC') or die;
 $params 	= $this->item->params;
 $canEdit	= $params->get('access-edit');
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
-JHtml::_('behavior.tooltip');
-JHtml::_('behavior.framework',true);
+Yjsg::yjsgtooltip();
 if(intval(JVERSION)  > 1.7){
 	$jvcheck = true;
 	$images = json_decode($this->item->images);

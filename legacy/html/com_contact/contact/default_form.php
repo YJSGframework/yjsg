@@ -10,7 +10,7 @@
 defined('_JEXEC') or die;
 JHtml::_('behavior.keepalive');
 JHtml::_('behavior.formvalidation');
-JHtml::_('behavior.tooltip');
+Yjsg::yjsgtooltip();
 $this->form->reset( true ); // to reset the form xml loaded by the view
 $this->form->loadFile( dirname(__FILE__) . YJDS . "contact.xml"); // to load in our own version of contact.xml
  if (isset($this->error)) : ?>

@@ -11,7 +11,7 @@
 defined('_JEXEC') or die;
 
 JHtml::_('behavior.keepalive');
-JHtml::_('behavior.tooltip');
+Yjsg::yjsgtooltip();
 JHtml::_('behavior.formvalidation');
 $this->form->reset( true ); // to reset the form xml loaded by the view
 

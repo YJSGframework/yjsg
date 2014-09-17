@@ -9,7 +9,7 @@
  */
 
 defined('_JEXEC') or die;
-JHtml::_('behavior.tooltip');
+Yjsg::yjsgtooltip();
 ?>
 <div class="userpageswrap user <?php echo $this->pageclass_sfx?>">
 	<div class="userpages <?php echo $this->pageclass_sfx?>">

@@ -13,8 +13,7 @@ defined('_JEXEC') or die;
 // Create a shortcut for params.
 $params = &$this->item->params;
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
-JHtml::_('behavior.tooltip');
-JHtml::_('behavior.framework',true);
+Yjsg::yjsgtooltip();
 // Get the user object.
 $user = JFactory::getUser();
 // Check if user is allowed to add/edit based on weblinks permissinos.
@@ -99,8 +98,8 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 
 						case 2:
 							// open in a popup window
-							$attribs = 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width='.$this->escape($width).',height='.$this->escape($height).'';
-							echo "<a href=\"$link\" onclick=\"window.open(this.href, 'targetWindow', '".$attribs."'); return false;\">".
+							$openoptions = 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width='.$this->escape($width).',height='.$this->escape($height).'';
+							echo "<a href=\"$link\" onclick=\"window.open(this.href, 'targetWindow', '".$openoptions."'); return false;\">".
 								$this->escape($item->title).'</a>';
 							break;
 						case 3:
