@@ -31,7 +31,7 @@ class Yjsg {
      * @since 2.0.0
      */	
 	 
-	public $version = "2.0.0";
+	public $version = "2.0.1";
 	
     /**
      * Check update
@@ -305,7 +305,30 @@ class Yjsg {
 		
 		return $getbody;
 		
-	}	
+	}
+	
+	
+    /**
+     * Joomla Tooltips
+     *
+     * @return tooltip
+     * @since 2.0.1
+     */
+	 
+	public static function yjsgtooltip() {
+
+		if (version_compare(JVERSION, '3.0', '>')) {
+			
+			$jtooltip = JHtml::_('bootstrap.tooltip');
+			
+		}else{
+			
+			$jtooltip = JHtml::_('behavior.tooltip');
+		}
+		
+		return $jtooltip;
+		
+	}
 	
 	
     /**
@@ -561,11 +584,13 @@ class Yjsg {
      * Update check
      *
      * @return string
-     * @since 2.0.0
+     * @since 2.0.1
      */
 	public function hasUpdate() {
 
-		if ( $this->hasupdate < $this->getUpdateVersion() ) {
+
+	if (version_compare($this->version, $this->getUpdateVersion(),'<')) {
+
 			
 			$this->hasupdate = 1;
 			
@@ -579,7 +604,7 @@ class Yjsg {
      * Get the update version
      *
      * @return	string	- new version
-     * @since 2.0.0
+     * @since 2.0.1
      */
     public static function getUpdateVersion() {
         
@@ -589,7 +614,7 @@ class Yjsg {
         
         $query->select( 'version' );
         $query->from( $db->quoteName( '#__updates' ) );
-        $query->where( 'element="Yjsg"' );
+        $query->where( 'element="yjsg"' );
        
         // Make sure there aren't any errors
 		try{
