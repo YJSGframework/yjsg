@@ -112,6 +112,9 @@ form#adminForm .formelm-area label {
 /* default system 
 --------------------- */
 /* Tooltips */
+.tip-wrap{
+	z-index:1000;
+}
 .tip-wrap .tip {
 	float: left;
 	background: #000;
