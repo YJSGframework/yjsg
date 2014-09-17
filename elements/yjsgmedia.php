@@ -243,9 +243,11 @@ class JFormFieldYjsgmedia extends JFormField
 					});
 				})(jQuery);
 			";
-
+			
 			// Add the script to the document head.
-			JFactory::getDocument()->addScriptDeclaration(implode("\n", $script));
+			$yjsgDoc = YjsgDochead::getDocument();
+			$yjsgDoc->addJsInhead(implode("\n", $script));
+			
 
 			self::$initialised = true;
 		}
@@ -277,7 +279,7 @@ class JFormFieldYjsgmedia extends JFormField
 		$html[] ='<div id="' . $this->element['name'] . '_holder" class="inputGroupHolder'.$attrClass.'">';
 		$html[] ='<div class="input-group">';
 		$html[] ='<span class="input-group-btn">';
-		$html[] ='<span id="img-preview" class="btn btn-default btn-sm TipPreview" title="'. JText::_('JLIB_FORM_MEDIA_PREVIEW_EMPTY') .'">';
+		$html[] ='<span class="btn btn-default btn-sm TipPreview" title="'. JText::_('JLIB_FORM_MEDIA_PREVIEW_EMPTY') .'">';
 		$html[] ='<i class="fa fa-eye"></i>';
 		$html[] ='</span>';
 		$html[] ='</span>';
