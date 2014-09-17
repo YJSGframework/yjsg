@@ -220,7 +220,7 @@ class JPagination extends YjsgJPaginationDefault
 			}
 		}
 
-		$data->all = new YjsgJPaginationDefaultObject(JText::_('JLIB_HTML_VIEW_ALL'), $this->prefix);
+		$data->all = new JPaginationObject(JText::_('JLIB_HTML_VIEW_ALL'), $this->prefix);
 		if (!$this->_viewall)
 		{
 			$data->all->base = '0';
@@ -228,8 +228,8 @@ class JPagination extends YjsgJPaginationDefault
 		}
 
 		// Set the start and previous data objects.
-		$data->start = new YjsgJPaginationDefaultObject(JText::_('JLIB_HTML_START'), $this->prefix);
-		$data->previous = new YjsgJPaginationDefaultObject(JText::_('JPREV'), $this->prefix);
+		$data->start = new JPaginationObject(JText::_('JLIB_HTML_START'), $this->prefix);
+		$data->previous = new JPaginationObject(JText::_('JPREV'), $this->prefix);
 
 		if ($this->get('pages.current') > 1)
 		{
@@ -245,8 +245,8 @@ class JPagination extends YjsgJPaginationDefault
 		}
 
 		// Set the next and end data objects.
-		$data->next = new YjsgJPaginationDefaultObject(JText::_('JNEXT'), $this->prefix);
-		$data->end = new YjsgJPaginationDefaultObject(JText::_('JLIB_HTML_END'), $this->prefix);
+		$data->next = new JPaginationObject(JText::_('JNEXT'), $this->prefix);
+		$data->end = new JPaginationObject(JText::_('JLIB_HTML_END'), $this->prefix);
 
 		if ($this->get('pages.current') < $this->get('pages.total'))
 		{
@@ -267,7 +267,7 @@ class JPagination extends YjsgJPaginationDefault
 			// Set the empty for removal from route
 			//$offset = $offset == 0 ? '' : $offset;
 
-			$data->pages[$i] = new YjsgJPaginationDefaultObject($i, $this->prefix);
+			$data->pages[$i] = new JPaginationObject($i, $this->prefix);
 			if ($i != $this->get('pages.current') || $this->_viewall)
 			{
 				$data->pages[$i]->base = $offset;
@@ -277,4 +277,57 @@ class JPagination extends YjsgJPaginationDefault
 		return $data;
 	}
 
+}
+/**
+ * Pagination object representing a particular item in the pagination lists.
+ *
+ * @package     Joomla.Platform
+ * @subpackage  HTML
+ * @since       11.1
+ */
+if (!class_exists('YjsgJPaginationDefaultObject')) {
+	class YjsgJPaginationDefaultObject extends JObject
+	{
+		/**
+		 * @var    string  The link text.
+		 * @since  11.1
+		 */
+		public $text;
+	
+		/**
+		 * @var    integer  The number of rows as a base offset.
+		 * @since  11.1
+		 */
+		public $base;
+	
+		/**
+		 * @var    string  The link URL.
+		 * @since  11.1
+		 */
+		public $link;
+	
+		/**
+		 * @var    integer  The prefix used for request variables.
+		 * @since  11.1
+		 */
+		public $prefix;
+	
+		/**
+		 * Class constructor.
+		 *
+		 * @param   string   $text    The link text.
+		 * @param   integer  $prefix  The prefix used for request variables.
+		 * @param   integer  $base    The number of rows as a base offset.
+		 * @param   string   $link    The link URL.
+		 *
+		 * @since   11.1
+		 */
+		public function __construct($text, $prefix = '', $base = null, $link = null)
+		{
+			$this->text = $text;
+			$this->prefix = $prefix;
+			$this->base = $base;
+			$this->link = $link;
+		}
+	}
 }
