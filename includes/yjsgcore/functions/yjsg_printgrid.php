@@ -375,9 +375,16 @@ function yjsg_print_grid_area($yjsg_grid_name,$add_width =false,$before ='',$aft
         	$module_float		= $moduleParams->get('module_float');
 			$module_floatwidth	= $moduleParams->get('module_floatwidth');
 			$module_suffix		= $moduleParams->get('moduleclass_sfx');
+			$yjsg_module_style	= $moduleParams->get('yjsg_module_style','default');
 			$tabs_suffix		= '';
 			$accordion_suffix	= '';
 			$slider_suffix		= '';
+			
+			// yjsg suffix
+			if($yjsg_module_style !='default' && empty($module_suffix)){
+				
+				$module_suffix = $yjsg_module_style;
+			}
 			
 			if(!empty($module_suffix)){
 
