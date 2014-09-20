@@ -95,16 +95,8 @@ defined('_JEXEC') or die('Restricted index access');
     );
     
 
-    
-
-	
-	 // backup template
-	if (!JFolder::exists($backupFolder)) {
-    	JFolder::copy($templateFolder, $backupFolder);
-	}
-    
     // Bail out if not able to backup
-    if (!JFolder::exists($backupFolder)) {
+    if (!JFolder::copy($beforeCleanup, $backupFolder)) {
         $response = array(
             'message' => JText::_('YJSG_NOT_ABLE_TO_BACKUP_TEMPLATE') . JText::_('YJSG_MANUAL_UPDATE_PROCESS'),
             'tupdate' => 'notwritable'

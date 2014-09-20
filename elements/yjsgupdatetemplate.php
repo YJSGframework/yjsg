@@ -48,6 +48,7 @@ if($isAdmin && isset($_POST['task']) && ($_POST['task'] =='convertTemplate' || $
 	$templateFolder 		= $JTemplateFolder.YJSGDEFT;
 	$newFolderName			= YJSGDEFT.'_Backup_'.YJSGV;
 	$backupFolder			= JPATH_ROOT.'/templates/'.$newFolderName;
+	$beforeCleanup   		= $templateFolder . '-beforeCleanup';
 	$yjsg					= Yjsg::getInstance();
 	$templateVersion		= $yjsg->tmplVersion(YJSGDEFT);
 	$versionsArray 			= array();	
