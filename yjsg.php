@@ -435,13 +435,19 @@ class plgSystemYjsg extends JPlugin {
 		
 		if (!JFile::exists($YjsgJPaginationDefaultFile)) {
 			$YjsgJPaginationDefault = JFile::read($YjsgJPaginationDefaultRead);
-			$YjsgJPaginationDefault = preg_replace('/class JPagination\b/i','class YjsgJPaginationDefault',$YjsgJPaginationDefault);
+			$YjsgJPaginationDefault = str_replace('class JPagination', 'class YjsgJPaginationDefault', $YjsgJPaginationDefault);
+			if (version_compare(JVERSION, '3.0', '<')) {
+				$YjsgJPaginationDefault = str_replace('new JPagination', 'new YjsgJPaginationDefault', $YjsgJPaginationDefault);
+			}
 			JFile::write($YjsgJPaginationDefaultFile, $YjsgJPaginationDefault);
 		}
 		
 		require_once($YjsgJPaginationDefaultFile);
 		jimport('joomla.html.pagination');
 		JLoader::register('JPagination', YJSGEXTEND . $IsJversion . '/pagination/pagination.php', true);
+		if(version_compare(JVERSION, '3.0', '<') && !class_exists('JPaginationObject')){
+			require_once(YJSGEXTEND.'25/pagination/object.php');
+		} 
             
     }
     
