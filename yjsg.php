@@ -1105,7 +1105,12 @@ class plgSystemYjsg extends JPlugin {
 			
 			
 		}
-		
+
+		// frontend template edit
+		if ($this->run_plg == 1 && $form->getName() == 'com_config.templates') {
+			$form->removeField('yjsgcheck','params');
+		}
+				
         // template form
         if ($this->run_plg == 1 && $this->templateView) {
             
