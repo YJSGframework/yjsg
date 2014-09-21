@@ -652,6 +652,10 @@ address {
 .pull-right {
 	float:right;
 }
+.yjsg-hide,
+.yjsg-form label.yjsg-hide {
+	display:none;
+}
 .yjsg-clear-all {
 	clear:both;
 	overflow:hidden;
@@ -901,6 +905,7 @@ address {
 [data-yjsg-tip], .yjsg-tip {
  position: relative;
  cursor: pointer;
+ text-align:center;
 }
 /*Default style*/
 [data-yjsg-tip]:before,

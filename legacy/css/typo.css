@@ -1019,6 +1019,10 @@ ul.list-striped h3 {
 .pull-right {
 	float:right;
 }
+.yjsg-hide,
+.yjsg-form label.yjsg-hide {
+	display:none;
+}
 .yjsg-clear-all {
 	clear:both;
 	overflow:hidden;
@@ -1197,6 +1201,7 @@ hr {
 [data-yjsg-tip], .yjsg-tip {
  position: relative;
  cursor: pointer;
+ text-align:center;
 }
 /*Default style*/
 [data-yjsg-tip]:before,
