@@ -411,6 +411,22 @@ ul.defaultmenu.inline li a:before {
 		margin-right:0;
 	}
 }
+/* menu in header */
+#yjsgheadergrid #topmenu_holder {
+	float: right;
+}
+.yjsgrtl #yjsgheadergrid #topmenu_holder {
+	float: left;
+}
+.top_menu_inheader #yjsgheadergrid,
+.top_menu_inheader #logoholder + #yjsgheadergrid{
+	margin-left:0;
+	margin-right:0;
+}
+.top_menu_inheader .yjsg-menu.inside-container{
+	padding-left:0;
+	padding-right:0;
+}
 /* RTL */
 /* top menu */
 .yjsgrtl ul.yjsgmenu ul ul {

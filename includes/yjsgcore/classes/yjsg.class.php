@@ -1265,6 +1265,7 @@ class JDocumentRendererHtmlclass extends JDocumentRenderer{
 		$menu 				= $app->getMenu();
 		$tparams			= $app->getTemplate(true)->params;
 		$html_class			= array();
+		$top_menu_location	= $tparams->get('top_menu_location',0);
 		
 		if($app->isSite()){
 			
@@ -1299,6 +1300,16 @@ class JDocumentRendererHtmlclass extends JDocumentRenderer{
 				
 			}
 			
+			//  menu position
+			if($top_menu_location == 0){
+				
+				$html_class[]		= 'top_menu_flexible';
+				
+			}else{
+				
+				$html_class[]		= 'top_menu_inheader';
+				
+			}
 			
 			// rtl 
 			
