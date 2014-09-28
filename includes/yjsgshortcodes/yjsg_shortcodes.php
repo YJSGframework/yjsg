@@ -655,4 +655,57 @@ function clean_html_code($uncleanhtml, $indent = '	') {
     //Return single string seperated by newline
     return implode("\n", $cleanhtml_array);
 }
+
+// run shortcode on body match
+//$text = preg_replace_callback("/<body[^>]*>(.*?)<\/body>/is","yjsg_run_shortcodes", $text);
+function yjsg_run_shortcodes($matches) {
+	
+	return yjsg_shortcodes($matches[1]);
+}
+
+// clean string from shortcode tags
+function yjsg_clean_shortcodes($str) {
+
+		$cleanStr = preg_replace(array(
+			'/yjsgparse/',
+			'/yjsgpre/',
+			'/yjsgimgs/',
+			'/yjsgfa/',
+			'/yjsgmedia/',
+			'/yjsgstabsgroup/',
+			'/yjsgstabs/',
+			'/yjsgnote/',
+			'/yjsgacgroup/',
+			'/yjsgacs/',
+			'/yjsgstabs/',
+			'/url="(.*?)"/',
+			'/link="(.*?)"/',
+			'/poster="(.*?)"/',
+			'/width="(.*?)"/',
+			'/height="(.*?)"/',
+			'/resp="(.*?)"/',
+			'/id="(.*?)"/',
+			'/title="(.*?)"/',
+			'/type="(.*?)"/',
+			'/active="(.*?)"/',
+			'/color="(.*?)"/',
+			'/name="(.*?)"/',
+			'/target="(.*?)"/',
+			'/class="(.*?)"/',
+			'/image="(.*?)"/',
+			'/border="(.*?)"/',
+			'/radius="(.*?)"/',
+			'/icon="(.*?)"/',
+			'/close="(.*?)"/',
+			'/effect="(.*?)"/',
+			'/days="(.*?)"/',
+			'/hours="(.*?)"/',
+			 '/[^A-Za-z0-9?!\s]/i',
+		), array(
+			''
+		), $str);
+
+		return trim($cleanStr);
+
+}
 ?>

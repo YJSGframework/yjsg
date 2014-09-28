@@ -823,7 +823,27 @@ class plgSystemYjsg extends JPlugin {
         
     }
     
-    
+	function onBeforeRender(){
+
+		if ($this->app->isSite() && $this->run_plg == 1) {
+			
+			require_once YJSGPATH . 'includes/yjsgshortcodes/yjsg_shortcodes.php';
+			$document = JFactory::getDocument();
+			
+			// cleanup description from possible shortcodes
+			$cleanDescription = yjsg_clean_shortcodes( $document->getDescription() );
+			$document->setDescription( $cleanDescription );
+	
+			$getogDesctiption		= $document->getMetaData('og:description');
+	
+			if(!empty($getogDesctiption)){
+				$document->setMetaData('og:description',$cleanDescription);
+			}
+		}
+	
+	
+	}
+	    
     function onAfterRender() {
         
 
@@ -926,7 +946,6 @@ class plgSystemYjsg extends JPlugin {
 
 			
 			// yjsg shortcodes
-			require_once YJSGPATH . 'includes/yjsgshortcodes/yjsg_shortcodes.php';
 			$body 	= yjsg_shortcodes($body);
 			Yjsg::setBody($body);
 			
