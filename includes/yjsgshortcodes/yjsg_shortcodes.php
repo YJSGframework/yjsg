@@ -149,7 +149,7 @@ function yjsg_shortcodes_replace($shortcode, $text) {
                     
                 }
                 
-                if (strpos($medialink, 'youtube') !== false) {
+                if (strpos($medialink, 'youtu') !== false) {
                     
                     $poster   = '';
                     $type     = 'video/youtube';
