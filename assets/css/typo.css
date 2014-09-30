@@ -2046,7 +2046,8 @@ img.mfp-img {
 	width:0;
 	height:0
 }
-.yjsg-round-progress {
+.yjsg-round-progress,
+[data-yjsg-round-progress]{
 	height:150px;
 	width:150px;
 	color:#40b1e2;
