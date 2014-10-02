@@ -366,52 +366,77 @@ class plgSystemYjsg extends JPlugin {
 		$YjsgJFormFieldDefaultFile    = YJSGEXTEND . "classes" . YJDS . "YjsgJFormFieldDefault" . $IsJversion . ".php";
 		$YjsgJLayoutFileDefaultFile   = YJSGEXTEND . "classes" . YJDS . "YjsgJLayoutFileDefault" . $IsJversion . ".php";
 		
-		
 		//extend JModuleHelper library class
 		
-		if (!JFile::exists($YjsgJModuleHelperDefaultFile)) {
-			$YjsgJModuleHelperDefault = JFile::read($YjsgJModuleHelperDefaultRead);
-			$YjsgJModuleHelperDefault = str_replace('class JModuleHelper', 'class YjsgJModuleHelperDefault', $YjsgJModuleHelperDefault);
-			JFile::write($YjsgJModuleHelperDefaultFile, $YjsgJModuleHelperDefault);
+		if($this->app->isSite()){
+			
+			if (!JFile::exists($YjsgJModuleHelperDefaultFile)) {
+				$YjsgJModuleHelperDefault = JFile::read($YjsgJModuleHelperDefaultRead);
+				$YjsgJModuleHelperDefault = str_replace('class JModuleHelper', 'class YjsgJModuleHelperDefault', $YjsgJModuleHelperDefault);
+				JFile::write($YjsgJModuleHelperDefaultFile, $YjsgJModuleHelperDefault);
+			}
+			if (!class_exists('YjsgJModuleHelperDefault')){
+				
+				require_once($YjsgJModuleHelperDefaultFile);
+				jimport('joomla.application.module.helper');
+				JLoader::register('JModuleHelper', YJSGEXTEND . $IsJversion . '/module/helper.php', true);
+				
+			}else{
+				
+				JError::raiseWarning(100, 'YjsgJModuleHelperDefault' . JText::_('YJSG_MISSING_CLASS'));
+				
+			}
 		}
-		
-		require_once($YjsgJModuleHelperDefaultFile);
-		jimport('joomla.application.module.helper');
-		JLoader::register('JModuleHelper', YJSGEXTEND . $IsJversion . '/module/helper.php', true);
 		
 		//extend JView library class
 		
-		if (!JFile::exists($YjsgJViewDefaultFile)) {
-			$YjsgJViewDefault = JFile::read($YjsgJViewDefaultRead);
-			$YjsgJViewDefault = str_replace('class ' . $isView, 'class Yjsg' . $isView . 'Default', $YjsgJViewDefault);
-			JFile::write($YjsgJViewDefaultFile, $YjsgJViewDefault);
+		if($this->app->isSite() || $this->templateView){
+			
+			if (!JFile::exists($YjsgJViewDefaultFile)) {
+				$YjsgJViewDefault = JFile::read($YjsgJViewDefaultRead);
+				$YjsgJViewDefault = str_replace('class ' . $isView, 'class Yjsg' . $isView . 'Default', $YjsgJViewDefault);
+				JFile::write($YjsgJViewDefaultFile, $YjsgJViewDefault);
+			}
+			
+			if (!class_exists('Yjsg' . $isView . 'Default')){
+				
+				require_once($YjsgJViewDefaultFile);
+				jimport('joomla.application.component.view');
+				JLoader::register($isView, YJSGEXTEND . $IsJversion . '/component/view.php', true);
+			
+			}else{
+				
+				JError::raiseWarning(100, 'Yjsg' . $isView . 'Default' . JText::_('YJSG_MISSING_CLASS'));
+				
+			}
 		}
-		
-		require_once($YjsgJViewDefaultFile);
-		jimport('joomla.application.component.view');
-		JLoader::register($isView, YJSGEXTEND . $IsJversion . '/component/view.php', true);
-		
-		
 		
 		//extend JDocumentHTML and JFormField  library class for template admin
 		
 		if ($this->templateView && $this->canEdit && $this->app->isAdmin() && $this->yjsg_newtmpl_check == 1) {
+			
 			if (!JFile::exists($YjsgJDocumentHTMLDefaultFile)) {
 				$YjsgJDocumentHTMLDefault = JFile::read($YjsgJDocumentHTMLDefaultRead);
 				$YjsgJDocumentHTMLDefault = str_replace('class JDocumentHTML', 'class YjsgJDocumentHTMLDefault', $YjsgJDocumentHTMLDefault);
 				JFile::write($YjsgJDocumentHTMLDefaultFile, $YjsgJDocumentHTMLDefault);
 			}
+			if (!class_exists('YjsgJDocumentHTMLDefault')){
+				
+				require_once($YjsgJDocumentHTMLDefaultFile);
+				JLoader::register('JDocumentHTML', YJSGEXTEND . $IsJversion . '/html/html.php', true);
+				
+			}else{
 			
-			require_once($YjsgJDocumentHTMLDefaultFile);
-			JLoader::register('JDocumentHTML', YJSGEXTEND . $IsJversion . '/html/html.php', true);
+				JError::raiseWarning(100, 'YjsgJDocumentHTMLDefault' . JText::_('YJSG_MISSING_CLASS'));
 			
-			
+			}
 			
 			if (!JFile::exists($YjsgJFormFieldDefaultFile)) {
 				$YjsgJFormFieldDefault = JFile::read($YjsgJFormFieldDefaultRead);
 				$YjsgJFormFieldDefault = str_replace('class JFormField', 'class YjsgJFormFieldDefault', $YjsgJFormFieldDefault);
 				JFile::write($YjsgJFormFieldDefaultFile, $YjsgJFormFieldDefault);
 			}
+			
 			
 			require_once($YjsgJFormFieldDefaultFile);
 			JLoader::register('JFormField', YJSGEXTEND . $IsJversion . '/form/field.php', true);
@@ -420,20 +445,30 @@ class plgSystemYjsg extends JPlugin {
 		}
 		
 		//extend JLayoutFile class
+		
 		if ($this->app->isSite() && version_compare(JVERSION, '3.1', '>')) {
+			
 			if (!JFile::exists($YjsgJLayoutFileDefaultFile)) {
 				$YjsgJLayoutFileDefault = JFile::read($YjsgJLayoutFileDefaultRead);
 				$YjsgJLayoutFileDefault = str_replace('class JLayoutFile', 'class YjsgJLayoutFileDefault', $YjsgJLayoutFileDefault);
 				JFile::write($YjsgJLayoutFileDefaultFile, $YjsgJLayoutFileDefault);
 			}	
+			if (!class_exists('YjsgJLayoutFileDefault')){
+				
+				require_once($YjsgJLayoutFileDefaultFile);
+				JLoader::register('JLayoutFile', YJSGEXTEND . $IsJversion . '/layout/file.php', true);
+				
+			}else{
 			
-			require_once($YjsgJLayoutFileDefaultFile);
-			JLoader::register('JLayoutFile', YJSGEXTEND . $IsJversion . '/layout/file.php', true);	
+				JError::raiseWarning(100, 'YjsgJLayoutFileDefault' . JText::_('YJSG_MISSING_CLASS'));
+			
+			}
 		}
 		
 		//extend JPagination library class
 		
 		if (!JFile::exists($YjsgJPaginationDefaultFile)) {
+			
 			$YjsgJPaginationDefault = JFile::read($YjsgJPaginationDefaultRead);
 			$YjsgJPaginationDefault = str_replace('class JPagination', 'class YjsgJPaginationDefault', $YjsgJPaginationDefault);
 			if (version_compare(JVERSION, '3.0', '<')) {
@@ -442,12 +477,23 @@ class plgSystemYjsg extends JPlugin {
 			JFile::write($YjsgJPaginationDefaultFile, $YjsgJPaginationDefault);
 		}
 		
-		require_once($YjsgJPaginationDefaultFile);
-		jimport('joomla.html.pagination');
-		JLoader::register('JPagination', YJSGEXTEND . $IsJversion . '/pagination/pagination.php', true);
-		if(version_compare(JVERSION, '3.0', '<') && !class_exists('JPaginationObject')){
-			require_once(YJSGEXTEND.'25/pagination/object.php');
-		} 
+		if (!class_exists('YjsgJPaginationDefault')){
+			
+			require_once($YjsgJPaginationDefaultFile);
+			jimport('joomla.html.pagination');
+			JLoader::register('JPagination', YJSGEXTEND . $IsJversion . '/pagination/pagination.php', true);
+			
+			if(version_compare(JVERSION, '3.0', '<') && !class_exists('JPaginationObject')){
+				require_once(YJSGEXTEND.'25/pagination/object.php');
+			} 
+			
+		}else{
+		
+			JError::raiseWarning(100, 'YjsgJPaginationDefault' . JText::_('YJSG_MISSING_CLASS'));
+		
+		}		
+		
+
             
     }
     
