@@ -467,31 +467,34 @@ class plgSystemYjsg extends JPlugin {
 		
 		//extend JPagination library class
 		
-		if (!JFile::exists($YjsgJPaginationDefaultFile)) {
+		if ($this->app->isSite()) {
 			
-			$YjsgJPaginationDefault = JFile::read($YjsgJPaginationDefaultRead);
-			$YjsgJPaginationDefault = str_replace('class JPagination', 'class YjsgJPaginationDefault', $YjsgJPaginationDefault);
-			if (version_compare(JVERSION, '3.0', '<')) {
-				$YjsgJPaginationDefault = str_replace('new JPagination', 'new YjsgJPaginationDefault', $YjsgJPaginationDefault);
+			if (!JFile::exists($YjsgJPaginationDefaultFile)) {
+				
+				$YjsgJPaginationDefault = JFile::read($YjsgJPaginationDefaultRead);
+				$YjsgJPaginationDefault = str_replace('class JPagination', 'class YjsgJPaginationDefault', $YjsgJPaginationDefault);
+				if (version_compare(JVERSION, '3.0', '<')) {
+					$YjsgJPaginationDefault = str_replace('new JPagination', 'new YjsgJPaginationDefault', $YjsgJPaginationDefault);
+				}
+				JFile::write($YjsgJPaginationDefaultFile, $YjsgJPaginationDefault);
 			}
-			JFile::write($YjsgJPaginationDefaultFile, $YjsgJPaginationDefault);
+			
+			if (!class_exists('YjsgJPaginationDefault')){
+				
+				require_once($YjsgJPaginationDefaultFile);
+				jimport('joomla.html.pagination');
+				JLoader::register('JPagination', YJSGEXTEND . $IsJversion . '/pagination/pagination.php', true);
+				
+				if(version_compare(JVERSION, '3.0', '<') && !class_exists('JPaginationObject')){
+					require_once(YJSGEXTEND.'25/pagination/object.php');
+				} 
+				
+			}else{
+			
+				JError::raiseWarning(100, 'YjsgJPaginationDefault' . JText::_('YJSG_MISSING_CLASS'));
+			
+			}
 		}
-		
-		if (!class_exists('YjsgJPaginationDefault')){
-			
-			require_once($YjsgJPaginationDefaultFile);
-			jimport('joomla.html.pagination');
-			JLoader::register('JPagination', YJSGEXTEND . $IsJversion . '/pagination/pagination.php', true);
-			
-			if(version_compare(JVERSION, '3.0', '<') && !class_exists('JPaginationObject')){
-				require_once(YJSGEXTEND.'25/pagination/object.php');
-			} 
-			
-		}else{
-		
-			JError::raiseWarning(100, 'YjsgJPaginationDefault' . JText::_('YJSG_MISSING_CLASS'));
-		
-		}		
 		
 
             
