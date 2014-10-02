@@ -36,6 +36,11 @@ Have a bug or a request? Please open an issue here https://github.com/YJSGframew
   * normalize.css
   * jQuery
   * magnific-popup
+  
+  
+##Versioning
+
+  Yjsg is using [Semantic Versioning](http://semver.org/)
 
 
 ## License, Copyright
