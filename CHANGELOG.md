@@ -1,4 +1,51 @@
-### 2.0.1 (September 18, 2014)
+##Version: 2.1.0 (October 02, 2014)
+
+###New features
+
+  - Added [Waypoints](http://imakewebthings.com/jquery-waypoints/) jQuery plugin
+  - Added Yjsgroundprogress jQuery plugin
+  - Added yjsg-hide CSS class
+
+###Bug fixes
+
+  - Fixed youtube shortlink fix for Mediaelement
+  - Fixed K2 shortcodes after read more 
+  - Fixed top menu in header margin/padding reset
+  - Fixed yjsgmedia element strict standards bug
+  - Fixed filter min width in yjsg-form
+  - Fixed com_contact featured table style missing class
+  - Fixed compact tags form missing class
+  - Fixed yjsg tooltips center aligned text
+  - Fixed frontend template settings dont display params
+  - Fixed empty system message type for 3.x
+  - Fixed template backup on 1.0.16 is backing up new template version if old one is installed
+  - Fixed VM pagination issue
+  - Fixed yjsg_module_style param is not applied to yjsgxhtml container
+  - Fixed yjsgfolderlist.php strict standards bug
+  - Fixed class JSON strict standards bug 
+
+
+##Version: 2.0.1 (September 18, 2014)
+
+###Code improvement
+
+  - Added Yjsg Article Option in frontend article edit view
+  - Added yjsg-form-append
+  - Added option to turn off Mootools dependency in admin for v2 templates ( legacy not included )
+  - Added check for JSN admin to disable their toolbar in template style edit view
+  - Added JLayouts override in plugin
+  - Made sure the voting override is triggered only on com_content
+  - Moved com_fabrik require.js head order to avoid js conflicts
+  - behaviour.tooltip replaced with Yjsg::yjsgtooltip()
+  - Updated less.php class to version 1.7.0.2
+  - Updated FontAwesome to version 4.2
+  - Matched mod_login view 2.5/3.x
+  - Matched com_finder j3x override
+  - Switched com_contact tabs to Yjsg based tabs( no Bootstrap dependency )
+  - Polaroid shortcode addon [reference](http://www.youjoomla.com/joomla_support/showthread.php?p=58942)
+  - Cleanup JS/CSS files
+
+###Bug fixes
 
   - Fixed article category menu rtl CSS
   - Fixed sidepanel rtl CSS 
@@ -15,24 +62,10 @@
   - Fixed admin tooltips when com_fabrik is used
   - Fixed top menu text separator space bug
   - Fixed shortcodes frontend edit loading before jquery
-  - Added Yjsg Article Option in frontend article edit view
-  - Added yjsg-form-append
-  - Added option to turn off Mootools dependency in admin for v2 templates ( legacy not included )
-  - Added check for JSN admin to disable their toolbar in template style edit view
-  - Added JLayouts override in plugin
-  - Made sure the voting override is triggered only on com_content
-  - Moved com_fabrik require.js head order to avoid js conflicts
-  - behaviour.tooltip replaced with Yjsg::yjsgtooltip()
-  - Updated less.php class to version 1.7.0.2
-  - Updated FontAwesome to version 4.2
-  - Matched mod_login view 2.5/3.x
-  - Matched com_finder j3x override
-  - Switched com_contact tabs to Yjsg based tabs( no Bootstrap dependency )
-  - Polaroid shortcode addon [reference](http://www.youjoomla.com/joomla_support/showthread.php?p=58942)
-  - Cleanup JS/CSS files
+
   
 
 
-### 2.0.0 (August 08, 2014)
+##Version: 2.0.0 (August 08, 2014)
 
   - Initial Release
