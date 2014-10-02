@@ -3,7 +3,7 @@
 ###New features
 
   - Added [Waypoints](http://imakewebthings.com/jquery-waypoints/) jQuery plugin
-  - Added Yjsgroundprogress jQuery plugin
+  - Added [Yjsgroundprogress](http://yjsimplegrid.com/add-ons/round-progress-bars.html) jQuery plugin
   - Added yjsg-hide CSS class
 
 ###Bug fixes
