@@ -306,6 +306,20 @@ defined('_JEXEC') or die('Restricted index access');
         'dir="<?php echo $this->direction; ?>"' => 'dir="<?php echo $this->direction; ?>" class="<jdoc:include type="htmlclass" />"'
     );
     
+
+    // Bail out if no beforeCleanup folder
+	if (!JFolder::exists($beforeCleanup)) {
+		
+		$nobackupMsg = JText::_('YJSG_INSTALLER_TMPL_NO_BACKUP1') . YJSGDEFT  . JText::_('YJSG_INSTALLER_TMPL_NO_BACKUP2');
+		$response = array(
+			'message' => $nobackupMsg,
+			'tupdate' => 'notwritable'
+		);
+		$json     = new JSON($response);
+		echo $json->result;
+		exit;			
+	}
+	
     
    // Bail out if not able to backup
    if (!JFolder::copy($beforeCleanup, $backupFolder)) {

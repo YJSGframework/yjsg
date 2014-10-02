@@ -95,16 +95,30 @@ defined('_JEXEC') or die('Restricted index access');
     );
     
 
-    // Bail out if not able to backup
-    if (!JFolder::copy($beforeCleanup, $backupFolder)) {
-        $response = array(
-            'message' => JText::_('YJSG_NOT_ABLE_TO_BACKUP_TEMPLATE') . JText::_('YJSG_MANUAL_UPDATE_PROCESS'),
-            'tupdate' => 'notwritable'
-        );
-        $json     = new JSON($response);
-        echo $json->result;
-        exit;
-    }
+    // Bail out if no beforeCleanup folder
+	if (!JFolder::exists($beforeCleanup)) {
+		
+		$nobackupMsg = JText::_('YJSG_INSTALLER_TMPL_NO_BACKUP1') . YJSGDEFT  . JText::_('YJSG_INSTALLER_TMPL_NO_BACKUP2');
+		$response = array(
+			'message' => $nobackupMsg,
+			'tupdate' => 'notwritable'
+		);
+		$json     = new JSON($response);
+		echo $json->result;
+		exit;			
+	}	
+	
+	// Bail out if not able to copy
+	if (!JFolder::copy($beforeCleanup, $backupFolder)) {
+		$response = array(
+			'message' => JText::_('YJSG_NOT_ABLE_TO_BACKUP_TEMPLATE') . JText::_('YJSG_MANUAL_UPDATE_PROCESS'),
+			'tupdate' => 'notwritable'
+		);
+		$json     = new JSON($response);
+		echo $json->result;
+		exit;
+	}
+
 
     
     // delete folders
