@@ -35,6 +35,16 @@ if( isset($loadmenu->getActive()->title)){
   <span class="yjmm_select" id="yjmm_selectid"><?php echo $SetActiveTitle ?></span>
   <select id="mmenu" class="yjstyled">
       <?php foreach($mobile_menu as $key => $menuitem) : 
+	  
+		  $anchor_css = $menuitem->anchor_css;
+		  
+		  if(!empty($anchor_css )){
+			  
+			  
+			   $anchor_css = ' class="'. trim($menuitem->anchor_css) .'" ';
+			  
+		  }
+	  
         if(count($menuitem->tree) == 1 || $menuitem->home == 1) {
             $addline ='&nbsp;';
         }else{
@@ -97,7 +107,7 @@ if( isset($loadmenu->getActive()->title)){
 			$menuitem->flink = JRoute::_($menuitem->flink);
 		}
       ?>
-      <option value="<?php echo JRoute::_($menuitem->flink)?>"<?php echo $selected ?>><?php echo $addline.$menuitem->title?></option>
+      <option<?php echo $anchor_css ?> value="<?php echo JRoute::_($menuitem->flink)?>"<?php echo $selected ?>><?php echo $addline.$menuitem->title?></option>
       <?php endforeach ?>
   </select>
 </div>
