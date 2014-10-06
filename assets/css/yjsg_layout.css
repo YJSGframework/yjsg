@@ -979,7 +979,8 @@ html.view-form div#sbox-window {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-.inside-container .yjsg-row {
+.inside-container .yjsg-row,
+.yjsg_grid .yjsg-row {
 	margin-left:-15px;
 	margin-right:-15px;
 }

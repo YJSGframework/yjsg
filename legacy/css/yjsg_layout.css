@@ -1311,7 +1311,8 @@ ul.defaultmenu.inline li a:after{
 	content:"";
 	clear:both;
 }
-.inside-container .yjsg-row{
+.inside-container .yjsg-row,
+.yjsg_grid .yjsg-row{
 	margin-left:-15px;
 	margin-right:-15px;
 }
