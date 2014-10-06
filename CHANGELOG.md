@@ -1,3 +1,22 @@
+##Version: 2.1.1 (October 06, 2014)
+
+###Code improvement
+
+  - Improved article blog layout margin and padding for easier separation in v2 templates
+  - Improved Page Class space before the class name
+  - Improved yjsgparse shortocde to allow js
+  - Added Page Class to html tag
+  - Added sub class to mobile menu
+  - Made sure yjsgpre shortcode dont error out when empty 
+  - Reset yjsg-row margin when inside the yjsg_grid
+
+###Bug fixes
+  - Fixed reset to default adds 3 top menus if top menu is in header by default
+  - Fixed images shortcode override was not closing modal on insert
+  - Fixed css_font_family in default xml should be 6
+  - Fixed blocknumber css
+
+  
 ##Version: 2.1.0 (October 02, 2014)
 
 ###New features
