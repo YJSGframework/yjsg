@@ -1,3 +1,8 @@
+##Version: 2.1.2 (October 06, 2014)
+
+###Bug fixes
+  - Fixed yjsgCleanPageSfx method to check for params first
+  
 ##Version: 2.1.1 (October 06, 2014)
 
 ###Code improvement
