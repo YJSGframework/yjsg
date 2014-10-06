@@ -133,6 +133,17 @@
 		clear:both!important;
 	}
 	
+	div.yjsg-newsitems div.multicolumns div.first .yjsgarticle {
+		margin-left: 0px;
+		padding-left:0;
+		padding-right:0;
+	}
+	div.yjsg-newsitems div.multicolumns div.last .yjsgarticle {
+		margin-right: 0px;
+		padding-left:0;
+		padding-right:0;
+	}
+		
 	#footer div,
 	.yjsglogo{
 		display:block;
