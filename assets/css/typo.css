@@ -553,18 +553,19 @@ blockquote.brackets:after {
 }
 /* big numbers */
 .blocknumber {
-	padding:0 0 0 65px;
+	padding:10px 0 0 65px;
 	display:block;
 	position:relative;
 	margin:15px 0;
 	font-size:120%;
 	line-height:23px;
+	min-height:50px;
 }
 .bignumber {
 	padding:10px;
 	display:block;
 	position:absolute;
-	top:-8px;
+	top:0px;
 	left:0;
 	font-weight:bold;
 	font-family:Arial, sans-serif;
@@ -575,11 +576,7 @@ blockquote.brackets:after {
 	width:25px;
 	color:#e7e7e7;
 }
-.bignumber.bnround {
-	min-height:40px;
-}
 .bnround .bignumber {
-	top:0px;
 	-webkit-border-radius:50%;
 	-khtml-border-radius:50%;
 	-moz-border-radius:50%;
