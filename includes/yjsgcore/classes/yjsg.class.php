@@ -1242,6 +1242,28 @@ class Yjsg {
 	}
 	
 	
+    /**
+     * Clean pageclass_sfx
+     *
+     * @return void
+     * @since 2.1.1
+     */
+	 
+	public function yjsgCleanPageSfx() {
+		
+		if(!$this->app->input->get( 'tmpl' )){
+			
+			$menu 				= $this->app->getMenu();
+			$activeparams		= $menu->getActive()->params;
+			$pageclass_sfx		= $activeparams->get('pageclass_sfx');
+			
+			if(!empty($pageclass_sfx)){
+				$activeparams->set('pageclass_sfx',' ' .trim($pageclass_sfx));
+			}
+			
+		}
+		
+	}	
 }
 
 
@@ -1266,6 +1288,12 @@ class JDocumentRendererHtmlclass extends JDocumentRenderer{
 		$tparams			= $app->getTemplate(true)->params;
 		$html_class			= array();
 		$top_menu_location	= $tparams->get('top_menu_location',0);
+		$pageclass_sfx		= '';
+		
+		if(!$app->input->get( 'tmpl' )){
+			$pageclass_sfx		= $menu->getActive()->params->get('pageclass_sfx');
+		}
+		
 		
 		if($app->isSite()){
 			
@@ -1318,6 +1346,14 @@ class JDocumentRendererHtmlclass extends JDocumentRenderer{
 			if($text_direction == 1){
 				
 				$html_class[]		='yjsgrtl';
+			}
+			
+			
+			// pageclass_sfx 
+			
+			if(!empty($pageclass_sfx)){
+				
+				$html_class[]		=trim($pageclass_sfx);
 			}
 		}
 		
