@@ -41,7 +41,7 @@
 				<option value="2" enable="google_font_family|affected_selectors" disable="css_font_family|fontfacekit_font_family">Google Font</option>
 				<option value="3" enable="fontfacekit_font_family" disable="google_font_family|css_font_family|affected_selectors">@font-face kit</option>
 			</field>
-			<field name="css_font_family" type="yjsglist" default="12" label="YJSG_CSS_FONT_FAM_LABEL" description="YJSG_CSS_FONT_FAM_DESC">
+			<field name="css_font_family" type="yjsglist" default="6" label="YJSG_CSS_FONT_FAM_LABEL" description="YJSG_CSS_FONT_FAM_DESC">
 				<option value="1">Bookman Old Style</option>
 				<option value="2">Palatino</option>
 				<option value="3">Times New Roman</option>
