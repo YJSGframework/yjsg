@@ -249,13 +249,17 @@ class plgSystemYjsg extends JPlugin {
         if ($this->run_plg == 1) {
             
             $this->yjsgConstants();
+			
             // load Extend J classes		
             $this->yjsgExtendJoomla();
 			
-			// match messages for any J version
 			
 			if($this->app->isSite()){
+				
+				// clean pageclass_sfx 
+				$this->yjsg->yjsgCleanPageSfx();	
 			
+				// match messages for any J version
 				if (version_compare(JVERSION, '3.0', '<') && !class_exists('JDocumentRendererMessage')) {
 					
 				   require_once YJSGEXTEND . "25" . YJDS . 'html' . YJDS . 'message.php';
@@ -268,10 +272,12 @@ class plgSystemYjsg extends JPlugin {
 					
 				}
 			}
-			
+
+
         }
         
-        
+
+			     
     }
 
 
@@ -390,7 +396,7 @@ class plgSystemYjsg extends JPlugin {
 		
 		//extend JView library class
 		
-		if($this->app->isSite() || $this->templateView){
+		if($this->app->isSite() || $this->templateView || $this->Input('author') == 'yjsg'){
 			
 			if (!JFile::exists($YjsgJViewDefaultFile)) {
 				$YjsgJViewDefault = JFile::read($YjsgJViewDefaultRead);
@@ -406,7 +412,10 @@ class plgSystemYjsg extends JPlugin {
 			
 			}else{
 				
-				JError::raiseWarning(100, 'Yjsg' . $isView . 'Default' . JText::_('YJSG_MISSING_CLASS'));
+				if($this->Input('tmpl') != 'component'){
+					JError::raiseWarning(100, 'Yjsg' . $isView . 'Default' . JText::_('YJSG_MISSING_CLASS'));
+				}
+					
 				
 			}
 		}
