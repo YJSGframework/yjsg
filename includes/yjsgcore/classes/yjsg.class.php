@@ -1251,9 +1251,11 @@ class Yjsg {
 	 
 	public function yjsgCleanPageSfx() {
 		
-		if(!$this->app->input->get( 'tmpl' )){
+		
 			
-			$menu 				= $this->app->getMenu();
+		$menu 					= $this->app->getMenu();
+		
+		if(isset($menu->getActive()->params)){
 			$activeparams		= $menu->getActive()->params;
 			$pageclass_sfx		= $activeparams->get('pageclass_sfx');
 			
@@ -1290,7 +1292,7 @@ class JDocumentRendererHtmlclass extends JDocumentRenderer{
 		$top_menu_location	= $tparams->get('top_menu_location',0);
 		$pageclass_sfx		= '';
 		
-		if(!$app->input->get( 'tmpl' )){
+		if(isset($menu->getActive()->params)){
 			$pageclass_sfx		= $menu->getActive()->params->get('pageclass_sfx');
 		}
 		
