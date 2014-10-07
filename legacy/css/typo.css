@@ -729,9 +729,11 @@ blockquote:after {
 }
 blockquote.quoted,
 blockquote.brackets {
+	display:block;
+	position:relative;
+	overflow:hidden;
 	border:none;
 	padding:0 25px;
-	position:relative;
 }
 blockquote.quoted:before,
 blockquote.quoted:after,
