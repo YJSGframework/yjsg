@@ -476,6 +476,9 @@ ul.check li:before {
 }
 /* blockquotes */
 blockquote {
+	display:block;
+	position:relative;
+	overflow:hidden;
 	padding: 0 0 0 15px;
 	margin: 0 0 20px;
 	border-left: 5px solid #eeeeee;
@@ -519,9 +522,6 @@ blockquote:after {
 }
 blockquote.quoted,
 blockquote.brackets {
-	display:block;
-	position:relative;
-	overflow:hidden;
 	border:none;
 	padding:0 25px;
 }
