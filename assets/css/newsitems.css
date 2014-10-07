@@ -129,17 +129,13 @@ div.yjsg-newsitems .width100 {
 	width: 100%;
 }
 /* MULTI ITEMS ROW SPACING */
+div.yjsg-newsitems div.multicolumns{
+	margin-left:-15px;
+	margin-right:-15px;
+}
 div.yjsg-newsitems div.multicolumns .yjsgarticle {
-	margin: 0px 0px 15px 0px;/* multi row newsitem spacing*/
+	margin: 0px 0px 15px 0px;
 	padding:0 15px;
-}
-/* FIRST ITEM IN A ROW SPACING */
-div.yjsg-newsitems div.multicolumns div.first .yjsgarticle {
-	margin-left: -15px;
-}
-/* LAST ITEM IN A ROW SPACING */
-div.yjsg-newsitems div.multicolumns div.last .yjsgarticle {
-	margin-right: -15px;
 }
 /* more articles links */
 div.yjsg-morearticles {
