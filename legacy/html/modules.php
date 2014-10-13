@@ -25,8 +25,17 @@ defined('_JEXEC') or die('Restricted access');
  Yjsgplain = square mods , no title no additional divs
  
   */
- // DEFAULT SQUARE
 
+// convert space in to span
+function moduleaddspan($s,$c){
+	
+	$output = '<span class="title_split titlesplit'.$c.'">'.$s.'</span>';
+    return $output;
+	
+}
+
+
+// DEFAULT SQUARE
 
 function modChrome_YJsgxhtml($module, &$params, &$attribs){
 	
@@ -96,7 +105,7 @@ function modChrome_YJsgxhtml($module, &$params, &$attribs){
 	if(strpos($title, ' ') !== false){	
 			
 		$title = explode(' ', $title);
-		$title = join(' ', array_map('addspan',$title, array_keys($title)));
+		$title = join(' ', array_map('moduleaddspan',$title, array_keys($title)));
 	
 	}
 
@@ -196,7 +205,7 @@ function modChrome_YJsground($module, &$params, &$attribs){
 	if(strpos($title, ' ') !== false){	
 			
 		$title = explode(' ', $title);
-		$title = join(' ', array_map('addspan',$title, array_keys($title)));
+		$title = join(' ', array_map('moduleaddspan',$title, array_keys($title)));
 	
 	}
 
