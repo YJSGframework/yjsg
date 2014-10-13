@@ -39,6 +39,8 @@ function moduleaddspan($s,$c){
 
 function modChrome_YJsgxhtml($module, &$params, &$attribs){
 	
+	if(!$module->content)return;
+	
 	$title 						= $module->title;
 	$module_suffix_class		= htmlspecialchars($params->get('moduleclass_sfx'));
 	$module_icon_prefix			= $params->get('module_icon_prefix','');
@@ -136,6 +138,8 @@ function modChrome_YJsgxhtml($module, &$params, &$attribs){
 }
 
 function modChrome_YJsground($module, &$params, &$attribs){
+	
+	if(!$module->content)return;
 	
 	$title 						= $module->title;
 	$module_suffix_class		= htmlspecialchars($params->get('moduleclass_sfx'));
@@ -237,6 +241,8 @@ function modChrome_YJsground($module, &$params, &$attribs){
 
 
 function modChrome_YJsgplain($module, &$params, &$attribs){
+	
+	if(!$module->content)return;
 	
 	$bootstrap_size 			= $params->get('bootstrap_size','');
 	$bootstrap_size_class		='';
