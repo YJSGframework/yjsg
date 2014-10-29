@@ -903,6 +903,7 @@ a.yjsgsliderNav i{
 	display:block;
 	text-align:center;
 	font-family:"FontAwesome";
+	font-style:normal;
 }
 a.yjsgsliderNav.prev i:before{
 	content:"\f104";
