@@ -2055,3 +2055,8 @@ img.mfp-img {
 	border-top-color:#40b1e2;
 	border-bottom-color:#ccc;
 }
+.bootstrap3 a.modal{
+	display:inline;
+	overflow:hidden;
+	position:static;
+}
