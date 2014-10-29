@@ -1237,8 +1237,6 @@ class Yjsg {
 		}
 		
 		
-		
-		
 	}
 	
 	
@@ -1250,7 +1248,6 @@ class Yjsg {
      */
 	 
 	public function yjsgCleanPageSfx() {
-		
 		
 			
 		$menu 					= $this->app->getMenu();
@@ -1266,6 +1263,73 @@ class Yjsg {
 		}
 		
 	}	
+	
+	
+	
+    /**
+     * Move js files
+     *
+     * @return void
+     * @since 2.1.3
+     */	
+	
+	public function yjsgMoveJs($movejsfiles=array()) {
+		
+		
+		$document 	= JFactory::getDocument();
+		$newJs		= array();
+		
+		foreach ($document->_scripts as $path => $file) {
+			
+			foreach ($movejsfiles as $find) {
+				
+				if (strpos($path, $find) !== false) {
+					$newJs[$path] = $document->_scripts[$path];
+					unset($document->_scripts[$path]);
+				}
+			}
+			
+		}
+		
+		$newJsFiles         = array_merge($document->_scripts, $newJs);
+		$document->_scripts = $newJsFiles;
+		
+	}
+	
+	
+    /**
+     * Move CSS files
+     *
+     * @return void
+     * @since 2.1.3
+     */	
+	
+	public function yjsgMoveCss($movecssfiles=array()) {
+		
+		
+		$document 	= JFactory::getDocument();
+		$newStyles	= array();
+		
+            foreach ($document->_styleSheets as $path => $file) {
+                
+                foreach ($movecssfiles as $find) {
+                    
+                    if (strpos($path, $find) !== false) {
+                        $newStyles[$path] = $document->_styleSheets[$path];
+                        unset($document->_styleSheets[$path]);
+                    }
+                }
+                
+            }
+			
+            $newstyleSheets         = array_merge($document->_styleSheets, $newStyles);
+            $document->_styleSheets = $newstyleSheets;
+		
+	}
+	
+	
+	
+	
 }
 
 

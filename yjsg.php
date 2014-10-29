@@ -761,9 +761,6 @@ class plgSystemYjsg extends JPlugin {
             
             
             $css_file  = $document->params->get('css_file');
-            $newStyles = array();
-            
-            
             $defaultStyles = array(
                 'http://fonts.googleapis.com',
                 'yjsg/assets/css',
@@ -773,21 +770,8 @@ class plgSystemYjsg extends JPlugin {
                 'yjsg/assets/bootstrap3/css',
                 'templates/' . $document->template
             );
-            
-            foreach ($document->_styleSheets as $path => $file) {
-                
-                foreach ($defaultStyles as $find) {
-                    
-                    if (strpos($path, $find) !== false) {
-                        $newStyles[$path] = $document->_styleSheets[$path];
-                        unset($document->_styleSheets[$path]);
-                    }
-                }
-                
-            }
-            
-            $newstyleSheets         = array_merge($document->_styleSheets, $newStyles);
-            $document->_styleSheets = $newstyleSheets;
+            $this->yjsg->yjsgMoveCss($defaultStyles);
+
             // moving css files done
             
             
@@ -832,8 +816,6 @@ class plgSystemYjsg extends JPlugin {
 
 			// moving js files
 			
-			$defaultJsFiles 	= array();
-			$newJs				= array();
 			$defaultJsFiles[] 	= 'templates/' . $document->template;
 			$defaultJsFiles[] 	= 'elements/src';
 			
@@ -857,21 +839,8 @@ class plgSystemYjsg extends JPlugin {
 				$defaultJsFiles[] 	= 'com_mijoshop';
 				$defaultJsFiles[] 	= 'mijoshopjquery';
 			}
-
-			foreach ($document->_scripts as $path => $file) {
-				
-				foreach ($defaultJsFiles as $find) {
-					
-					if (strpos($path, $find) !== false) {
-						$newJs[$path] = $document->_scripts[$path];
-						unset($document->_scripts[$path]);
-					}
-				}
-				
-			}
 			
-			$newJsFiles         = array_merge($document->_scripts, $newJs);
-			$document->_scripts = $newJsFiles;
+			$this->yjsg->yjsgMoveJs($defaultJsFiles);
 	  
 			// js files move done						
             
