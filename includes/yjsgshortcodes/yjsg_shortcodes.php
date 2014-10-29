@@ -723,7 +723,7 @@ function yjsg_clean_shortcodes($str) {
 			'/effect="(.*?)"/',
 			'/days="(.*?)"/',
 			'/hours="(.*?)"/',
-			 '/[^A-Za-z0-9?!\s]/i',
+			'/[^\p{L}|\p{N}\s]+/u'
 		), array(
 			''
 		), $str);
