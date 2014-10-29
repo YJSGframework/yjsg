@@ -1310,6 +1310,7 @@ input.patterninputHide {
 	background-size:25% auto;
 	background-repeat:repeat;
 	border: 3px solid #efefef;
+	background-size:cover;
 }
 #defaultbgImage .patterns .preview {
 	background-size:255px auto;
