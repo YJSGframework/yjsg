@@ -362,6 +362,9 @@ fieldset[disabled] .btn-yjsg.active {
 .btn-primary.active i {
 	color:#eb6a5a;
 }
+.btn-group>.btn-yjsg{
+	padding-left:10px;
+}
 /* side tabs */
 .tabs-left {
 	border:none;
@@ -1714,6 +1717,7 @@ ul.multiselect-container>li {
 }
 ul.multiselect-container>li>a.multiselect-all label {
 	font-weight:700;
+
 }
 ul.multiselect-container>li>label.multiselect-group {
 	margin:0;
@@ -1729,7 +1733,7 @@ ul.multiselect-container>li>a>label {
 }
 ul.multiselect-container>li>a>label.radio,
 ul.multiselect-container>li>a>label.checkbox {
-	margin:0;
+	margin:0 0 0 15px;
 }
 ul.multiselect-container>li>a>label>input[type=checkbox] {
 	margin-bottom:5px;
@@ -1748,6 +1752,13 @@ ul.multiselect-container li.active a:focus {
 	text-decoration: none;
 	outline: 0;
 	background-color: #eb6a5a;
+}
+ul.multiselect-container .multiselect-search{
+	height:34px;
+}
+.multiselect-item.multiselect-group label{
+	padding-left:15px;
+
 }
 /* select layout box */
 .selectLayout {
@@ -1827,6 +1838,7 @@ ul.multiselect-container li.active a:focus {
 }
 /* clone layout box */
 .clonelayoutbox {
+
 	display:block;
 	padding:10px 0 20px 0;
 }

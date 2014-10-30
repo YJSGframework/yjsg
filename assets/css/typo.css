@@ -2055,8 +2055,11 @@ img.mfp-img {
 	border-top-color:#40b1e2;
 	border-bottom-color:#ccc;
 }
-.bootstrap3 a.modal{
+.bootstrap3 #k2Container a.modal{
 	display:inline;
 	overflow:hidden;
 	position:static;
+}
+.bootstrap3 .control-group{
+	float:left;
 }
