@@ -701,6 +701,7 @@ function yjsg_clean_shortcodes($str) {
 			'/yjsgacgroup/',
 			'/yjsgacs/',
 			'/yjsgstabs/',
+			
 			'/url="(.*?)"/',
 			'/link="(.*?)"/',
 			'/poster="(.*?)"/',
@@ -723,12 +724,62 @@ function yjsg_clean_shortcodes($str) {
 			'/effect="(.*?)"/',
 			'/days="(.*?)"/',
 			'/hours="(.*?)"/',
-			'/[^\p{L}|\p{N}\s]+/u'
+
+			'/url="/',
+			'/link="/',
+			'/poster="/',
+			'/width="/',
+			'/height="/',
+			'/resp="/',
+			'/id="/',
+			'/title="/',
+			'/type="/',
+			'/active="/',
+			'/color="/',
+			'/name="/',
+			'/target="/',
+			'/class="/',
+			'/image="/',
+			'/border="/',
+			'/radius="/',
+			'/icon="/',
+			'/close="/',
+			'/effect="/',
+			'/days="/',
+			'/hours="/',
+			
+			'/url=/',
+			'/link=/',
+			'/poster=/',
+			'/width=/',
+			'/height=/',
+			'/resp=/',
+			'/id=/',
+			'/title=/',
+			'/type=/',
+			'/active=/',
+			'/color=/',
+			'/name=/',
+			'/target=/',
+			'/class=/',
+			'/image=/',
+			'/border=/',
+			'/radius=/',
+			'/icon=/',
+			'/close=/',
+			'/effect=/',
+			'/days=/',
+			'/hours=/',
+			
+			'/\[.*?\]/',
+			'/\[/',
+			'/\]/'
 		), array(
 			''
 		), $str);
 
 		return trim($cleanStr);
+//'/[^\p{L}|\p{N}\s]+/u'
 
 }
 ?>
