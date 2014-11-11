@@ -169,7 +169,7 @@
 			   cur = cur[cur.length-1];
 			   var id = cur && cur.length ? cur[0].id : "";
 			   
-			   if (lastScrollId !== id) {
+			   if (lastScrollId !== id && id !="") {
 				   lastScrollId = id;
 				   stickyItems.removeClass("active-scroll");
 				   $("[href=#"+id+"]").addClass("active-scroll");
@@ -238,6 +238,13 @@
                 type: 'image',
                 mainClass: 'mfp-fade'
             });
+			
+			
+		   $('.yjsg-iframe-lightbox').magnificPopup({
+			  type: 'iframe',
+			  mainClass: 'mfp-fade'
+			});
+			
 
         },
 
