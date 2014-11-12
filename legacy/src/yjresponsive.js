@@ -46,7 +46,9 @@
 
                 var select_holder = $(self.settings.menuholder);
                 var size = YjsgRespond.viewPort().width;
-                $(self.settings.topmenuholder).prepend(select_holder);
+				if (!$(self.settings.topmenuholder).find(select_holder).length) {
+                	$(self.settings.topmenuholder).prepend(select_holder);
+				}
                 $(self.settings.selectmenu).on('change', function () {
                     window.location.href = $(this).val();
                 });
@@ -171,7 +173,6 @@
         YjsgRespond.showMenu();
         YjsgRespond.logoResize();
         YjsgRespond.winsize["width"] = YjsgRespond.viewPort().width;
-		//$("ul.yjsgmenu li.haschild").removeClass("flip");
     });
 
 })(jQuery);

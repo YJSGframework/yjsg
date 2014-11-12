@@ -26,7 +26,6 @@
             var self = this;
             if ($(self.settings.menuholder).length > 0) {
                 var select_holder = $(self.settings.menuholder);
-                var size = YjsgRespond.viewPort().width;
                 $(self.settings.topmenuholder).prepend(select_holder);
                 $(self.settings.selectmenu).on('change', function () {
                     window.location.href = $(this).val();
@@ -70,7 +69,6 @@
     }
     $(document).on('ready', YjsgRespond.initialize);
     $(window).on('resize', function () {
-        YjsgRespond.showMenu();
         YjsgRespond.winsize["width"] = YjsgRespond.viewPort().width;
     });
 })(jQuery);
