@@ -24,7 +24,7 @@ $fp_after_text           	= $yjsg_params->get('fp_after_text');
 
 $params 	= $this->item->params;
 $canEdit	= $params->get('access-edit');
-
+$info    	= $params->get('info_block_position', 0);
 
 // micro data
 $article_nameMD 			= '';
@@ -103,70 +103,8 @@ endif;
 	<?php echo $this->item->event->beforeDisplayContent; ?>
 	<?php if ($newsitemTools) : ?>
 	<div class="newsitem_tools">
-		<div class="newsitem_info">
-			<?php /* Parent category*/if ($params->get('show_parent_category')) : ?>
-			<span class="icon-list-alt"></span>
-			<span class="newsitem_parent_category">
-			<?php $title = $this->escape($this->item->parent_title);
-					$url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)) . '"'.$article_genreMD.'>' . $title . '</a>'; ?>
-			<?php if ($params->get('link_parent_category') and $this->item->parent_slug) : ?>
-			<?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
-			<?php else : ?>
-			<?php echo JText::sprintf('COM_CONTENT_PARENT', '<span'.$article_genreMD.'>'.$title.'</span>'); ?>
-			<?php endif; ?>
-			</span>
-			<?php endif; ?>
-			<?php /*Category title*/if ($params->get('show_category')) : ?>
-			<span class="newsitem_category"><span class="icon-list-alt"></span>
-			<?php 	$title = $this->escape($this->item->category_title);
-			$url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)).'"'.$article_genreMD.'>'.$title.'</a>';
-			if ($params->get('link_category') AND $this->item->catslug) :
-				echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
-			<?php else : ?>
-				<?php echo JText::sprintf('COM_CONTENT_CATEGORY', '<span'.$article_genreMD.'>'.$title.'</span>'); ?>
-			<?php endif; ?>
-			</span>
-			<div class="clr"></div>
-			<?php endif; ?>
-			<?php /* Create date*/if ($params->get('show_create_date')) : ?>
-			<span class="createdate">
-			<span class="icon-calendar"></span>
-				<time datetime="<?php echo JHtml::_('date', $this->item->created, 'c'); ?>"<?php echo $article_createdMD ?>>
-					<?php echo JText::sprintf('COM_CONTENT_CREATED_DATE_ON', JHtml::_('date', $this->item->created, JText::_('DATE_FORMAT_LC3'))); ?>
-				</time>
-			</span>
-			<?php endif; ?>
-			<?php /*Modify date*/ if ($params->get('show_modify_date')) : ?>
-			<div class="clr"></div>
-			<span class="modifydate">
-			<span class="icon-edit"></span>
-				<time datetime="<?php echo JHtml::_('date', $this->item->modified, 'c'); ?>"<?php echo $article_modifiedMD ?>>
-					<?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHtml::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC3'))); ?>
-				</time>
-			</span>
-			<?php endif; ?>
-			<div class="clr"></div>
-			<?php /* Published date*/ if ($params->get('show_publish_date')) : ?>
-			<span class="newsitem_published"><span class="icon-calendar"></span>
-				<time datetime="<?php echo JHtml::_('date', $this->item->publish_up, 'c'); ?>"<?php echo $article_publishedMD ?>>
-					<?php echo JText::sprintf('COM_CONTENT_PUBLISHED_DATE_ON', JHtml::_('date', $this->item->publish_up, JText::_('DATE_FORMAT_LC3'))); ?>
-				</time>
-			</span>
-			<div class="clr"></div>
-			<?php endif; ?>
-			<?php /* Author*/if ($params->get('show_author') && !empty($this->item->author)) : ?>
-			<span class="createby"<?php echo $article_authorMD ?>>
-			<span class="icon-pencil"></span>
-			<?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', '<span'.$article_nameMD.'>'.$author.'</span>'); ?>
-			</span>
-			<?php endif; ?>
-			<?php /* Hits*/if ($params->get('show_hits')) : ?>
-			<span class="newsitem_hits"><span class="icon-eye-open"></span>
-			<?php echo $article_interactionrMD ?>
-			<?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?>
-			</span>
-			<?php endif; ?>
-		</div>
+		<?php if ($info == 0) include YJSG_ARTICLE_INFO; //layouts/yjsg_article_info.php ?>
+		<?php if ($info == 2) include YJSG_ARTICLE_INFO_SPLIT_TOP; //layouts/yjsg_article_info_split_top.php ?>
 		<?php /* Email and Print*/ if ($params->get('show_print_icon') || $params->get('show_email_icon') || $canEdit) : ?>
 		<div class="btn-group pull-right actiongroup">
 			<?php if ($bootstrap_version !='bootstrapoff') : ?>
@@ -220,6 +158,8 @@ echo  $fp_intro_text = substr(strip_tags($this->item->introtext,
 echo $this->item->introtext; 
 } 
 ?>
+	<?php if ($info == 1) include YJSG_ARTICLE_INFO; //layouts/yjsg_article_info.php ?>
+	<?php if ($info == 2) include YJSG_ARTICLE_INFO_SPLIT_BOTTOM; //layouts/yjsg_article_info_split_bottom.php ?>
 	</div>
 	<?php /* Read more link*/ if ($params->get('show_readmore') && $this->item->readmore) :
 if ($params->get('access-view')) :
