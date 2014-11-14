@@ -758,9 +758,8 @@ class plgSystemYjsg extends JPlugin {
                 unset($document->_styleSheets[JUri::root(true) . '/media/jui/css/icomoon.css']);
                 
             }
-            
-            
-            $css_file  = $document->params->get('css_file');
+
+			
             $defaultStyles = array(
                 'http://fonts.googleapis.com',
                 'yjsg/assets/css',
