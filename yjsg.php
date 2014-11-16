@@ -1147,7 +1147,46 @@ class plgSystemYjsg extends JPlugin {
 				}
 			}
 
-			
+			// Yjsg article options for specific category
+			if ($form->getName() == 'com_content.article') {
+				
+				 if ($this->app->isAdmin()) {
+					 
+						$article_id = $this->Int('id');
+						
+				 }else{
+					 
+						$article_id = $this->Int('a_id');
+				 }
+				
+				if(isset($article_id) && !empty($article_id) && JFolder::exists(YJSGCUSTOMFOLDER."yjsgarticle" )){
+					
+					$db = JFactory::getDbo();
+					$query ="SELECT a.catid,c.alias  
+							FROM #__content a
+							LEFT JOIN #__categories c
+							ON a.catid = c.id
+							WHERE a.id=".$article_id."";
+					
+					$db->setQuery($query);
+					$getalias		= $db->loadObject();
+					$custom_xml 	= $getalias->alias;
+					
+					$xml_files 		= JFolder::files(YJSGCUSTOMFOLDER."yjsgarticle", '.xml');
+					
+					if (is_array($xml_files) && in_array($custom_xml.".xml",$xml_files)){
+					
+						foreach($xml_files as $extra_xml){
+							
+							$extra_xml = JFile::stripExt($extra_xml);
+							if($extra_xml =='yjsg_article')continue;
+							$form->loadFile($extra_xml,false);
+							
+						}	
+					}
+				}
+
+			}			
 			
 		}
 
