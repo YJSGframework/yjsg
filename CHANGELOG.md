@@ -1,3 +1,38 @@
+##Version: 2.1.3 (November 24, 2014)
+
+###Code improvement
+
+  - Added custom article fields per category
+  - Added yjsg-iframe-lightbox 
+  - Refined yjsg_clean_shortcodes function
+  - Bootstrap 3.3.0 update
+  - Bootstrap multiselect update to v0.9.8
+  - Bootstrap tour update to v0.10.1
+  - Added files move methods for js and css files
+  - Grid inherit suffix from modules
+  - Hide module output if content is empty
+  - Moved module addspan function to module.php 
+
+
+###Bug fixes
+
+  - Pagination icon line-height fix
+  - Stray $css_file variable removed
+  - Mobile menu not reachable on android fix 
+  - Active-scroll is added on every # link
+  - Offline page picking up get_style_value from core
+  - Bootstrap3 k2 a.modal fix
+  - Yjsgbackground element background image preview fix
+  - a.yjsgsliderNav i needs font-style:normal;
+  - K2 edit item css fixes
+  - Leave unicode characters in tact in yjsg_cleanup_shortcode function 
+  - Start patterns array in yjsgbackground.php element 
+  - Mobile menu item class not displayed when cache on
+  - Magnific popup z-index fix 
+  - blockquote.quoted,blockquote.brackets need overflow hidden
+  - News items multicolumns margin adjustmant
+  - Fixed article info position params
+
 ##Version: 2.1.2 (October 06, 2014)
 
 ###Bug fixes
