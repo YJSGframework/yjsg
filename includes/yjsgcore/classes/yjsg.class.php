@@ -379,6 +379,13 @@ class Yjsg {
 
 		$this->defaultXMl = simplexml_load_file (JPATH_ROOT.YJDS.'templates'.YJDS.$templatename.YJDS.'templateDetails.xml', NULL, LIBXML_NOCDATA|LIBXML_NOBLANKS);		
 		
+		
+		if($this->app->isAdmin() && JDEBUG && version_compare(JVERSION,'3.0.0','ge')){
+			
+			$this->defaultXMl ='';
+			
+		}
+		
 		return $this->defaultXMl;
 	}
 	
