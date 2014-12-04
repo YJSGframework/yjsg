@@ -141,16 +141,6 @@ class Yjsg {
 	 
 	public $attrbvalue ='';
 	
-    /**
-     * Template xml file
-     *
-     * @return	array
-     * @since 2.0.0
-     */	
-	 
-	public $defaultXMl = null;
-	
-	
 	
     /**
      * Return template legacy version if exists
@@ -377,16 +367,10 @@ class Yjsg {
 			$templatename = $tname;
 		}
 
-		$this->defaultXMl = simplexml_load_file (JPATH_ROOT.YJDS.'templates'.YJDS.$templatename.YJDS.'templateDetails.xml', NULL, LIBXML_NOCDATA|LIBXML_NOBLANKS);		
+		$defaultXMl = simplexml_load_file (JPATH_ROOT.YJDS.'templates'.YJDS.$templatename.YJDS.'templateDetails.xml', NULL, LIBXML_NOCDATA|LIBXML_NOBLANKS);		
+
 		
-		
-		if($this->app->isAdmin() && JDEBUG && version_compare(JVERSION,'3.0.0','ge')){
-			
-			$this->defaultXMl ='';
-			
-		}
-		
-		return $this->defaultXMl;
+		return $defaultXMl;
 	}
 	
 

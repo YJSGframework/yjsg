@@ -866,13 +866,6 @@ class plgSystemYjsg extends JPlugin {
 				$document->setMetaData('og:description',$cleanDescription);
 			}
 		}
-	
-		//notify user that yjsg admin is disabled in debug mode
-		if($this->app->isAdmin() && JDEBUG && version_compare(JVERSION,'3.0.0','ge')){
-
-			$this->app->enqueueMessage(JText::_('YJSG_DEBUG_ON'), 'message');
-		}
-			
 	}
 	    
     function onAfterRender() {
