@@ -238,7 +238,16 @@
                 type: 'image',
                 mainClass: 'mfp-fade'
             });
-			
+
+
+            $('.yjsg-link-lightbox-gallery').magnificPopup({
+                type: 'image',
+                mainClass: 'mfp-fade',
+                gallery: {
+                    enabled: true
+                }
+            });
+						
 			
 		   $('.yjsg-iframe-lightbox').magnificPopup({
 			  type: 'iframe',
