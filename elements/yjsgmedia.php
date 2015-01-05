@@ -95,6 +95,10 @@ class JFormFieldYjsgmedia extends JFormField
 									parent.find('.TipPreview').attr('data-original-title', '". JText::_('JLIB_FORM_MEDIA_PREVIEW_EMPTY') ."');
 								}
 							});
+							
+							$('.openiframe').on('click', function (el) {
+								 el.preventDefault();
+							});
 						
 					});
 				})(jQuery);
@@ -141,7 +145,7 @@ class JFormFieldYjsgmedia extends JFormField
 		$html[] ='</span>';
 		$html[] ='<input type="text"  name="' . $this->name . '" id="' . $this->id . '" class="form-control mediaInput" readonly="readonly" placeholder="'.JText::_('YJSG_SELECT_IMAGE').'" value="'. htmlspecialchars($this->value, ENT_COMPAT, 'UTF-8') . '">';
 		$html[] ='<span class="input-group-btn">';
-		$html[] ='<button id="'.$this->element['name'].'_openm" class="btn btn-default btn-sm" data-toggle="modal" data-target="#Modal_'.$this->element['name'].'">';
+		$html[] ='<button id="'.$this->element['name'].'_openm" class="btn btn-default btn-sm openiframe" data-toggle="modal" data-target="#Modal_'.$this->element['name'].'">';
 		$html[] ='Select';
 		$html[] ='</button>';
 		$html[] ='<button class="btn btn-default btn-sm resetMedia">';
