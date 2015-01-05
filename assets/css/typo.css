@@ -1979,23 +1979,23 @@ img.mfp-img {
 	padding:5px;
 	font-size:11px;
 	opacity:0;
-	filter:alpha(opacity=0)
+	filter:alpha(opacity=0);
 }
 .tooltip.in {
 	opacity:.8;
-	filter:alpha(opacity=80)
+	filter:alpha(opacity=80);
 }
 .tooltip.top {
-	margin-top:-2px
+	margin-top:-2px;
 }
 .tooltip.right {
-	margin-left:2px
+	margin-left:2px;
 }
 .tooltip.bottom {
-	margin-top:2px
+	margin-top:2px;
 }
 .tooltip.left {
-	margin-left:-2px
+	margin-left:-2px;
 }
 .tooltip.top .tooltip-arrow {
 	bottom:0;
@@ -2003,7 +2003,7 @@ img.mfp-img {
 	margin-left:-5px;
 	border-left:5px solid transparent;
 	border-right:5px solid transparent;
-	border-top:5px solid #000
+	border-top:5px solid #000;
 }
 .tooltip.left .tooltip-arrow {
 	top:50%;
@@ -2011,7 +2011,7 @@ img.mfp-img {
 	margin-top:-5px;
 	border-top:5px solid transparent;
 	border-bottom:5px solid transparent;
-	border-left:5px solid #000
+	border-left:5px solid #000;
 }
 .tooltip.bottom .tooltip-arrow {
 	top:0;
@@ -2019,7 +2019,7 @@ img.mfp-img {
 	margin-left:-5px;
 	border-left:5px solid transparent;
 	border-right:5px solid transparent;
-	border-bottom:5px solid #000
+	border-bottom:5px solid #000;
 }
 .tooltip.right .tooltip-arrow {
 	top:50%;
@@ -2027,7 +2027,7 @@ img.mfp-img {
 	margin-top:-5px;
 	border-top:5px solid transparent;
 	border-bottom:5px solid transparent;
-	border-right:5px solid #000
+	border-right:5px solid #000;
 }
 .tooltip-inner {
 	max-width:200px;
@@ -2038,12 +2038,12 @@ img.mfp-img {
 	background-color:#000;
 	-webkit-border-radius:4px;
 	-moz-border-radius:4px;
-	border-radius:4px
+	border-radius:4px;
 }
 .tooltip-arrow {
 	position:absolute;
 	width:0;
-	height:0
+	height:0;
 }
 .yjsg-round-progress,
 [data-yjsg-round-progress]{
@@ -2055,8 +2055,13 @@ img.mfp-img {
 	border-top-color:#40b1e2;
 	border-bottom-color:#ccc;
 }
-.bootstrap3 #k2Container a.modal{
+.bootstrap3 a.modal{
 	display:inline;
+	overflow:hidden;
+	position:static;
+}
+.bootstrap3 .itemImage a.modal{
+	display:block;
 	overflow:hidden;
 	position:static;
 }
