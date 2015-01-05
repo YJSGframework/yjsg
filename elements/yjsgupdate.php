@@ -223,7 +223,7 @@ if(isset($_POST['task']))	{
 
 				$db 	= JFactory::getDbo();
 				$query = "INSERT INTO #__template_styles( template, client_id, title,params)
-							SELECT '".$template_name."',client_id,'".$newName."','".$params."'
+							SELECT '".$template_name."',client_id,'".$newName."','".$db->getEscaped($params)."'
 							FROM #__template_styles
 							WHERE id =".$template_id."
 						";
