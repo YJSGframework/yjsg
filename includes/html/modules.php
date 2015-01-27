@@ -58,6 +58,8 @@ function modChrome_YJsgxhtml($module, &$params, &$attribs){
 	$moduleid					= ' modid'.$module->id;
 	$yjsg_module_style			= $params->get('yjsg_module_style','default');
 	$yjsg_suffix_class			='';
+	$before_module				= $params->get('before_module','');
+	$after_module				= $params->get('after_module','');
 	
 	// yjsg suffix
 	if($yjsg_module_style !='default'){
@@ -111,9 +113,9 @@ function modChrome_YJsgxhtml($module, &$params, &$attribs){
 	
 	}
 
-
 	// output
-	$module_output  = '<'.$module_tag.' class="yjsquare'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
+	$module_output   = $before_module;
+	$module_output  .= '<'.$module_tag.' class="yjsquare'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
 	
 	if ($module->showtitle){
 		
@@ -128,6 +130,7 @@ function modChrome_YJsgxhtml($module, &$params, &$attribs){
 	$module_output .= $module->content;
 	$module_output .= '</div>';
 	$module_output .= '</'.$module_tag.'>';
+	$module_output .= $after_module;
 	
 	
 	
@@ -159,6 +162,8 @@ function modChrome_YJsground($module, &$params, &$attribs){
 	$moduleid					= ' modid'.$module->id;
 	$yjsg_module_style			= $params->get('yjsg_module_style','default');
 	$yjsg_suffix_class			='';
+	$before_module				= $params->get('before_module','');
+	$after_module				= $params->get('after_module','');
 	
 	// yjsg suffix
 	if($yjsg_module_style !='default'){
@@ -215,7 +220,8 @@ function modChrome_YJsground($module, &$params, &$attribs){
 
 
 	// output
-	$module_output  = '<'.$module_tag.' class="yjsquare addround'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
+	$module_output   = $before_module;
+	$module_output  .= '<'.$module_tag.' class="yjsquare addround'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
 	
 	if ($module->showtitle){
 		
@@ -230,6 +236,7 @@ function modChrome_YJsground($module, &$params, &$attribs){
 	$module_output .= $module->content;
 	$module_output .= '</div>';
 	$module_output .= '</'.$module_tag.'>';
+	$module_output .= $after_module;
 	
 	
 	
@@ -251,6 +258,8 @@ function modChrome_YJsgplain($module, &$params, &$attribs){
 	$module_suffix_class		= htmlspecialchars($params->get('moduleclass_sfx'));
 	$yjsg_module_style			= $params->get('yjsg_module_style','default');
 	$yjsg_suffix_class			='';
+	$before_module				= $params->get('before_module','');
+	$after_module				= $params->get('after_module','');
 	
 	
 	// yjsg suffix
@@ -271,9 +280,11 @@ function modChrome_YJsgplain($module, &$params, &$attribs){
 	}
 
 	// output
-	$module_output  = '<'.$module_tag.' class="yjplain'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
+	$module_output  = $before_module;
+	$module_output .= '<'.$module_tag.' class="yjplain'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
 	$module_output .= $module->content;
 	$module_output .= '</'.$module_tag.'>';
+	$module_output .= $after_module;
 	
 	
 	
