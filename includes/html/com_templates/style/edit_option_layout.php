@@ -158,10 +158,10 @@ if($name =='YJSG_LAYOUT_LABEL' || $name =='YJSG_DEF_GRID_LABEL' || $name =='YJSG
 						<div id="mainbodyLayoutHolder" class="mbLayout yjsg_maingrid midleftright">
 							<div class="selectLayout">
 								<div class="lblock">
-									<span> Select layout </span>
-									<div class="layoutOption lmr" data-layout="1" title="Left - Mainbody - Inset - Right"></div>
-									<div class="layoutOption mlr" data-layout="2" title="Mainbody - Inset - Left - Right"></div>
-									<div class="layoutOption lrm" data-layout="3" title="Left - Right - Inset - Mainbody"></div>
+									<span> <?php echo JText::_('YJSG_SELECT_LAYOUT') ?> </span>
+									<div class="layoutOption lmr" data-layout="1" title="<?php echo JText::_('YJSG_SELECT_LAYOUT_LMR') ?>"></div>
+									<div class="layoutOption mlr" data-layout="2" title="<?php echo JText::_('YJSG_SELECT_LAYOUT_MLR') ?>"></div>
+									<div class="layoutOption lrm" data-layout="3" title="<?php echo JText::_('YJSG_SELECT_LAYOUT_LRM') ?>"></div>
 								</div>
 								<div class="lblock">
 									<ul class="adminformlist">
