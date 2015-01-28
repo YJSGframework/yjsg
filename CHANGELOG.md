@@ -1,3 +1,18 @@
+##Version: 2.2.0 (January 28, 2015)
+
+###New features
+ - Added yjsg-link-lightbox-gallery
+ - Added before and after module content
+ - Updated Font Awesome to 4.3.0
+
+###Code improvement
+ - Removed empty space from article separator
+ - Fixed a.modal bootstrap3 conflict 
+ - Escape db params when making template copy
+ - Yjsgmedia element prevent default button action
+ - Removed xml data from dbug
+ - Js cleanup for IE
+ 
 ##Version: 2.1.3 (November 24, 2014)
 
 ###Code improvement
@@ -30,7 +45,7 @@
   - Mobile menu item class not displayed when cache on
   - Magnific popup z-index fix 
   - blockquote.quoted,blockquote.brackets need overflow hidden
-  - News items multicolumns margin adjustmant
+  - News items multicolumns margin adjustment
   - Fixed article info position params
 
 ##Version: 2.1.2 (October 06, 2014)
