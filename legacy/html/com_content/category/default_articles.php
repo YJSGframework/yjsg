@@ -159,6 +159,7 @@ $listDirn	= $this->escape($this->state->get('list.direction'));
 
 <?php // Code to add a link to submit an article. ?>
 <?php if ($this->category->getParams()->get('access-create')) : ?>
+	<br />
 	<?php echo JHtml::_('icon.create', $this->category, $this->category->params); ?>
 <?php  endif; ?>
 	<?php if (($this->params->def('show_pagination', 2) == 1  || ($this->params->get('show_pagination') == 2)) && ($this->pagination->get('pages.total') > 1)) : ?>
