@@ -62,7 +62,7 @@ class JFormFieldYjsgbackgrounds extends JFormFieldList
 		// Get a list of files in the search path with the given filter.
 		$files = JFolder::files($path, $filter);
 
-
+		$patterns_layout = array();
 
 		// Build the options list from the list of files.
 		if (is_array($files))

@@ -117,6 +117,10 @@
 	[data-sticky-block]{
 		display:none!important;
 	}
+
+	div.yjsg-newsitems .float-left{
+		width:50%;
+	}
 }
 @media screen and (max-width: 768px) {
 	.yjsg-font-mega,
@@ -133,6 +137,11 @@
 		clear:both!important;
 	}
 	
+	div.yjsg-newsitems div.multicolumns{
+		margin-left:0px;
+		margin-right:0px;
+	}
+
 	#footer div,
 	.yjsglogo{
 		display:block;

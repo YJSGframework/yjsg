@@ -44,7 +44,9 @@ $paramsArray						 = json_decode($this->params,true);
 
 // STYLE SETTINGS
 
-$get_style_value				 	= explode('|',$this->params->get("yjsg_get_styles","blue|007ebd"));
+if(!isset($get_style_value)){
+	$get_style_value				 	= explode('|',$this->params->get("yjsg_get_styles","blue|007ebd"));
+}
 $yjsg_get_styles				 	= $get_style_value[0];	
 $default_link_color				 	= $get_style_value[1];
 $site_link_color				 	= '#'.$default_link_color;

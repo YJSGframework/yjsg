@@ -11,12 +11,15 @@
 defined('_JEXEC') or die;
 
 JHtml::addIncludePath(JPATH_COMPONENT.YJDS.'helpers');
-$params = &$this->params;
+$params = $this->params;
 
 ?>
-
 <div id="archive-items">
-	<?php foreach ($this->items as $i => $item) : ?>
+	<?php foreach ($this->items as $i => $item) : 
+			$info = $item->params->get('info_block_position', 0); 
+			$author = $params->get('link_author', 0) ? JHTML::_('link',JRoute::_('index.php?option=com_users&amp;view=profile&amp;member_id='.$item->created_by),$item->author) : $item->author; 
+			$author	=($item->created_by_alias ? $item->created_by_alias : $author);
+			?>
 	<div class="news_item_a" itemscope itemtype="http://schema.org/Article">
 		<h2 class="pagetitle" itemprop="name">
 			<?php if ($params->get('link_titles')): ?>
@@ -28,53 +31,8 @@ $params = &$this->params;
 			<?php endif; ?>
 		</h2>
 		<div class="newsitem_tools">
-			<div class="newsitem_info">
-				<?php if ($params->get('show_create_date')) : ?>
-				<span class="createdate">
-				<?php echo JText::sprintf('COM_CONTENT_CREATED_DATE_ON', JHTML::_('date',$item->created, JText::_('DATE_FORMAT_LC2'))); ?>
-				</span>
-				<?php endif; ?>
-				<?php if ($params->get('show_author') && !empty($item->author )) : ?>
-				<span class="createby" itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="icon-pencil"></span>
-				<?php $author =  $item->author; ?>
-				<?php $author = ($item->created_by_alias ? $item->created_by_alias : $author);?>
-				<?php if (!empty($item->contactid ) &&  $params->get('link_author') == true):?>
-				<?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY' , 
-					 JHTML::_('link',JRoute::_('index.php?option=com_contact&view=contact&id='.$item->contactid),'<span itemprop="name">'.$author.'<span>')); ?>
-				<?php else :?>
-				<?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY','<span itemprop="name">'.$author.'</span>'); ?>
-				<?php endif; ?>
-				</span>
-				<?php endif; ?>
-				<?php if ($params->get('show_parent_category')) : ?>
-				<span class="newsitem_category"><span class="icon-list-alt"></span>
-				<?php	$title = $this->escape($item->parent_title);
-						$url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($item->catslug)).'" itemprop="genre">'.$title.'</a>';?>
-				<?php if ($params->get('link_parent_category') && $item->parent_slug) : ?>
-				<?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
-				<?php else : ?>
-				<?php echo JText::sprintf('COM_CONTENT_PARENT', '<span itemprop="genre">'.$title.'</span>'); ?>
-				<?php endif; ?>
-				</span>
-				<?php endif; ?>
-				<?php if ($params->get('show_category')) : ?>
-				<span class="newsitem_category"><span class="icon-list-alt"></span>
-				<?php	$title = $this->escape($item->category_title);
-						$url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($item->catslug)) . '" itemprop="genre">' . $title . '</a>'; ?>
-				<?php if ($params->get('link_category') && $item->catslug) : ?>
-				<?php echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
-				<?php else : ?>
-				<?php echo JText::sprintf('COM_CONTENT_CATEGORY', '<span itemprop="genre">'.$title.'</span>'); ?>
-				<?php endif; ?>
-				</span>
-				<?php endif; ?>
-				<?php if ($params->get('show_hits')) : ?>
-				<span class="newsitem_hits"><span class="icon-eye-open"></span>
-				<meta itemprop="interactionCount" content="UserPageVisits:<?php echo $item->hits; ?>" />
-				<?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $item->hits); ?>
-				</span>
-				<?php endif; ?>
-			</div>
+			<?php if ($info == 0) include YJSG_ARTICLE_INFO; //layouts/yjsg_article_info.php ?>
+			<?php if ($info == 2) include YJSG_ARTICLE_INFO_SPLIT_TOP; //layouts/yjsg_article_info_split_top.php ?>
 			<div class="yjsg-clear-all"></div>
 		</div>
 		<?php if ($params->get('show_intro')) :?>
@@ -83,20 +41,8 @@ $params = &$this->params;
 			<?php echo JHTML::_('string.truncate', $item->introtext, $params->get('introtext_limit')); ?>
 		</div>
 		<?php endif; ?>
-		<?php if ($params->get('show_modify_date')) : ?>
-		<span class="modifydate"><span class="icon-calendar"></span>
-		<time datetime="<?php echo JHtml::_('date', $item->modified, 'c'); ?>" itemprop="dateModified">
-			<?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHTML::_('date',$item->modified, JText::_('DATE_FORMAT_LC2'))); ?>
-		</time>
-		</span>
-		<?php endif; ?>
-		<?php if ($params->get('show_publish_date')) : ?>
-		<span class="createdate"><span class="icon-calendar"></span>
-		<time datetime="<?php echo JHtml::_('date', $item->publish_up, 'c'); ?>" itemprop="datePublished">
-			<?php echo JText::sprintf('COM_CONTENT_PUBLISHED_DATE_ON', JHTML::_('date',$item->publish_up, JText::_('DATE_FORMAT_LC2'))); ?>
-		</time>
-		</span>
-		<?php endif; ?>
+		<?php if ($info == 1) include YJSG_ARTICLE_INFO; //layouts/yjsg_article_info.php ?>
+		<?php if ($info == 2) include YJSG_ARTICLE_INFO_SPLIT_BOTTOM; //layouts/yjsg_article_info_split_bottom.php ?>
 	</div>
 	<?php endforeach; ?>
 </div>

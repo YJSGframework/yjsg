@@ -567,7 +567,7 @@
             topmenuLocation.on('change', function () {
                 var selected = $(this).val();
 
-                if (selected == 1) {
+                if (selected == 1 && !$( ".topmenu" ).is( ".prependTopmenu" ) ) {
 
                     $('#yjsg_headergrid').find('.opensettings,.settingpannel,.yjsg_moduleh,.YJSG_reset-values').addClass('hidden');
                     $('#yjsg_headergrid').prepend('<div class="topmenu orange prependTopmenu">top menu</div>');

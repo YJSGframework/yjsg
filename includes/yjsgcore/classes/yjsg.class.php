@@ -31,7 +31,7 @@ class Yjsg {
      * @since 2.0.0
      */	
 	 
-	public $version = "2.0.1";
+	public $version = "2.2.0";
 	
     /**
      * Check update
@@ -140,16 +140,6 @@ class Yjsg {
      */		
 	 
 	public $attrbvalue ='';
-	
-    /**
-     * Template xml file
-     *
-     * @return	array
-     * @since 2.0.0
-     */	
-	 
-	public $defaultXMl = null;
-	
 	
 	
     /**
@@ -377,9 +367,10 @@ class Yjsg {
 			$templatename = $tname;
 		}
 
-		$this->defaultXMl = simplexml_load_file (JPATH_ROOT.YJDS.'templates'.YJDS.$templatename.YJDS.'templateDetails.xml', NULL, LIBXML_NOCDATA|LIBXML_NOBLANKS);		
+		$defaultXMl = simplexml_load_file (JPATH_ROOT.YJDS.'templates'.YJDS.$templatename.YJDS.'templateDetails.xml', NULL, LIBXML_NOCDATA|LIBXML_NOBLANKS);		
+
 		
-		return $this->defaultXMl;
+		return $defaultXMl;
 	}
 	
 
@@ -1237,9 +1228,97 @@ class Yjsg {
 		}
 		
 		
+	}
+	
+	
+    /**
+     * Clean pageclass_sfx
+     *
+     * @return void
+     * @since 2.1.1
+     */
+	 
+	public function yjsgCleanPageSfx() {
 		
+			
+		$menu 					= $this->app->getMenu();
+		
+		if(isset($menu->getActive()->params)){
+			$activeparams		= $menu->getActive()->params;
+			$pageclass_sfx		= $activeparams->get('pageclass_sfx');
+			
+			if(!empty($pageclass_sfx)){
+				$activeparams->set('pageclass_sfx',' ' .trim($pageclass_sfx));
+			}
+			
+		}
+		
+	}	
+	
+	
+	
+    /**
+     * Move js files
+     *
+     * @return void
+     * @since 2.1.3
+     */	
+	
+	public function yjsgMoveJs($movejsfiles=array()) {
+		
+		
+		$document 	= JFactory::getDocument();
+		$newJs		= array();
+		
+		foreach ($document->_scripts as $path => $file) {
+			
+			foreach ($movejsfiles as $find) {
+				
+				if (strpos($path, $find) !== false) {
+					$newJs[$path] = $document->_scripts[$path];
+					unset($document->_scripts[$path]);
+				}
+			}
+			
+		}
+		
+		$newJsFiles         = array_merge($document->_scripts, $newJs);
+		$document->_scripts = $newJsFiles;
 		
 	}
+	
+	
+    /**
+     * Move CSS files
+     *
+     * @return void
+     * @since 2.1.3
+     */	
+	
+	public function yjsgMoveCss($movecssfiles=array()) {
+		
+		
+		$document 	= JFactory::getDocument();
+		$newStyles	= array();
+		
+            foreach ($document->_styleSheets as $path => $file) {
+                
+                foreach ($movecssfiles as $find) {
+                    
+                    if (strpos($path, $find) !== false) {
+                        $newStyles[$path] = $document->_styleSheets[$path];
+                        unset($document->_styleSheets[$path]);
+                    }
+                }
+                
+            }
+			
+            $newstyleSheets         = array_merge($document->_styleSheets, $newStyles);
+            $document->_styleSheets = $newstyleSheets;
+		
+	}
+	
+	
 	
 	
 }
@@ -1266,6 +1345,12 @@ class JDocumentRendererHtmlclass extends JDocumentRenderer{
 		$tparams			= $app->getTemplate(true)->params;
 		$html_class			= array();
 		$top_menu_location	= $tparams->get('top_menu_location',0);
+		$pageclass_sfx		= '';
+		
+		if(isset($menu->getActive()->params)){
+			$pageclass_sfx		= $menu->getActive()->params->get('pageclass_sfx');
+		}
+		
 		
 		if($app->isSite()){
 			
@@ -1318,6 +1403,14 @@ class JDocumentRendererHtmlclass extends JDocumentRenderer{
 			if($text_direction == 1){
 				
 				$html_class[]		='yjsgrtl';
+			}
+			
+			
+			// pageclass_sfx 
+			
+			if(!empty($pageclass_sfx)){
+				
+				$html_class[]		=trim($pageclass_sfx);
 			}
 		}
 		

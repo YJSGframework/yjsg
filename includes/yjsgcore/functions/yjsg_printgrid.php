@@ -316,6 +316,9 @@ function yjsg_print_grid_area($yjsg_grid_name,$add_width =false,$before ='',$aft
 		}else{
 					$gridDivName	= $yjsg_grid_name;
 		}
+		
+		$grid_suffix		= array();
+		
 		$html = '<div id="'.$gridDivName.'" class="yjsg_grid'.$add_width.'">';
 		
 		  
@@ -380,6 +383,7 @@ function yjsg_print_grid_area($yjsg_grid_name,$add_width =false,$before ='',$aft
 			$accordion_suffix	= '';
 			$slider_suffix		= '';
 			
+			
 			// yjsg suffix
 			if($yjsg_module_style !='default' && empty($module_suffix)){
 				
@@ -390,7 +394,8 @@ function yjsg_print_grid_area($yjsg_grid_name,$add_width =false,$before ='',$aft
 
 				$tabs_suffix		= ' tabssfx-yjsgsfx-'.trim($module_suffix);
 				$accordion_suffix	= ' accordionsfx-yjsgsfx-'.trim($module_suffix);
-				$slider_suffix		= ' slidersfx-yjsgsfx-'.trim($module_suffix);				
+				$slider_suffix		= ' slidersfx-yjsgsfx-'.trim($module_suffix);
+				$grid_suffix	    []= ' gridsfx-'.trim($module_suffix);				
 				$module_suffix 		= ' yjsgsfx-'.trim($module_suffix);
 
 			}
@@ -421,7 +426,7 @@ function yjsg_print_grid_area($yjsg_grid_name,$add_width =false,$before ='',$aft
 				
 			}
 
-
+			
 		
 			if( !$mod_width ) continue;
 			
@@ -547,6 +552,14 @@ function yjsg_print_grid_area($yjsg_grid_name,$add_width =false,$before ='',$aft
 			
 		  }
 		$html .= '</div>';
+		
+		if(!empty($grid_suffix)){
+			
+			$add_grid_suffix = implode('',$grid_suffix);
+			$html = str_replace('yjsg_grid','yjsg_grid'.$add_grid_suffix,$html);
+			
+		}
+		
 
 		if( $echo ){
 		  echo $before.$html.$after;

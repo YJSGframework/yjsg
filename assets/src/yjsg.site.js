@@ -103,7 +103,7 @@
                     el.css('margin-top', pushed);
                 }
 
-                window.addEventListener("scroll", function (evt) {
+                $(document).on("scroll", function (evt) {
 
                     if ($(window).scrollTop() >= offset) {
 
@@ -169,7 +169,7 @@
 			   cur = cur[cur.length-1];
 			   var id = cur && cur.length ? cur[0].id : "";
 			   
-			   if (lastScrollId !== id) {
+			   if (lastScrollId !== id && id !="") {
 				   lastScrollId = id;
 				   stickyItems.removeClass("active-scroll");
 				   $("[href=#"+id+"]").addClass("active-scroll");
@@ -238,6 +238,22 @@
                 type: 'image',
                 mainClass: 'mfp-fade'
             });
+
+
+            $('.yjsg-link-lightbox-gallery').magnificPopup({
+                type: 'image',
+                mainClass: 'mfp-fade',
+                gallery: {
+                    enabled: true
+                }
+            });
+						
+			
+		   $('.yjsg-iframe-lightbox').magnificPopup({
+			  type: 'iframe',
+			  mainClass: 'mfp-fade'
+			});
+			
 
         },
 
@@ -370,7 +386,7 @@
                 $(canvas).css(startCss).addClass('canvas_active').animate(openPoz, 400);
 
                 $(overlay).addClass('canvas_active').animate({
-                    backgroundColor: "rgba(0, 0, 0, 0.3)",
+                    backgroundColor: "rgba(0, 0, 0, 0.3)"
                 }, 400);
 
                 $('html').addClass('canvas_on').stop().animate(openMargin, 400);
@@ -385,7 +401,7 @@
                 if (target.parents('.yjsg-off_canvas_in').length != 0 && !target.parents().hasClass('closeCanvas') || target.hasClass('yjsg-off_canvas_in')) return;
 
                 $('.yjsg-off_canvas').animate({
-                    backgroundColor: "rgba(0, 0, 0, 0)",
+                    backgroundColor: "rgba(0, 0, 0, 0)"
                 }, 400);
 
                 $('.yjsg-off_canvas_in').stop().animate(closePoz, 400, function () {
@@ -540,7 +556,7 @@
                         $(this).find('div.nogroup').first().css({
                             top: getTop * 2,
                             opacity: 0,
-                            display: 'block',
+                            display: 'block'
 
                         }).stop(true, true).animate({
                             'top': getTop,
@@ -556,7 +572,7 @@
                         $(this).find('div.nogroup').first().css({
                             top: getTop,
                             opacity: 0,
-                            display: 'block',
+                            display: 'block'
 
                         }).stop(true, true).animate({
                             'top': 0,
@@ -931,13 +947,13 @@
                 $(this).on('mouseenter', function (event) {
 
                     $(this).find('img').animate({
-                        'opacity': opacity,
+                        'opacity': opacity
                     }, speed);
 
                 }).on('mouseleave', function (event) {
 
                     $(this).find('img').animate({
-                        'opacity': 1,
+                        'opacity': 1
                     }, speed);
 
                 });
@@ -1060,7 +1076,7 @@
                 }
             });
 
-        },
+        }
 
     }
 
