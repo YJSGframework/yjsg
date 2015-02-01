@@ -126,12 +126,12 @@
 				<option value="2">Midblock-Leftblock-Rightblock</option>
 				<option value="3">Leftblock-Rightblock-Midblock</option>
 			</field>
-			<field name="maincolumn" type="yjsgsinglebox" default="55" gridgroup="mainbody" clabel="YJSG_MAINBODY" />
-			<field name="insetcolumn" type="yjsgsinglebox" default="0" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="YJSG_INSET" />
-			<field name="leftcolumn" type="yjsgsinglebox" default="22.5" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="YJSG_LEFT" />
-			<field name="rightcolumn" type="yjsgsinglebox" default="22.5" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="YJSG_RIGHT" />
-			<field name="insettop" type="yjsgsinglebox" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="YJSG_INSETTOP" />
-			<field name="insetbottom" type="yjsgsinglebox" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="YJSG_INSETBOTTOM" />
+			<field name="maincolumn" type="yjsgsinglebox" default="55" gridgroup="mainbody" clabel="mainbody" />
+			<field name="insetcolumn" type="yjsgsinglebox" default="0" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="inset" />
+			<field name="leftcolumn" type="yjsgsinglebox" default="22.5" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="left" />
+			<field name="rightcolumn" type="yjsgsinglebox" default="22.5" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="right" />
+			<field name="insettop" type="yjsgsinglebox" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="insettop" />
+			<field name="insetbottom" type="yjsgsinglebox" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="insetbottom" />
 			<field name="define_itemid"  type="menuitem" class="yjsgmultiselect" multiple="multiple" default="0" />
 		</fieldset>
 		<!-- Modules Grids settings -->
