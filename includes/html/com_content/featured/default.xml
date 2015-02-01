@@ -46,8 +46,8 @@
 				label="JGLOBAL_MULTI_COLUMN_ORDER_LABEL"
 			>
 				<option value="">JGLOBAL_USE_GLOBAL</option>
-				<option value="0">JGLOBAL_Down</option>
-				<option value="1">JGLOBAL_Across</option>
+				<option value="0">JGLOBAL_DOWN</option>
+				<option value="1">JGLOBAL_ACROSS</option>
 			</field>
 
 			<field name="orderby_pri" type="list"
@@ -55,7 +55,7 @@
 				label="JGLOBAL_CATEGORY_ORDER_LABEL"
 			>
 				<option value="">JGLOBAL_USE_GLOBAL</option>
-				<option value="none">JGLOBAL_No_Order</option>
+				<option value="none">JGLOBAL_NO_ORDER</option>
 				<option value="alpha">JGLOBAL_TITLE_ALPHABETICAL</option>
 				<option value="ralpha">JGLOBAL_TITLE_REVERSE_ALPHABETICAL</option>
 				<option value="order">JGLOBAL_CATEGORY_MANAGER_ORDER</option>
@@ -127,8 +127,8 @@
 			>
 				<option value="">JGLOBAL_USE_GLOBAL</option>
 				<option value="use_article">COM_CONTENT_FIELD_VALUE_USE_ARTICLE_SETTINGS</option>
-				<option value="0">JNo</option>
-				<option value="1">JYes</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
 			</field>
 
 			<field name="show_intro" type="list"
@@ -156,8 +156,8 @@
 			>
 				<option value="">JGLOBAL_USE_GLOBAL</option>
 				<option value="use_article">COM_CONTENT_FIELD_VALUE_USE_ARTICLE_SETTINGS</option>
-				<option value="0">JNo</option>
-				<option value="1">JYes</option>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
 			</field>
 
 			<field name="show_parent_category" type="list"
