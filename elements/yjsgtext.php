@@ -27,7 +27,7 @@ class JFormFieldYJSGText extends JFormField
 		
 		$size = ( $this->element['size'] ? 'size="'.$this->element['size'].'"' : '' );
 		$class = ( $this->element['class'] ? 'class="'.$this->element['class'].'"' : 'class="text_area"' );
-		
+		$hint = ( $this->element['hint'] ? 'placeholder="'.JText::_($this->element['hint']).'"' : '' );
 		
 		$searchName1 = array('maincolumn','insetcolumn','leftcolumn','rightcolumn');
 		$searchName2 = array('maincolumn_itmid','insetcolumn_itmid','leftcolumn_itmid','rightcolumn_itmid');
@@ -56,6 +56,6 @@ class JFormFieldYJSGText extends JFormField
 		$output .='';
 		$output .='';
 		
-       	return '<input type="text" name="'.$this->name.'" id="'.$this->id.'" value="'.$this->value.'" '.$class.' '.$size.' />';
+       	return '<input type="text" name="'.$this->name.'" id="'.$this->id.'" value="'.$this->value.'" '.$hint.' '.$class.' '.$size.' />';
 	}	
 }
