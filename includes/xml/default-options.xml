@@ -12,7 +12,7 @@
 				<option value="2">YJSG_NO</option>
 			</field>
 			<field name="yjsg_get_styles" type="yjsglist" default="blue|007ebd" label="YJSG_COLOR_LABEL" description="YJSG_COLOR_DESC" yjsgstyles="blue==007ebd">
-				<option value="blue|007ebd">Blue</option>
+				<option value="blue|007ebd">YJSG_COLOR_OPTION_BLUE</option>
 			</field>
 			<field name="default_font" type="yjsgtext" default="14px" label="YJSG_FONT_SIZE_LABEL" description="YJSG_FONT_SIZE_DESC" />
 			<field name="default_font_family" type="yjsglist" default="6" label="YJSG_FONT_FAM_LABEL" description="YJSG_FONT_FAM_DESC">
@@ -80,17 +80,17 @@
 		<fieldset name="YJSG_TOP_MENU_LABEL">
 			<field name="YJSG_TOP_MENU_YJ_LABEL" type="yjsgparamtitle" default="YJSG_TOP_MENU_YJ_LABEL" />
 			<field name="top_menu_location" type="yjsglist" default="0" label="YJSG_TOP_MENU_LOCATION_LABEL" description="YJSG_TOP_MENU_LOCATION_DESC">
-				<option value="0">Flexible</option>
-				<option value="1">In header</option>
+				<option value="0">YJSG_TOP_MENU_LOCATION_OPTION_FLEXIBLE</option>
+				<option value="1">YJSG_TOP_MENU_LOCATION_OPTION_INHEADER</option>
 			</field>
 			<field name="menuName" type="menu" default="mainmenu" label="YJSG_DEF_TOP_MENU_LABEL" description="YJSG_DEF_TOP_MENU_DESC" />
 			<field name="default_menu_style" type="yjsglist" default="2" label="YJSG_DEF_MENU_STYLE_LABEL" description="YJSG_DEF_MENU_STYLE_DESC">
-				<option value="1" enable="yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance" disable="default_menu_animation|yjsg_menu_animation_speed">Dropdown Menu</option>
-				<option value="2" enable="default_menu_animation|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance">SMooth Dropdown</option>
-				<option value="3" enable="yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance" disable="default_menu_animation|yjsg_menu_animation_speed">Dropline</option>
-				<option value="4" enable="default_menu_animation|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance">SMooth Dropline</option>
-				<option value="5" disable="default_menu_animation|yjsg_menu_top_distance|yjsg_menu_side_distance|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width">Split Menu</option>
-				<option value="6" disable="default_menu_animation|yjsg_menu_top_distance|yjsg_menu_side_distance|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width">Menu module position</option>
+				<option value="1" enable="yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance" disable="default_menu_animation|yjsg_menu_animation_speed">YJSG_DEF_TOP_MENU_OPTION_DROPDOWN</option>
+				<option value="2" enable="default_menu_animation|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance">YJSG_DEF_TOP_MENU_OPTION_SMOOTHDROPDOWN</option>
+				<option value="3" enable="yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance" disable="default_menu_animation|yjsg_menu_animation_speed">YJSG_DEF_TOP_MENU_OPTION_DROPLINE</option>
+				<option value="4" enable="default_menu_animation|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance">YJSG_DEF_TOP_MENU_OPTION_SMOOTHDROPLINE</option>
+				<option value="5" disable="default_menu_animation|yjsg_menu_top_distance|yjsg_menu_side_distance|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width">YJSG_DEF_TOP_MENU_OPTION_SPLIT</option>
+				<option value="6" disable="default_menu_animation|yjsg_menu_top_distance|yjsg_menu_side_distance|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width">YJSG_DEF_TOP_MENU_OPTION_MODULEPOSITIONn</option>
 			</field>
 			<field name="menuendLevel" type="yjsglist" default="0" label="YJSG_DEF_MENU_ENDLEVEL_LABEL" description="YJSG_DEF_MENU_ENDLEVEL_DESC">
 				<option value="0">JALL</option>
@@ -110,9 +110,9 @@
 			<field name="yjsg_menu_top_distance" type="yjsgtext" default="10" label="YJSG_ANIM_TOP_DISTANCE_LABEL" description="YJSG_ANIM_TOP_DISTANCE_DESC" />
 			<field name="yjsg_menu_side_distance" type="yjsgtext" default="10" label="YJSG_ANIM_SIDE_DISTANCE_LABEL" description="YJSG_ANIM_SIDE_DISTANCE_DESC" />
 			<field name="default_menu_animation" type="yjsglist" default="fade" label="YJSG_DEF_MENU_ANIM_LABEL" description="YJSG_DEF_MENU_ANIM_DESC">
-				<option value="fade">Fade</option>
-				<option value="revfade">Reverse Fade</option>
-				<option value="grow">Grow</option>
+				<option value="fade">YJSG_DEF_MENU_ANIM_OPTION_FADE</option>
+				<option value="revfade">YJSG_DEF_MENU_ANIM_OPTION_RESERVEFADE</option>
+				<option value="grow">YJSG_DEF_MENU_ANIM_OPTION_GROW</option>
 			</field>
 			<field name="yjsg_menu_animation_speed" type="yjsgtext" default="300" label="YJSG_ANIM_SPEED_LABEL" description="YJSG_ANIM_SPEED_DESC" />
 			<field name="" type="yjsgparamtitle" default="YJSG_TOP_MENU_OFF_YJ_LABEL" />
@@ -126,12 +126,12 @@
 				<option value="2">Midblock-Leftblock-Rightblock</option>
 				<option value="3">Leftblock-Rightblock-Midblock</option>
 			</field>
-			<field name="maincolumn" type="yjsgsinglebox" default="55" gridgroup="mainbody" clabel="mainbody" />
-			<field name="insetcolumn" type="yjsgsinglebox" default="0" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="inset" />
-			<field name="leftcolumn" type="yjsgsinglebox" default="22.5" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="left" />
-			<field name="rightcolumn" type="yjsgsinglebox" default="22.5" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="right" />
-			<field name="insettop" type="yjsgsinglebox" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="insettop" />
-			<field name="insetbottom" type="yjsgsinglebox" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="insetbottom" />
+			<field name="maincolumn" type="yjsgsinglebox" default="55" gridgroup="mainbody" clabel="YJSG_MAINBODY" />
+			<field name="insetcolumn" type="yjsgsinglebox" default="0" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="YJSG_INSET" />
+			<field name="leftcolumn" type="yjsgsinglebox" default="22.5" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="YJSG_LEFT" />
+			<field name="rightcolumn" type="yjsgsinglebox" default="22.5" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="YJSG_RIGHT" />
+			<field name="insettop" type="yjsgsinglebox" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="YJSG_INSETTOP" />
+			<field name="insetbottom" type="yjsgsinglebox" customchrome="YJsgxhtml" gridgroup="mainbody" clabel="YJSG_INSETBOTTOM" />
 			<field name="define_itemid"  type="menuitem" class="yjsgmultiselect" multiple="multiple" default="0" />
 		</fieldset>
 		<!-- Modules Grids settings -->
@@ -207,8 +207,8 @@
 			</field>
 			<field name="YJSG_TEXT_DIR_YJ_LABEL" type="yjsgparamtitle" default="YJSG_TEXT_DIR_YJ_LABEL" />
 			<field name="text_direction" type="yjsgradio" default="2" label="YJSG_TEXT_DIR_LABEL" description="YJSG_TEXT_DIR_DESC">
-				<option value="1">RTL</option>
-				<option value="2">LTR</option>
+				<option value="1">YJSG_TEXT_DIR_OPTION_RTL</option>
+				<option value="2">YJSG_TEXT_DIR_OPTION_LTR</option>
 			</field>
 			<field name="YJSG_SEO_YJ_LABEL" type="yjsgparamtitle" default="YJSG_SEO_YJ_LABEL" />
 			<field name="turn_seo_off" type="yjsglist" default="2" label="YJSG_SEO_LABEL" description="YJSG_SEO_DESC">
@@ -265,7 +265,7 @@
 			<!-- compiler options -->
 			<field name="YJSG_COMP_YJ_LABEL" type="yjsgparamtitle" default="YJSG_COMP_YJ_LABEL"/>
 			<field name="bootstrap_version" type="yjsglist" default="bootstrap2" label="YJSG_BSV_LABEL" description="YJSG_BSV_DESC" >
-				<option value="bootstrapoff">None</option>
+				<option value="bootstrapoff">JNONE</option>
 				<option value="bootstrap2">Bootstrap2</option>
 				<option value="bootstrap3">Bootstrap3</option>
 			</field>
