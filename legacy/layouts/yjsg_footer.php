@@ -23,7 +23,7 @@ endif;
 		<?php echo getYJLINKS($default_font_family,$yj_copyrightyear,$yj_templatename,$show_tools,$show_fres,$show_rtlc,$validators_off,$totop_off)  ?>
 			<?php if ($branding_off == 2) { ?>
                 <a class="yjsglogo png" href="http://yjsimplegrid.com/" target="_blank">
-					<span>YJSimpleGrid Joomla! Templates Framework official website</span>
+					<span><?php echo JText::_( 'YJSG_FOOTER_YJSG_WEBSITE' ); ?></span>
                 </a>
 			<?php } ?>
        </div>
@@ -32,8 +32,7 @@ endif;
 <!-- end footer -->
 	<?php if ($joomlacredit_off ==2): ?>
 		<div id="joomlacredit" class="yjsgsitew">
-			<a href="http://www.joomla.org" target="_blank">Joomla!</a> is Free Software released under the 
-			<a href="http://www.gnu.org/licenses/gpl-2.0.html" target="_blank">GNU/GPL License.</a>
+			<?php echo JText::_( 'YJSG_FOOTER_JOOMLA_CREDITS' ); ?>
 		</div>
 	<?php endif; ?>
 <?php echo $yjsg_js;// do not remove.these are site js vars ?>

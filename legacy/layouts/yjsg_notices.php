@@ -12,24 +12,24 @@ defined( '_JEXEC' ) or die( 'Restricted index access' );?>
 	<h1><?php echo JText::_( 'YJSG_IE_NOTICE_MSG' ); ?></h1>
 	<div class="browsers">
 		<a href="http://www.getfirefox.net/" target="_blank" id="fox">
-			Get firefox
+			<?php echo JText::_( 'YJSG_UPGRADE_GET' ); ?> Firefox
 		</a>
-		<a href="http://www.google.com/chrome/index.html?hl=en&brand=CHMA&utm_campaign=en&utm_source=en-ha-row-bk&utm_medium=ha" target="_blank" id="chrome">
-			Get Chrome
+		<a href="http://www.google.com/chrome/index.html?hl=en&amp;brand=CHMA&amp;utm_campaign=en&amp;utm_source=en-ha-row-bk&amp;utm_medium=ha" target="_blank" id="chrome">
+			<?php echo JText::_( 'YJSG_UPGRADE_GET' ); ?> Chrome
 		</a>
 		<a href="http://www.microsoft.com/windows/internet-explorer/default.aspx" target="_blank" id="ie8">
-			Get IE8
+			<?php echo JText::_( 'YJSG_UPGRADE_GET' ); ?> IE8
 		</a>
 		<a href="http://www.apple.com/safari/download/" target="_blank" id="safari">
-			Get Safari
+			<?php echo JText::_( 'YJSG_UPGRADE_GET' ); ?> Safari
 		</a>
 		<a href="http://www.opera.com/download/" target="_blank" id="opera">
-			Get Opera
+			<?php echo JText::_( 'YJSG_UPGRADE_GET' ); ?> Opera
 		</a>
 	</div>
 	<h4><?php echo JText::_( 'YJSG_UPGRADE_BROWSER_MSG' ); ?></h4>
 	<a href="#" id="closeIe6Alert">
-		close
+		<?php echo JText::_( 'YJSG_UPGRADE_CLOSE' ); ?>
 	</a>
 </div>
 <?php } ?>
