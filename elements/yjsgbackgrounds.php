@@ -100,7 +100,7 @@ class JFormFieldYjsgbackgrounds extends JFormFieldList
 				}
 
 				$patterns_layout []='<div class="patterns '.$css_class.$thisdefault.'" data-thisimg="'.$file.'">';
-				$patterns_layout []='<img src="'. JURI::root() . $xml_path .'/'.$file.'" class="yjsgtips" data-placement="bottom" data-original-title="This is" data-content="'.JFile::stripExt($file).'" />';
+				$patterns_layout []='<img src="'. JURI::root() . $xml_path .'/'.$file.'" class="yjsgtips" data-placement="bottom" data-original-title="'.JText::_('YJSG_BACKGROUND_THISIS').'" data-content="'.JFile::stripExt($file).'" />';
 				$patterns_layout []='<div class="preview"></div>';
 				$patterns_layout []='</div>';
 			}
