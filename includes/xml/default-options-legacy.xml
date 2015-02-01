@@ -37,9 +37,9 @@
 				<option value="2" disable="selectors_override_type|css_font_family|google_font_family|affected_selectors|fontfacekit_font_family">YJSG_NO</option>
 			</field>
 			<field name="selectors_override_type" type="yjsglist" default="1" label="YJSG_HTAG_OVR_TYPE_LABEL" description="YJSG_HTAG_OVR_TYPE_DESC">
-				<option value="1" enable="css_font_family|affected_selectors" disable="google_font_family|fontfacekit_font_family">CSS</option>
-				<option value="2" enable="google_font_family|affected_selectors" disable="css_font_family|fontfacekit_font_family">Google Font</option>
-				<option value="3" enable="fontfacekit_font_family" disable="google_font_family|css_font_family|affected_selectors">@font-face kit</option>
+				<option value="1" enable="css_font_family|affected_selectors" disable="google_font_family|fontfacekit_font_family">YJSG_HTAG_OVR_TYPE_OPTION_CSS</option>
+				<option value="2" enable="google_font_family|affected_selectors" disable="css_font_family|fontfacekit_font_family">YJSG_HTAG_OVR_TYPE_OPTION_GOOGLEFONT</option>
+				<option value="3" enable="fontfacekit_font_family" disable="google_font_family|css_font_family|affected_selectors">YJSG_HTAG_OVR_TYPE_OPTION_FONTFACEKIT</option>
 			</field>
 			<field name="css_font_family" type="yjsglist" default="6" label="YJSG_CSS_FONT_FAM_LABEL" description="YJSG_CSS_FONT_FAM_DESC">
 				<option value="1">Bookman Old Style</option>
