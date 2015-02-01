@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
 	<fields name="params" addfieldpath="/plugins/system/yjsg/includes/yjsgmegamenu/elements">
-		<fieldset name="YJSG_MEGA_MENU" label="Yjsg Mega Menu Parameters">
-			<field name="yj_menu_icon_prefix" type="yjsgfa" class="yjsg-fa" default="" label="FA Icon Before title" description="Select the icon to be shown before the title" />
-			<field name="yj_menu_icon_suffix" type="yjsgfa" class="yjsg-fa" default="" label="FA Icon After title" description="Select the icon to be shown after the title" />
-			<field name="yj_menu_sub_title" type="textarea" filter="raw" rows="3" cols="40" default="" label="Sub title" description="Add your menu item description here.You can also include HTML" />
-			<field name="yj_hide_indicator" type="radio" class="yjsg-radio-group" default="0" label="Hide sub items indicator" description="If set to yes, this option adds a class name yjsgmenu-hide-indicator to the menu item li tag. You can use this class to hide the dropdown indicator or do some specific styling for this menu item. This is usefull for example if this menu item is a parent of a search module and you dont want the indicator to show.">
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+		<fieldset name="YJSG_MEGA_MENU" label="YJSG_MEGA_MENU_LABEL">
+			<field name="yj_menu_icon_prefix" type="yjsgfa" class="yjsg-fa" default="" label="YJSG_MEGA_MENU_FABEFORE_LABEL" description="YJSG_MEGA_MENU_FABEFORE_DESC" />
+			<field name="yj_menu_icon_suffix" type="yjsgfa" class="yjsg-fa" default="" label="YJSG_MEGA_MENU_FAAFTER_LABEL" description="YJSG_MEGA_MENU_FAAFTER_DESC" />
+			<field name="yj_menu_sub_title" type="textarea" filter="raw" rows="3" cols="40" default="" label="YJSG_MEGA_MENU_SUBTITLE_LABEL" description="YJSG_MEGA_MENU_SUBTITLE_DESC" />
+			<field name="yj_hide_indicator" type="radio" class="yjsg-radio-group" default="0" label="YJSG_MEGA_MENU_HIDESUBITEMS_LABEL" description="YJSG_MEGA_MENU_HIDESUBITEMS_DESC">
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
-			<field name="yj_group_holder" type="radio" class="yjsg-radio-group" default="0" label="Act as group holder?" description="If selected yes , this will be the main group holder. Please assign this as a parent to all groups  you want to be visible inside this menu item. Note that this can only be a Normal link , not module and not module position">
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+			<field name="yj_group_holder" type="radio" class="yjsg-radio-group" default="0" label="YJSG_MEGA_MENU_GROUPHOLDER_LABEL" description="YJSG_MEGA_MENU_GROUPHOLDER_DESC">
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
-			<field name="yj_menu_holder_width" type="text" default="" label="Group holder width" description="Column width" />
-			<field name="yj_menu_groups_count" type="list" default="0" label="Number of sub groups" description="Number of sub groups" >
-				<option value="0">0</option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
+			<field name="yj_menu_holder_width" type="text" default="" label="YJSG_MEGA_MENU_GROUPHOLDERWIDTH_LABEL" description="YJSG_MEGA_MENU_GROUPHOLDERWIDTH_DESC" />
+			<field name="yj_menu_groups_count" type="list" default="0" label="YJSG_MEGA_MENU_SUBGROUPCOUNT_LABEL" description="YJSG_MEGA_MENU_SUBGROUPCOUNT_DESC" >
+				<option value="0">J0</option>
+				<option value="1">J1</option>
+				<option value="2">J2</option>
+				<option value="3">J3</option>
+				<option value="4">J4</option>
+				<option value="5">J5</option>
+				<option value="6">J6</option>
 			</field>
-			<field name="yj_sub_group_width" type="textarea" rows="3" cols="40" default="" label="Sub groups width" description="Sub groups width assigns width to Group holder sub groups.Example if you have 3 sub groups enter each group width.1 per line. " />
-			<field name="yj_item_type" type="radio" class="yjsg-radio-group" default="0" label="Menu item type" description="You can select what type of the item this would be . Module, module position, Normal link. If this item is a group holder please leave default value.Normal link" >
-				<option value="0">Normal link</option>
-				<option value="1">Module</option>
-				<option value="2">Module position</option>
+			<field name="yj_sub_group_width" type="textarea" rows="3" cols="40" default="" label="YJSG_MEGA_MENU_SUBGROUPWIDTH_LABEL" description="YJSG_MEGA_MENU_SUBGROUPWIDTH_DESC" />
+			<field name="yj_item_type" type="radio" class="yjsg-radio-group" default="0" label="YJSG_MEGA_MENU_ITEMTYPE_LABEL" description="YJSG_MEGA_MENU_ITEMTYPE_DESC" >
+				<option value="0">YJSG_MEGA_MENU_ITEMTYPE_OPTION_NORMALLINK</option>
+				<option value="1">YJSG_MEGA_MENU_ITEMTYPE_OPTION_MODULE</option>
+				<option value="2">YJSG_MEGA_MENU_ITEMTYPE_OPTION_MODULEPOSITION</option>
 			</field>
-			<field name="yj_menu_show_title" type="list" default="1" label="Display title if  link type is module/module position?" description="If set to NO  Link title , link image and link description will not be displayed.This option is functional ONLY if link type is module or module position. This is usefull if you like to show only module with its tile. For example Login Form" >
-				<option value="1">Yes</option>
-				<option value="2">No</option>
+			<field name="yj_menu_show_title" type="list" default="1" label="YJSG_MEGA_MENU_SHOWTITLE_LABEL" description="YJSG_MEGA_MENU_SHOWTITLE_DESC" >
+				<option value="1">YJSG_YES</option>
+				<option value="2">YJSG_NO</option>
 			</field>
-			<field name="yj_mod_id" id="yj_mod_id" type="sql" default="0" multiple="multiple" size="10" description="Use Ctrl-click to select more than one item." label="Select one or more module" query="SELECT id, module, title FROM #__modules WHERE  `client_id`=0 AND module != 'mod_mainmenu' ORDER BY position ASC" key_field="id" value_field="title" />
-			<field name="yj_position" id="yj_position" type="sql" default="0" multiple="multiple" size="10" description="Use Ctrl-click to select more than one item." label="Select one or more position" query="SELECT DISTINCT position FROM #__modules ORDER BY position ASC" key_field="position" value_field="position"/>
+			<field name="yj_mod_id" id="yj_mod_id" type="sql" default="0" multiple="multiple" size="10" description="YJSG_MEGA_MENU_SELECTMODULES_DESC" label="YJSG_MEGA_MENU_SELECTMODULES_LABEL" query="SELECT id, module, title FROM #__modules WHERE  `client_id`=0 AND module != 'mod_mainmenu' ORDER BY position ASC" key_field="id" value_field="title" />
+			<field name="yj_position" id="yj_position" type="sql" default="0" multiple="multiple" size="10" description="YJSG_MEGA_MENU_SELECTPOSITIONS_DESC" label="YJSG_MEGA_MENU_SELECTPOSITIONS_LABEL" query="SELECT DISTINCT position FROM #__modules ORDER BY position ASC" key_field="position" value_field="position"/>
 		</fieldset>
 	</fields>
 </form>
