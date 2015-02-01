@@ -12,7 +12,7 @@
 				<option value="2">YJSG_NO</option>
 			</field>
 			<field name="yjsg_get_styles" type="yjsglist" default="blue|007ebd" label="YJSG_COLOR_LABEL" description="YJSG_COLOR_DESC" yjsgstyles="blue==007ebd">
-				<option value="blue|007ebd">YJSG_COLOR_OPTION_BLUE</option>
+				<option value="blue|007ebd">Blue</option>
 			</field>
 			<field name="default_font" type="yjsgtext" default="14px" label="YJSG_FONT_SIZE_LABEL" description="YJSG_FONT_SIZE_DESC" />
 			<field name="default_font_family" type="yjsglist" default="6" label="YJSG_FONT_FAM_LABEL" description="YJSG_FONT_FAM_DESC">
