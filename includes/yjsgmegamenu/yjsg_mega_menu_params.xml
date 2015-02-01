@@ -15,7 +15,7 @@
 			</field>
 			<field name="yj_menu_holder_width" type="text" default="" label="YJSG_MEGA_MENU_GROUPHOLDERWIDTH_LABEL" description="YJSG_MEGA_MENU_GROUPHOLDERWIDTH_DESC" />
 			<field name="yj_menu_groups_count" type="list" default="0" label="YJSG_MEGA_MENU_SUBGROUPCOUNT_LABEL" description="YJSG_MEGA_MENU_SUBGROUPCOUNT_DESC" >
-				<option value="0">J0</option>
+				<option value="0">0</option>
 				<option value="1">J1</option>
 				<option value="2">J2</option>
 				<option value="3">J3</option>
