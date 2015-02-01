@@ -90,7 +90,7 @@
 				<option value="3" enable="yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance" disable="default_menu_animation|yjsg_menu_animation_speed">YJSG_DEF_TOP_MENU_OPTION_DROPLINE</option>
 				<option value="4" enable="default_menu_animation|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance">YJSG_DEF_TOP_MENU_OPTION_SMOOTHDROPLINE</option>
 				<option value="5" disable="default_menu_animation|yjsg_menu_top_distance|yjsg_menu_side_distance|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width">YJSG_DEF_TOP_MENU_OPTION_SPLIT</option>
-				<option value="6" disable="default_menu_animation|yjsg_menu_top_distance|yjsg_menu_side_distance|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width">YJSG_DEF_TOP_MENU_OPTION_MODULEPOSITIONn</option>
+				<option value="6" disable="default_menu_animation|yjsg_menu_top_distance|yjsg_menu_side_distance|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width">YJSG_DEF_TOP_MENU_OPTION_MODULEPOSITION</option>
 			</field>
 			<field name="menuendLevel" type="yjsglist" default="0" label="YJSG_DEF_MENU_ENDLEVEL_LABEL" description="YJSG_DEF_MENU_ENDLEVEL_DESC">
 				<option value="0">JALL</option>
