@@ -41,6 +41,6 @@ function getYJLINKS($default_font_family,$yj_copyrightear,$yj_templatename,$show
 		echo '</div>';
 	}
 	
-	echo '<div class="yjsgcp">'.JText::sprintf('YJSG_LINKS_YOUJOOMLA_CREDITS', $yj_templatename, $yj_copyrightear).'</div>';
+	echo '<div class="yjsgcp">'.JText::sprintf('YJSG_LINKS_YOUJOOMLA_BRANDING', $yj_templatename, $yj_copyrightear).'</div>';
 }
 ?>
