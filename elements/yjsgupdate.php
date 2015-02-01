@@ -36,9 +36,9 @@ if(isset($_POST['task']))	{
 	// nothing goes pass this
 	
 	if(intval(JVERSION) >= 3 ){
-		JSession::checkToken() or jexit( '{"error":"Invalid Token"}' );
+		JSession::checkToken() or jexit( '{"error":"'.JText::_( 'JINVALID_TOKEN' ).'"}' );
 	}else{
-		JRequest::checkToken() or jexit( '{"error":"Invalid Token"}' );
+		JRequest::checkToken() or jexit( '{"error":"'.JText::_( 'JINVALID_TOKEN' ).'"}' );
 	}
 	
 	require('yjsgjson.php');
@@ -419,5 +419,5 @@ if(isset($_POST['task']))	{
 
 }else{
 	
-	echo 'Restricted access';
+	echo JText::_( 'JGLOBAL_AUTH_ACCESS_DENIED' );
 }
