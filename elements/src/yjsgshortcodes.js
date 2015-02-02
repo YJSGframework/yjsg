@@ -26,14 +26,14 @@
 			
 			
 		var MediaShortcode = '<a class="btn yjsg-shortcode-link"';
-			MediaShortcode += ' href="'+siteroot+'plugins/system/yjsg/includes/yjsgshortcodes/templates/media.html"';
+			MediaShortcode += ' href="'+siteroot+'plugins/system/yjsg/includes/yjsgshortcodes/showsc.php?sc=media"';
 			MediaShortcode += ' rel="{handler: \'iframe\', size: {x: 770, y: 420}}">';
 			MediaShortcode += ' <i class="fa fa-play"></i> ';
 			MediaShortcode += 'Media';
 			MediaShortcode += ' </a>';
 
 		var NotificationsShortcode = '<a class="btn yjsg-shortcode-link"';
-			NotificationsShortcode += ' href="'+siteroot+'plugins/system/yjsg/includes/yjsgshortcodes/templates/notifications.html"';
+			NotificationsShortcode += ' href="'+siteroot+'plugins/system/yjsg/includes/yjsgshortcodes/showsc.php?sc=notifications"';
 			NotificationsShortcode += ' rel="{handler: \'iframe\', size: {x: 770, y: 630}}">';
 			NotificationsShortcode += ' <i class="fa fa-bullhorn"></i> ';
 			NotificationsShortcode += 'Notifications';	
@@ -41,7 +41,7 @@
 			
 			
 		var IconsShortcode = '<a class="btn yjsg-shortcode-link"';
-			IconsShortcode += ' href="'+siteroot+'plugins/system/yjsg/includes/yjsgshortcodes/templates/icons.html"';
+			IconsShortcode += ' href="'+siteroot+'plugins/system/yjsg/includes/yjsgshortcodes/showsc.php?sc=icons"';
 			IconsShortcode += ' rel="{handler: \'iframe\', size: {x: 770, y: 500}}">';
 			IconsShortcode += ' <i class="fa fa-star"></i> ';
 			IconsShortcode += 'Icons';	
@@ -49,7 +49,7 @@
 	
 			
 		var AccordionShortcode = '<a class="btn yjsg-shortcode-link"';
-			AccordionShortcode += ' href="'+siteroot+'plugins/system/yjsg/includes/yjsgshortcodes/templates/accordions.html"';
+			AccordionShortcode += ' href="'+siteroot+'plugins/system/yjsg/includes/yjsgshortcodes/showsc.php?sc=accordions"';
 			AccordionShortcode += ' rel="{handler: \'iframe\', size: {x: 770, y: 350}}">';
 			AccordionShortcode += ' <i class="fa fa-list"></i> ';
 			AccordionShortcode += ' Accordions';
@@ -57,14 +57,14 @@
 			
 			
 		var TabsShortcode = '<a class="btn yjsg-shortcode-link"';
-			TabsShortcode += ' href="'+siteroot+'plugins/system/yjsg/includes/yjsgshortcodes/templates/tabs.html"';
+			TabsShortcode += ' href="'+siteroot+'plugins/system/yjsg/includes/yjsgshortcodes/showsc.php?sc=tabs"';
 			TabsShortcode += ' rel="{handler: \'iframe\', size: {x: 770, y: 420}}">';
 			TabsShortcode += ' <i class="fa fa-folder-o"></i> ';
 			TabsShortcode += ' Tabs';
 			TabsShortcode += ' </a>';	
 			
 		var ImagesShortcode = '<a class="btn yjsg-shortcode-link"';
-			ImagesShortcode += ' href="'+siteroot+'plugins/system/yjsg/includes/yjsgshortcodes/templates/images.html"';
+			ImagesShortcode += ' href="'+siteroot+'plugins/system/yjsg/includes/yjsgshortcodes/showsc.php?sc=images"';
 			ImagesShortcode += ' rel="{handler: \'iframe\', size: {x: 770, y: 600}}">';
 			ImagesShortcode += ' <i class="fa fa-camera"></i> ';
 			ImagesShortcode += ' Image effects';
