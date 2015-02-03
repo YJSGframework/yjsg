@@ -30,6 +30,8 @@ $session 				= JFactory::getSession();
 $user 					= JFactory::getUser();
 $compile_link			= preg_replace('/(\btemplates\b|\bmodules\b|\bcomponents\b|\bplugins\b)(.*)/','',JURI::root());
 $siteBase				= $compile_link;
+$language				= JFactory::getLanguage();
+$language->setLanguage(JComponentHelper::getParams('com_languages')->get('site'));
 
 if(isset($_POST['task']))	{
 	
