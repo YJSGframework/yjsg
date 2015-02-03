@@ -103,14 +103,6 @@
 			format="%Y-%m-%d %H:%M:%S"
 			size="22"
 			filter="user_utc" />
-		<field
-			name="language"
-			type="contentlanguage"
-			label="JFIELD_LANGUAGE_LABEL"
-			description="JFIELD_LANGUAGE_DESC"
-			class="yjsg-form-element">
-			<option value="*">JALL</option>
-		</field>
 		<field name="tags"
 			type="tag"
 			label="JTAG"
