@@ -1,12 +1,15 @@
+<?php
+require 'framework.php';
+?>
 <!doctype html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="../../../assets/bootstrap3/css/bootstrap.min.css" />
-<link rel="stylesheet" href="../../../elements/css/yjsgfa.css" />
-<script type="text/javascript" src="../../../assets/src/libraries/jquery.min.js"></script>
-<script type="text/javascript" src="../../../assets/bootstrap3/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../../elements/src/yjsgfa.js"></script>
+<link rel="stylesheet" href="<?php echo $base_link	.'plugins/system/yjsg/' ?>assets/bootstrap3/css/bootstrap.min.css" />
+<link rel="stylesheet" href="<?php echo $base_link	.'plugins/system/yjsg/' ?>elements/css/yjsgfa.css" />
+<script type="text/javascript" src="<?php echo $base_link	.'plugins/system/yjsg/' ?>assets/src/libraries/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo $base_link	.'plugins/system/yjsg/' ?>assets/bootstrap3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo $base_link	.'plugins/system/yjsg/' ?>elements/src/yjsgfa.js"></script>
 <script type="text/javascript" src="notifications.js"></script>
 </head>
 <body>
