@@ -193,6 +193,19 @@ $yjsg_js .="
 
 	// magnific
 	$document->addScript(YJSG_ASSETS.'src/magnific/yjsg.magnific.popup.min.js');
+	
+	$yjsg_js.="
+		var lgtr = new Object();
+		lgtr.magnificpopup_close='".JText::_('YJSG_MAGNIFICPOPUP_CLOSE')."';
+		lgtr.magnificpopup_loading='".JText::_('YJSG_MAGNIFICPOPUP_LOADING')."';
+		lgtr.magnificpopup_prev='".JText::_('YJSG_MAGNIFICPOPUP_PREVIOUS')."';
+		lgtr.magnificpopup_next='".JText::_('YJSG_MAGNIFICPOPUP_NEXT')."';
+		lgtr.magnificpopup_counter='".JText::_('YJSG_MAGNIFICPOPUP_PAGINATION')."';
+		lgtr.magnificpopup_errorimage='".JText::_('YJSG_MAGNIFICPOPUP_IMAGE_NOT_LOADED')."';
+		lgtr.magnificpopup_errorajax='".JText::_('YJSG_MAGNIFICPOPUP_CONTENT_NOT_LOADED')."';	
+	
+	";
+	
 
 	// add apple touch icon for Apple mobile OS - iOS
 	if($detect->isiOS() || $detect->isAndroidOS()){	

@@ -1,10 +1,13 @@
+<?php
+include 'framework.php';
+?>
 <!doctype html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="../../../assets/bootstrap3/css/bootstrap.min.css" />
-<script type="text/javascript" src="../../../assets/src/libraries/jquery.min.js"></script>
-<script type="text/javascript" src="../../../assets/bootstrap3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<?php echo $base_link	.'plugins/system/yjsg/assets/' ?>bootstrap3/css/bootstrap.min.css" />
+<script type="text/javascript" src="<?php echo $base_link	.'plugins/system/yjsg/assets/' ?>src/libraries/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo $base_link	.'plugins/system/yjsg/assets/' ?>bootstrap3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="accordions.js"></script>
 </head>
 <body>
