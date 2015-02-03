@@ -31,6 +31,8 @@ $session 				= JFactory::getSession();
 $user 					= JFactory::getUser();
 $isAdmin 				= $user->get('isRoot');
 $site_link				= str_replace('plugins/system/'.basename(dirname(dirname(__FILE__))).'/elements/','',JURI::root());
+$language				= JFactory::getLanguage();
+$language->setLanguage(JComponentHelper::getParams('com_languages')->get('site'));
 
 if($isAdmin && isset($_POST['task']) && ($_POST['task'] =='convertTemplate' || $_POST['task'] =='checkTemplate' || $_POST['task'] =='restoreTemplate' || $_POST['task'] =='cleanupTemplate'))	{
 	// nothing goes pass this
