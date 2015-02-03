@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
 	<fields name="params" addfieldpath="/plugins/system/yjsg/includes/yjsgmoduleoptions/elements">
-		<fieldset name="YJSG_MODULE_OPTIONS" label="Yjsg Module Options">
-			<field name="module_subtitle"  type="textarea" filter="raw" rows="3" cols="40" class="yjsg-subtitle" default="" label="Module sub title" description="Additional module title to be displayed under the main module title" />
-			<field name="module_float" type="list" default="0"  class="yjsg-float" label="Force float" description="You can force float the module inside the grid by setting the float direction and adding the specific width to module container. Note that this option applies only to modules inside the grid.">
-				<option value="none">Dont force float</option>
-				<option value="right">Force Right</option>
-				<option value="left">Force Left</option>
+		<fieldset name="YJSG_MODULE_OPTIONS" label="YJSG_MODULE_LABEL">
+			<field name="module_subtitle"  type="textarea" filter="raw" rows="3" cols="40" class="yjsg-subtitle" default="" label="YJSG_MODULE_SUBTITLE_LABEL" description="YJSG_MODULE_SUBTITLE_DESC" />
+			<field name="module_float" type="list" default="0"  class="yjsg-float" label="YJSG_MODULE_FORCEFLOAT_LABEL" description="YJSG_MODULE_FORCEFLOAT_DESC">
+				<option value="none">YJSG_MODULE_FORCEFLOAT_OPTION_DONTFORCE</option>
+				<option value="right">YJSG_MODULE_FORCEFLOAT_OPTION_FORCERIGHT</option>
+				<option value="left">YJSG_MODULE_FORCEFLOAT_OPTION_FORCELEFT</option>
 			</field>
-			<field name="module_floatwidth" type="text" class="yjsg-float-width" default="" label="Force float width" description="Add forced float module width in px or percentage. Example;200px. Note that this option applies only to modules inside the grid." />
-			<field name="module_icon_prefix" type="yjsgfa" class="yjsg-fa" default="" label="FA Icon Before title" description="This field will be automatically populated once you click on the icon you like. You can also start typing the icon name. The icon you are looking for will be placed on top of the list." />
-			<field name="module_icon_suffix" type="yjsgfa" class="yjsg-fa" default="" label="FA Icon After title" description="This field will be automatically populated once you click on the icon you like. You can also start typing the icon name. The icon you are looking for will be placed on top of the list." />
-			<field name="before_module"  type="textarea" filter="safehtml" rows="5" cols="50" class="yjsg-before-module" default="" label="Content before the module" description="Additional content to be displayed before the module. Html is allowed." />
-			<field name="after_module"  type="textarea" filter="safehtml" rows="5" cols="50" class="yjsg-after-module" default="" label="Content after the module" description="Additional content to be displayed after the module. Html is allowed." />
+			<field name="module_floatwidth" type="text" class="yjsg-float-width" default="" label="YJSG_MODULE_FORCEFLOATWIDTH_LABEL" description="YJSG_MODULE_FORCEFLOATWIDTH_DESC" />
+			<field name="module_icon_prefix" type="yjsgfa" class="yjsg-fa" default="" label="YJSG_MODULE_FAICONBEFORE_LABEL" description="YJSG_MODULE_FAICONBEFORE_DESC" />
+			<field name="module_icon_suffix" type="yjsgfa" class="yjsg-fa" default="" label="YJSG_MODULE_FAICONAFTER_LABEL" description="YJSG_MODULE_FAICONAFTER_DESC" />
+			<field name="before_module"  type="textarea" filter="safehtml" rows="5" cols="50" class="yjsg-before-module" default="" label="YJSG_MODULE_CONTENTBEFORE_LABEL" description="YJSG_MODULE_CONTENTBEFORE_DESC" />
+			<field name="after_module"  type="textarea" filter="safehtml" rows="5" cols="50" class="yjsg-after-module" default="" label="YJSG_MODULE_CONTENTAFTER_LABEL" description="YJSG_MODULE_CONTENTAFTER_DESC" />
 		</fieldset>
 	</fields>
 </form>

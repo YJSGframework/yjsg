@@ -31,13 +31,15 @@ $session 				= JFactory::getSession();
 $user 					= JFactory::getUser();
 $isAdmin 				= $user->get('isRoot');
 $site_link				= str_replace('plugins/system/'.basename(dirname(dirname(__FILE__))).'/elements/','',JURI::root());
+$language				= JFactory::getLanguage();
+$language->setLanguage(JComponentHelper::getParams('com_languages')->get('site'));
 
 if($isAdmin && isset($_POST['task']) && ($_POST['task'] =='convertTemplate' || $_POST['task'] =='checkTemplate' || $_POST['task'] =='restoreTemplate' || $_POST['task'] =='cleanupTemplate'))	{
 	// nothing goes pass this
 	if(intval(JVERSION) >= 3 ){
-		JSession::checkToken() or jexit( '{"error":"Invalid Token"}' );
+		JSession::checkToken() or jexit( '{"error":"'.JText::_( 'JINVALID_TOKEN' ).'"}' );
 	}else{
-		JRequest::checkToken() or jexit( '{"error":"Invalid Token"}' );
+		JRequest::checkToken() or jexit( '{"error":"'.JText::_( 'JINVALID_TOKEN' ).'"}' );
 	}
 	
 	require('yjsgjson.php');
@@ -188,5 +190,5 @@ if($isAdmin && isset($_POST['task']) && ($_POST['task'] =='convertTemplate' || $
 		
 	
 }else{
-	echo 'Restricted acsess';
+	echo JText::_( 'JGLOBAL_AUTH_ACCESS_DENIED' );
 }

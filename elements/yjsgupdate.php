@@ -30,15 +30,17 @@ $session 				= JFactory::getSession();
 $user 					= JFactory::getUser();
 $compile_link			= preg_replace('/(\btemplates\b|\bmodules\b|\bcomponents\b|\bplugins\b)(.*)/','',JURI::root());
 $siteBase				= $compile_link;
+$language				= JFactory::getLanguage();
+$language->setLanguage(JComponentHelper::getParams('com_languages')->get('site'));
 
 if(isset($_POST['task']))	{
 	
 	// nothing goes pass this
 	
 	if(intval(JVERSION) >= 3 ){
-		JSession::checkToken() or jexit( '{"error":"Invalid Token"}' );
+		JSession::checkToken() or jexit( '{"error":"'.JText::_( 'JINVALID_TOKEN' ).'"}' );
 	}else{
-		JRequest::checkToken() or jexit( '{"error":"Invalid Token"}' );
+		JRequest::checkToken() or jexit( '{"error":"'.JText::_( 'JINVALID_TOKEN' ).'"}' );
 	}
 	
 	require('yjsgjson.php');
@@ -419,5 +421,5 @@ if(isset($_POST['task']))	{
 
 }else{
 	
-	echo 'Restricted access';
+	echo JText::_( 'JGLOBAL_AUTH_ACCESS_DENIED' );
 }

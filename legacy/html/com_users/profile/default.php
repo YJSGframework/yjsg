@@ -24,7 +24,7 @@ Yjsg::yjsgtooltip();
 		<?php if (JFactory::getUser()->id == $this->data->id) : ?>
 		<a class="btn btn-small btn-sm button" href="<?php echo JRoute::_('index.php?option=com_users&task=profile.edit&user_id='.(int) $this->data->id);?>">
 			<span class="icon-user"></span>
-			<?php echo JText::_('COM_USERS_Edit_Profile'); ?>
+			<?php echo JText::_('COM_USERS_EDIT_PROFILE'); ?>
 		</a>
 		<?php endif; ?>
 	</div>

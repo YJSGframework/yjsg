@@ -65,9 +65,9 @@ class JFormFieldYjsgfa extends JFormField
 		foreach ($yjsgfa['icons'] as $yjsgfaicons => $yjsgfaicon) {
 		  
 		  if(intval(JVERSION) < 3){
-		  	$tipTitle	=' title="Icon name::'.$yjsgfaicon['id'].'" ';
+		  	$tipTitle	=' title="'.JText::_('YJSG_MODULE_TIP_ICONNAME').'::'.$yjsgfaicon['id'].'" ';
 		  }else{
-			$tipTitle	='  title="<strong>Icon name</strong><br />'.$yjsgfaicon['id'].'" ';
+			$tipTitle	='  title="<strong>'.JText::_('YJSG_MODULE_TIP_ICONNAME').'</strong><br />'.$yjsgfaicon['id'].'" ';
 		  }
 			$html .= '<span data-faname="fa fa-'.$yjsgfaicon['id'].'" class="'.$tipClass.' fa fa-'.$yjsgfaicon['id'].'"'.$tipTitle.'></span>';
 		}

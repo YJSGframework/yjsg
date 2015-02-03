@@ -8,15 +8,15 @@
  */
 defined( '_JEXEC' ) or die( 'Restricted index access' );
 // top panel params
-$tpopen_text			             = $this->params->get("tpopen_text","Open");
-$tpclose_text			             = $this->params->get("tpclose_text","Close");
+$tpopen_text			             = $this->params->get("tpopen_text",JText::_( 'YJSG_OPEN' ));
+$tpclose_text			             = $this->params->get("tpclose_text",JText::_( 'YJSG_CLOSE' ));
 $tpbtn_width			             = $this->params->get("tpbtn_width","100");
 $tpbtn_height			             = $this->params->get("tpbtn_height","30");
 $tptran_speed			             = $this->params->get("tptran_speed","500");
 
 //bottom panel params
-$bpopen_text			             = $this->params->get("bpopen_text","Open");
-$bpclose_text			             = $this->params->get("bpclose_text","Close");
+$bpopen_text			             = $this->params->get("bpopen_text",JText::_( 'YJSG_OPEN' ));
+$bpclose_text			             = $this->params->get("bpclose_text",JText::_( 'YJSG_CLOSE' ));
 $bpbtn_width			             = $this->params->get("bpbtn_width","100");
 $bpbtn_height			             = $this->params->get("bpbtn_height","30");
 $bptran_speed			             = $this->params->get("bptran_speed","500");
