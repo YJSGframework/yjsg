@@ -12,6 +12,11 @@ $jpath = preg_replace('/(\btemplates\b|\bmodules\b|\bcomponents\b|\bplugins\b)(.
 define('JPATH_BASE',rtrim($jpath,DIRECTORY_SEPARATOR));
 require_once ( JPATH_BASE .DIRECTORY_SEPARATOR.'includes'.DIRECTORY_SEPARATOR.'defines.php' );
 require_once ( JPATH_BASE .DIRECTORY_SEPARATOR.'includes'.DIRECTORY_SEPARATOR.'framework.php' );
+jimport('joomla.language.language');
+$lang = JFactory::getLanguage();
+$lang->setLanguage(JComponentHelper::getParams('com_languages')->get('site'));
+JPlugin::loadLanguage('joomla');
+JPlugin::loadLanguage('plg_system_yjsg');
 
 if(isset($_POST['ajaxreset']))	{
 
@@ -27,5 +32,5 @@ if(isset($_POST['ajaxreset']))	{
 	
 	
 }else{
-	echo 'Restricted access';
+	echo JText::_( 'JGLOBAL_AUTH_ACCESS_DENIED' );
 }
