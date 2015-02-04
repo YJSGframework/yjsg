@@ -5,38 +5,38 @@ require 'framework.php';
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" href="<?php echo $base_link	.'plugins/system/yjsg/' ?>assets/bootstrap3/css/bootstrap.min.css" />
-<script type="text/javascript" src="<?php echo $base_link	.'plugins/system/yjsg/' ?>assets/src/libraries/jquery.min.js"></script>
-<script type="text/javascript" src="<?php echo $base_link	.'plugins/system/yjsg/' ?>assets/bootstrap3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<?php echo $base_link.'plugins/system/yjsg/'; ?>assets/bootstrap3/css/bootstrap.min.css" />
+<script type="text/javascript" src="<?php echo $base_link.'plugins/system/yjsg/'; ?>assets/src/libraries/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo $base_link.'plugins/system/yjsg/'; ?>assets/bootstrap3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="tabs.js"></script>
 </head>
 <body>
     <div class="container">
-        <h2> Tabs shortcode </h2>
+        <h2><?php echo JText::_('YJSG_SHORTCODES_TABS_TITLE'); ?></h2>
         <form role="form">
             <div class="form-group">
-                <label for="tabtype" for="title" data-toggle="tooltip" data-placement="top" title="Select tabs type">Tabs type</label>
+                <label for="tabtype" for="title" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('YJSG_SHORTCODES_TABS_TABTYPE_DESC'); ?>"><?php echo JText::_('YJSG_SHORTCODES_TABS_TABTYPE_LABEL'); ?></label>
                 <select class="form-control" id="tabtype" name="tabtype">
-                    <option value="tabnav" selected>Tab nav</option>
-                    <option value="tabpills">Tab pills</option>
-					<option value="tabsleft">Tabs left</option>
-					<option value="tabsright">Tabs right</option>
-					<option value="tabscentered">Tabs centered</option>
+                    <option value="tabnav" selected><?php echo JText::_('YJSG_SHORTCODES_TABS_TABTYPE_OPTION_NAV'); ?></option>
+                    <option value="tabpills"><?php echo JText::_('YJSG_SHORTCODES_TABS_TABTYPE_OPTION_PILLS'); ?></option>
+					<option value="tabsleft"><?php echo JText::_('YJSG_SHORTCODES_TABS_TABTYPE_OPTION_LEFT'); ?></option>
+					<option value="tabsright"><?php echo JText::_('YJSG_SHORTCODES_TABS_TABTYPE_OPTION_RIGHT'); ?></option>
+					<option value="tabscentered"><?php echo JText::_('YJSG_SHORTCODES_TABS_TABTYPE_OPTION_CENTERED'); ?></option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="tabid" for="title" data-toggle="tooltip" data-placement="top" title="Add tab group id. This should be unique for every instance."> Tab id </label>
-                <input type="text" class="form-control" id="tabid" name="tabid" placeholder="tab id" onClick="this.select()" />
+                <label for="tabid" for="title" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('YJSG_SHORTCODES_TABS_TABID_DESC'); ?>"><?php echo JText::_('YJSG_SHORTCODES_TABS_TABID_LABEL'); ?></label>
+                <input type="text" class="form-control" id="tabid" name="tabid" placeholder="<?php echo JText::_('YJSG_SHORTCODES_TABS_TABID_HINT'); ?>" onClick="this.select()" />
             </div>
             <div class="form-group poster">
-                <label for="tabs" for="title" data-toggle="tooltip" data-placement="top" title="Number of tabs">Number of tabs</label>
+                <label for="tabs" for="title" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('YJSG_SHORTCODES_TABS_TABS_DESC'); ?>"><?php echo JText::_('YJSG_SHORTCODES_TABS_TABS_LABEL'); ?></label>
                 <input type="text" class="form-control" id="tabs" name="tabs" value="3" onClick="this.select()"/>
             </div>
             <div class="form-group">
-                <label for="activetab" data-toggle="tooltip" data-placement="top" title="Set active tab index. The count begins at 0. Example;0,1,2">Active tab</label>
+                <label for="activetab" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('YJSG_SHORTCODES_TABS_ACTIVETAB_DESC'); ?>"><?php echo JText::_('YJSG_SHORTCODES_TABS_ACTIVETAB_LABEL'); ?></label>
                 <input type="text" class="form-control" id="activetab" name="activetab" value="0" onClick="this.select()" />
             </div>
-            <button type="submit" id="addshortcode" class="btn btn-primary">Insert shortcode</button>
+            <button type="submit" id="addshortcode" class="btn btn-primary"><?php echo JText::_('YJSG_SHORTCODES_TABS_BUTTON_SUBMIT'); ?></button>
         </form>
     </div>
 </body>
