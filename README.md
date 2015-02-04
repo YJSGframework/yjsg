@@ -23,7 +23,7 @@ Visit [Eximium](http://joomlatemplates.youjoomla.info/eximium/) Joomla Template 
 ## Help and Documentation
 
 * [Documentation](http://yjsimplegrid.com/documentation)
-* [Discussions](http://www.youjoomla.com/joomla_support/yjsg-template-framework-plugin/)
+* [Discussions](http://www.youjoomla.com/joomla_support/forumdisplay.php?f=269)
 
 ## Bug tracker
 
