@@ -46,7 +46,7 @@
 			 notifications +='[/yjsgnote]';
 			
 			if (content == '') {
-				alert('Content is required');
+				alert(jstr_content_required);
 				return;
 				
 			}

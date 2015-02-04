@@ -61,13 +61,13 @@
 			
 			
 			if (effect == 'fade' && ( fadeto =='' || fadespeed=='') ) {
-				alert('Fade speed and fade to is required');
+				alert(jstr_alert_fade);
 				return;
 				
 			}
 			
 			if (imagelink == '' || (lightbox !='' && lightboximage == '' )) {
-				alert('Image is required');
+				alert(jstr_alert_image);
 				return;
 				
 			}

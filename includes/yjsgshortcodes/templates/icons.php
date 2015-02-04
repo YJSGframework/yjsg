@@ -66,5 +66,8 @@ require 'framework.php';
 			<button type="submit" id="addshortcode" class="btn btn-primary"><?php echo JText::_('YJSG_SHORTCODES_ICONS_BUTTON_SUBMIT'); ?></button>
 		</form>
 	</div>
+<script type="text/javascript">
+var jstr_click_on_any = "<?php echo JText::_('YJSG_SHORTCODES_ICONS_JS_ALERT'); ?>";
+</script>
 </body>
 </html>

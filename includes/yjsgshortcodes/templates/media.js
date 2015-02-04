@@ -57,7 +57,7 @@
 			var mediashortcode = '[yjsgmedia link="' + medialink + '" poster="' + poster + '" width="' + width + '" height="' + height + '" resp="'+resp+'" id="'+mediaid+'"]';
 			
 			if (medialink == '') {
-				alert('Media link is required');
+				alert(jstr_media_required);
 				return;
 				
 			}

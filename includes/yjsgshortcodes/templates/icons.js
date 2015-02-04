@@ -29,7 +29,7 @@
 
 			if(icon ==''){
 				
-				alert('Click on any icon');
+				alert(jstr_click_on_any);
 				return;
 				
 			}
