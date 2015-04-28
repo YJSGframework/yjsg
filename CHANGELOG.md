@@ -1,3 +1,15 @@
+##Version: 2.2.1 (April 28, 2015)
+
+###Code improvement
+ - Fixed yjsg-form radios alignment
+ - Removed float from yjsg-col-1 
+ - Added two factor authentication inputs
+ - Assign category when submiting new article fixes #13
+ - Assign language when submiting new article fixes #19
+ - Added brake before new article button
+ - Added new language strings
+ - Added language strings for shortcodes
+
 ##Version: 2.2.0 (January 28, 2015)
 
 ###New features
