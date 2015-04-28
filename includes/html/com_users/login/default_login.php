@@ -10,7 +10,11 @@
 
 defined('_JEXEC') or die;
 JHtml::_('behavior.keepalive');
-$this->form->loadFile( dirname(__FILE__) . DIRECTORY_SEPARATOR . "login.xml");
+if (intval(JVERSION) >= 3) {
+	$this->form->loadFile( dirname(__FILE__) . DIRECTORY_SEPARATOR . "login.xml");
+}else{
+	$this->form->loadFile( dirname(__FILE__) . DIRECTORY_SEPARATOR . "login25.xml");
+}
 ?>
 <div class="yjsg-userpages login">
 	<?php if(JFactory::getApplication()->input->get( 'Itemid' ) !==''): ?>
@@ -49,6 +53,14 @@ $this->form->loadFile( dirname(__FILE__) . DIRECTORY_SEPARATOR . "login.xml");
 			</div>
 			<?php endif; ?>
 			<?php endforeach; ?>
+			<?php if ($this->tfa): ?>
+			<div class="yjsg-form-group">
+				<?php echo $this->form->getField('secretkey')->label; ?>
+				<div class="yjsg-element-holder">
+					<?php echo $this->form->getField('secretkey')->input; ?>
+				</div>
+			</div>
+			<?php endif; ?>
 			<br />
 			<ul class="unstyled">
 				<li>
@@ -62,8 +74,8 @@ $this->form->loadFile( dirname(__FILE__) . DIRECTORY_SEPARATOR . "login.xml");
 					</a>
 				</li>
 				<?php
-$usersConfig = JComponentHelper::getParams('com_users');
-if ($usersConfig->get('allowUserRegistration')) : ?>
+					$usersConfig = JComponentHelper::getParams('com_users');
+					if ($usersConfig->get('allowUserRegistration')) : ?>
 				<li>
 					<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>">
 						<?php echo JText::_('COM_USERS_LOGIN_REGISTER'); ?>

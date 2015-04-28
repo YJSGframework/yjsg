@@ -19,16 +19,7 @@
 			required="required"
 			size="25"
 		/>
-		
-		<field
-			name="secretkey"
-			type="text"
-			class="inputbox form-field"
-			required="false"
-			filter="int"
-			label="JGLOBAL_SECRETKEY"
-			size="25"
-		/>
+
 	</fieldset>
 	
 	<fieldset>

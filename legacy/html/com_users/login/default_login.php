@@ -11,7 +11,11 @@
 defined('_JEXEC') or die;
 JHtml::_('behavior.keepalive');
 $this->form->reset( true ); // to reset the form xml loaded by the view
-$this->form->loadFile( dirname(__FILE__) . DIRECTORY_SEPARATOR . "login.xml"); // to load in our own version of login.xml
+if (intval(JVERSION) >= 3) {
+	$this->form->loadFile( dirname(__FILE__) . DIRECTORY_SEPARATOR . "login.xml");
+}else{
+	$this->form->loadFile( dirname(__FILE__) . DIRECTORY_SEPARATOR . "login25.xml");
+}
 ?>
 
 <div class="userpageswrap login">
@@ -48,6 +52,12 @@ $this->form->loadFile( dirname(__FILE__) . DIRECTORY_SEPARATOR . "login.xml"); /
 					<?php echo $field->input; ?></div>
 				<?php endif; ?>
 				<?php endforeach; ?>
+				<?php if ($this->tfa): ?>
+				<div class="login-fields">
+					<?php echo $this->form->getField('secretkey')->label; ?>
+					<?php echo $this->form->getField('secretkey')->input; ?>
+				</div>				
+				<?php endif; ?>
 				<br />
 				<ul class="unstyled">
 					<li>
@@ -61,8 +71,8 @@ $this->form->loadFile( dirname(__FILE__) . DIRECTORY_SEPARATOR . "login.xml"); /
 						</a>
 					</li>
 					<?php
-$usersConfig = JComponentHelper::getParams('com_users');
-if ($usersConfig->get('allowUserRegistration')) : ?>
+						$usersConfig = JComponentHelper::getParams('com_users');
+						if ($usersConfig->get('allowUserRegistration')) : ?>
 					<li>
 						<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>">
 							<?php echo JText::_('COM_USERS_LOGIN_REGISTER'); ?>
