@@ -10,7 +10,7 @@ require 'framework.php';
 <link rel="stylesheet" href="<?php echo $base_link	.'plugins/system/yjsg/'; ?>assets/bootstrap3/css/bootstrap.min.css" />
 <script type="text/javascript" src="<?php echo $base_link.'plugins/system/yjsg/'; ?>assets/src/libraries/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-<script type="text/javascript" src="<?php echo $base_link.'plugins/system/yjsg'; ?>assets/bootstrap3/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo $base_link.'plugins/system/yjsg/'; ?>assets/bootstrap3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="images.js"></script>
 </head>
 <body>
