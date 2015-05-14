@@ -500,6 +500,154 @@
 
         },
 
+
+		animateMenusShow: function (element,animation,animationspeed) {
+			
+			var self = this;
+			
+			if (element.hasClass("holdsgroup")) {
+		
+				return false;
+			}
+		
+			if (element.hasClass("level0") && $('.megadropline').length > 0) {
+		
+				return false;
+			}
+		
+			if (animation == 'fade') {
+		
+				element.find('div.nogroup').first().hide().stop(true, true).toggle('fade', animationspeed, function () {
+		
+					$(this).show();
+		
+				});
+		
+			}
+			if (animation == 'grow') {
+		
+				element.find('div.nogroup > ul').first().addClass('growshown').hide().show('slide', {
+					direction: "up"
+				}, animationspeed, function () {
+		
+					$(this).css('display', 'block');
+					$(this).parent().css('display', 'block');
+		
+				});
+		
+			}
+		
+			if (animation == 'revfade') {
+		
+				var getTop = element.find('a').first().outerHeight(true);
+		
+				if (element.hasClass("level0") || ($('.megadropline').length > 0 && element.hasClass("level1"))) {
+		
+					element.find('div.nogroup').first().css({
+						top: getTop * 2,
+						opacity: 0,
+						display: 'block'
+		
+					}).stop(true, true).animate({
+						'top': getTop,
+						'opacity': 1
+					}, animationspeed, function () {
+		
+						$(this).css('display', 'block');
+		
+					});
+		
+				} else {
+		
+					element.find('div.nogroup').first().css({
+						top: getTop,
+						opacity: 0,
+						display: 'block'
+		
+					}).stop(true, true).animate({
+						'top': 0,
+						'opacity': 1
+					}, animationspeed, function () {
+		
+						$(this).css('display', 'block');
+		
+					});
+		
+				}
+		
+			}	
+		},
+		
+		
+		
+		
+		animateMenusHide: function (element,animation,animationspeed) {
+			
+			  	var self = this;
+			  
+			  	if (element.hasClass("level0") && $('.megadropline').length > 0) {
+		
+					return false;
+				}
+		
+				if (animation == 'fade') {
+		
+					element.find('div.nogroup').first().stop(true).toggle('fade', animationspeed, function () {
+		
+						$(this).removeAttr('style');
+		
+					});
+		
+				}
+		
+				if (animation == 'grow') {
+		
+					element.find('.growshown').stop(true, true).hide('slide', {
+						direction: "up"
+					}, animationspeed, function () {
+		
+						$(this).removeClass('growshown').removeAttr('style');
+						$(this).parent().removeAttr('style');
+		
+					});
+		
+				}
+		
+				if (animation == 'revfade') {
+		
+					var getTop = element.find('a').first().outerHeight(true);
+		
+					if (element.hasClass("level0") || ($('.megadropline').length > 0 && element.hasClass("level1"))) {
+		
+						element.find('div.nogroup').first().stop().animate({
+							'top': getTop + 20,
+							'opacity': 0
+						}, animationspeed, function () {
+		
+							$(this).removeAttr('style');
+		
+						});
+		
+					} else {
+		
+						element.find('div.nogroup').first().stop().animate({
+							'top': getTop,
+							'opacity': 0
+						}, animationspeed, function () {
+		
+							$(this).removeAttr('style');
+		
+						});
+		
+					}
+		
+				}	
+			
+			
+			
+		},
+		
+
         animateMenus: function () {
 
             var self = this;
@@ -527,142 +675,17 @@
                 });
             }
 
-            $("ul.yjsgmenu li.haschild").hover(function () {
+			$("ul.yjsgmenu li.haschild").hover(function(e) {
+	
+				self.animateMenusShow($(this),animation,animationspeed);
+	
+			}, function(e) {
+	
+				self.animateMenusHide($(this),animation,animationspeed);
+	
+			});
+		
 
-                if ($(this).hasClass("holdsgroup")) {
-
-                    return false;
-                }
-
-                if ($(this).hasClass("level0") && $('.megadropline').length > 0) {
-
-                    return false;
-                }
-
-                if (animation == 'fade') {
-
-                    $(this).find('div.nogroup').first().hide().stop(true, true).toggle('fade', animationspeed, function () {
-
-                        $(this).show();
-
-                    });
-
-                }
-                if (animation == 'grow') {
-
-                    $(this).find('div.nogroup > ul').first().hide().show('slide', {
-                        direction: "up"
-                    }, animationspeed, function () {
-
-                        $(this).css('display', 'block');
-                        $(this).parent().css('display', 'block');
-
-                    });
-
-                }
-
-                if (animation == 'revfade') {
-
-                    var getTop = $(this).find('a').first().outerHeight(true);
-
-                    if ($(this).hasClass("level0") || ($('.megadropline').length > 0 && $(this).hasClass("level1"))) {
-
-                        $(this).find('div.nogroup').first().css({
-                            top: getTop * 2,
-                            opacity: 0,
-                            display: 'block'
-
-                        }).stop(true, true).animate({
-                            'top': getTop,
-                            'opacity': 1
-                        }, animationspeed, function () {
-
-                            $(this).css('display', 'block');
-
-                        });
-
-                    } else {
-
-                        $(this).find('div.nogroup').first().css({
-                            top: getTop,
-                            opacity: 0,
-                            display: 'block'
-
-                        }).stop(true, true).animate({
-                            'top': 0,
-                            'opacity': 1
-                        }, animationspeed, function () {
-
-                            $(this).css('display', 'block');
-
-                        });
-
-                    }
-
-                }
-
-            }, function () {
-
-
-                if ($(this).hasClass("level0") && $('.megadropline').length > 0) {
-
-                    return false;
-                }
-
-                if (animation == 'fade') {
-
-                    $(this).find('div.nogroup').first().stop(true).toggle('fade', animationspeed, function () {
-
-                        $(this).removeAttr('style');
-
-                    });
-
-                }
-
-                if (animation == 'grow') {
-
-                    $(this).find('div.nogroup > ul').first().stop(true, true).hide('slide', {
-                        direction: "up"
-                    }, animationspeed, function () {
-
-                        $(this).removeAttr('style');
-                        $(this).parent().removeAttr('style');
-
-                    });
-
-                }
-
-                if (animation == 'revfade') {
-
-                    var getTop = $(this).find('a').first().outerHeight(true);
-
-                    if ($(this).hasClass("level0") || ($('.megadropline').length > 0 && $(this).hasClass("level1"))) {
-
-                        $(this).find('div.nogroup').first().stop().animate({
-                            'top': getTop + 20,
-                            'opacity': 0
-                        }, animationspeed, function () {
-
-                            $(this).removeAttr('style');
-
-                        });
-
-                    } else {
-
-                        $(this).find('div.nogroup').first().stop().animate({
-                            'top': getTop,
-                            'opacity': 0
-                        }, animationspeed, function () {
-
-                            $(this).removeAttr('style');
-
-                        });
-
-                    }
-
-                }
-
-            });
 
         },
 
@@ -975,15 +998,8 @@
             });
 
         },
-		
-		yjscrollData: function (){
-			
-			
-			
-			
-			
-		},
-		
+
+
         yjsgScroll: function () {
 
             var self = this;
