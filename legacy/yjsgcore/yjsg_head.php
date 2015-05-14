@@ -14,6 +14,12 @@ echo $cc_after_headtag;
 // load mootools with mootools more , without true , more is not loaded
 JHtml::_('behavior.framework',true);
 
+
+if (intval(JVERSION) > 2) {
+	JHtml::_('jquery.framework');
+}
+
+
 $document->addStyleDeclaration("body{font-size:".$css_font.";}#logo{width:$logo_out%;height:$logo_height;}#logo a{height:$logo_height;}.yjsgsitew{width:".$css_width.$css_widthdefined.";}.yjsgheadergw{width:".$headergrid_width."%;}".$midblockWidth.$leftblockWidth.$rightblockWidth.$insetblockWidth.$insetWidth."");
 
 // custom logo
