@@ -1,3 +1,9 @@
+##Version: 2.2.2 (May 14, 2015)
+
+###Code improvement
+ - Fixed topmenu animation grow bug
+ - Fixed legacy templates not loading jquery
+
 ##Version: 2.2.1 (April 28, 2015)
 
 ###Code improvement
