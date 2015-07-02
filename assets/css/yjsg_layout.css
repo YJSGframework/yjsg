@@ -49,6 +49,7 @@
 	height:inherit;
 	width:auto;
 	font-size:0.01;
+	text-indent:-10000px;
 }
 /* manibody grid */
 .holders {
