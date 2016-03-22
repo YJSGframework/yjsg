@@ -334,8 +334,7 @@ class plgSystemYjsg extends JPlugin {
      */
     
     public function yjsgExtendJoomla() {
-        
-            
+
 		if (version_compare(JVERSION, '3.0', '<')) {
 			
 			$IsJversion                   = '25';
@@ -357,7 +356,11 @@ class plgSystemYjsg extends JPlugin {
 			}
 			$YjsgJViewDefaultRead         = JPATH_LIBRARIES . '/legacy/view/legacy.php';
 			$YjsgJPaginationDefaultRead   = JPATH_LIBRARIES . '/cms/pagination/pagination.php';
-			$YjsgJDocumentHTMLDefaultRead = JPATH_LIBRARIES . '/joomla/document/html/html.php';
+			if(version_compare(JVERSION, '3.5', '>=')){//@since 2.2.3
+				$YjsgJDocumentHTMLDefaultRead = JPATH_LIBRARIES . '/joomla/document/html.php';
+			}else{
+				$YjsgJDocumentHTMLDefaultRead = JPATH_LIBRARIES . '/joomla/document/html/html.php';
+			}
 			$YjsgJFormFieldDefaultRead    = JPATH_LIBRARIES . '/joomla/form/field.php';
 			$YjsgJLayoutFileDefaultRead   = JPATH_LIBRARIES . '/cms/layout/file.php';
 		}
@@ -426,7 +429,11 @@ class plgSystemYjsg extends JPlugin {
 			
 			if (!JFile::exists($YjsgJDocumentHTMLDefaultFile)) {
 				$YjsgJDocumentHTMLDefault = JFile::read($YjsgJDocumentHTMLDefaultRead);
-				$YjsgJDocumentHTMLDefault = str_replace('class JDocumentHTML', 'class YjsgJDocumentHTMLDefault', $YjsgJDocumentHTMLDefault);
+				if(version_compare(JVERSION, '3.5', '>=')){//@since 2.2.3
+					$YjsgJDocumentHTMLDefault = str_replace('class JDocumentHtml', 'class YjsgJDocumentHTMLDefault', $YjsgJDocumentHTMLDefault);
+				}else{
+					$YjsgJDocumentHTMLDefault = str_replace('class JDocumentHTML', 'class YjsgJDocumentHTMLDefault', $YjsgJDocumentHTMLDefault);
+				}
 				JFile::write($YjsgJDocumentHTMLDefaultFile, $YjsgJDocumentHTMLDefault);
 			}
 			if (!class_exists('YjsgJDocumentHTMLDefault')){
