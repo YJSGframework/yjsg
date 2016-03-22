@@ -397,7 +397,7 @@ if ($selectors_override_type == 1 ){ // CSS
 		$nice_font   		= ''.str_replace('+',' ',$fontName).','.$splitFont[1].';'.$fontWeight.'';
 		$google_font_family = $splitFont[0];
 	}	
-	$font_sheet  = 'http://fonts.googleapis.com/css?family='.$google_font_family.'';
+	$font_sheet  = '//fonts.googleapis.com/css?family='.$google_font_family.'';
 	
 	// stylesheet with multiple fonts
 	if(strstr($font_sheet,'==')){
