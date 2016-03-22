@@ -1,8 +1,8 @@
 ##Version: 2.2.3 (March 22, 2016)
 
 ###Code improvement
- - Addapt to Joomla 3.5.0 JDocumentHTML class name changed to JDocumentHtml
- - Addapt to Joomla 3.5.0 JDocumentHTML class folder libraries/joomla/document/html changed to libraries/joomla/document
+ - Adapt to Joomla 3.5.0 JDocumentHTML class name changed to JDocumentHtml
+ - Adapt to Joomla 3.5.0 JDocumentHTML class folder libraries/joomla/document/html changed to libraries/joomla/document
  - Updated froogaloop fixes iframe for vimeo
  - Fixed google api https
  - Font awesome update to 4.5.0
