@@ -31,7 +31,7 @@ class Yjsg {
      * @since 2.0.0
      */	
 	 
-	public $version = "2.2.2";
+	public $version = "2.2.3";
 	
     /**
      * Check update
