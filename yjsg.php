@@ -1048,7 +1048,7 @@ class plgSystemYjsg extends JPlugin {
 				$imagemedia = 'index.php?option=com_media&view=images&tmpl=component&asset=com_templates&author=yjsg&fieldid=';
 				
 			}else{
-				
+				JHTML::_('behavior.modal');				
 				$imagemedia = 'administrator/index.php?option=com_media&view=images&tmpl=component&asset=com_templates&author=yjsg&fieldid=';
 			}
 			
