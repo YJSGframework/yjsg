@@ -1,3 +1,8 @@
+##Version: 2.2.4 (July 13, 2016)
+
+###Code improvement
+ - Shortcodes not visible in TinyMCE fix
+ 
 ##Version: 2.2.3 (March 22, 2016)
 
 ###Code improvement
