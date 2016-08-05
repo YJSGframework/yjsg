@@ -1,8 +1,7 @@
 ##Version: 2.2.5 (August 05, 2016)
- - Removed SqueezeBox close
  
 ###Code improvement
- - Shortcodes not visible in TinyMCE fix
+ - Removed SqueezeBox close
  
 ##Version: 2.2.4 (July 13, 2016)
 
