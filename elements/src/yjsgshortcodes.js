@@ -76,11 +76,7 @@
 			
 			
 			if (typeof (SqueezeBox) != 'undefined') {
-				
-				if (typeof (oldSqueezeBox) == 'undefined') {
-					SqueezeBox.close();
-				}
-				
+
 				SqueezeBox.initialize({});
 				SqueezeBox.assign($$('a.yjsg-shortcode-link'), {
 					parse: 'rel'
