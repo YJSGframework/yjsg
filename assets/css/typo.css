@@ -2068,3 +2068,6 @@ img.mfp-img {
 .bootstrap3 .control-group{
 	float:left;
 }
+.bootstrap3 .hasPopover{
+	display:block!important;
+}
