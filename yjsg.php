@@ -898,7 +898,7 @@ class plgSystemYjsg extends JPlugin {
 			  }else{
 				  
 					$body 	= preg_replace('/title="(.*?)<\/strong><br \/>(.*?)">/','data-original-title="$1</strong>" data-content="$2">', $body);
-					$body 	= str_replace('hasTooltip', "adminLabel", $body);
+					$body 	= str_replace(array('hasTooltip','hasPopover'), "adminLabel", $body);
 				  
 			  }
 			  Yjsg::setBody($body);
