@@ -53,7 +53,7 @@ if($params->get('yjsg_microdata_cat_enabeled') == 1){
 
 $edit_icon	= JHtml::_('icon.edit', $this->item, $params);
 $email_icon = JHtml::_('icon.email', $this->item, $params);
-$print_icon = JHtml::_('icon.print_popup', $this->item, $params);
+$print_icon = JHtml::_('icon.print_screen', $this->item, $params);
 
 // remove images from print email and edit, use font icons
 if ($canEdit){

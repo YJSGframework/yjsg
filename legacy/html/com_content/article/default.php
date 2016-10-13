@@ -21,12 +21,7 @@ if(intval(JVERSION)  > 1.7){
 
 $edit_icon	= JHtml::_('icon.edit', $this->item, $params);
 $email_icon = JHtml::_('icon.email', $this->item, $params);
-if (!$this->print){
-	$print_icon = JHtml::_('icon.print_popup', $this->item, $params);
-}else{
-	$print_icon = JHtml::_('icon.print_screen', $this->item, $params);
-	
-}
+$print_icon = JHtml::_('icon.print_screen', $this->item, $params);
 
 $bootstrap_version  = $yjsg->tplParam('bootstrap_version');
 if(empty($bootstrap_version)){

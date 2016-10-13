@@ -25,7 +25,7 @@ $info    	= $params->get('info_block_position', 0);
 
 $edit_icon	= JHtml::_('icon.edit', $this->item, $params);
 $email_icon = JHtml::_('icon.email', $this->item, $params);
-$print_icon = JHtml::_('icon.print_popup', $this->item, $params);
+$print_icon = JHtml::_('icon.print_screen', $this->item, $params);
 
 // micro data
 $article_nameMD 			= '';
