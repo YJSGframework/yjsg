@@ -15,7 +15,7 @@ defined('_JEXEC') or die;
   <div class="navbar-inner">
     <div class="yjsg-navbar-container">
       <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only"><?php echo JText::_('YJSG_BOOTSTRAPNAVBAR_TOOGLE_NAVIGATION'); ?></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>

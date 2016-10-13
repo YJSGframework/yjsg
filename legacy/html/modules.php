@@ -25,10 +25,21 @@ defined('_JEXEC') or die('Restricted access');
  Yjsgplain = square mods , no title no additional divs
  
   */
- // DEFAULT SQUARE
 
+// convert space in to span
+function moduleaddspan($s,$c){
+	
+	$output = '<span class="title_split titlesplit'.$c.'">'.$s.'</span>';
+    return $output;
+	
+}
+
+
+// DEFAULT SQUARE
 
 function modChrome_YJsgxhtml($module, &$params, &$attribs){
+	
+	if(!$module->content)return;
 	
 	$title 						= $module->title;
 	$module_suffix_class		= htmlspecialchars($params->get('moduleclass_sfx'));
@@ -47,6 +58,8 @@ function modChrome_YJsgxhtml($module, &$params, &$attribs){
 	$moduleid					= ' modid'.$module->id;
 	$yjsg_module_style			= $params->get('yjsg_module_style','default');
 	$yjsg_suffix_class			='';
+	$before_module				= $params->get('before_module','');
+	$after_module				= $params->get('after_module','');
 	
 	// yjsg suffix
 	if($yjsg_module_style !='default'){
@@ -96,13 +109,14 @@ function modChrome_YJsgxhtml($module, &$params, &$attribs){
 	if(strpos($title, ' ') !== false){	
 			
 		$title = explode(' ', $title);
-		$title = join(' ', array_map('addspan',$title, array_keys($title)));
+		$title = join(' ', array_map('moduleaddspan',$title, array_keys($title)));
 	
 	}
 
 
 	// output
-	$module_output  = '<'.$module_tag.' class="yjsquare'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
+	$module_output   = $before_module;
+	$module_output  .= '<'.$module_tag.' class="yjsquare'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
 	
 	if ($module->showtitle){
 		
@@ -117,6 +131,7 @@ function modChrome_YJsgxhtml($module, &$params, &$attribs){
 	$module_output .= $module->content;
 	$module_output .= '</div>';
 	$module_output .= '</'.$module_tag.'>';
+	$module_output .= $after_module;
 	
 	
 	
@@ -127,6 +142,8 @@ function modChrome_YJsgxhtml($module, &$params, &$attribs){
 }
 
 function modChrome_YJsground($module, &$params, &$attribs){
+	
+	if(!$module->content)return;
 	
 	$title 						= $module->title;
 	$module_suffix_class		= htmlspecialchars($params->get('moduleclass_sfx'));
@@ -146,6 +163,8 @@ function modChrome_YJsground($module, &$params, &$attribs){
 	$moduleid					= ' modid'.$module->id;
 	$yjsg_module_style			= $params->get('yjsg_module_style','default');
 	$yjsg_suffix_class			='';
+	$before_module				= $params->get('before_module','');
+	$after_module				= $params->get('after_module','');
 	
 	// yjsg suffix
 	if($yjsg_module_style !='default'){
@@ -196,13 +215,14 @@ function modChrome_YJsground($module, &$params, &$attribs){
 	if(strpos($title, ' ') !== false){	
 			
 		$title = explode(' ', $title);
-		$title = join(' ', array_map('addspan',$title, array_keys($title)));
+		$title = join(' ', array_map('moduleaddspan',$title, array_keys($title)));
 	
 	}
 
 
 	// output
-	$module_output  = '<'.$module_tag.' class="yjsquare addround'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
+	$module_output   = $before_module;
+	$module_output  .= '<'.$module_tag.' class="yjsquare addround'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
 	
 	if ($module->showtitle){
 		
@@ -217,6 +237,7 @@ function modChrome_YJsground($module, &$params, &$attribs){
 	$module_output .= $module->content;
 	$module_output .= '</div>';
 	$module_output .= '</'.$module_tag.'>';
+	$module_output .= $after_module;
 	
 	
 	
@@ -229,6 +250,8 @@ function modChrome_YJsground($module, &$params, &$attribs){
 
 function modChrome_YJsgplain($module, &$params, &$attribs){
 	
+	if(!$module->content)return;
+	
 	$bootstrap_size 			= $params->get('bootstrap_size','');
 	$bootstrap_size_class		='';
 	$module_tag 				= $params->get('module_tag','div');
@@ -236,6 +259,8 @@ function modChrome_YJsgplain($module, &$params, &$attribs){
 	$module_suffix_class		= htmlspecialchars($params->get('moduleclass_sfx'));
 	$yjsg_module_style			= $params->get('yjsg_module_style','default');
 	$yjsg_suffix_class			='';
+	$before_module				= $params->get('before_module','');
+	$after_module				= $params->get('after_module','');
 	
 	
 	
@@ -257,9 +282,11 @@ function modChrome_YJsgplain($module, &$params, &$attribs){
 	}
 
 	// output
-	$module_output  = '<'.$module_tag.' class="yjplain'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
+	$module_output  = $before_module;
+	$module_output .= '<'.$module_tag.' class="yjplain'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
 	$module_output .= $module->content;
 	$module_output .= '</'.$module_tag.'>';
+	$module_output .= $after_module;
 	
 	
 	

@@ -1,17 +1,11 @@
 <?php
-/*======================================================================*\
-|| #################################################################### ||
-|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
-|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
-|| # license - PHP files are licensed under  GNU/GPL V2                 ||
-|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
-|| # bound by Proprietary License of Youjoomla.com                      ||
-|| # for more information visit http://www.youjoomla.com/license.html   ||
-|| # Redistribution and  modification of this software                  ||
-|| # is bounded by its licenses                                         ||
-|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
-|| #################################################################### ||
-\*======================================================================*/
+/**
+ * @package      YJSG Framework
+ * @copyright    Copyright(C) since 2007  Youjoomla.com. All Rights Reserved.
+ * @author       YouJoomla
+ * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
+ */
 defined( '_JEXEC' ) or die( 'Restricted index access' );
 jimport('joomla.filesystem.file');
 //BEGIN CUSTOM JS VAR
@@ -50,7 +44,9 @@ $paramsArray						 = json_decode($this->params,true);
 
 // STYLE SETTINGS
 
-$get_style_value				 	= explode('|',$this->params->get("yjsg_get_styles","blue|007ebd"));
+if(!isset($get_style_value)){
+	$get_style_value				 	= explode('|',$this->params->get("yjsg_get_styles","blue|007ebd"));
+}
 $yjsg_get_styles				 	= $get_style_value[0];	
 $default_link_color				 	= $get_style_value[1];
 $site_link_color				 	= '#'.$default_link_color;
@@ -401,7 +397,7 @@ if ($selectors_override_type == 1 ){ // CSS
 		$nice_font   		= ''.str_replace('+',' ',$fontName).','.$splitFont[1].';'.$fontWeight.'';
 		$google_font_family = $splitFont[0];
 	}	
-	$font_sheet  = 'http://fonts.googleapis.com/css?family='.$google_font_family.'';
+	$font_sheet  = '//fonts.googleapis.com/css?family='.$google_font_family.'';
 	
 	// stylesheet with multiple fonts
 	if(strstr($font_sheet,'==')){

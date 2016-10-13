@@ -1,17 +1,11 @@
 <?php
-/*======================================================================*\
-|| #################################################################### ||
-|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
-|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
-|| # license - PHP files are licensed under  GNU/GPL V2                 ||
-|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
-|| # bound by Proprietary License of Youjoomla.com                      ||
-|| # for more information visit http://www.youjoomla.com/license.html   ||
-|| # Redistribution and  modification of this software                  ||
-|| # is bounded by its licenses                                         ||
-|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
-|| #################################################################### ||
-\*======================================================================*/
+/**
+ * @package      YJSG Framework
+ * @copyright    Copyright(C) since 2007  Youjoomla.com. All Rights Reserved.
+ * @author       YouJoomla
+ * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
+ */
 defined( '_JEXEC' ) or die( 'Restricted index access' );
 /*check if grids are present*/
 $yjsg1_loaded 				= false;
@@ -322,6 +316,9 @@ function yjsg_print_grid_area($yjsg_grid_name,$add_width =false,$before ='',$aft
 		}else{
 					$gridDivName	= $yjsg_grid_name;
 		}
+		
+		$grid_suffix		= array();
+		
 		$html = '<div id="'.$gridDivName.'" class="yjsg_grid'.$add_width.'">';
 		
 		  
@@ -381,15 +378,24 @@ function yjsg_print_grid_area($yjsg_grid_name,$add_width =false,$before ='',$aft
         	$module_float		= $moduleParams->get('module_float');
 			$module_floatwidth	= $moduleParams->get('module_floatwidth');
 			$module_suffix		= $moduleParams->get('moduleclass_sfx');
+			$yjsg_module_style	= $moduleParams->get('yjsg_module_style','default');
 			$tabs_suffix		= '';
 			$accordion_suffix	= '';
 			$slider_suffix		= '';
+			
+			
+			// yjsg suffix
+			if($yjsg_module_style !='default' && empty($module_suffix)){
+				
+				$module_suffix = $yjsg_module_style;
+			}
 			
 			if(!empty($module_suffix)){
 
 				$tabs_suffix		= ' tabssfx-yjsgsfx-'.trim($module_suffix);
 				$accordion_suffix	= ' accordionsfx-yjsgsfx-'.trim($module_suffix);
-				$slider_suffix		= ' slidersfx-yjsgsfx-'.trim($module_suffix);				
+				$slider_suffix		= ' slidersfx-yjsgsfx-'.trim($module_suffix);
+				$grid_suffix	    []= ' gridsfx-'.trim($module_suffix);				
 				$module_suffix 		= ' yjsgsfx-'.trim($module_suffix);
 
 			}
@@ -420,7 +426,7 @@ function yjsg_print_grid_area($yjsg_grid_name,$add_width =false,$before ='',$aft
 				
 			}
 
-
+			
 		
 			if( !$mod_width ) continue;
 			
@@ -546,6 +552,14 @@ function yjsg_print_grid_area($yjsg_grid_name,$add_width =false,$before ='',$aft
 			
 		  }
 		$html .= '</div>';
+		
+		if(!empty($grid_suffix)){
+			
+			$add_grid_suffix = implode('',$grid_suffix);
+			$html = str_replace('yjsg_grid','yjsg_grid'.$add_grid_suffix,$html);
+			
+		}
+		
 
 		if( $echo ){
 		  echo $before.$html.$after;

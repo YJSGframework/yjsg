@@ -1,17 +1,10 @@
-/*======================================================================*\
-|| #################################################################### ||
-|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
-|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
-|| # Authors - Dragan Todorovic and Constantin Boiangiu                 ||
-|| # license - PHP files are licensed under  GNU/GPL V2                 ||
-|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
-|| # bound by Proprietary License of Youjoomla.com                      ||
-|| # for more information visit http://www.youjoomla.com/license.html   ||
-|| # Redistribution and  modification of this software                  ||
-|| # is bounded by its licenses                                         ||
-|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
-|| #################################################################### ||
-\*======================================================================*/
+/**
+ * @package      YJSG Framework
+ * @copyright    Copyright(C) since 2007  Youjoomla.com. All Rights Reserved.
+ * @author       YouJoomla
+ * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
+ */
 (function ($) {
 
     var YjsgSite = {
@@ -110,7 +103,7 @@
                     el.css('margin-top', pushed);
                 }
 
-                window.addEventListener("scroll", function (evt) {
+                $(document).on("scroll", function (evt) {
 
                     if ($(window).scrollTop() >= offset) {
 
@@ -176,7 +169,7 @@
 			   cur = cur[cur.length-1];
 			   var id = cur && cur.length ? cur[0].id : "";
 			   
-			   if (lastScrollId !== id) {
+			   if (lastScrollId !== id && id !="") {
 				   lastScrollId = id;
 				   stickyItems.removeClass("active-scroll");
 				   $("[href=#"+id+"]").addClass("active-scroll");
@@ -191,6 +184,20 @@
             var self = this;
 			
 			if (typeof ($.fn.magnificPopup) == 'undefined') return;
+			
+			if(typeof lgtr != 'undefined'){
+				$.extend(true, $.magnificPopup.defaults, {
+				  tClose: lgtr.magnificpopup_close,
+				  tLoading: lgtr.magnificpopup_loading,
+				  gallery: {
+					tPrev: lgtr.magnificpopup_prev,
+					tNext: lgtr.magnificpopup_next,
+					tCounter: lgtr.magnificpopup_counter
+				  },
+				  image: { tError: lgtr.magnificpopup_errorimage },
+				  ajax: { tError: lgtr.magnificpopup_errorajax }
+				});
+			}
 
             $('.yjsg-lightbox-gallery').each(function () {
                 $(this).find('a').magnificPopup({
@@ -245,6 +252,22 @@
                 type: 'image',
                 mainClass: 'mfp-fade'
             });
+
+
+            $('.yjsg-link-lightbox-gallery').magnificPopup({
+                type: 'image',
+                mainClass: 'mfp-fade',
+                gallery: {
+                    enabled: true
+                }
+            });
+						
+			
+		   $('.yjsg-iframe-lightbox').magnificPopup({
+			  type: 'iframe',
+			  mainClass: 'mfp-fade'
+			});
+			
 
         },
 
@@ -377,7 +400,7 @@
                 $(canvas).css(startCss).addClass('canvas_active').animate(openPoz, 400);
 
                 $(overlay).addClass('canvas_active').animate({
-                    backgroundColor: "rgba(0, 0, 0, 0.3)",
+                    backgroundColor: "rgba(0, 0, 0, 0.3)"
                 }, 400);
 
                 $('html').addClass('canvas_on').stop().animate(openMargin, 400);
@@ -392,7 +415,7 @@
                 if (target.parents('.yjsg-off_canvas_in').length != 0 && !target.parents().hasClass('closeCanvas') || target.hasClass('yjsg-off_canvas_in')) return;
 
                 $('.yjsg-off_canvas').animate({
-                    backgroundColor: "rgba(0, 0, 0, 0)",
+                    backgroundColor: "rgba(0, 0, 0, 0)"
                 }, 400);
 
                 $('.yjsg-off_canvas_in').stop().animate(closePoz, 400, function () {
@@ -477,6 +500,154 @@
 
         },
 
+
+		animateMenusShow: function (element,animation,animationspeed) {
+			
+			var self = this;
+			
+			if (element.hasClass("holdsgroup")) {
+		
+				return false;
+			}
+		
+			if (element.hasClass("level0") && $('.megadropline').length > 0) {
+		
+				return false;
+			}
+		
+			if (animation == 'fade') {
+		
+				element.find('div.nogroup').first().hide().stop(true, true).toggle('fade', animationspeed, function () {
+		
+					$(this).show();
+		
+				});
+		
+			}
+			if (animation == 'grow') {
+		
+				element.find('div.nogroup > ul').first().addClass('growshown').hide().show('slide', {
+					direction: "up"
+				}, animationspeed, function () {
+		
+					$(this).css('display', 'block');
+					$(this).parent().css('display', 'block');
+		
+				});
+		
+			}
+		
+			if (animation == 'revfade') {
+		
+				var getTop = element.find('a').first().outerHeight(true);
+		
+				if (element.hasClass("level0") || ($('.megadropline').length > 0 && element.hasClass("level1"))) {
+		
+					element.find('div.nogroup').first().css({
+						top: getTop * 2,
+						opacity: 0,
+						display: 'block'
+		
+					}).stop(true, true).animate({
+						'top': getTop,
+						'opacity': 1
+					}, animationspeed, function () {
+		
+						$(this).css('display', 'block');
+		
+					});
+		
+				} else {
+		
+					element.find('div.nogroup').first().css({
+						top: getTop,
+						opacity: 0,
+						display: 'block'
+		
+					}).stop(true, true).animate({
+						'top': 0,
+						'opacity': 1
+					}, animationspeed, function () {
+		
+						$(this).css('display', 'block');
+		
+					});
+		
+				}
+		
+			}	
+		},
+		
+		
+		
+		
+		animateMenusHide: function (element,animation,animationspeed) {
+			
+			  	var self = this;
+			  
+			  	if (element.hasClass("level0") && $('.megadropline').length > 0) {
+		
+					return false;
+				}
+		
+				if (animation == 'fade') {
+		
+					element.find('div.nogroup').first().stop(true).toggle('fade', animationspeed, function () {
+		
+						$(this).removeAttr('style');
+		
+					});
+		
+				}
+		
+				if (animation == 'grow') {
+		
+					element.find('.growshown').stop(true, true).hide('slide', {
+						direction: "up"
+					}, animationspeed, function () {
+		
+						$(this).removeClass('growshown').removeAttr('style');
+						$(this).parent().removeAttr('style');
+		
+					});
+		
+				}
+		
+				if (animation == 'revfade') {
+		
+					var getTop = element.find('a').first().outerHeight(true);
+		
+					if (element.hasClass("level0") || ($('.megadropline').length > 0 && element.hasClass("level1"))) {
+		
+						element.find('div.nogroup').first().stop().animate({
+							'top': getTop + 20,
+							'opacity': 0
+						}, animationspeed, function () {
+		
+							$(this).removeAttr('style');
+		
+						});
+		
+					} else {
+		
+						element.find('div.nogroup').first().stop().animate({
+							'top': getTop,
+							'opacity': 0
+						}, animationspeed, function () {
+		
+							$(this).removeAttr('style');
+		
+						});
+		
+					}
+		
+				}	
+			
+			
+			
+		},
+		
+
         animateMenus: function () {
 
             var self = this;
@@ -504,142 +675,17 @@
                 });
             }
 
-            $("ul.yjsgmenu li.haschild").hover(function () {
+			$("ul.yjsgmenu li.haschild").hover(function(e) {
+	
+				self.animateMenusShow($(this),animation,animationspeed);
+	
+			}, function(e) {
+	
+				self.animateMenusHide($(this),animation,animationspeed);
+	
+			});
+		
 
-                if ($(this).hasClass("holdsgroup")) {
-
-                    return false;
-                }
-
-                if ($(this).hasClass("level0") && $('.megadropline').length > 0) {
-
-                    return false;
-                }
-
-                if (animation == 'fade') {
-
-                    $(this).find('div.nogroup').first().hide().stop(true, true).toggle('fade', animationspeed, function () {
-
-                        $(this).show();
-
-                    });
-
-                }
-                if (animation == 'grow') {
-
-                    $(this).find('div.nogroup > ul').first().hide().show('slide', {
-                        direction: "up"
-                    }, animationspeed, function () {
-
-                        $(this).css('display', 'block');
-                        $(this).parent().css('display', 'block');
-
-                    });
-
-                }
-
-                if (animation == 'revfade') {
-
-                    var getTop = $(this).find('a').first().outerHeight(true);
-
-                    if ($(this).hasClass("level0") || ($('.megadropline').length > 0 && $(this).hasClass("level1"))) {
-
-                        $(this).find('div.nogroup').first().css({
-                            top: getTop * 2,
-                            opacity: 0,
-                            display: 'block',
-
-                        }).stop(true, true).animate({
-                            'top': getTop,
-                            'opacity': 1
-                        }, animationspeed, function () {
-
-                            $(this).css('display', 'block');
-
-                        });
-
-                    } else {
-
-                        $(this).find('div.nogroup').first().css({
-                            top: getTop,
-                            opacity: 0,
-                            display: 'block',
-
-                        }).stop(true, true).animate({
-                            'top': 0,
-                            'opacity': 1
-                        }, animationspeed, function () {
-
-                            $(this).css('display', 'block');
-
-                        });
-
-                    }
-
-                }
-
-            }, function () {
-
-
-                if ($(this).hasClass("level0") && $('.megadropline').length > 0) {
-
-                    return false;
-                }
-
-                if (animation == 'fade') {
-
-                    $(this).find('div.nogroup').first().stop(true).toggle('fade', animationspeed, function () {
-
-                        $(this).removeAttr('style');
-
-                    });
-
-                }
-
-                if (animation == 'grow') {
-
-                    $(this).find('div.nogroup > ul').first().stop(true, true).hide('slide', {
-                        direction: "up"
-                    }, animationspeed, function () {
-
-                        $(this).removeAttr('style');
-                        $(this).parent().removeAttr('style');
-
-                    });
-
-                }
-
-                if (animation == 'revfade') {
-
-                    var getTop = $(this).find('a').first().outerHeight(true);
-
-                    if ($(this).hasClass("level0") || ($('.megadropline').length > 0 && $(this).hasClass("level1"))) {
-
-                        $(this).find('div.nogroup').first().stop().animate({
-                            'top': getTop + 20,
-                            'opacity': 0
-                        }, animationspeed, function () {
-
-                            $(this).removeAttr('style');
-
-                        });
-
-                    } else {
-
-                        $(this).find('div.nogroup').first().stop().animate({
-                            'top': getTop,
-                            'opacity': 0
-                        }, animationspeed, function () {
-
-                            $(this).removeAttr('style');
-
-                        });
-
-                    }
-
-                }
-
-            });
 
         },
 
@@ -938,13 +984,13 @@
                 $(this).on('mouseenter', function (event) {
 
                     $(this).find('img').animate({
-                        'opacity': opacity,
+                        'opacity': opacity
                     }, speed);
 
                 }).on('mouseleave', function (event) {
 
                     $(this).find('img').animate({
-                        'opacity': 1,
+                        'opacity': 1
                     }, speed);
 
                 });
@@ -952,15 +998,8 @@
             });
 
         },
-		
-		yjscrollData: function (){
-			
-			
-			
-			
-			
-		},
-		
+
+
         yjsgScroll: function () {
 
             var self = this;
@@ -1067,7 +1106,7 @@
                 }
             });
 
-        },
+        }
 
     }
 

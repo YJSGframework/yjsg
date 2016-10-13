@@ -1,19 +1,11 @@
 <?php
-/*======================================================================*\
-|| #################################################################### ||
-|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
-|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
-|| # Authors - Dragan Todorovic and Constantin Boiangiu                 ||
-|| # license - PHP files are licensed under  GNU/GPL V2                 ||
-|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
-|| # bound by Proprietary License of Youjoomla.com                      ||
-|| # for more information visit http://www.youjoomla.com/license.html   ||
-|| # Redistribution and  modification of this software                  ||
-|| # is bounded by its licenses                                         ||
-|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
-|| #################################################################### ||
-\*======================================================================*/
-
+/**
+ * @package      YJSG Framework
+ * @copyright    Copyright(C) since 2007  Youjoomla.com. All Rights Reserved.
+ * @author       YouJoomla
+ * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
+ */
 // Check to ensure this file is within the rest of the framework
 defined('JPATH_BASE') or die();
 
@@ -35,7 +27,7 @@ class JFormFieldYJSGText extends JFormField
 		
 		$size = ( $this->element['size'] ? 'size="'.$this->element['size'].'"' : '' );
 		$class = ( $this->element['class'] ? 'class="'.$this->element['class'].'"' : 'class="text_area"' );
-		
+		$hint = ( $this->element['hint'] ? 'placeholder="'.JText::_($this->element['hint']).'"' : '' );
 		
 		$searchName1 = array('maincolumn','insetcolumn','leftcolumn','rightcolumn');
 		$searchName2 = array('maincolumn_itmid','insetcolumn_itmid','leftcolumn_itmid','rightcolumn_itmid');
@@ -64,6 +56,6 @@ class JFormFieldYJSGText extends JFormField
 		$output .='';
 		$output .='';
 		
-       	return '<input type="text" name="'.$this->name.'" id="'.$this->id.'" value="'.$this->value.'" '.$class.' '.$size.' />';
+       	return '<input type="text" name="'.$this->name.'" id="'.$this->id.'" value="'.$this->value.'" '.$hint.' '.$class.' '.$size.' />';
 	}	
 }

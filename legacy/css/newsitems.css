@@ -1,16 +1,10 @@
-/*======================================================================*\
-|| #################################################################### ||
-|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
-|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
-|| # license - PHP files are licensed under  GNU/GPL V2                 ||
-|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
-|| # bound by Proprietary License of Youjoomla.com                      ||
-|| # for more information visit http://www.youjoomla.com/license.html   ||
-|| # Redistribution and  modification of this software                  ||
-|| # is bounded by its licenses                                         ||
-|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
-|| #################################################################### ||
-\*======================================================================*/
+/**
+ * @package      YJSG Framework
+ * @copyright    Copyright(C) since 2007  Youjoomla.com. All Rights Reserved.
+ * @author       YouJoomla
+ * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
+ */
 /* HOLDING CLASS OF VIEWS. WHEN YOU ADD PAGE SUFFIX IT WILL AFFECT THIS DIV.
    STYLE HOLDING CLASSES ACCORDING TO THIS DIV */
 div.yjsg-newsitems {
@@ -69,7 +63,9 @@ h1.article_title {
 	margin:0;
 }
 .newsitem_tools [class^="icon-"],
-.newsitem_tools [class^="fa"]{
+.newsitem_tools [class^="fa"],
+.newsitem_info [class^="icon-"],
+.newsitem_info [class^="fa"] {
 	font-size:14px;
 }
 /* newsitem_info  CONTAINS , CREATED BY , CREATE DATE */
@@ -77,7 +73,13 @@ h1.article_title {
 	width: 70%;
 	display: block;
 	float:left;
-	
+	color:#888;	
+}
+.newsitem_info_bottom,
+.newsitem_info_split_bottom{
+	margin:20px 0;
+	float:none;
+	width: 100%;
 }
 .newsitem_info span{
 	padding-left:3px;
@@ -121,7 +123,6 @@ ul.dropdown-menu.buttonheading img {
 }
 .createby {
 	padding:0 3px 0 0px;
-		float:left;
 }
 .createdate {
 	padding:0 3px 0 0px;
@@ -137,9 +138,7 @@ ul.dropdown-menu.buttonheading img {
 	padding:0 3px 0 0px;
 }
 .newsitem_hits {
-	padding:0 0 0 0;
-	display:block;
-	float:left;
+	padding:0;
 }
 .newsitem_published {
 	padding:0 10px 0 0;

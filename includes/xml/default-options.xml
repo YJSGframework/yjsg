@@ -8,8 +8,8 @@
 		<fieldset name="YJSG_STYLE_SETTINGS">
 			<field name="YJSG_STYLE_SUB" type="yjsgparamtitle" default="YJSG_STYLE_SUB" />
 			<field name="custom_css" type="yjsgradio" default="2" label="YJSG_CUSTOM_CSS_LABEL" description="YJSG_CUSTOM_CSS_DESC">
-				<option value="1">Yes</option>
-				<option value="2">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="2">YJSG_NO</option>
 			</field>
 			<field name="yjsg_get_styles" type="yjsglist" default="blue|007ebd" label="YJSG_COLOR_LABEL" description="YJSG_COLOR_DESC" yjsgstyles="blue==007ebd">
 				<option value="blue|007ebd">Blue</option>
@@ -33,15 +33,15 @@
 				<option value="15">Georgia</option>
 			</field>
 			<field name="selectors_override" type="yjsglist" default="2" label="YJSG_HTAG_OVR_LABEL" description="YJSG_HTAG_OVR_DESC">
-				<option value="1"  enable="selectors_override_type|css_font_family|google_font_family|affected_selectors|fontfacekit_font_family">Yes</option>
-				<option value="2" disable="selectors_override_type|css_font_family|google_font_family|affected_selectors|fontfacekit_font_family">No</option>
+				<option value="1"  enable="selectors_override_type|css_font_family|google_font_family|affected_selectors|fontfacekit_font_family">YJSG_YES</option>
+				<option value="2" disable="selectors_override_type|css_font_family|google_font_family|affected_selectors|fontfacekit_font_family">YJSG_NO</option>
 			</field>
 			<field name="selectors_override_type" type="yjsglist" default="1" label="YJSG_HTAG_OVR_TYPE_LABEL" description="YJSG_HTAG_OVR_TYPE_DESC">
-				<option value="1" enable="css_font_family|affected_selectors" disable="google_font_family|fontfacekit_font_family">CSS</option>
-				<option value="2" enable="google_font_family|affected_selectors" disable="css_font_family|fontfacekit_font_family">Google Font</option>
-				<option value="3" enable="fontfacekit_font_family" disable="google_font_family|css_font_family|affected_selectors">@font-face kit</option>
+				<option value="1" enable="css_font_family|affected_selectors" disable="google_font_family|fontfacekit_font_family">YJSG_HTAG_OVR_TYPE_OPTION_CSS</option>
+				<option value="2" enable="google_font_family|affected_selectors" disable="css_font_family|fontfacekit_font_family">YJSG_HTAG_OVR_TYPE_OPTION_GOOGLEFONT</option>
+				<option value="3" enable="fontfacekit_font_family" disable="google_font_family|css_font_family|affected_selectors">YJSG_HTAG_OVR_TYPE_OPTION_FONTFACEKIT</option>
 			</field>
-			<field name="css_font_family" type="yjsglist" default="12" label="YJSG_CSS_FONT_FAM_LABEL" description="YJSG_CSS_FONT_FAM_DESC">
+			<field name="css_font_family" type="yjsglist" default="6" label="YJSG_CSS_FONT_FAM_LABEL" description="YJSG_CSS_FONT_FAM_DESC">
 				<option value="1">Bookman Old Style</option>
 				<option value="2">Palatino</option>
 				<option value="3">Times New Roman</option>
@@ -68,29 +68,29 @@
 			<field name="logo_width" type="yjsgtext" default="165px" label="YJSG_LOGO_WIDTH" description="YJSG_LOGO_WIDTH_DESC" />
 			<field name="logo_height" type="yjsgtext" default="115px" label="YJSG_LOGO_HEIGHT" description="YJSG_LOGO_HEIGHT_DESC" />
 			<field name="turn_logo_off" type="yjsgradio" default="2" label="YJSG_LOGO_OFF_LABEL" description="YJSG_LOGO_OFF_DESC">
-				<option value="1">Yes</option>
-				<option value="2">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="2">YJSG_NO</option>
 			</field>
 			<field name="turn_header_block_off" type="yjsgradio" default="2" label="YJSG_HEADER_BLOCK_OFF" description="YJSG_HEADER_BLOCK_OFF_DESC">
-				<option value="1">Yes</option>
-				<option value="2">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="2">YJSG_NO</option>
 			</field>
 		</fieldset>
 		<!-- Top Menu Settings -->
 		<fieldset name="YJSG_TOP_MENU_LABEL">
 			<field name="YJSG_TOP_MENU_YJ_LABEL" type="yjsgparamtitle" default="YJSG_TOP_MENU_YJ_LABEL" />
 			<field name="top_menu_location" type="yjsglist" default="0" label="YJSG_TOP_MENU_LOCATION_LABEL" description="YJSG_TOP_MENU_LOCATION_DESC">
-				<option value="0">Flexible</option>
-				<option value="1">In header</option>
+				<option value="0">YJSG_TOP_MENU_LOCATION_OPTION_FLEXIBLE</option>
+				<option value="1">YJSG_TOP_MENU_LOCATION_OPTION_INHEADER</option>
 			</field>
 			<field name="menuName" type="menu" default="mainmenu" label="YJSG_DEF_TOP_MENU_LABEL" description="YJSG_DEF_TOP_MENU_DESC" />
 			<field name="default_menu_style" type="yjsglist" default="2" label="YJSG_DEF_MENU_STYLE_LABEL" description="YJSG_DEF_MENU_STYLE_DESC">
-				<option value="1" enable="yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance" disable="default_menu_animation|yjsg_menu_animation_speed">Dropdown Menu</option>
-				<option value="2" enable="default_menu_animation|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance">SMooth Dropdown</option>
-				<option value="3" enable="yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance" disable="default_menu_animation|yjsg_menu_animation_speed">Dropline</option>
-				<option value="4" enable="default_menu_animation|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance">SMooth Dropline</option>
-				<option value="5" disable="default_menu_animation|yjsg_menu_top_distance|yjsg_menu_side_distance|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width">Split Menu</option>
-				<option value="6" disable="default_menu_animation|yjsg_menu_top_distance|yjsg_menu_side_distance|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width">Menu module position</option>
+				<option value="1" enable="yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance" disable="default_menu_animation|yjsg_menu_animation_speed">YJSG_DEF_TOP_MENU_OPTION_DROPDOWN</option>
+				<option value="2" enable="default_menu_animation|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance">YJSG_DEF_TOP_MENU_OPTION_SMOOTHDROPDOWN</option>
+				<option value="3" enable="yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance" disable="default_menu_animation|yjsg_menu_animation_speed">YJSG_DEF_TOP_MENU_OPTION_DROPLINE</option>
+				<option value="4" enable="default_menu_animation|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width|yjsg_menu_top_distance|yjsg_menu_side_distance">YJSG_DEF_TOP_MENU_OPTION_SMOOTHDROPLINE</option>
+				<option value="5" disable="default_menu_animation|yjsg_menu_top_distance|yjsg_menu_side_distance|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width">YJSG_DEF_TOP_MENU_OPTION_SPLIT</option>
+				<option value="6" disable="default_menu_animation|yjsg_menu_top_distance|yjsg_menu_side_distance|yjsg_menu_animation_speed|yjsg_menu_offset|sub_width">YJSG_DEF_TOP_MENU_OPTION_MODULEPOSITION</option>
 			</field>
 			<field name="menuendLevel" type="yjsglist" default="0" label="YJSG_DEF_MENU_ENDLEVEL_LABEL" description="YJSG_DEF_MENU_ENDLEVEL_DESC">
 				<option value="0">JALL</option>
@@ -110,9 +110,9 @@
 			<field name="yjsg_menu_top_distance" type="yjsgtext" default="10" label="YJSG_ANIM_TOP_DISTANCE_LABEL" description="YJSG_ANIM_TOP_DISTANCE_DESC" />
 			<field name="yjsg_menu_side_distance" type="yjsgtext" default="10" label="YJSG_ANIM_SIDE_DISTANCE_LABEL" description="YJSG_ANIM_SIDE_DISTANCE_DESC" />
 			<field name="default_menu_animation" type="yjsglist" default="fade" label="YJSG_DEF_MENU_ANIM_LABEL" description="YJSG_DEF_MENU_ANIM_DESC">
-				<option value="fade">Fade</option>
-				<option value="revfade">Reverse Fade</option>
-				<option value="grow">Grow</option>
+				<option value="fade">YJSG_DEF_MENU_ANIM_OPTION_FADE</option>
+				<option value="revfade">YJSG_DEF_MENU_ANIM_OPTION_RESERVEFADE</option>
+				<option value="grow">YJSG_DEF_MENU_ANIM_OPTION_GROW</option>
 			</field>
 			<field name="yjsg_menu_animation_speed" type="yjsgtext" default="300" label="YJSG_ANIM_SPEED_LABEL" description="YJSG_ANIM_SPEED_DESC" />
 			<field name="" type="yjsgparamtitle" default="YJSG_TOP_MENU_OFF_YJ_LABEL" />
@@ -148,16 +148,16 @@
 			<field name="yjsg_7_width" type="yjsgmultitext" default="20|20|20|20|20" labels="User21|User22|User23|User24|User25" customchrome="YJsgxhtml|YJsgxhtml|YJsgxhtml|YJsgxhtml|YJsgxhtml" items="5" size="2" class="serialize_multiple" />
 			<!-- Top Sliding Panel -->
 			<field name="YJSG_TOPPANEL_YJ_LABEL" type="yjsgparamtitle" default="YJSG_TOPPANEL_YJ_LABEL" />
-			<field name="tpopen_text" type="yjsgtext" default="Open" label="YJSG_TP_OPEN" description="YJSG_TP_OPEN_DESC" />
-			<field name="tpclose_text" type="yjsgtext" default="Close" label="YJSG_TP_CLOSE" description="YJSG_TP_CLOSE_DESC" />
+			<field name="tpopen_text" type="yjsgtext" default="" hint="YJSG_OPEN" label="YJSG_TP_OPEN" description="YJSG_TP_OPEN_DESC" />
+			<field name="tpclose_text" type="yjsgtext" default="" hint="YJSG_CLOSE" label="YJSG_TP_CLOSE" description="YJSG_TP_CLOSE_DESC" />
 			<field name="tpbtn_height" type="yjsgtext" default="30" label="YJSG_TPB_HEIGHT" description="YJSG_TPB_HEIGHT_DESC" />
 			<field name="tpbtn_width" type="yjsgtext" default="100" label="YJSG_TPB_WIDTH" description="YJSG_TPB_WIDTH_DESC" />
 			<field name="tptran_speed" type="yjsgtext" default="500" label="YJSG_TPTRANS_SPEED" description="YJSG_TPTRANS_SPEED_DESC" />
 			<field name="yjsg_toppanel_width" type="yjsgmultitext" default="20|20|20|20|20" labels="Tpan1|Tpan2|Tpan3|Tpan4|Tpan5" customchrome="YJsgxhtml|YJsgxhtml|YJsgxhtml|YJsgxhtml|YJsgxhtml" items="5" size="2" class="serialize_multiple" />
 			<!-- Bottom Sliding Panel -->
 			<field name="YJSG_BOTPANEL_YJ_LABEL" type="yjsgparamtitle" default="YJSG_BOTPANEL_YJ_LABEL" />
-			<field name="bpopen_text" type="yjsgtext" default="Open" label="YJSG_BP_OPEN" description="YJSG_BP_OPEN_DESC" />
-			<field name="bpclose_text" type="yjsgtext" default="Close" label="YJSG_BP_CLOSE" description="YJSG_BP_CLOSE_DESC" />
+			<field name="bpopen_text" type="yjsgtext" default="" hint="YJSG_OPEN" label="YJSG_BP_OPEN" description="YJSG_BP_OPEN_DESC" />
+			<field name="bpclose_text" type="yjsgtext" default="" hint="YJSG_CLOSE" label="YJSG_BP_CLOSE" description="YJSG_BP_CLOSE_DESC" />
 			<field name="bpbtn_height" type="yjsgtext" default="30" label="YJSG_BPB_HEIGHT" description="YJSG_BPB_HEIGHT_DESC" />
 			<field name="bpbtn_width" type="yjsgtext" default="100" label="YJSG_BPB_WIDTH" description="YJSG_BPB_WIDTH_DESC" />
 			<field name="bptran_speed" type="yjsgtext" default="500" label="YJSG_BPTRANS_SPEED" description="YJSG_BPTRANS_SPEED_DESC" />
@@ -168,83 +168,83 @@
 			<field name="spbtn_poz" type="yjsgtext" default="45%" label="YJSG_SPB_POZ" description="YJSG_SPB_POZ_DESC" />
 			<field name="sptran_speed" type="yjsgtext" default="500" label="YJSG_SPTRANS_SPEED" description="YJSG_SPTRANS_SPEED_DESC" />
 			<field name="sidepanel_module_style" type="yjsgradio" default="YJsgxhtml" label="YJSG_SIDEPANEL_MS_LABEL"  description="YJSG_SIDEPANEL_MS_DESC">
-				<option value="YJsgxhtml">Square</option>
-				<option value="YJsground">Round</option>
-				<option value="YJsgplain">Blank</option>
+				<option value="YJsgxhtml">YJSG_SQUARE</option>
+				<option value="YJsground">YJSG_ROUND</option>
+				<option value="YJsgplain">YJSG_BLANK</option>
 			</field>
 		</fieldset>
 		<!-- Additional Features -->
 		<fieldset name="YJSG_ADD_F_LABEL">
 			<field name="YJSG_GA_YJ_LABEL" type="yjsgparamtitle" default="YJSG_GA_YJ_LABEL" />
 			<field name="ga_switch" type="yjsglist" default="0" label="YJSG_GA_LABEL" description="YJSG_GA_DESC">
-				<option value="0" disable="GAcode|GAuniversal">Disable</option>
-				<option value="1" enable="GAcode" disable="GAuniversal">Enable</option>
-				<option value="2" enable="GAuniversal" disable="GAcode">Enable Universal Analytics</option>
+				<option value="0" disable="GAcode|GAuniversal">YJSG_DISABLE</option>
+				<option value="1" enable="GAcode" disable="GAuniversal">YJSG_ENABLE</option>
+				<option value="2" enable="GAuniversal" disable="GAcode">YJSG_ENABLE_GUA</option>
 			</field>
-			<field name="GAcode" type="yjsgtext" default="Your google code" size="20" label="YJSG_GACODE_LABEL" description="YJSG_GACODE_DESC" />
+			<field name="GAcode" type="yjsgtext" default="" hint="YJSG_GACODE_HINT" size="20" label="YJSG_GACODE_LABEL" description="YJSG_GACODE_DESC" />
 			<field name="GAuniversal" type="textarea" rows="4" cols="50" default="" filter="raw" label="YJSG_GA_UN_CODE_LABEL" description="YJSG_GA_UN_CODE_DESC" />
 			<field name="YJSG_NOTICES_YJ_LABEL" type="yjsgparamtitle" default="YJSG_NOTICES_YJ_LABEL" />
 			<field name="ie6notice" type="yjsgradio" default="0" label="YJSG_IE_NOTICE_LABEL" description="YJSG_IE_NOTICE_DESC">
-				<option value="1">Enable</option>
-				<option value="0">Disable</option>
+				<option value="1">YJSG_ENABLE</option>
+				<option value="0">YJSG_DISABLE</option>
 			</field>
 			<field name="nonscript" type="yjsgradio" default="0" label="YJSG_NOSCRIPT_LABEL" description="YJSG_NOSCRIPT_DESC">
-				<option value="1">Enable</option>
-				<option value="0">Disable</option>
+				<option value="1">YJSG_ENABLE</option>
+				<option value="0">YJSG_DISABLE</option>
 			</field>
 			<field name="YJSG_SHOW_TOOLS_YJ_LABEL" type="yjsgparamtitle" default="YJSG_SHOW_TOOLS_YJ_LABEL" />
 			<field name="show_tools" type="yjsgradio" default="1" label="YJSG_SHOW_TOOLS_LABEL" description="YJSG_SHOW_TOOLS_DESC">
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
 			<field name="show_fres" type="yjsgradio" default="1" label="YJSG_SHOW_FONT_RESIZER_LABEL" description="YJSG_SHOW_FONT_RESIZER_DESC">
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
 			<field name="show_rtlc" type="yjsgradio" default="1" label="YJSG_SHOW_RTL_SWITCH_LABEL" description="YJSG_SHOW_RTL_SWITCH_DESC">
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
 			<field name="YJSG_TEXT_DIR_YJ_LABEL" type="yjsgparamtitle" default="YJSG_TEXT_DIR_YJ_LABEL" />
 			<field name="text_direction" type="yjsgradio" default="2" label="YJSG_TEXT_DIR_LABEL" description="YJSG_TEXT_DIR_DESC">
-				<option value="1">RTL</option>
-				<option value="2">LTR</option>
+				<option value="1">YJSG_TEXT_DIR_OPTION_RTL</option>
+				<option value="2">YJSG_TEXT_DIR_OPTION_LTR</option>
 			</field>
 			<field name="YJSG_SEO_YJ_LABEL" type="yjsgparamtitle" default="YJSG_SEO_YJ_LABEL" />
 			<field name="turn_seo_off" type="yjsglist" default="2" label="YJSG_SEO_LABEL" description="YJSG_SEO_DESC">
-				<option value="1" enable="seo|tags">Yes</option>
-				<option value="2" disable="seo|tags">No</option>
+				<option value="1" enable="seo|tags">YJSG_YES</option>
+				<option value="2" disable="seo|tags">YJSG_NO</option>
 			</field>
-			<field name="seo" type="yjsgtext" default="Your description goes here" label="YJSG_H1_SITE_DES_LABEL" size="50" description="YJSG_H1_SITE_DES_DESC" />
-			<field name="tags" type="yjsgtext" default="Your keywords go here" size="50" label="YJSG_H1_SITE_KEYWORDS_LABEL" description="YJSG_H1_SITE_KEYWORDS_DESC" />
+			<field name="seo" type="yjsgtext" default="" hint="YJSG_H1_SITE_DES_HINT" label="YJSG_H1_SITE_DES_LABEL" size="50" description="YJSG_H1_SITE_DES_DESC" />
+			<field name="tags" type="yjsgtext" default="" hint="YJSG_H1_SITE_KEYWORDS_HINT" size="50" label="YJSG_H1_SITE_KEYWORDS_LABEL" description="YJSG_H1_SITE_KEYWORDS_DESC" />
 			<!-- mediaelement js -->
 			<field name="YJSG_MEDIA_YJ_LABEL" type="yjsgparamtitle" default="YJSG_MEDIA_YJ_LABEL" />
 			<field name="yjsg_media_on" type="yjsgradio" default="0" label="YJSG_MEDIA_LABEL" description="YJSG_MEDIA_DESC">
-				<option value="0">No</option>
-				<option value="1">Yes</option>
+				<option value="0">YJSG_NO</option>
+				<option value="1">YJSG_YES</option>
 			</field>
 			<!-- brandings -->
 			<field name="YJSG_COPY_YJ_LABEL" type="yjsgparamtitle" default="YJSG_COPY_YJ_LABEL" />
 			<field name="branding_off" type="yjsgradio" default="2" label="YJSG_COPY_LABEL" description="YJSG_COPY_DESC">
-				<option value="1">No</option>
-				<option value="2">Yes</option>
+				<option value="1">YJSG_NO</option>
+				<option value="2">YJSG_YES</option>
 			</field>
 			<field name="joomlacredit_off" type="yjsgradio" default="1" label="YJSG_JCOPY_LABEL" description="YJSG_JCOPY_DESC">
-				<option value="1">No</option>
-				<option value="2">Yes</option>
+				<option value="1">YJSG_NO</option>
+				<option value="2">YJSG_YES</option>
 			</field>
 			<field name="custom_cp" type="yjsgtext" default="" size="80" label="YJSG_CUSTOM_CP_LABEL" description="YJSG_CUSTOM_CP_DESC" />
 			<field name="joomla_generator_off" type="yjsgradio" default="1"  label="YJSG_JOOMLA_GEN_LABEL" description="YJSG_JOOMLA_GEN_DESC" >
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
 			<field name="validators_off" type="yjsgradio" default="1"  label="YJSG_VALIDATORS_LABEL" description="YJSG_VALIDATORS_DESC" >
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
 			<field name="totop_off" type="yjsgradio" default="1"  label="YJSG_TOTOP_LABEL" description="YJSG_TOTOP_DESC" >
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
 		</fieldset>
 		<!-- Advanced Options -->
@@ -252,12 +252,12 @@
 			<!-- Responsive settings -->
 			<field name="YJSG_RESPONSIVE_YJ_LABEL" type="yjsgparamtitle" default="YJSG_RESPONSIVE_YJ_LABEL"/>
 			<field name="responsive_on" type="yjsgradio" default="1" label="YJSG_RESPONSIVE_LABEL" description="YJSG_RESPONSIVE_DESC">
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
 			<field name="scalable_on" type="yjsgradio" default="0" label="YJSG_SCALABLE_LABEL" description="YJSG_SCALABLE_DESC">
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
 			<field name="YJSG_OFFCANVAS_YJ_LABEL" type="yjsgparamtitle" default="YJSG_OFFCANVAS_YJ_LABEL"/>
 			<field name="offcanvas_width" type="yjsgtext" default="250px" label="YJSG_OFFCANVAS_WIDTH_LABEL" description="YJSG_OFFCANVAS_WIDTH_DESC" />
@@ -265,27 +265,27 @@
 			<!-- compiler options -->
 			<field name="YJSG_COMP_YJ_LABEL" type="yjsgparamtitle" default="YJSG_COMP_YJ_LABEL"/>
 			<field name="bootstrap_version" type="yjsglist" default="bootstrap2" label="YJSG_BSV_LABEL" description="YJSG_BSV_DESC" >
-				<option value="bootstrapoff">None</option>
+				<option value="bootstrapoff">JNONE</option>
 				<option value="bootstrap2">Bootstrap2</option>
 				<option value="bootstrap3">Bootstrap3</option>
 			</field>
 			<field name="compile_css" type="yjsgradio" default="0" label="YJSG_COMP_CSS_LABEL" description="YJSG_COMP_CSS_DESC" >
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
 			<field name="compiler_compressed" type="yjsgradio" default="1" label="YJSG_COMP_COMPR_LABEL" description="YJSG_COMP_COMPR_DESC" >
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
 			<field name="ajax_front_recompile" type="yjsgradio" default="1" label="YJSG_AJAX_FRONT_COMP_LABEL" description="YJSG_AJAX_FRONT_COMP_DESC" >
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
 			<!-- end compiler settings -->
 			<field name="YJSG_FP_CONTROL_YJ_LABEL" type="yjsgparamtitle" default="YJSG_FP_CONTROL_YJ_LABEL"/>
 			<field name="fp_controll_switch" type="yjsgradio" default="2"  label="YJSG_FP_CONTROL_LABEL" description="YJSG_FP_CONTROL_DESC" >
-				<option value="1">Yes</option>
-				<option value="2">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="2">YJSG_NO</option>
 			</field>
 			<field name="fp_chars_limit" type="yjsgtext" default="3000" size="10" label="YJSG_FP_CHARS_LIMIT_LABEL" description="YJSG_FP_CHARS_LIMIT_DESC" />
 			<field name="fp_after_text" type="yjsgtext" default="" size="10" label="YJSG_FP_AFTER_CHARS_LABEL" description="YJSG_FP_AFTER_CHARS_DESC" />
@@ -294,8 +294,8 @@
 			<field name="component_switch" type="menuitem" class="yjsgmultiselect" multiple="multiple" default="0" label="YJSG_COMPONENT_OFF_LABEL" description="YJSG_COMPONENT_OFF_DESC" />
 			<field name="YJSG_MOOTOOLS_SWITCH_YJ_LABEL" type="yjsgparamtitle" default="YJSG_MOOTOOLS_SWITCH_YJ_LABEL"/>
 			<field name="mootools_on" type="yjsgradio" default="1"  label="YJSG_MOOTOOLS_SWITCH_LABEL" description="YJSG_MOOTOOLS_SWITCH_DESC" >
-				<option value="1">Yes</option>
-				<option value="0">No</option>
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
 			</field>
 			<field name="admin_css_time" type="yjsgtime" default="0" />
 			<field name="yjsg_assigements" type="hidden" default="" />

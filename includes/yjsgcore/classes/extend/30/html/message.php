@@ -21,6 +21,16 @@ function renderMessage($msgList)
 
 			foreach ($msgList as $type => $msgs)
 			{
+				
+				
+				if(empty($type)){
+					
+					$type		 	='message';
+					$alert[$type] 	= 'yjtb_green';
+					$icon[$type]  	= 'fa fa-thumbs-up';
+				}
+				
+				
 				$buffer .= '<div class="yjtbox ' . $alert[$type]. ' lineup">';
 				$buffer .= '<span class="yjtboxicon ' . $icon[$type]. '"></span>';
 				$buffer .= '<span class="yjtb_close"></span>';

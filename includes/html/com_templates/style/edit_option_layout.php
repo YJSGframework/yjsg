@@ -1,18 +1,11 @@
 <?php
-/*======================================================================*\
-|| #################################################################### ||
-|| # Package - YJSG Framework                							||
-|| # Copyright (C) since 2007  Youjoomla.com. All Rights Reserved.      ||
-|| # license - PHP files are licensed under  GNU/GPL V2                 ||
-|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
-|| # bound by Proprietary License of Youjoomla.com                      ||
-|| # for more information visit http://www.youjoomla.com/license.html   ||
-|| # Redistribution and  modification of this software                  ||
-|| # is bounded by its licenses                                         || 
-|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
-|| #################################################################### || 
-\*======================================================================*/
-
+/**
+ * @package      YJSG Framework
+ * @copyright    Copyright(C) since 2007  Youjoomla.com. All Rights Reserved.
+ * @author       YouJoomla
+ * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
+ */
 // No direct access.
 defined('_JEXEC') or die;
 if($name =='YJSG_LAYOUT_LABEL' || $name =='YJSG_DEF_GRID_LABEL' || $name =='YJSG_LOGO_LABEL'){ 
@@ -165,10 +158,10 @@ if($name =='YJSG_LAYOUT_LABEL' || $name =='YJSG_DEF_GRID_LABEL' || $name =='YJSG
 						<div id="mainbodyLayoutHolder" class="mbLayout yjsg_maingrid midleftright">
 							<div class="selectLayout">
 								<div class="lblock">
-									<span> Select layout </span>
-									<div class="layoutOption lmr" data-layout="1" title="Left - Mainbody - Inset - Right"></div>
-									<div class="layoutOption mlr" data-layout="2" title="Mainbody - Inset - Left - Right"></div>
-									<div class="layoutOption lrm" data-layout="3" title="Left - Right - Inset - Mainbody"></div>
+									<span> <?php echo JText::_('YJSG_SELECT_LAYOUT') ?> </span>
+									<div class="layoutOption lmr" data-layout="1" title="<?php echo JText::_('YJSG_SELECT_LAYOUT_LMR') ?>"></div>
+									<div class="layoutOption mlr" data-layout="2" title="<?php echo JText::_('YJSG_SELECT_LAYOUT_MLR') ?>"></div>
+									<div class="layoutOption lrm" data-layout="3" title="<?php echo JText::_('YJSG_SELECT_LAYOUT_LRM') ?>"></div>
 								</div>
 								<div class="lblock">
 									<ul class="adminformlist">

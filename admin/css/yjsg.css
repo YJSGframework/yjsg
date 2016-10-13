@@ -362,6 +362,9 @@ fieldset[disabled] .btn-yjsg.active {
 .btn-primary.active i {
 	color:#eb6a5a;
 }
+.btn-group>.btn-yjsg{
+	padding-left:10px;
+}
 /* side tabs */
 .tabs-left {
 	border:none;
@@ -1310,6 +1313,7 @@ input.patterninputHide {
 	background-size:25% auto;
 	background-repeat:repeat;
 	border: 3px solid #efefef;
+	background-size:cover;
 }
 #defaultbgImage .patterns .preview {
 	background-size:255px auto;
@@ -1713,6 +1717,7 @@ ul.multiselect-container>li {
 }
 ul.multiselect-container>li>a.multiselect-all label {
 	font-weight:700;
+
 }
 ul.multiselect-container>li>label.multiselect-group {
 	margin:0;
@@ -1728,7 +1733,7 @@ ul.multiselect-container>li>a>label {
 }
 ul.multiselect-container>li>a>label.radio,
 ul.multiselect-container>li>a>label.checkbox {
-	margin:0;
+	margin:0 0 0 15px;
 }
 ul.multiselect-container>li>a>label>input[type=checkbox] {
 	margin-bottom:5px;
@@ -1747,6 +1752,13 @@ ul.multiselect-container li.active a:focus {
 	text-decoration: none;
 	outline: 0;
 	background-color: #eb6a5a;
+}
+ul.multiselect-container .multiselect-search{
+	height:34px;
+}
+.multiselect-item.multiselect-group label{
+	padding-left:15px;
+
 }
 /* select layout box */
 .selectLayout {
@@ -1826,6 +1838,7 @@ ul.multiselect-container li.active a:focus {
 }
 /* clone layout box */
 .clonelayoutbox {
+
 	display:block;
 	padding:10px 0 20px 0;
 }
@@ -1834,4 +1847,260 @@ ul.multiselect-container li.active a:focus {
 	clear:both;
 	font-weight:bold;
 	padding:0 0 10px 0;
+}
+/**
+ * @copyright	Copyright (C) 2005 - 2014 Open Source Matters, Inc. All rights reserved.
+ * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+/* Common CSS for system debug */
+div#system-debug {
+	clear: both;
+}
+
+#system-debug {
+	background-color: #fff;
+	color: #000;
+	border: 1px dashed silver;
+	padding: 5px;
+	text-align: left;
+}
+
+#system-debug div.dbgHeader {
+	background-color: #ddd;
+	border: 1px solid #eee;
+	font-size: 16px;
+}
+
+#system-debug h3 {
+	margin: 0;
+}
+
+#system-debug a h3 {
+	background-color: #ddd;
+	color: #000;
+	font-size: 14px;
+	padding: 5px;
+	text-decoration: none;
+	margin: 0px;
+}
+
+#system-debug a:hover,
+#system-debug a:focus,
+#system-debug a:active,
+#system-debug a:link,
+#system-debug a:visited {
+	background-color: #ddd;
+	color: #000;
+	text-decoration:none;
+}
+
+#system-debug a:hover h3,
+#system-debug a:focus h3 {
+	background-color: #4d4d4d;
+	color: #ddd;
+	font-size: 14px;
+	cursor: pointer;
+	text-decoration:none;
+}
+
+#system-debug div.dbgContainer {
+	padding: 10px;
+}
+
+#system-debug span.dbgCommand {
+	color: blue;
+	font-weight: bold;
+}
+
+#system-debug span.dbgTable {
+	color: green;
+	font-weight: bold;
+}
+
+#system-debug b.dbgOperator {
+	color: red;
+	font-weight: bold;
+}
+
+#system-debug h1 {
+	background-color: #2c2c2c;
+	color: #fff;
+	padding: 10px;
+	margin: 0;
+	font-size: 16px;
+	line-height: 1em;
+}
+
+#system-debug h4 {
+	font-size: 14px;
+	font-weight:bold;
+	margin: 5px 0 0 0;
+}
+
+#system-debug h5 {
+	font-size: 13px;
+	font-weight:bold;
+	margin: 5px 0 0 0;
+}
+
+div#system-debug {
+	margin: 5px;
+}
+
+#system-debug ol {
+	margin-left: 25px;
+	margin-right: 25px;
+	text-align: left;
+	direction: ltr;
+}
+
+#system-debug ul {
+	list-style: none;
+	text-align: left;
+	direction: ltr;
+}
+
+#system-debug li {
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+
+#system-debug code {
+	font-size: 13px;
+	text-align: left;
+	direction: ltr;
+}
+
+#system-debug p {
+	font-size: 13px;
+}
+
+
+/* Common CSS for system debug */
+
+#system-debug {
+	background-color: #fff;
+	color: #000;
+	border: 1px dashed silver;
+	padding: 10px;
+	position: absolute;
+	z-index:1000;
+	bottom:0;
+	max-width:500px;
+	max-height:500px;
+	overflow:auto;
+}
+
+#system-debug div.dbgHeader {
+	background-color: #ddd;
+	border: 1px solid #eee;
+	font-size: 16px;
+}
+
+#system-debug h3 {
+	margin: 0;
+}
+
+#system-debug a h3 {
+	background-color: #ddd;
+	color: #000;
+	font-size: 14px;
+	padding: 5px;
+	text-decoration: none;
+	margin: 0px;
+}
+
+#system-debug .dbgerror a h3 {
+	background-color: red;
+}
+
+#system-debug a:hover,
+#system-debug a:focus,
+#system-debug a:active,
+#system-debug a:link,
+#system-debug a:visited {
+	background-color: #ddd;
+	color: #000;
+	text-decoration:none;
+}
+
+#system-debug a:hover h3,
+#system-debug a:focus h3 {
+	background-color: #4d4d4d;
+	color: #ddd;
+	font-size: 14px;
+	cursor: pointer;
+	text-decoration:none;
+}
+
+#system-debug div.dbgContainer {
+	padding: 10px;
+}
+
+#system-debug span.dbgCommand {
+	color: blue;
+	font-weight: bold;
+}
+
+#system-debug span.dbgTable {
+	color: green;
+	font-weight: bold;
+}
+
+#system-debug b.dbgOperator {
+	color: red;
+	font-weight: bold;
+}
+
+#system-debug h1 {
+	background-color: #2c2c2c;
+	color: #fff;
+	padding: 10px;
+	margin: 0;
+	font-size: 16px;
+	line-height: 1em;
+}
+
+#system-debug h4 {
+	font-size: 14px;
+	font-weight:bold;
+}
+
+#system-debug h5 {
+	font-size: 13px;
+	font-weight:bold;
+	margin-top: 5px;
+}
+
+div#system-debug {
+	margin: 5px;
+}
+
+#system-debug ol {
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+#system-debug ul {
+	list-style: none;
+}
+
+#system-debug li {
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+
+#system-debug code {
+	font-size: 13px;
+	text-align: left;
+	direction: ltr;
+}
+
+#system-debug p {
+	font-size: 13px;
+}
+
+#system-debug div.dbgHeader.dbgerror {
+	background-color: red;
 }

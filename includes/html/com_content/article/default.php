@@ -1,23 +1,18 @@
 <?php
-/*======================================================================*\
-|| #################################################################### ||
-|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
-|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
-|| # license - PHP files are licensed under  GNU/GPL V2                 ||
-|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
-|| # bound by Proprietary License of Youjoomla.com                      ||
-|| # for more information visit http://www.youjoomla.com/license.html   ||
-|| # Redistribution and  modification of this software                  ||
-|| # is bounded by its licenses                                         ||
-|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
-|| #################################################################### ||
-\*======================================================================*/
+/**
+ * @package      YJSG Framework
+ * @copyright    Copyright(C) since 2007  Youjoomla.com. All Rights Reserved.
+ * @author       YouJoomla
+ * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
+ */
 defined('_JEXEC') or die;
 JHtml::addIncludePath(JPATH_COMPONENT.DIRECTORY_SEPARATOR.'helpers');
 $params 	= $this->item->params;
 $canEdit	= $this->item->params->get('access-edit');
 $user		= JFactory::getUser();
 $images 	= json_decode($this->item->images);
+$info    	= $params->get('info_block_position', 0);
 $edit_icon	= JHtml::_('icon.edit', $this->item, $params);
 $email_icon = JHtml::_('icon.email', $this->item, $params);
 if (!$this->print){
@@ -83,71 +78,13 @@ endif; ?>
 	<?php echo $this->item->event->beforeDisplayContent; ?>
 	<?php if ($newsitemTools) : ?>
 	<div class="newsitem_tools">
-		<div class="newsitem_info">
-			<?php /* Parent category*/if ($params->get('show_parent_category')) : ?>
-			<span class="fa fa-list-alt"></span>
-			<span class="newsitem_parent_category details">
-			<?php $title = $this->escape($this->item->parent_title);
-			$url = '<a href="' . JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->parent_slug)) . '"'.$yjsg->mdata($params)->itemgenre.'>' . $title . '</a>'; ?>
-			<?php if ($params->get('link_parent_category') and $this->item->parent_slug) : ?>
-			<?php echo JText::sprintf('COM_CONTENT_PARENT', $url); ?>
-			<?php else : ?>
-			<?php echo JText::sprintf('COM_CONTENT_PARENT', '<span'.$yjsg->mdata($params)->itemgenre.'>'.$title.'</span>'); ?>
-			<?php endif; ?>
-			</span>
-			<?php endif; ?>
-			<?php /*Category title*/if ($params->get('show_category')) : ?>
-			<span class="newsitem_category details"><span class="fa fa-list-alt"></span>
-			<?php 	$title = $this->escape($this->item->category_title);
-				$url = '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug)).'"'.$yjsg->mdata($params)->itemgenre.'>'.$title.'</a>';
-				if ($params->get('link_category') AND $this->item->catslug) :
-					echo JText::sprintf('COM_CONTENT_CATEGORY', $url); ?>
-				<?php else : ?>
-					<?php echo JText::sprintf('COM_CONTENT_CATEGORY', '<span'.$yjsg->mdata($params)->itemgenre.'>'.$title.'</span>'); ?>
-				<?php endif; ?>
-			</span>
-			<?php endif; ?>
-			<?php /* Create date*/if ($params->get('show_create_date')) : ?>
-			<span class="createdate details">
-			<span class="fa fa-calendar"></span>
-			<time datetime="<?php echo JHtml::_('date', $this->item->created, 'c'); ?>"<?php echo $yjsg->mdata($params)->createdate ?>>
-				<?php echo JText::sprintf('COM_CONTENT_CREATED_DATE_ON', JHTML::_('date',$this->item->created, JText::_('DATE_FORMAT_LC3'))); ?>
-			</time>
-			</span>
-			<?php endif; ?>
-			<?php /*Modify date*/ if ($params->get('show_modify_date')) : ?>
-			<span class="modifydate details">
-			<span class="fa fa-edit"></span>
-			<time datetime="<?php echo JHtml::_('date', $this->item->modified, 'c'); ?>"<?php echo $yjsg->mdata($params)->modifydate ?>>
-				<?php echo JText::sprintf('COM_CONTENT_LAST_UPDATED', JHTML::_('date',$this->item->modified, JText::_('DATE_FORMAT_LC2'))); ?>
-			</time>
-			</span>
-			<?php endif; ?>
-			<?php /* Published date*/ if ($params->get('show_publish_date')) : ?>
-			<span class="published details"><span class="fa fa-calendar"></span>
-			<time datetime="<?php echo JHtml::_('date', $this->item->publish_up, 'c'); ?>"<?php echo $yjsg->mdata($params)->published ?>>
-				<?php echo JText::sprintf('COM_CONTENT_PUBLISHED_DATE_ON', JHTML::_('date',$this->item->publish_up, JText::_('DATE_FORMAT_LC3'))); ?>
-			</time>
-			</span>
-			<?php endif; ?>
-			<?php /* Author*/if ($params->get('show_author') && !empty($this->item->author)) : ?>
-			<span class="createdby details"<?php echo $yjsg->mdata($params)->author ?>>
-			<span class="fa fa-pencil"></span>
-			<?php echo JText::sprintf('COM_CONTENT_WRITTEN_BY', '<span'.$yjsg->mdata($params)->authorname.'>'.$author.'</span>'); ?>
-			</span>
-			<?php endif; ?>
-			<?php /* Hits*/if ($params->get('show_hits')) : ?>
-			<span class="newsitem_hits details"><span class="fa fa-eye"></span>
-			<?php echo $yjsg->mdata($params,$this->item->hits)->interaction ?>
-			<?php echo JText::sprintf('COM_CONTENT_ARTICLE_HITS', $this->item->hits); ?>
-			</span>
-			<?php endif; ?>
-			<?php /* Rich snippets */if ($params->get('yjsg_microdata_position') == 0) : ?>
-			<div class="yjsg-rich-snippets yjrs-header">
-				<?php echo $yjsg->mdata($params)->microdata ?>
-			</div>
-			<?php endif; ?>
+		<?php if ($info == 0) include YJSG_ARTICLE_INFO; //layouts/yjsg_article_info.php ?>
+		<?php if ($info == 2) include YJSG_ARTICLE_INFO_SPLIT_TOP; //layouts/yjsg_article_info_split_top.php ?>
+		<?php /* Rich snippets */if ($params->get('yjsg_microdata_position') == 0 && !empty($yjsg->mdata($params)->microdata)) : ?>
+		<div class="yjsg-rich-snippets yjrs-header">
+			<?php echo $yjsg->mdata($params)->microdata ?>
 		</div>
+		<?php endif; ?>
 		<?php /* Email and Print*/ if ($params->get('show_print_icon') || $params->get('show_email_icon') || $canEdit) : ?>
 		<div class="btn-group pull-right actiongroup">
 			<?php if ($bootstrap_version !='bootstrapoff') : ?>
@@ -206,7 +143,9 @@ if (!empty($this->item->pagination) AND $this->item->pagination AND !$this->item
 endif;
 ?>
 		<?php echo $this->item->text; ?>
-		<?php /* Rich snippets */if ($params->get('yjsg_microdata_position') == 1) : ?>
+		<?php if ($info == 1) include YJSG_ARTICLE_INFO; //layouts/yjsg_article_info.php ?>
+		<?php if ($info == 2) include YJSG_ARTICLE_INFO_SPLIT_BOTTOM; //layouts/yjsg_article_info_split_bottom.php ?>
+		<?php /* Rich snippets */if ($params->get('yjsg_microdata_position') == 1 && !empty($yjsg->mdata($params)->microdata)) : ?>
 		<div class="yjsg-rich-snippets yjrs-article">
 			<?php echo $yjsg->mdata($params)->microdata ?>
 		</div>

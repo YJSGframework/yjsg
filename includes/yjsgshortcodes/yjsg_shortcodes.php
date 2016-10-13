@@ -1,17 +1,11 @@
 <?php
-/*======================================================================*\
-|| #################################################################### ||
-|| # Package - YJSG Framework                							||
-|| # Copyright (C) since 2007  Youjoomla.com. All Rights Reserved.      ||
-|| # license - PHP files are licensed under  GNU/GPL V2                 ||
-|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
-|| # bound by Proprietary License of Youjoomla.com                      ||
-|| # for more information visit http://www.youjoomla.com/license.html   ||
-|| # Redistribution and  modification of this software                  ||
-|| # is bounded by its licenses                                         || 
-|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
-|| #################################################################### || 
-\*======================================================================*/
+/**
+ * @package      YJSG Framework
+ * @copyright    Copyright(C) since 2007  Youjoomla.com. All Rights Reserved.
+ * @author       YouJoomla
+ * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
+ */
 // no direct access 
 defined('_JEXEC') or die;
 
@@ -99,11 +93,21 @@ function yjsg_shortcodes_replace($shortcode, $text) {
         
         case "yjsgparse":
             foreach ($matches as $index => $match) {
+				
+				
+				
+				
                 
                 if (!empty($matches[$index][1])) {
                     $days        = $matches[$index][2];
                     $hours       = $matches[$index][3];
-                    $replacement = yjsg_parse($matches[$index][1], $days, $hours);
+					$allowjs	 = false;
+					
+					if (strpos($matches[$index][0],'allowjs') !== false) {
+						$allowjs = true;					
+					}
+					
+                    $replacement = yjsg_parse($matches[$index][1], $days, $hours,$allowjs);
                 }
                 
                 $text = str_replace($matches[$index][0], $replacement, $text);
@@ -155,7 +159,7 @@ function yjsg_shortcodes_replace($shortcode, $text) {
                     
                 }
                 
-                if (strpos($medialink, 'youtube') !== false) {
+                if (strpos($medialink, 'youtu') !== false) {
                     
                     $poster   = '';
                     $type     = 'video/youtube';
@@ -423,7 +427,7 @@ function yjsg_shortcodes_replace($shortcode, $text) {
 
 
 // yjsgparse shortcode function
-function yjsg_parse($path, $days = '', $hours = '') {
+function yjsg_parse($path, $days = '', $hours = '', $allowjs = false) {
 	
     $yjsgmediafolder = JPATH_SITE . YJDS . 'media' . YJDS . 'plg_system_yjsg' . YJDS;
     $indexContent    = '';
@@ -522,7 +526,7 @@ function yjsg_parse($path, $days = '', $hours = '') {
             
         } else if ($httpCode >= 200 && $httpCode < 300) {
             
-             $content = yjsg_clean_html($data);
+             $content = yjsg_clean_html($data,$allowjs);
              JFile::write($filepath, $content);
             
             
@@ -548,7 +552,7 @@ function yjsg_parse($path, $days = '', $hours = '') {
         } else if ($httpCode >= 200 && $httpCode < 300) {
             
                 
-       			$content = yjsg_clean_html($data);
+       			$content = yjsg_clean_html($data,$allowjs);
                 JFile::write($filepath, $content);
             
         } else {
@@ -571,15 +575,20 @@ function yjsg_parse($path, $days = '', $hours = '') {
 }
 
 // cleanup html
-function yjsg_clean_html($content) {
+function yjsg_clean_html($content,$allowjs) {
     
     $search = array(
-        '@<script[^>]*?>.*?</script>@si',
         '@<.*?<body.*?>@si',
         '@<\/body.*?>@si',
         '@<\/html.*?>@si',
         '@<![\s\S]*?--[ \t\n\r]*>@'
     );
+	
+	if(!$allowjs){
+		
+		$search[] = '@<script[^>]*?>.*?</script>@si';
+		
+	}
     
     $content = preg_replace($search, '', $content);
     return $content;
@@ -595,7 +604,15 @@ function fix_newlines_for_clean_html($fixthistext) {
             $fixedtext_array[$unfixedtextkey] = $fixedtextvalue;
         }
     }
-    return implode("\n", $fixedtext_array);
+	if(!empty($fixedtext_array)){
+		
+    	return implode("\n", $fixedtext_array);
+		
+	}else{
+		
+		return 'missing code snippet';
+		
+	}
 }
 
 function clean_html_code($uncleanhtml, $indent = '	') {
@@ -660,5 +677,109 @@ function clean_html_code($uncleanhtml, $indent = '	') {
     }
     //Return single string seperated by newline
     return implode("\n", $cleanhtml_array);
+}
+
+// run shortcode on body match
+//$text = preg_replace_callback("/<body[^>]*>(.*?)<\/body>/is","yjsg_run_shortcodes", $text);
+function yjsg_run_shortcodes($matches) {
+	
+	return yjsg_shortcodes($matches[1]);
+}
+
+// clean string from shortcode tags
+function yjsg_clean_shortcodes($str) {
+
+		$cleanStr = preg_replace(array(
+			'/yjsgparse/',
+			'/yjsgpre/',
+			'/yjsgimgs/',
+			'/yjsgfa/',
+			'/yjsgmedia/',
+			'/yjsgstabsgroup/',
+			'/yjsgstabs/',
+			'/yjsgnote/',
+			'/yjsgacgroup/',
+			'/yjsgacs/',
+			'/yjsgstabs/',
+			
+			'/url="(.*?)"/',
+			'/link="(.*?)"/',
+			'/poster="(.*?)"/',
+			'/width="(.*?)"/',
+			'/height="(.*?)"/',
+			'/resp="(.*?)"/',
+			'/id="(.*?)"/',
+			'/title="(.*?)"/',
+			'/type="(.*?)"/',
+			'/active="(.*?)"/',
+			'/color="(.*?)"/',
+			'/name="(.*?)"/',
+			'/target="(.*?)"/',
+			'/class="(.*?)"/',
+			'/image="(.*?)"/',
+			'/border="(.*?)"/',
+			'/radius="(.*?)"/',
+			'/icon="(.*?)"/',
+			'/close="(.*?)"/',
+			'/effect="(.*?)"/',
+			'/days="(.*?)"/',
+			'/hours="(.*?)"/',
+
+			'/url="/',
+			'/link="/',
+			'/poster="/',
+			'/width="/',
+			'/height="/',
+			'/resp="/',
+			'/id="/',
+			'/title="/',
+			'/type="/',
+			'/active="/',
+			'/color="/',
+			'/name="/',
+			'/target="/',
+			'/class="/',
+			'/image="/',
+			'/border="/',
+			'/radius="/',
+			'/icon="/',
+			'/close="/',
+			'/effect="/',
+			'/days="/',
+			'/hours="/',
+			
+			'/url=/',
+			'/link=/',
+			'/poster=/',
+			'/width=/',
+			'/height=/',
+			'/resp=/',
+			'/id=/',
+			'/title=/',
+			'/type=/',
+			'/active=/',
+			'/color=/',
+			'/name=/',
+			'/target=/',
+			'/class=/',
+			'/image=/',
+			'/border=/',
+			'/radius=/',
+			'/icon=/',
+			'/close=/',
+			'/effect=/',
+			'/days=/',
+			'/hours=/',
+			
+			'/\[.*?\]/',
+			'/\[/',
+			'/\]/'
+		), array(
+			''
+		), $str);
+
+		return trim($cleanStr);
+//'/[^\p{L}|\p{N}\s]+/u'
+
 }
 ?>

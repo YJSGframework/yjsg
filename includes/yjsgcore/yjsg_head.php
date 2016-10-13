@@ -1,17 +1,11 @@
 <?php 
-/*======================================================================*\
-|| #################################################################### ||
-|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
-|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
-|| # license - PHP files are licensed under  GNU/GPL V2                 ||
-|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
-|| # bound by Proprietary License of Youjoomla.com                      ||
-|| # for more information visit http://www.youjoomla.com/license.html   ||
-|| # Redistribution and  modification of this software                  ||
-|| # is bounded by its licenses                                         ||
-|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
-|| #################################################################### ||
-\*======================================================================*/
+/**
+ * @package      YJSG Framework
+ * @copyright    Copyright(C) since 2007  Youjoomla.com. All Rights Reserved.
+ * @author       YouJoomla
+ * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
+ */
 defined( '_JEXEC' ) or die( 'Restricted index access' );
 echo $cc_after_headtag;
 // load mootools with mootools more , without true , more is not loaded
@@ -199,6 +193,19 @@ $yjsg_js .="
 
 	// magnific
 	$document->addScript(YJSG_ASSETS.'src/magnific/yjsg.magnific.popup.min.js');
+	
+	$yjsg_js.="
+		var lgtr = new Object();
+		lgtr.magnificpopup_close='".JText::_('YJSG_MAGNIFICPOPUP_CLOSE')."';
+		lgtr.magnificpopup_loading='".JText::_('YJSG_MAGNIFICPOPUP_LOADING')."';
+		lgtr.magnificpopup_prev='".JText::_('YJSG_MAGNIFICPOPUP_PREVIOUS')."';
+		lgtr.magnificpopup_next='".JText::_('YJSG_MAGNIFICPOPUP_NEXT')."';
+		lgtr.magnificpopup_counter='".JText::_('YJSG_MAGNIFICPOPUP_PAGINATION')."';
+		lgtr.magnificpopup_errorimage='".JText::_('YJSG_MAGNIFICPOPUP_IMAGE_NOT_LOADED')."';
+		lgtr.magnificpopup_errorajax='".JText::_('YJSG_MAGNIFICPOPUP_CONTENT_NOT_LOADED')."';	
+	
+	";
+	
 
 	// add apple touch icon for Apple mobile OS - iOS
 	if($detect->isiOS() || $detect->isAndroidOS()){	

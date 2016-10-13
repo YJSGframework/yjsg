@@ -1,16 +1,10 @@
-/*======================================================================*\
-|| #################################################################### ||
-|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
-|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
-|| # license - PHP files are licensed under  GNU/GPL V2                 ||
-|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
-|| # bound by Proprietary License of Youjoomla.com                      ||
-|| # for more information visit http://www.youjoomla.com/license.html   ||
-|| # Redistribution and  modification of this software                  ||
-|| # is bounded by its licenses                                         ||
-|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
-|| #################################################################### ||
-\*======================================================================*/
+/**
+ * @package      YJSG Framework
+ * @copyright    Copyright(C) since 2007  Youjoomla.com. All Rights Reserved.
+ * @author       YouJoomla
+ * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
+ */
 /* a transition */
 a {
 	-o-transition:color .2s ease-in-out;
@@ -71,7 +65,7 @@ img {
 	margin-bottom:10px;
 	font-weight:normal;
 }
-.yjt_polaroid.yjt_hideptitle:after{
+.yjt_polaroid.yjt_hideptitle:after {
 	display:none;
 }
 .yjt_polaroid img {
@@ -308,15 +302,15 @@ img {
 }
 /* labels */
 [class*='yjt_label'] {
-	display: inline;
-	padding:2px 5px;
-	font-size: 85%;
-	font-weight: 700;
-	line-height: 1;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: baseline;
-	border-radius: .25em;
+ display: inline;
+ padding:2px 5px;
+ font-size: 85%;
+ font-weight: 700;
+ line-height: 1;
+ text-align: center;
+ white-space: nowrap;
+ vertical-align: baseline;
+ border-radius: .25em;
 }
 /* Border radius */
 .radiusb2 {
@@ -482,6 +476,9 @@ ul.check li:before {
 }
 /* blockquotes */
 blockquote {
+	display:block;
+	position:relative;
+	overflow:hidden;
 	padding: 0 0 0 15px;
 	margin: 0 0 20px;
 	border-left: 5px solid #eeeeee;
@@ -527,7 +524,6 @@ blockquote.quoted,
 blockquote.brackets {
 	border:none;
 	padding:0 25px;
-	position:relative;
 }
 blockquote.quoted:before,
 blockquote.quoted:after,
@@ -559,18 +555,19 @@ blockquote.brackets:after {
 }
 /* big numbers */
 .blocknumber {
-	padding:0 0 0 65px;
+	padding:10px 0 0 65px;
 	display:block;
 	position:relative;
 	margin:15px 0;
 	font-size:120%;
 	line-height:23px;
+	min-height:50px;
 }
 .bignumber {
 	padding:10px;
 	display:block;
 	position:absolute;
-	top:-8px;
+	top:0px;
 	left:0;
 	font-weight:bold;
 	font-family:Arial, sans-serif;
@@ -581,11 +578,7 @@ blockquote.brackets:after {
 	width:25px;
 	color:#e7e7e7;
 }
-.bignumber.bnround {
-	min-height:40px;
-}
 .bnround .bignumber {
-	top:0px;
 	-webkit-border-radius:50%;
 	-khtml-border-radius:50%;
 	-moz-border-radius:50%;
@@ -657,6 +650,10 @@ address {
 .yjsg-pull-right,
 .pull-right {
 	float:right;
+}
+.yjsg-hide,
+.yjsg-form label.yjsg-hide {
+	display:none;
 }
 .yjsg-clear-all {
 	clear:both;
@@ -907,6 +904,7 @@ address {
 [data-yjsg-tip], .yjsg-tip {
  position: relative;
  cursor: pointer;
+ text-align:center;
 }
 /*Default style*/
 [data-yjsg-tip]:before,
@@ -1104,7 +1102,7 @@ address {
 	box-shadow: 0 0px 2px rgba(0,0,0,0.18);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	box-sizing: border-box; 
+	box-sizing: border-box;
 }
 /* sticky menu */
 .yjsg-sticky-menu {
@@ -1387,7 +1385,7 @@ ol.linenums li {
 	text-shadow: 0 1px 0 #fff;
 }
 /* Joomla Tooltips */
-.tip-wrap{
+.tip-wrap {
 	z-index:1000;
 }
 .tip-wrap .tip {
@@ -1426,7 +1424,7 @@ ol.linenums li {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 1042;
+	z-index: 5902;
 	overflow: hidden;
 	position: fixed;
 	background: #0b0b0b;
@@ -1438,7 +1436,7 @@ ol.linenums li {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 1043;
+	z-index: 5903;
 	position: fixed;
 	outline: none !important;
 	-webkit-backface-visibility: hidden;
@@ -1470,7 +1468,7 @@ ol.linenums li {
 	vertical-align: middle;
 	margin: 0 auto;
 	text-align: left;
-	z-index: 1045;
+	z-index: 5905;
 }
 .mfp-inline-holder .mfp-content,
 .mfp-ajax-holder .mfp-content {
@@ -1518,7 +1516,7 @@ ol.linenums li {
 	margin-top: -0.8em;
 	left: 8px;
 	right: 8px;
-	z-index: 1044;
+	z-index: 5904;
 }
 .mfp-preloader a {
 	color: #cccccc;
@@ -1542,7 +1540,7 @@ button.mfp-arrow {
 	display: block;
 	outline: none;
 	padding: 0;
-	z-index: 1046;
+	z-index: 5906;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
@@ -1973,77 +1971,100 @@ img.mfp-img {
 	top:0;
 	bottom:auto;
 }
-.tooltip{
-    position:absolute;
-    z-index:1020;
-    display:block;
-    visibility:visible;
-    padding:5px;
-    font-size:11px;
-    opacity:0;
-    filter:alpha(opacity=0)
+.tooltip {
+	position:absolute;
+	z-index:1020;
+	display:block;
+	visibility:visible;
+	padding:5px;
+	font-size:11px;
+	opacity:0;
+	filter:alpha(opacity=0);
 }
-.tooltip.in{
-    opacity:.8;
-    filter:alpha(opacity=80)
+.tooltip.in {
+	opacity:.8;
+	filter:alpha(opacity=80);
 }
-.tooltip.top{
-    margin-top:-2px
+.tooltip.top {
+	margin-top:-2px;
 }
-.tooltip.right{
-    margin-left:2px
+.tooltip.right {
+	margin-left:2px;
 }
-.tooltip.bottom{
-    margin-top:2px
+.tooltip.bottom {
+	margin-top:2px;
 }
-.tooltip.left{
-    margin-left:-2px
+.tooltip.left {
+	margin-left:-2px;
 }
-.tooltip.top .tooltip-arrow{
-    bottom:0;
-    left:50%;
-    margin-left:-5px;
-    border-left:5px solid transparent;
-    border-right:5px solid transparent;
-    border-top:5px solid #000
+.tooltip.top .tooltip-arrow {
+	bottom:0;
+	left:50%;
+	margin-left:-5px;
+	border-left:5px solid transparent;
+	border-right:5px solid transparent;
+	border-top:5px solid #000;
 }
-.tooltip.left .tooltip-arrow{
-    top:50%;
-    right:0;
-    margin-top:-5px;
-    border-top:5px solid transparent;
-    border-bottom:5px solid transparent;
-    border-left:5px solid #000
+.tooltip.left .tooltip-arrow {
+	top:50%;
+	right:0;
+	margin-top:-5px;
+	border-top:5px solid transparent;
+	border-bottom:5px solid transparent;
+	border-left:5px solid #000;
 }
-.tooltip.bottom .tooltip-arrow{
-    top:0;
-    left:50%;
-    margin-left:-5px;
-    border-left:5px solid transparent;
-    border-right:5px solid transparent;
-    border-bottom:5px solid #000
+.tooltip.bottom .tooltip-arrow {
+	top:0;
+	left:50%;
+	margin-left:-5px;
+	border-left:5px solid transparent;
+	border-right:5px solid transparent;
+	border-bottom:5px solid #000;
 }
-.tooltip.right .tooltip-arrow{
-    top:50%;
-    left:0;
-    margin-top:-5px;
-    border-top:5px solid transparent;
-    border-bottom:5px solid transparent;
-    border-right:5px solid #000
+.tooltip.right .tooltip-arrow {
+	top:50%;
+	left:0;
+	margin-top:-5px;
+	border-top:5px solid transparent;
+	border-bottom:5px solid transparent;
+	border-right:5px solid #000;
 }
-.tooltip-inner{
-    max-width:200px;
-    padding:3px 8px;
-    color:#fff;
-    text-align:center;
-    text-decoration:none;
-    background-color:#000;
-    -webkit-border-radius:4px;
-    -moz-border-radius:4px;
-    border-radius:4px
+.tooltip-inner {
+	max-width:200px;
+	padding:3px 8px;
+	color:#fff;
+	text-align:center;
+	text-decoration:none;
+	background-color:#000;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
 }
-.tooltip-arrow{
-    position:absolute;
-    width:0;
-    height:0
+.tooltip-arrow {
+	position:absolute;
+	width:0;
+	height:0;
+}
+.yjsg-round-progress,
+[data-yjsg-round-progress]{
+	height:150px;
+	width:150px;
+	color:#40b1e2;
+	font-size:25px;
+	font-family:'Calibri';
+	border-top-color:#40b1e2;
+	border-bottom-color:#ccc;
+}
+.bootstrap3 a.modal{
+	display:inline;
+	overflow:hidden;
+	position:static;
+}
+.bootstrap3 .itemImage a.modal{
+	display:block;
+	overflow:hidden;
+	position:static;
+}
+.bootstrap3 .control-group{
+	float:left;
 }

@@ -62,7 +62,7 @@ class JFormFieldYjsgbackgrounds extends JFormFieldList
 		// Get a list of files in the search path with the given filter.
 		$files = JFolder::files($path, $filter);
 
-
+		$patterns_layout = array();
 
 		// Build the options list from the list of files.
 		if (is_array($files))
@@ -100,7 +100,7 @@ class JFormFieldYjsgbackgrounds extends JFormFieldList
 				}
 
 				$patterns_layout []='<div class="patterns '.$css_class.$thisdefault.'" data-thisimg="'.$file.'">';
-				$patterns_layout []='<img src="'. JURI::root() . $xml_path .'/'.$file.'" class="yjsgtips" data-placement="bottom" data-original-title="This is" data-content="'.JFile::stripExt($file).'" />';
+				$patterns_layout []='<img src="'. JURI::root() . $xml_path .'/'.$file.'" class="yjsgtips" data-placement="bottom" data-original-title="'.JText::_('YJSG_BACKGROUND_THISIS').'" data-content="'.JFile::stripExt($file).'" />';
 				$patterns_layout []='<div class="preview"></div>';
 				$patterns_layout []='</div>';
 			}

@@ -22,10 +22,11 @@ $params = &$this->item->params;
 	<p> <?php echo JText::_('COM_CONTACT_NO_CONTACTS'); ?>	 </p>
 <?php else : ?>
 
-<form action="<?php echo htmlspecialchars(JFactory::getURI()->toString()); ?>" method="post" class="form-form" name="adminForm" id="adminForm">
+<form action="<?php echo htmlspecialchars(JFactory::getURI()->toString()); ?>" method="post" class="yjsg-form" name="adminForm" id="adminForm">
 	<fieldset class="filters form-fieldset">
-	<legend class="hidelabeltxt element-hide"><?php echo JText::_('JGLOBAL_FILTER_LABEL'); ?></legend>
+	
 	<?php if ($this->params->get('show_pagination_limit')) : ?>
+	<legend class="hidelabeltxt element-hide"><?php echo JText::_('JGLOBAL_FILTER_LABEL'); ?></legend>
 		<div class="display-limit">
 			<?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?>&#160;
 			<?php echo $this->pagination->getLimitBox(); ?>
@@ -33,14 +34,14 @@ $params = &$this->item->params;
 	<?php endif; ?>
 	</fieldset>
 
-	<table class="category" width="100%" border="0" cellspacing="0" cellpadding="0">
+	<table class="category table-bordered">
 		<?php if ($this->params->get('show_headings')) : ?>
 		<thead><tr>
 			<th class="sectiontableheader">
 				<?php echo JText::_('JGLOBAL_NUM'); ?>
 			</th>
 			<th class="sectiontableheader">
-				<?php echo JHtml::_('grid.sort', 'COM_CONTACT_CONTACT_EMAIL_NAME', 'a.name', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort', 'COM_CONTACT_CONTACT_EMAIL_NAME_LABEL', 'a.name', $listDirn, $listOrder); ?>
 			</th>
 			<?php if ($this->params->get('show_position_headings')) : ?>
 			<th class="sectiontableheader">

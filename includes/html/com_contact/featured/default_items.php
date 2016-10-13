@@ -34,14 +34,14 @@ $params = &$this->item->params;
 	<?php endif; ?>
 	</fieldset>
 
-	<table class="category" width="100%" border="0" cellspacing="0" cellpadding="0">
+	<table class="yjsg-table-bordered">
 		<?php if ($this->params->get('show_headings')) : ?>
 		<thead><tr>
 			<th class="sectiontableheader">
 				<?php echo JText::_('JGLOBAL_NUM'); ?>
 			</th>
 			<th class="sectiontableheader">
-				<?php echo JHtml::_('grid.sort', 'COM_CONTACT_CONTACT_EMAIL_NAME', 'a.name', $listDirn, $listOrder); ?>
+				<?php echo JHtml::_('grid.sort', 'COM_CONTACT_CONTACT_EMAIL_NAME_LABEL', 'a.name', $listDirn, $listOrder); ?>
 			</th>
 			<?php if ($this->params->get('show_position_headings')) : ?>
 			<th class="sectiontableheader">

@@ -35,7 +35,8 @@ class JSON
 		{
 			if( is_array( $value ) )
 			{
-				$last_key = end( array_keys( $array ) );
+				$keys = array_keys($array);
+				$last_key = end($keys);
 				
 				$this->result .= '"'.$key.'":';
 				$this->json_encode( $value , ($key == $last_key ? '':',') );

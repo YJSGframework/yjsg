@@ -44,12 +44,17 @@ if(is_array($yjsg_article_options) && array_intersect($yjsg_article_options,$use
 }
 
 if($showYjsgArticleOptions){
-	$yjsgarticlefields 	= array();
+	$yjsgarticlefields 				= array();
+	$yjsgarticle_category_fields 	= array();
 	$attrib   			= $this->form->getFieldsets('attribs');
 	
 	foreach ($attrib as $yjsgextras) {
 		if(isset($yjsgextras->yjsgextra) && ($yjsgextras->yjsgextra == 'yjsgarticle')){
 			$yjsgarticlefields[] = $yjsgextras;
+		}
+		
+		if(isset($yjsgextras->yjsgcategory)){
+			$yjsgarticle_category_fields[] = $yjsgextras;
 		}
 	}
 	
@@ -119,6 +124,13 @@ if($showYjsgArticleOptions){
 			<li>
 				<a class="tabbutton" href="#yjsgarticleoptions">
 					<?php echo JText::_('YJSG_ARTICLE_OPTIONS') ?>
+				</a>
+			</li>
+			<?php endif; ?>
+			<?php if($showYjsgArticleOptions && count($yjsgarticle_category_fields)) : ?>
+			<li>
+				<a class="tabbutton" href="#yjsgarticlecategoryoptions">
+					<?php echo $yjsgarticle_category_fields[0]->label ?>
 				</a>
 			</li>
 			<?php endif; ?>
@@ -352,10 +364,7 @@ if($showYjsgArticleOptions){
 		<?php if($showYjsgArticleOptions && count($yjsgarticlefields)) : ?>
 		<div id="yjsgarticleoptions" class="yjsgTabContent">
 			<?php foreach ($yjsgarticlefields as $yjsgfieldset) : ?>
-				<?php foreach ($this->form->getFieldset($yjsgfieldset->name) as $yjsgafield) : 
-				
-					//$formGroupClass = ($yjsgafield->type == 'Textarea') ? 'yjsg-form-group' : 'yjsg-form-group-inline';
-				?>
+				<?php foreach ($this->form->getFieldset($yjsgfieldset->name) as $yjsgafield): ?>
 					<div class="yjsg-form-group-inline">
 						<?php echo $yjsgafield->label; ?>
 						<div class="yjsg-element-holder">
@@ -366,8 +375,20 @@ if($showYjsgArticleOptions){
 			<?php endforeach ?>
 		</div>
 		<?php endif; ?>	
-		
-		
+		<?php if($showYjsgArticleOptions && count($yjsgarticle_category_fields)) : ?>
+		<div id="yjsgarticlecategoryoptions" class="yjsgTabContent">
+			<?php foreach ($yjsgarticle_category_fields as $yjsgfieldset) : ?>
+				<?php foreach ($this->form->getFieldset($yjsgfieldset->name) as $yjsgafield): ?>
+					<div class="yjsg-form-group-inline">
+						<?php echo $yjsgafield->label; ?>
+						<div class="yjsg-element-holder">
+							<?php echo $yjsgafield->input; ?>
+						</div>
+					</div>
+				<?php endforeach ?>
+			<?php endforeach ?>
+		</div>
+		<?php endif; ?>			
 	</div>
 	<input type="hidden" name="task" value="" />
 	<input type="hidden" name="return" value="<?php echo $this->return_page;?>" />

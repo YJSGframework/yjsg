@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-	<!-- $Id: login.xml 19713 2010-12-01 17:01:50Z infograf768 $ -->
 <form>
 	<fieldset name="credentials"
 		label="COM_USERS_LOGIN_DEFAULT_LABEL"	>
@@ -18,6 +17,16 @@
 			filter="raw"
 			label="JGLOBAL_PASSWORD"
 			required="required"
+			size="25"
+		/>
+		
+		<field
+			name="secretkey"
+			type="text"
+			class="yjsg-form-element"
+			required="false"
+			filter="int"
+			label="JGLOBAL_SECRETKEY"
 			size="25"
 		/>
 	</fieldset>

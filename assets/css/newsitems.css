@@ -1,16 +1,10 @@
-/*======================================================================*\
-|| #################################################################### ||
-|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
-|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
-|| # license - PHP files are licensed under  GNU/GPL V2                 ||
-|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
-|| # bound by Proprietary License of Youjoomla.com                      ||
-|| # for more information visit http://www.youjoomla.com/license.html   ||
-|| # Redistribution and  modification of this software                  ||
-|| # is bounded by its licenses                                         ||
-|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
-|| #################################################################### ||
-\*======================================================================*/
+/**
+ * @package      YJSG Framework
+ * @copyright    Copyright(C) since 2007  Youjoomla.com. All Rights Reserved.
+ * @author       YouJoomla
+ * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
+ */
 .pagetitle {
 	margin:0 0 20px 0;
 }
@@ -33,16 +27,19 @@
 	clear:both;
 	padding:0;
 	margin:0 0 25px 0;
-	font-size:90%;
 }
 .newsitem_tools [class^="icon-"],
-.newsitem_tools [class^="fa"] {
+.newsitem_tools [class^="fa"],
+.newsitem_info [class^="icon-"],
+.newsitem_info [class^="fa"] {
 	font-size:14px;
 }
 /* newsitem_info */
 .newsitem_info {
 	display: block;
 	float:left;
+	font-size:90%;
+	color:#888;
 }
 .newsitem_info span.details {
 	display:block;
@@ -54,6 +51,11 @@
 .newsitem_info span.newsitem_hits {
 	float:left;
 	margin-right:10px;
+}
+.newsitem_info_bottom,
+.newsitem_info_split_bottom{
+	margin:20px 0;
+	float:none;
 }
 /* article tools: print, email , edit */
 ul.dropdown-menu.articletools {
@@ -135,16 +137,13 @@ div.yjsg-newsitems .width100 {
 	width: 100%;
 }
 /* MULTI ITEMS ROW SPACING */
+div.yjsg-newsitems div.multicolumns{
+	margin-left:-15px;
+	margin-right:-15px;
+}
 div.yjsg-newsitems div.multicolumns .yjsgarticle {
-	margin: 0px 15px 15px 0px;/* multi row newsitem spacing*/
-}
-/* FIRST ITEM IN A ROW SPACING */
-div.yjsg-newsitems div.multicolumns div.first .yjsgarticle {
-	margin-left: 0px;
-}
-/* LAST ITEM IN A ROW SPACING */
-div.yjsg-newsitems div.multicolumns div.last .yjsgarticle {
-	margin-right: 0px;
+	margin: 0px 0px 15px 0px;
+	padding:0 15px;
 }
 /* more articles links */
 div.yjsg-morearticles {

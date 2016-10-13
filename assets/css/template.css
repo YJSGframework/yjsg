@@ -1,16 +1,10 @@
-/*======================================================================*\
-|| #################################################################### ||
-|| # Package - Joomla Template based on YJSimpleGrid Framework          ||
-|| # Copyright (C) 2010  Youjoomla.com. All Rights Reserved.            ||
-|| # license - PHP files are licensed under  GNU/GPL V2                 ||
-|| # license - CSS  - JS - IMAGE files  are Copyrighted material        ||
-|| # bound by Proprietary License of Youjoomla.com                      ||
-|| # for more information visit http://www.youjoomla.com/license.html   ||
-|| # Redistribution and  modification of this software                  ||
-|| # is bounded by its licenses                                         ||
-|| # websites - http://www.youjoomla.com | http://www.yjsimplegrid.com  ||
-|| #################################################################### ||
-\*======================================================================*/
+/**
+ * @package      YJSG Framework
+ * @copyright    Copyright(C) since 2007  Youjoomla.com. All Rights Reserved.
+ * @author       YouJoomla
+ * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
+ */
 @import url("normalize.css");
 @import url("yjsg_layout.css");
 @import url("newsitems.css");
@@ -220,7 +214,6 @@ input[type="checkbox"] {
 input[type=radio],
 input[type=checkbox] {
 	display:inline-block;
-	margin-top:0;
 	line-height: normal;
 	vertical-align: middle;
 }
@@ -265,7 +258,12 @@ input[type="checkbox"],
 }
 .yjsg-form-group-inline input[type="radio"],
 .yjsg-form-group-inline input[type="checkbox"] {
+	position:static;
 	display:inline-block;
+	float:none;
+	margin-top:0px;
+	margin-left:0;
+	margin-right:5px;
 }
 .yjsg-form-group > label {
 	display:block;
@@ -277,6 +275,10 @@ input[type="checkbox"],
 	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-right:15px;
+	padding-left:0;
+	
+}
+.yjsg-edit-form .yjsg-form-group-inline label{
 	min-width:170px;
 }
 .yjsg-element-holder fieldset label{

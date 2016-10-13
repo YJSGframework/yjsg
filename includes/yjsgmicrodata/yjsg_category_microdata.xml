@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <form>
 	<fields name="params" addfieldpath="/plugins/system/yjsg/includes/yjsgmicrodata/elements">
-		<fieldset name="YJSG_MICRODATA" label="Yjsg Category Rich Snippets">
-			<field name="yjsg_microdata_cat_enabeled" type="list" default="article"  class="yjsg-microdata" label="Enable Rich Snippets" description="If set to yes, your category and its articles will get rich snippet type CreativeWork which is applicable to most generic kind of creative work, including books, movies, photographs, software programs, etc.">
-				<option value="0">Disable</option>
-				<option value="1">Enable</option>
+		<fieldset name="YJSG_MICRODATA" label="YJSG_MICRODATA_CATEGORY_LABEL">
+			<field name="yjsg_microdata_cat_enabeled" type="list" default="article"  class="yjsg-microdata" label="YJSG_MICRODATA_CATEGORY_ENABLE_LABEL" description="YJSG_MICRODATA_CATEGORY_ENABLE_DESC">
+				<option value="0">YJSG_DISABLE</option>
+				<option value="1">YJSG_ENABLE</option>
 			</field>
 		</fieldset>
 	</fields>

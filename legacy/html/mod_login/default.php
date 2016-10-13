@@ -35,23 +35,29 @@ JHtml::_('behavior.keepalive');
 	<div class="pretext">
 	<?php echo $params->get('pretext'); ?>
 	</div>
-		<div class="yjsg-form-group-addon">
-    		<span class="yjsg-form-prepend"><span class="icon-user"></span></span>
-			<input id="modlgn_username" type="text" name="username" class="yjsg-form-element"  size="18" placeholder="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>" />
-		</div>
-		<div class="yjsg-form-group-addon">
-    		<span class="yjsg-form-prepend"><span class="icon-lock"></span></span>
-			<input id="modlgn_passwd" type="password" name="password" class="yjsg-form-element" size="18" placeholder="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" />
-		</div>
-    <div class="yjsg-form-group-inline">    
-	<?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
-      <label class="checkbox-label" id="modlgn_remember_l">
-        	<input id="modlgn_remember" type="checkbox"> <?php echo JText::_('MOD_LOGIN_REMEMBER_ME') ?>
-      </label>
-	<?php endif; ?>
-	<div class="yjsg-element-holder">
-   	 	<button type="submit" tabindex="3" name="Submit" class="button"><?php echo JText::_('JLOGIN') ?></button>
+	<div class="yjsg-form-group-addon">
+		<span class="yjsg-form-prepend"><span class="icon-user"></span></span>
+		<input id="modlgn_username" type="text" name="username" class="yjsg-form-element"  size="18" placeholder="<?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?>" />
 	</div>
+	<div class="yjsg-form-group-addon">
+		<span class="yjsg-form-prepend"><span class="icon-lock"></span></span>
+		<input id="modlgn_passwd" type="password" name="password" class="yjsg-form-element" size="18" placeholder="<?php echo JText::_('JGLOBAL_PASSWORD') ?>" />
+	</div>
+	<?php if (isset($twofactormethods) && count($twofactormethods) > 1): ?>
+	<div class="yjsg-form-group-addon">
+		<span class="yjsg-form-prepend"><span class="icon-key"></span></span>
+		<input id="modlgn_secretkey" type="text" name="secretkey" class="yjsg-form-element" size="18" placeholder="<?php echo JText::_('JGLOBAL_SECRETKEY') ?>" />
+	</div>		
+	<?php endif; ?>
+    <div class="yjsg-form-group-inline">    
+		<?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
+		  <label class="checkbox-label" id="modlgn_remember_l">
+				<input id="modlgn_remember" type="checkbox"> <?php echo JText::_('MOD_LOGIN_REMEMBER_ME') ?>
+		  </label>
+		<?php endif; ?>
+		<div class="yjsg-element-holder">
+			<button type="submit" tabindex="3" name="Submit" class="button"><?php echo JText::_('JLOGIN') ?></button>
+		</div>
 	</div>
 	<input type="hidden" name="option" value="com_users" />
 	<input type="hidden" name="task" value="user.login" />
