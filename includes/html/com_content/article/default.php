@@ -15,12 +15,7 @@ $images 	= json_decode($this->item->images);
 $info    	= $params->get('info_block_position', 0);
 $edit_icon	= JHtml::_('icon.edit', $this->item, $params);
 $email_icon = JHtml::_('icon.email', $this->item, $params);
-if (!$this->print){
-	$print_icon = JHtml::_('icon.print_popup', $this->item, $params);
-}else{
-	$print_icon = JHtml::_('icon.print_screen', $this->item, $params);
-	
-}
+$print_icon = JHtml::_('icon.print_screen', $this->item, $params);
 $suffix		= $this->params->get( 'pageclass_sfx' );
 
 // remove images from print email and edit, use font icons
