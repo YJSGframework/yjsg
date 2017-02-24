@@ -31,7 +31,7 @@ class Yjsg {
      * @since 2.0.0
      */	
 	 
-	public $version = "2.2.5";
+	public $version = "2.2.6";
 	
     /**
      * Check update
@@ -171,10 +171,10 @@ class Yjsg {
      * Create microdata tags
      *
      * @return	string
-     * @since 2.0.0
+     * @since 2.2.6
      */	
 	 
-	public $yjsgmicrodata = '';
+	public $yjsgmicrodata = array();
 	
 	
 	
