@@ -242,8 +242,8 @@ $yjsg_js .="
 
 
 /* Calculate offset  percent value for YJ Mega Menu */
-$offset_value = ($sub_width / 100) * $yjsg_menu_offset;
-$final_offset = number_format($sub_width - $offset_value + 10,0, '.', '') ;
+$offset_value = ((int) $sub_width / 100) * (int)$yjsg_menu_offset;
+$final_offset = number_format((int)$sub_width - (int)$offset_value + 10,0, '.', '') ;
 
 
 	// custom css and js inside head tag

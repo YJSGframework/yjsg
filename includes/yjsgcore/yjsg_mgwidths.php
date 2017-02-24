@@ -14,51 +14,50 @@ defined( '_JEXEC' ) or die( 'Restricted index access' );
 	$insetblock  = '';
 	$insettop    = '';
 
-
 if ( $left  &&  $right && $inset ) {	
 	$leftblock   = $leftcolumn.$widthdefined;
 	$midblock    = $maincolumn.$widthdefined;
 	$rightblock  = $rightcolumn.$widthdefined;
 	$insetblock  = $insetcolumn.$widthdefined;
-	$insettop    = 100 - $midblock.$widthdefined;
+	$insettop    = (100 - (int)$midblock).$widthdefined;
 	
 }elseif ( $left && $right) {
-    $insetdevide = $insetcolumn /2;
-	$leftblock   = $leftcolumn+$insetdevide.$widthdefined;
+    $insetdevide = (int)$insetcolumn /2;
+	$leftblock   = ( (int)$leftcolumn + (int)$insetdevide ).$widthdefined;
 	$midblock    = $maincolumn.$widthdefined;
-	$rightblock  = $rightcolumn+$insetdevide.$widthdefined;
-	$insettop    = 100 - $midblock.$widthdefined;
+	$rightblock  = ( (int)$rightcolumn + (int)$insetdevide).$widthdefined;
+	$insettop    = (100 - (int)$midblock).$widthdefined;
 	
 	
 }elseif ( $left && $inset) {
 	$leftblock   = $leftcolumn.$widthdefined;
-	$midblock    = $maincolumn+$insetcolumn.$widthdefined;
+	$midblock    = ( (int)$maincolumn + (int)$insetcolumn ).$widthdefined;
 	$insetblock  = $insetcolumn.$widthdefined;
-	$insettop    = 100 - $midblock.$widthdefined;
+	$insettop    = (100 - (int)$midblock).$widthdefined;
 	
 }elseif ( $right && $inset) {
 	$rightblock  = $rightcolumn.$widthdefined;
-	$midblock    = $maincolumn+$insetcolumn.$widthdefined;
+	$midblock    = ( (int)$maincolumn + (int)$insetcolumn ).$widthdefined;
 	$insetblock  = $insetcolumn.$widthdefined;
-	$insettop    = 100 - $midblock.$widthdefined;
+	$insettop    = (100 - (int)$midblock).$widthdefined;
 	
 }elseif ( $left) {
-	$midblock   = $maincolumn + $rightcolumn + $insetcolumn.$widthdefined;
+	$midblock   = ( (int)$maincolumn + (int)$rightcolumn + (int)$insetcolumn ).$widthdefined;
 	$leftblock  = $leftcolumn.$widthdefined ;
-	$insettop    = 100 - $midblock.$widthdefined;
+	$insettop    = (100 - (int)$midblock).$widthdefined;
 	
 }elseif ( $right) {
-	$midblock    = $maincolumn + $leftcolumn + $insetcolumn.$widthdefined;
+	$midblock    = ( (int)$maincolumn + (int)$leftcolumn + (int)$insetcolumn ).$widthdefined;
 	$rightblock  = $rightcolumn.$widthdefined ;
-	$insettop    = 100 - $midblock.$widthdefined;
+	$insettop    = (100 - (int)$midblock).$widthdefined;
 
 }elseif ( $inset) {
-	$midblock    = $maincolumn + $rightcolumn + $leftcolumn.$widthdefined;
+	$midblock    = ( (int)$maincolumn + (int)$rightcolumn + (int)$leftcolumn ).$widthdefined;
 	$insetblock  = $insetcolumn.$widthdefined ;
-	$insettop    = 100 - $midblock.$widthdefined;
+	$insettop    = (100 - (int)$midblock).$widthdefined;
 
 } else {
-    $midblock    = $leftcolumn + $rightcolumn + $maincolumn + $insetcolumn.$widthdefined;
+    $midblock    = ( (int)$leftcolumn + (int)$rightcolumn + (int)$maincolumn + (int)$insetcolumn ).$widthdefined;
 	$insettop    ='0'.$widthdefined;
 	}
 	
@@ -67,36 +66,36 @@ if ( $left  &&  $right && $inset ) {
 if((!$yjsg_bodytop_loaded || !$yjsg_bodybottom_loaded)){
 	if ( $left  &&  $right && $inset && $turn_component_off == 1 ) {
 		
-		$devide 	 = $midblock /3;
-		$leftblock   = $leftcolumn+$devide .$widthdefined;
+		$devide 	 = (int)$midblock /3;
+		$leftblock   = ( (int)$leftcolumn+(int)$devide ).$widthdefined;
 		$midblock    = '0'.$widthdefined;
-		$rightblock  = $rightcolumn+$devide .$widthdefined;
-		$insetblock  = $insetcolumn+$devide .$widthdefined;
-		$insettop    = 100 - $midblock.$widthdefined;
+		$rightblock  = ( (int)$rightcolumn+(int)$devide ).$widthdefined;
+		$insetblock  = ( (int)$insetcolumn+(int)$devide ).$widthdefined;
+		$insettop    = (100 - (int)$midblock).$widthdefined;
 		
 	}elseif  ( $left && $right && $turn_component_off == 1 ) {
 		
-		$devide		 = $midblock /2;
+		$devide		 = (int)$midblock /2;
 		$midblock    = '0'.$widthdefined;
-		$leftblock   = $leftcolumn+$devide .$widthdefined;
-		$rightblock  = $rightcolumn+$devide .$widthdefined;
-		$insettop    = 100 - $midblock.$widthdefined;
+		$leftblock   = ( (int)$leftcolumn + (int)$devide ).$widthdefined;
+		$rightblock  = ( (int)$rightcolumn + (int)$devide ).$widthdefined;
+		$insettop    = (100 - (int)$midblock).$widthdefined;
 		
 	}elseif ( $right && $inset && $turn_component_off == 1 ) {
 		
-		$devide 	 = $midblock /2;
+		$devide 	 = (int)$midblock /2;
 		$midblock    = '0'.$widthdefined;
-		$rightblock  = $rightcolumn+$devide .$widthdefined;
-		$insetblock  = $insetcolumn+$devide .$widthdefined;
-		$insettop    = 100 - $midblock.$widthdefined;
+		$rightblock  = ( (int)$rightcolumn + (int)$devide ).$widthdefined;
+		$insetblock  = ( (int)$insetcolumn + (int)$devide ).$widthdefined;
+		$insettop    = (100 - (int)$midblock).$widthdefined;
 		
 	}elseif  ( $left && $inset && $turn_component_off == 1 ) {
 		
-		$devide 	 = $midblock /2;
+		$devide 	 = (int)$midblock /2;
 		$midblock    = '0'.$widthdefined;
-		$leftblock   = $leftcolumn+$devide .$widthdefined;
-		$insetblock  = $insetcolumn+$devide .$widthdefined;
-		$insettop    = 100 - $midblock.$widthdefined;
+		$leftblock   = ( (int)$leftcolumn + (int)$devide ).$widthdefined;
+		$insetblock  = ( (int)$insetcolumn + (int)$devide ).$widthdefined;
+		$insettop    = (100 - (int)$midblock).$widthdefined;
 		
 	}elseif ( $left && $turn_component_off == 1 ) {
 	
