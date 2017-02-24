@@ -70,7 +70,17 @@
 			ImagesShortcode += ' Image effects';
 			ImagesShortcode += ' </a>';			
 			
-			$( '#editor-xtd-buttons,.editor' ).after('<div class="yjsg-shortcodes"><h3>Yjsg Shortcodes</h3></div>');
+			
+			if($('#editor-xtd-buttons').length > 0 ){
+				
+				$( '#editor-xtd-buttons' ).after('<div class="yjsg-shortcodes"><h3>Yjsg Shortcodes</h3></div>');
+				
+			}else{
+				
+				$( '.editor' ).after('<div class="yjsg-shortcodes"><h3>Yjsg Shortcodes</h3></div>');
+			}
+			
+			
 			$( ".yjsg-shortcodes" ).append( MediaShortcode, NotificationsShortcode ,IconsShortcode , AccordionShortcode ,TabsShortcode ,ImagesShortcode );
 			
 			
