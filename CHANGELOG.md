@@ -1,3 +1,16 @@
+##Version: 2.2.6 (February 24, 2017)
+
+###Code improvement
+ - Yjsgcolor construct fix
+ - yjsgmicrodata array fix
+ - yjsg_head.php calc fix
+ - yjsg_mgwidths calc fix
+ - JCE editor double shortcode fix
+ - Print icon fix
+ - Popovers fix
+ - Media element update to 2.23.5 
+ - Font awesome update to 4.7.0
+ 
 ##Version: 2.2.5 (August 05, 2016)
  
 ###Code improvement
