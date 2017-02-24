@@ -15,8 +15,12 @@
 defined( '_JEXEC' ) or die( 'Restricted index access' ); 
 class Yjsgcolor {
 
-	function Yjsgcolor($hex){
+	public function __construct($hex){
 		$this->yjsgcolor = $hex;
+	}
+
+	function Yjsgcolor($hex){
+		self::__construct($hex);
 	}
 
 	function coerceColor($value) {
