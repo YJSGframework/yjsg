@@ -1,11 +1,11 @@
-##Version: 2.2.7 (May 04, 2017)
+## Version: 2.2.7 (May 04, 2017)
  
-###Bug fix
+### Bug fix
  - Fixed Menu Page Class not printing in head tag
  
-##Version: 2.2.6 (February 24, 2017)
+## Version: 2.2.6 (February 24, 2017)
 
-###Code improvement
+### Code improvement
  - Yjsgcolor construct fix
  - yjsgmicrodata array fix
  - yjsg_head.php calc fix
@@ -16,19 +16,19 @@
  - Media element update to 2.23.5 
  - Font awesome update to 4.7.0
  
-##Version: 2.2.5 (August 05, 2016)
+## Version: 2.2.5 (August 05, 2016)
  
-###Code improvement
+### Code improvement
  - Removed SqueezeBox close
  
-##Version: 2.2.4 (July 13, 2016)
+## Version: 2.2.4 (July 13, 2016)
 
-###Code improvement
+### Code improvement
  - Shortcodes not visible in TinyMCE fix
  
-##Version: 2.2.3 (March 22, 2016)
+## Version: 2.2.3 (March 22, 2016)
 
-###Code improvement
+### Code improvement
  - Adapt to Joomla 3.5.0 JDocumentHTML class name changed to JDocumentHtml
  - Adapt to Joomla 3.5.0 JDocumentHTML class folder libraries/joomla/document/html changed to libraries/joomla/document
  - Updated froogaloop fixes iframe for vimeo
@@ -38,15 +38,15 @@
  - Fixed logo SEO text indent
  
  
-##Version: 2.2.2 (May 14, 2015)
+## Version: 2.2.2 (May 14, 2015)
 
-###Code improvement
+### Code improvement
  - Fixed topmenu animation grow bug
  - Fixed legacy templates not loading jquery
 
-##Version: 2.2.1 (April 28, 2015)
+## Version: 2.2.1 (April 28, 2015)
 
-###Code improvement
+### Code improvement
  - Fixed yjsg-form radios alignment
  - Removed float from yjsg-col-1 
  - Added two factor authentication inputs
@@ -56,9 +56,9 @@
  - Added new language strings
  - Added language strings for shortcodes
 
-##Version: 2.2.0 (January 28, 2015)
+## Version: 2.2.0 (January 28, 2015)
 
-###New features
+### New features
  - Added yjsg-link-lightbox-gallery
  - Added before and after module content
  - Updated Font Awesome to 4.3.0
@@ -71,9 +71,9 @@
  - Removed xml data from dbug
  - Js cleanup for IE
  
-##Version: 2.1.3 (November 24, 2014)
+## Version: 2.1.3 (November 24, 2014)
 
-###Code improvement
+### Code improvement
 
   - Added custom article fields per category
   - Added yjsg-iframe-lightbox 
@@ -87,7 +87,7 @@
   - Moved module addspan function to module.php 
 
 
-###Bug fixes
+### Bug fixes
 
   - Pagination icon line-height fix
   - Stray $css_file variable removed
@@ -106,14 +106,14 @@
   - News items multicolumns margin adjustment
   - Fixed article info position params
 
-##Version: 2.1.2 (October 06, 2014)
+## Version: 2.1.2 (October 06, 2014)
 
-###Bug fixes
+### Bug fixes
   - Fixed yjsgCleanPageSfx method to check for params first
   
-##Version: 2.1.1 (October 06, 2014)
+## Version: 2.1.1 (October 06, 2014)
 
-###Code improvement
+### Code improvement
 
   - Improved article blog layout margin and padding for easier separation in v2 templates
   - Improved Page Class space before the class name
@@ -123,22 +123,22 @@
   - Made sure yjsgpre shortcode dont error out when empty 
   - Reset yjsg-row margin when inside the yjsg_grid
 
-###Bug fixes
+### Bug fixes
   - Fixed reset to default adds 3 top menus if top menu is in header by default
   - Fixed images shortcode override was not closing modal on insert
   - Fixed css_font_family in default xml should be 6
   - Fixed blocknumber css
 
   
-##Version: 2.1.0 (October 02, 2014)
+## Version: 2.1.0 (October 02, 2014)
 
-###New features
+### New features
 
   - Added [Waypoints](http://imakewebthings.com/jquery-waypoints/) jQuery plugin
   - Added [Yjsgroundprogress](http://yjsimplegrid.com/add-ons/round-progress-bars.html) jQuery plugin
   - Added yjsg-hide CSS class
 
-###Bug fixes
+### Bug fixes
 
   - Fixed youtube shortlink fix for Mediaelement
   - Fixed K2 shortcodes after read more 
@@ -157,9 +157,9 @@
   - Fixed class JSON strict standards bug 
 
 
-##Version: 2.0.1 (September 18, 2014)
+## Version: 2.0.1 (September 18, 2014)
 
-###Code improvement
+### Code improvement
 
   - Added Yjsg Article Option in frontend article edit view
   - Added yjsg-form-append
@@ -177,7 +177,7 @@
   - Polaroid shortcode addon [reference](http://www.youjoomla.com/joomla_support/showthread.php?p=58942)
   - Cleanup JS/CSS files
 
-###Bug fixes
+### Bug fixes
 
   - Fixed article category menu rtl CSS
   - Fixed sidepanel rtl CSS 
@@ -198,6 +198,6 @@
   
 
 
-##Version: 2.0.0 (August 08, 2014)
+## Version: 2.0.0 (August 08, 2014)
 
   - Initial Release
