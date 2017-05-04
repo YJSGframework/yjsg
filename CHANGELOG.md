@@ -1,3 +1,8 @@
+##Version: 2.2.7 (May 04, 2017)
+ 
+###Bug fix
+ - Fixed Menu Page Class not printing in head tag
+ 
 ##Version: 2.2.6 (February 24, 2017)
 
 ###Code improvement
