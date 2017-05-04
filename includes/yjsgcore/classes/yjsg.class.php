@@ -31,7 +31,7 @@ class Yjsg {
      * @since 2.0.0
      */	
 	 
-	public $version = "2.2.6";
+	public $version = "2.2.7";
 	
     /**
      * Check update
@@ -1347,7 +1347,7 @@ class JDocumentRendererHtmlclass extends JDocumentRenderer{
 		$top_menu_location	= $tparams->get('top_menu_location',0);
 		$pageclass_sfx		= '';
 		
-		if(isset($menu->getActive()->params)){
+		if(is_object($menu->getActive()->params)){
 			$pageclass_sfx		= $menu->getActive()->params->get('pageclass_sfx');
 		}
 		
