@@ -1,3 +1,8 @@
+## Version: 2.2.8 (July 18, 2017)
+ 
+### Issue fix
+ - Better dependencies error handling
+ 
 ## Version: 2.2.7 (May 04, 2017)
  
 ### Bug fix
