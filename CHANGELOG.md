@@ -2,6 +2,9 @@
  
 ### Issue fix
  - Better dependencies error handling
+
+### Bug fix
+ - Fix for print icon #42
  
 ## Version: 2.2.7 (May 04, 2017)
  
