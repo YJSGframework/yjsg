@@ -1,3 +1,8 @@
+## Version: 2.2.9 (September 20, 2017)
+ 
+### Bug fix
+ - Fixes #49 issue with Joomla renaming/moving classes and methods since 3.8.0
+
 ## Version: 2.2.8 (July 18, 2017)
  
 ### Issue fix
