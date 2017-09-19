@@ -338,7 +338,12 @@ class plgSystemYjsg extends JPlugin {
 		if (version_compare(JVERSION, '3.0', '<')) {
 			
 			$IsJversion                   = '25';
+			$ModuleHelper				  = 'JModuleHelper';
 			$isView                       = 'JView';
+			$HtmlDocument 				  = 'JDocumentHTML';
+			$FormField					  = 'JFormField';
+			$FileLayout					  = 'JLayoutFile';
+			$Pagination					  = 'JPagination';
 			$YjsgJModuleHelperDefaultRead = JPATH_LIBRARIES . '/joomla/application/module/helper.php';
 			$YjsgJViewDefaultRead         = JPATH_LIBRARIES . '/joomla/application/component/view.php';
 			$YjsgJPaginationDefaultRead   = JPATH_LIBRARIES . '/joomla/html/pagination.php';
@@ -347,8 +352,14 @@ class plgSystemYjsg extends JPlugin {
 			
 		} elseif (version_compare(JVERSION, '3.0', '>')) {
 			
-			$IsJversion = '30';
-			$isView     = 'JViewLegacy';
+			$IsJversion 	= '30';
+			$ModuleHelper	= 'JModuleHelper';
+			$isView     	= 'JViewLegacy';
+			$HtmlDocument 	= 'JDocumentHTML';
+			$FormField		= 'JFormField';
+			$FileLayout		= 'JLayoutFile';
+			$Pagination		= 'JPagination';
+			
 			if (version_compare(JVERSION, '3.2', '<')) {
 				$YjsgJModuleHelperDefaultRead = JPATH_LIBRARIES . '/legacy/module/helper.php';
 			} else {
@@ -357,15 +368,53 @@ class plgSystemYjsg extends JPlugin {
 			$YjsgJViewDefaultRead         = JPATH_LIBRARIES . '/legacy/view/legacy.php';
 			$YjsgJPaginationDefaultRead   = JPATH_LIBRARIES . '/cms/pagination/pagination.php';
 			if(version_compare(JVERSION, '3.5', '>=')){//@since 2.2.3
+			
+				$HtmlDocument 				  = 'JDocumentHtml';
 				$YjsgJDocumentHTMLDefaultRead = JPATH_LIBRARIES . '/joomla/document/html.php';
 			}else{
 				$YjsgJDocumentHTMLDefaultRead = JPATH_LIBRARIES . '/joomla/document/html/html.php';
 			}
 			$YjsgJFormFieldDefaultRead    = JPATH_LIBRARIES . '/joomla/form/field.php';
 			$YjsgJLayoutFileDefaultRead   = JPATH_LIBRARIES . '/cms/layout/file.php';
+			
+			
+			
+			if (version_compare(JVERSION, '3.8', '>=')) { //@since 2.2.9
+				
+				
+				$IsJversion 					= '38';
+
+				$YjsgJModuleHelperDefaultRead 	= JPATH_LIBRARIES . '/src/Helper/ModuleHelper.php';	
+				$YjsgJViewDefaultRead         	= JPATH_LIBRARIES . '/src/MVC/View/HtmlView.php';			
+				$YjsgJPaginationDefaultRead   	= JPATH_LIBRARIES . '/src/Pagination/Pagination.php';
+				$YjsgJDocumentHTMLDefaultRead 	= JPATH_LIBRARIES . '/src/Document/HtmlDocument.php';
+				$YjsgJFormFieldDefaultRead    	= JPATH_LIBRARIES . '/src/Form/FormField.php';
+				$YjsgJLayoutFileDefaultRead   	= JPATH_LIBRARIES . '/src/Layout/FileLayout.php';
+			}
+			
+			
 		}
 		
+		// replacers
+		if (version_compare(JVERSION, '3.8', '>=')) {	//@since 2.2.9	 
 		
+			$RepModuleHelper				= 'ModuleHelper';
+			$RepisView     					= 'HtmlView';
+			$RepHtmlDocument 				= 'HtmlDocument';
+			$RepFormField					= 'FormField';
+			$RepFileLayout					= 'FileLayout';
+			$RepPagination					= 'Pagination';
+			
+		}else{
+			
+			$RepModuleHelper				= $ModuleHelper;
+			$RepisView     					= $isView;
+			$RepHtmlDocument 				= $HtmlDocument;
+			$RepFormField					= $FormField;
+			$RepFileLayout					= $FileLayout;
+			$RepPagination					= $Pagination;			
+			
+		}
 		
 		// default files
 		$YjsgJModuleHelperDefaultFile = YJSGEXTEND . "classes" . YJDS . "YjsgJModuleHelperDefault" . $IsJversion . ".php";
@@ -375,26 +424,28 @@ class plgSystemYjsg extends JPlugin {
 		$YjsgJFormFieldDefaultFile    = YJSGEXTEND . "classes" . YJDS . "YjsgJFormFieldDefault" . $IsJversion . ".php";
 		$YjsgJLayoutFileDefaultFile   = YJSGEXTEND . "classes" . YJDS . "YjsgJLayoutFileDefault" . $IsJversion . ".php";
 		
-		//extend JModuleHelper library class
+		//extend JModuleHelper library class // JLoader::getClassList()
 		
 		if($this->app->isSite()){
 			
 			if ( JFile::exists($YjsgJModuleHelperDefaultFile) ) {
-				
+			
 				require_once($YjsgJModuleHelperDefaultFile);
 				jimport('joomla.application.module.helper');
-				JLoader::register('JModuleHelper', YJSGEXTEND . $IsJversion . '/module/helper.php', true);
+				JLoader::register($ModuleHelper, YJSGEXTEND . $IsJversion . '/module/helper.php', true);
+
 
 			}else{
 				
 				$YjsgJModuleHelperDefault = JFile::read($YjsgJModuleHelperDefaultRead);
-				$YjsgJModuleHelperDefault = str_replace('class JModuleHelper', 'class YjsgJModuleHelperDefault', $YjsgJModuleHelperDefault);
+				$YjsgJModuleHelperDefault = str_replace('class '.$RepModuleHelper, 'class YjsgJModuleHelperDefault', $YjsgJModuleHelperDefault);
+				$YjsgJModuleHelperDefault = preg_replace('/(namespace(.*?);)/s', '', $YjsgJModuleHelperDefault);
 				
 				if(JFile::write($YjsgJModuleHelperDefaultFile, $YjsgJModuleHelperDefault)){
 					
 					require_once($YjsgJModuleHelperDefaultFile);
 					jimport('joomla.application.module.helper');
-					JLoader::register('JModuleHelper', YJSGEXTEND . $IsJversion . '/module/helper.php', true);
+					JLoader::register($ModuleHelper, YJSGEXTEND . $IsJversion . '/module/helper.php', true);
 
 				}else{
 					
@@ -418,7 +469,8 @@ class plgSystemYjsg extends JPlugin {
 			}else{
 				
 				$YjsgJViewDefault = JFile::read($YjsgJViewDefaultRead);
-				$YjsgJViewDefault = str_replace('class ' . $isView, 'class Yjsg' . $isView . 'Default', $YjsgJViewDefault);
+				$YjsgJViewDefault = str_replace('class ' . $RepisView, 'class Yjsg' . $isView . 'Default', $YjsgJViewDefault);
+				$YjsgJViewDefault = preg_replace('/(namespace(.*?);)/s', '', $YjsgJViewDefault);
 				
 				if( JFile::write($YjsgJViewDefaultFile, $YjsgJViewDefault) ){
 					
@@ -443,23 +495,21 @@ class plgSystemYjsg extends JPlugin {
 			if ( JFile::exists($YjsgJDocumentHTMLDefaultFile) ) {
 
 				require_once($YjsgJDocumentHTMLDefaultFile);
-				JLoader::register('JDocumentHTML', YJSGEXTEND . $IsJversion . '/html/html.php', true);				
+				JLoader::register($HtmlDocument, YJSGEXTEND . $IsJversion . '/html/html.php', true);				
 				
 			}else{
 				
 				
 				$YjsgJDocumentHTMLDefault = JFile::read($YjsgJDocumentHTMLDefaultRead);
-				if(version_compare(JVERSION, '3.5', '>=')){//@since 2.2.3
-					$YjsgJDocumentHTMLDefault = str_replace('class JDocumentHtml', 'class YjsgJDocumentHTMLDefault', $YjsgJDocumentHTMLDefault);
-				}else{
-					$YjsgJDocumentHTMLDefault = str_replace('class JDocumentHTML', 'class YjsgJDocumentHTMLDefault', $YjsgJDocumentHTMLDefault);
-				}
+				$YjsgJDocumentHTMLDefault = str_replace('class '.$RepHtmlDocument, 'class YjsgJDocumentHTMLDefault', $YjsgJDocumentHTMLDefault);
+				$YjsgJDocumentHTMLDefault = preg_replace('/(namespace(.*?);)/s', '', $YjsgJDocumentHTMLDefault);
+				$YjsgJDocumentHTMLDefault = str_replace('extends Document', 'extends JDocument', $YjsgJDocumentHTMLDefault);
 				
 				
 				if ( JFile::write($YjsgJDocumentHTMLDefaultFile, $YjsgJDocumentHTMLDefault) ){
 					
 					require_once($YjsgJDocumentHTMLDefaultFile);
-					JLoader::register('JDocumentHTML', YJSGEXTEND . $IsJversion . '/html/html.php', true);	
+					JLoader::register($HtmlDocument, YJSGEXTEND . $IsJversion . '/html/html.php', true);	
 									
 				}else{
 					
@@ -468,27 +518,28 @@ class plgSystemYjsg extends JPlugin {
 				
 			}
 
-			
-			if ( JFile::exists($YjsgJFormFieldDefaultFile) ) {
-				
-				require_once($YjsgJFormFieldDefaultFile);
-				JLoader::register('JFormField', YJSGEXTEND . $IsJversion . '/form/field.php', true);
-
-			}else{
-				
-				$YjsgJFormFieldDefault = JFile::read($YjsgJFormFieldDefaultRead);
-				$YjsgJFormFieldDefault = str_replace('class JFormField', 'class YjsgJFormFieldDefault', $YjsgJFormFieldDefault);
-				
-				if ( JFile::write($YjsgJFormFieldDefaultFile, $YjsgJFormFieldDefault)){
+			if(version_compare(JVERSION, '3.8', '<')){
+				if ( JFile::exists($YjsgJFormFieldDefaultFile) ) {
 					
 					require_once($YjsgJFormFieldDefaultFile);
-					JLoader::register('JFormField', YJSGEXTEND . $IsJversion . '/form/field.php', true);					
-					
+					JLoader::register($FormField, YJSGEXTEND . $IsJversion . '/form/field.php', true);
+	
 				}else{
 					
-					JError::raiseWarning(100, 'YjsgJFormFieldDefault'.$IsJversion . JText::_('YJSG_CANNOT_CREATE_FILE'));
+					$YjsgJFormFieldDefault = JFile::read($YjsgJFormFieldDefaultRead);
+					$YjsgJFormFieldDefault = str_replace('class '.$RepFormField, 'class YjsgJFormFieldDefault', $YjsgJFormFieldDefault);
+					
+					if ( JFile::write($YjsgJFormFieldDefaultFile, $YjsgJFormFieldDefault)){
+						
+						require_once($YjsgJFormFieldDefaultFile);
+						JLoader::register($FormField, YJSGEXTEND . $IsJversion . '/form/field.php', true);					
+						
+					}else{
+						
+						JError::raiseWarning(100, 'YjsgJFormFieldDefault'.$IsJversion . JText::_('YJSG_CANNOT_CREATE_FILE'));
+					}
+					
 				}
-				
 			}
 		}
 		
@@ -499,18 +550,19 @@ class plgSystemYjsg extends JPlugin {
 			if ( JFile::exists($YjsgJLayoutFileDefaultFile) ) {
 
 				require_once($YjsgJLayoutFileDefaultFile);
-				JLoader::register('JLayoutFile', YJSGEXTEND . $IsJversion . '/layout/file.php', true);	
-								
+				JLoader::register($FileLayout, YJSGEXTEND . $IsJversion . '/layout/file.php', true);	
+				
 			}else{
 				
 				$YjsgJLayoutFileDefault = JFile::read($YjsgJLayoutFileDefaultRead);
-				$YjsgJLayoutFileDefault = str_replace('class JLayoutFile', 'class YjsgJLayoutFileDefault', $YjsgJLayoutFileDefault);
-				
+				$YjsgJLayoutFileDefault = str_replace('class '.$RepFileLayout, 'class YjsgJLayoutFileDefault', $YjsgJLayoutFileDefault);
+				$YjsgJLayoutFileDefault = preg_replace('/(namespace(.*?);)/s', '', $YjsgJLayoutFileDefault);
+				$YjsgJLayoutFileDefault = str_replace('extends BaseLayout', 'extends JLayoutBase', $YjsgJLayoutFileDefault);
 				
 				if( JFile::write($YjsgJLayoutFileDefaultFile, $YjsgJLayoutFileDefault) ){
 					
 					require_once($YjsgJLayoutFileDefaultFile);
-					JLoader::register('JLayoutFile', YJSGEXTEND . $IsJversion . '/layout/file.php', true);						
+					JLoader::register($FileLayout, YJSGEXTEND . $IsJversion . '/layout/file.php', true);						
 					
 				}else{
 					
@@ -530,7 +582,7 @@ class plgSystemYjsg extends JPlugin {
 
 				require_once($YjsgJPaginationDefaultFile);
 				jimport('joomla.html.pagination');
-				JLoader::register('JPagination', YJSGEXTEND . $IsJversion . '/pagination/pagination.php', true);
+				JLoader::register($Pagination, YJSGEXTEND . $IsJversion . '/pagination/pagination.php', true);
 				
 				if(version_compare(JVERSION, '3.0', '<') && !class_exists('JPaginationObject')){
 					require_once(YJSGEXTEND.'25/pagination/object.php');
@@ -539,17 +591,18 @@ class plgSystemYjsg extends JPlugin {
 			}else{
 				
 				$YjsgJPaginationDefault = JFile::read($YjsgJPaginationDefaultRead);
-				$YjsgJPaginationDefault = str_replace('class JPagination', 'class YjsgJPaginationDefault', $YjsgJPaginationDefault);
+				$YjsgJPaginationDefault = str_replace('class '.$RepPagination, 'class YjsgJPaginationDefault', $YjsgJPaginationDefault);
+				$YjsgJPaginationDefault = preg_replace('/(namespace(.*?);)/s', '', $YjsgJPaginationDefault);
 				
 				if (version_compare(JVERSION, '3.0', '<')) {
-					$YjsgJPaginationDefault = str_replace('new JPagination', 'new YjsgJPaginationDefault', $YjsgJPaginationDefault);
+					$YjsgJPaginationDefault = str_replace('new '.$RepPagination, 'new YjsgJPaginationDefault', $YjsgJPaginationDefault);
 				}
 				
 				if ( JFile::write($YjsgJPaginationDefaultFile, $YjsgJPaginationDefault) ){
 
 					require_once($YjsgJPaginationDefaultFile);
 					jimport('joomla.html.pagination');
-					JLoader::register('JPagination', YJSGEXTEND . $IsJversion . '/pagination/pagination.php', true);
+					JLoader::register($Pagination, YJSGEXTEND . $IsJversion . '/pagination/pagination.php', true);
 					
 					if(version_compare(JVERSION, '3.0', '<') && !class_exists('JPaginationObject')){
 						require_once(YJSGEXTEND.'25/pagination/object.php');
