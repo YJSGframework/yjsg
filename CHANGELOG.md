@@ -1,5 +1,10 @@
+## Version: 2.3.0 (December 08, 2017)
+
+### Bug fix
+ - Fixes #46 pagination class override
+
 ## Version: 2.2.9 (September 20, 2017)
- 
+
 ### Bug fix
  - Fixes #49 issue with Joomla renaming/moving classes and methods since 3.8.0
 
