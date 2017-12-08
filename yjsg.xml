@@ -2,7 +2,7 @@
 <extension version="2.5" type="plugin" group="system" method="upgrade">
 	<name>System - Yjsg Framework</name>
 	<author>Youjoomla.com</author>
-	<creationDate>09-20-2017</creationDate>
+	<creationDate>12-08-2017</creationDate>
 	<copyright>Copyright (c) since 2007 Youjoomla.com. All rights reserved.</copyright>
 	<authorEmail>youjoomla@gmail.com</authorEmail>
 	<authorUrl>www.youjoomla.com</authorUrl>
