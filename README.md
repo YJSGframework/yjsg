@@ -1,4 +1,4 @@
-#Yjsg - flexible, effective and easy-to-use Joomla Template Framework plugin
+# Yjsg - flexible, effective and easy-to-use Joomla Template Framework plugin
 
 YJSG is built on latest trends in web technology like; Bootstrap 2 and 3, FontAwesome 3 and 4, CSS3, LESS CSS and HTML5.
 
