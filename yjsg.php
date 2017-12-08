@@ -593,7 +593,12 @@ class plgSystemYjsg extends JPlugin {
 				$YjsgJPaginationDefault = JFile::read($YjsgJPaginationDefaultRead);
 				$YjsgJPaginationDefault = str_replace('class '.$RepPagination, 'class YjsgJPaginationDefault', $YjsgJPaginationDefault);
 				$YjsgJPaginationDefault = preg_replace('/(namespace(.*?);)/s', '', $YjsgJPaginationDefault);
-				
+
+				if (version_compare(JVERSION, '3.8.0','>=')) { //@since 2.3.0
+					
+					$YjsgJPaginationDefault = str_replace('active(PaginationObject', 'active(Joomla\CMS\Pagination\PaginationObject', $YjsgJPaginationDefault);
+				}
+								
 				if (version_compare(JVERSION, '3.0', '<')) {
 					$YjsgJPaginationDefault = str_replace('new '.$RepPagination, 'new YjsgJPaginationDefault', $YjsgJPaginationDefault);
 				}
