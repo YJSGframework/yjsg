@@ -1,3 +1,10 @@
+## Version: 2.3.1 (February 09, 2018)
+
+### Bug fix
+ - Template Logo media manager fix
+ - $sub_width should be int not mix
+ - Get active menu undefined warning property fix
+ 
 ## Version: 2.3.0 (December 08, 2017)
 
 ### Bug fix
