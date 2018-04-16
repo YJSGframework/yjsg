@@ -464,7 +464,7 @@ function yjsg_parse($path, $days = '', $hours = '', $allowjs = false) {
     // awesome cache cleanup method :)
     
     $day  = 24 * 3600;
-    $hour = 60 * 60 * $hours;
+    $hour = 60 * 60 * (int)$hours;
     
     
     if ($days && $days > 0) {
