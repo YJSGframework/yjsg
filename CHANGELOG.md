@@ -1,4 +1,4 @@
-## Version: 2.3.3 (April 16, 2018)
+## Version: 2.3.2 (April 16, 2018)
 
 ### Bug fix
  - Shortcodes not visible in tynimice fix
