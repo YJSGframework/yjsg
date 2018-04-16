@@ -70,7 +70,12 @@
 			ImagesShortcode += ' Image effects';
 			ImagesShortcode += ' </a>';			
 			
-			
+			if($('.js-editor-tinymce').length > 0 ){
+				
+				$( '.js-editor-tinymce' ).attr('id','editor-xtd-buttons');
+				
+			}
+					
 			if($('#editor-xtd-buttons').length > 0 ){
 				
 				$( '#editor-xtd-buttons' ).after('<div class="yjsg-shortcodes"><h3>Yjsg Shortcodes</h3></div>');
