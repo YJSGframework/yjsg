@@ -1210,6 +1210,8 @@ class plgSystemYjsg extends JPlugin {
 
 		if( $this->yjsg->yjtmpl() ){
 			
+			$data = is_array($data) ? (object) $data : $data;
+			
 			//YJSG  mega menu 
 			if ($form->getName() == 'com_menus.item') {
 				JForm::addFormPath(JPATH_PLUGINS . YJDS . 'system' . YJDS . 'yjsg' . YJDS . 'includes' . YJDS . 'yjsgmegamenu');
@@ -1243,10 +1245,13 @@ class plgSystemYjsg extends JPlugin {
 				$this->addShortcodes();		 
 			}
 			
+			
+			
+			
 			// Microdata category
 			if ($form->getName() == 'com_menus.item' && $data->type == 'component' && strstr($data->link, 'com_content')) {
 				
-				if (!strstr($data['link'], 'view=category&layout=blog') && !strstr($data['link'], 'view=featured'))return;
+				if (!strstr($data->link, 'view=category&layout=blog') && !strstr($data->link, 'view=featured'))return;
 				JForm::addFormPath(JPATH_PLUGINS . YJDS . 'system' . YJDS . 'yjsg' . YJDS . 'includes' . YJDS . 'yjsgmicrodata');
 				$form->loadFile('yjsg_category_microdata', false);			 
 			}
