@@ -1,3 +1,8 @@
+## Version: 2.3.3 (June 27, 2018)
+
+### Bug fix
+ - Fix for menu items object type use
+
 ## Version: 2.3.2 (April 16, 2018)
 
 ### Bug fix
