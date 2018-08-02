@@ -1204,3 +1204,22 @@ ul.yjsgsliderPaginationTabs:after,
 	-moz-border-radius-bottomright: 4px;
 	border-bottom-right-radius: 4px;
 }
+
+/* Page builders support */
+.com_quix .holders,
+.com_sppagebuilder .holders{
+	padding:0;
+}
+.com_quix .tpl_component,
+.com_sppagebuilder .tpl_component{
+	padding:0;
+}
+.com_quix #centerbottom.yjsgsitew,
+.com_sppagebuilder #centerbottom.yjsgsitew{
+	padding:0;
+	width:auto;
+}
+.com_quix #midblock .inside-container,
+.com_sppagebuilder #midblock .inside-container{
+	padding:0;
+}
