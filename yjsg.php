@@ -1220,7 +1220,7 @@ class plgSystemYjsg extends JPlugin {
 			
 			// Yjsg module additional params
 			if ($form->getName() == 'com_modules.module') {
-				if ($data && $data->client_id != 0)return;
+				if ($data && isset($data->client_id) && $data->client_id != 0)return;
 				JForm::addFormPath(JPATH_PLUGINS . YJDS . 'system' . YJDS . 'yjsg' . YJDS . 'includes' . YJDS . 'yjsgmoduleoptions');
 				$form->loadFile('yjsg_module_options', false);
 				$this->addShortcodes();
@@ -1234,7 +1234,7 @@ class plgSystemYjsg extends JPlugin {
 
 			// Module menu params 
 			if ($form->getName() == 'com_modules.module') {
-				if ($data && $data->module != 'mod_menu')return;
+				if ($data && isset($data->module) && $data->module != 'mod_menu')return;
 				$form->loadFile('yjsg_menu_module_options', false);			 
 			}
 			
