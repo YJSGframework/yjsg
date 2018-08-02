@@ -1,3 +1,12 @@
+## Version: 2.3.4 (August 02, 2018)
+
+### Bug fix
+ - Fix for menu Select type switch
+ - Fix widths to use float instead of int
+ 
+### Code improvement
+ - Added containers spacings reset if page builders are used
+  
 ## Version: 2.3.3 (June 27, 2018)
 
 ### Bug fix
