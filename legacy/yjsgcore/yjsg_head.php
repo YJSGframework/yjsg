@@ -20,7 +20,7 @@ if (intval(JVERSION) > 2) {
 }
 
 
-$document->addStyleDeclaration("body{font-size:".$css_font.";}#logo{width:$logo_out%;height:$logo_height;}#logo a{height:$logo_height;}.yjsgsitew{width:".$css_width.$css_widthdefined.";}.yjsgheadergw{width:".$headergrid_width."%;}".$midblockWidth.$leftblockWidth.$rightblockWidth.$insetblockWidth.$insetWidth."");
+$document->addStyleDeclaration("body{font-size:".$css_font.";}#logo{width:$logo_out%;height:$logo_height;}#logo a{height:$logo_height;}.yjsgsitew{max-width:".$css_width.$css_widthdefined.";}.yjsgheadergw{width:".$headergrid_width."%;}".$midblockWidth.$leftblockWidth.$rightblockWidth.$insetblockWidth.$insetWidth."");
 
 // custom logo
 if($this->params->get("logo_image")){

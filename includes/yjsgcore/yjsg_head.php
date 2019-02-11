@@ -17,7 +17,7 @@ if (intval(JVERSION) > 2) {
 	JHtml::_('jquery.framework');
 }
 // default css
-$document->addStyleDeclaration("body{font-size:".$css_font.";}#logo,#logoholder{width:$logo_out;height:$logo_height;}.yjsgsitew{width:".$css_width.$css_widthdefined.";}".$midblockWidth.$leftblockWidth.$rightblockWidth.$insetblockWidth.$insetWidth."");
+$document->addStyleDeclaration("body{font-size:".$css_font.";}#logo,#logoholder{width:$logo_out;height:$logo_height;}.yjsgsitew{max-width:".$css_width.$css_widthdefined.";}".$midblockWidth.$leftblockWidth.$rightblockWidth.$insetblockWidth.$insetWidth."");
 
 // custom logo
 if($this->params->get("logo_image")){
