@@ -334,7 +334,9 @@ class plgSystemYjsg extends JPlugin {
      */
     
     public function yjsgExtendJoomla() {
-
+		
+		require_once YJSGPATH . 'includes/yjsgcore/functions/yj_print.php';
+		
 		if (version_compare(JVERSION, '3.0', '<')) {
 			
 			$IsJversion                   = '25';
