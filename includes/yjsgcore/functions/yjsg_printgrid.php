@@ -560,6 +560,12 @@ function yjsg_print_grid_area($yjsg_grid_name,$add_width =false,$before ='',$aft
 			
 		}
 		
+		if('auto' == $before && 'auto' == $after){
+			$out_class = !empty($grid_suffix) ? implode('',$grid_suffix) :'';
+			$before = '<div id="'.$gridDivName.'-out" class="'.$gridDivName.'-out yjsg-grid-out'.$out_class.'">';
+			$after 	= '</div>';
+		}
+				
 
 		if( $echo ){
 		  echo $before.$html.$after;
