@@ -13,6 +13,10 @@
 			<field name="module_icon_suffix" type="yjsgfa" class="yjsg-fa" default="" label="YJSG_MODULE_FAICONAFTER_LABEL" description="YJSG_MODULE_FAICONAFTER_DESC" />
 			<field name="before_module"  type="textarea" filter="safehtml" rows="5" cols="50" class="yjsg-before-module" default="" label="YJSG_MODULE_CONTENTBEFORE_LABEL" description="YJSG_MODULE_CONTENTBEFORE_DESC" />
 			<field name="after_module"  type="textarea" filter="safehtml" rows="5" cols="50" class="yjsg-after-module" default="" label="YJSG_MODULE_CONTENTAFTER_LABEL" description="YJSG_MODULE_CONTENTAFTER_DESC" />
+			<field name="show_in_articles" type="list" default="default" label="YJSG_MODULE_SHOW_IN_ARTICLE_LABEL" description="YJSG_MODULE_SHOW_IN_ARTICLE_DESC">
+				<option value="show">Show</option>
+				<option value="hide">Hide</option>
+			</field>
 		</fieldset>
 	</fields>
 </form>

@@ -177,6 +177,14 @@ abstract class JModuleHelper extends YjsgJModuleHelperDefault
 
 		for ($i = 0; $i < $total; $i++)
 		{
+			
+			$mod_params = json_decode($modules[$i]->params,true);
+			if( isset($mod_params['show_in_articles']) && 
+				'hide' == $mod_params['show_in_articles'] &&
+				JRequest::getVar( 'view' ) == 'article' ){
+				continue;
+			}
+			
 			if ($modules[$i]->position == $position)
 			{
 				$result[] = &$modules[$i];
