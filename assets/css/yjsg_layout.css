@@ -1207,19 +1207,23 @@ ul.yjsgsliderPaginationTabs:after,
 
 /* Page builders support */
 .com_quix .holders,
-.com_sppagebuilder .holders{
+.com_sppagebuilder .holders,
+.com_blox .holders{
 	padding:0;
 }
 .com_quix .tpl_component,
-.com_sppagebuilder .tpl_component{
+.com_sppagebuilder .tpl_component,
+.com_blox .tpl_component{
 	padding:0;
 }
 .com_quix #centerbottom.yjsgsitew,
-.com_sppagebuilder #centerbottom.yjsgsitew{
+.com_sppagebuilder #centerbottom.yjsgsitew,
+.com_blox #centerbottom.yjsgsitew{
 	padding:0;
 	width:auto;
 }
 .com_quix #midblock .inside-container,
-.com_sppagebuilder #midblock .inside-container{
+.com_sppagebuilder #midblock .inside-container,
+.com_blox #midblock .inside-container{
 	padding:0;
 }
