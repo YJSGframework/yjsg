@@ -37,7 +37,12 @@ if( isset($loadmenu->getActive()->title)){
       <?php foreach($mobile_menu as $key => $menuitem) : 
 
 	  
-		$anchor_css = $menuitem->params->get('menu-anchor_css') ;
+		$anchor_css = $menuitem->params->get('menu-anchor_css');
+		$menu_show	= $menuitem->params->get('menu_show');
+		
+		if( !$menu_show ){
+			continue;	
+		}
 		
 		if(!empty($anchor_css)){
 		  
