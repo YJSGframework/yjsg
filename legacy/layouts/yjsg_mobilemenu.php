@@ -73,7 +73,7 @@ if( isset($loadmenu->getActive()->title)){
 		switch ($menuitem->type)
 		{
 			case 'separator' :
-				continue;
+				continue 2;
 
 			case 'url' :
 				if ((strpos($menuitem->link, 'index.php?') === 0) && (strpos($menuitem->link, 'Itemid=') === false))
