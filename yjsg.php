@@ -1218,6 +1218,12 @@ class plgSystemYjsg extends JPlugin {
 			if ($form->getName() == 'com_menus.item') {
 				JForm::addFormPath(JPATH_PLUGINS . YJDS . 'system' . YJDS . 'yjsg' . YJDS . 'includes' . YJDS . 'yjsgmegamenu');
 				$form->loadFile('yjsg_mega_menu_params', false);
+				
+				// Yjsg custom menu item params from template
+				if (JFolder::exists(YJSGCUSTOMFOLDER."yjsgmenuitem" )) {
+					JForm::addFormPath(YJSGCUSTOMFOLDER."yjsgmenuitem");
+					$form->loadFile('yjsg_menu_item_params', false);
+				}
 			}
 			
 			// Yjsg module additional params
