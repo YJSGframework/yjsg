@@ -304,7 +304,17 @@ class plgSystemYjsg extends JPlugin {
     }
     
 	
-	
+    /**
+     * Include helpers
+	 *
+	 * @return  mix
+     */	
+	public function yjsgHelpers(){
+		
+		require_once YJSGPATH . 'includes/yjsgcore/functions/yj_print.php';
+		require_once YJSGPATH . 'includes/yjsgcore/functions/yjsg_helpers.php';		
+		
+	}
     /**
      * Cleanup old classes on updates
 	 *
@@ -334,8 +344,6 @@ class plgSystemYjsg extends JPlugin {
      */
     
     public function yjsgExtendJoomla() {
-		
-		require_once YJSGPATH . 'includes/yjsgcore/functions/yj_print.php';
 		
 		if (version_compare(JVERSION, '3.0', '<')) {
 			
@@ -640,7 +648,6 @@ class plgSystemYjsg extends JPlugin {
     
     public function yjsgConstants() {
         
-        
         defined('YJSGPATH') or define('YJSGPATH', dirname(__FILE__) . YJDS);
         defined('YJSGRUN') or define('YJSGRUN', 1);
         defined('YJSGV') or define('YJSGV', $this->yjsg->version);
@@ -663,6 +670,9 @@ class plgSystemYjsg extends JPlugin {
         defined('YJSGSITE_BASEPATH') or define('YJSGSITE_BASEPATH', JURI::base(true) . '/templates/' . $this->default_template . '/');
         defined('YJSG_BASEPATH') or define('YJSG_BASEPATH', JURI::base(true) . '/plugins/system/yjsg/');
         defined('YJSG_ASSETS') or define('YJSG_ASSETS', JURI::base(true) . '/plugins/system/yjsg/assets/');
+		
+		// load helpers
+		$this->yjsgHelpers();
 		
         if ($this->app->isSite()) {
             
