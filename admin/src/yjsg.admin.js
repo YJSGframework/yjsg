@@ -1894,6 +1894,7 @@
 
                                     $('#jform_params_' + elId).attr('disabled', false);
                                     $("span[data-tiptrigger='jform_params_" + elId + "']").addClass('hidden');
+									$('.lih-'+ elId.toLowerCase()).removeClass('is-disabled').addClass('is-enabled');
 
                                 }
                             });
@@ -1909,7 +1910,7 @@
 
                                     $('#jform_params_' + elId).attr('disabled', true);
                                     $("span[data-tiptrigger='jform_params_" + elId + "']").removeClass('hidden');
-
+									$('.lih-'+ elId.toLowerCase()).removeClass('is-enabled').addClass('is-disabled');
                                 }
                             });
                             break;

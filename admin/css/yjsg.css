@@ -553,6 +553,12 @@ ul.adminformlist li {
 ul.adminformlist li:last-child {
 	border-bottom:none;
 }
+ul.adminformlist li.is-disabled{
+	display:none;
+}
+ul.adminformlist li:last-child {
+	border-bottom:none;
+}
 ul.adminformlist li label.hasTip,
 ul.adminformlist li label.hasTooltip,
 ul.adminformlist li label.adminLabel {
