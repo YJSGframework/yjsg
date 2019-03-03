@@ -1410,15 +1410,15 @@ class plgSystemYjsg extends JPlugin {
             }
             
             // now we ready. add  yjsg admin head tags 
-            
+            $version = '?v='.YJSGV;
             $yjsgDoc->addMeta('viewport', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
             $yjsgDoc->addCss(YJSGSITE_PLG_PATH . 'assets/bootstrap3/css/bootstrap.min.css');
-            $yjsgDoc->addCss(YJSGSITE_PLG_PATH . 'admin/css/yjsg.css');
+            $yjsgDoc->addCss(YJSGSITE_PLG_PATH . 'admin/css/yjsg.css'.$version);
             $yjsgDoc->addJs(YJSGSITE_PLG_PATH . 'assets/src/libraries/jquery.min.js');
             $yjsgDoc->addJs(YJSGSITE_PLG_PATH . 'assets/bootstrap3/js/bootstrap.min.js');
             $yjsgDoc->addJs(YJSGSITE_PLG_PATH . 'assets/src/bootstrap-multiselect.js');
             $yjsgDoc->addJs(YJSGSITE_PLG_PATH . 'admin/src/yjsg.admin.plugins.js');
-            $yjsgDoc->addJs(YJSGSITE_PLG_PATH . 'admin/src/yjsg.admin.js');
+            $yjsgDoc->addJs(YJSGSITE_PLG_PATH . 'admin/src/yjsg.admin.js'.$version);
             $yjsgDoc->addJsInhead('var tplDefaults=' . json_encode($tpl_default) . ';var dbDefaults=' . $db_default . ';var fontc="' . $fontc . '";');
             $yjsgDoc->addJsInhead('var yjsglayout_array=' . YJSGLAYOUT . ';');
             $yjsgDoc->addJsInhead('var refreshTime=' . $refreshTime . ';');
