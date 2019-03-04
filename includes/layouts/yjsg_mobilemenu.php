@@ -23,8 +23,9 @@ $mobile_load     	= false; $subnav = false; $sidenav = false;
 $module->params		= "menutype=$menu_name_is\nshowAllChildren=1";
 $mobile_load 		= $renderer->render( $module, $options );
 $mobile_menu 	 	= $loadmenu->getItems('menutype',$menu_name_is, false);	
+$show_active		= $loadmenu->getActive()->params->get('menu_show');
 
-if( isset($loadmenu->getActive()->title)){
+if( $show_active && isset($loadmenu->getActive()->title)){
 	$SetActiveTitle = $loadmenu->getActive()->title;
 }else{
 	$SetActiveTitle = $mobile_menu[0]->title;
