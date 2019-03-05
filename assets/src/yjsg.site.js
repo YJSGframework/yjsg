@@ -5,83 +5,157 @@
  * @license      http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
  * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
  */
-(function ($) {
+;window.onerror = function(msg, url, line, col, error) {
+   var extra = !col ? '' : '\ncolumn: ' + col;
+   extra += !error ? '' : '\nerror: ' + error;
+   url +=':'+line;
+   console.log("Error: " + msg + "\nurl: " + url + "\nline: " + line + extra);
 
-    var YjsgSite = {
+	var html = document.documentElement;
+	
+	if (html.classList.contains('yjsg-preloader-active')) {
+		html.classList.remove('yjsg-preloader-active');
+	}
 
-        settings: {
-            bsversion: "",
-            yversion: "",
-            menuanimation: '',
-            compileme: '',
-            menuanimationspeed: 300
-        },
+};
+(function($, window, document, undefined) {
 
-        initialize: function (options) {
+   "use strict";
 
-            this.options = $.extend({}, this.settings, options);
+   var pluginName = "YjsgSite",
+      defaults = {
+		bsversion: "",
+		yversion: "",
+		menuanimation: '',
+		compileme: '',
+		menuanimationspeed: 300
+      };
 
-            YjsgSite.start();
+   function Plugin(element, options) {
+      this.element = element;
 
-        },
-        start: function () {
+      this.settings = $.extend({}, defaults, options);
+      this._defaults = defaults;
+      this._name = pluginName;
+      this.init();
+   }
+
+  
+   $.extend(Plugin.prototype, {
+      init: function() {
+		  
+		var self = this;
+		
+		this.bsversion = bootstrapv;
+		this.yversion = yver;
+		this.yjsglegacy = yjsglegacy;
+		this.yjsgrtl = yjsgrtl;
+		this.compileme = compileme;
+		this.haspreloader 	= $('.yjsg-preloader').length > 0 ? true : false;
+		
+		if (typeof menuanimation != 'undefined') {
+		
+			this.menuanimation = menuanimation;
+		
+		} else {
+		
+			this.menuanimation = '';
+		}
+		
+		if (typeof menuanimationspeed != 'undefined') {
+		
+			this.menuanimationspeed = menuanimationspeed;
+		
+		} else {
+		
+			this.menuanimationspeed = self.settings.menuanimationspeed;
+		}
+		
+		self.offCanvas();
+		self.fontResize();
+		self.yjsgInitAnimations( this.haspreloader );
+		self.setHeadersize();
+		self.yjsgScroll();
+		self.yjsgAccordion();
+		self.yjsgSimpleTabs();
+		self.customChrome();
+		self.ajaxRecompile();
+		self.siteTypo();
+		self.conflictsFix();
+		self.bootstrapJs();
+		self.ieNotices();
+		prettyPrint();
+		
+		if (this.yjsglegacy == 0) {
+			self.animateMenus();
+		}
+		
+		window.yjsgCloseModal = function (getElem) {
+			SqueezeBox.close();
+		};
+		
+		self.yjsgRating();
+		self.yjsgMedia();
+		self.yjsgLightbox();
+		self.yjsgSticky();
+		
+		
+		},
+	  
+		yjsgInitOnLoad: function (){
+			
+			var self = this;
+			self.yjsgPreloader(); 
+			
+		},
+		
+		yjsgInitAnimations: function (haspreloader){
+			
+			var self = this;
+			
+			// yjsgPreloader will init these
+			if (!haspreloader) {
+				 
+				YjsgSetTimeout(function (){
+					self.yjsgAnimations();
+				},20);	
+			}
+		},
+		
+        yjsgPreloader: function() {
 
             var self = this;
 
-            this.bsversion = bootstrapv;
-            this.yversion = yver;
-            this.yjsglegacy = yjsglegacy;
-            this.yjsgrtl = yjsgrtl;
-            this.compileme = compileme;
+            if (self.haspreloader) {
+				
+				var $init_delay = 0;
+                var $delay = $('.yjsg-preloader').attr('data-delay');
+				var $onclick = $('.yjsg-preloader').attr('data-onclick');
+                var $delay2 = parseInt($delay) + 1200;
 
-            if (typeof menuanimation != 'undefined') {
+				if(!$('.yjsg-preloader').hasClass('leave-fade')){
+					$init_delay = 350;
+				}
 
-                this.menuanimation = menuanimation;
+				YjsgSetTimeout(function() {
+					
+					$('html').toggleClass('yjsg-preloader-active');
+					
+					YjsgSetTimeout(function() {
+						
+						self.yjsgAnimations();
+						
+					}, $init_delay );
+					
+				}, $delay);
 
-            } else {
-
-                this.menuanimation = '';
+				YjsgSetTimeout(function() {
+				   $('.yjsg-preloader').addClass('finished');
+				}, $delay2);
+				
             }
-
-            if (typeof menuanimationspeed != 'undefined') {
-
-                this.menuanimationspeed = menuanimationspeed;
-
-            } else {
-
-                this.menuanimationspeed = self.settings.menuanimationspeed;
-            }
-
-            YjsgSite.offCanvas();
-            YjsgSite.fontResize();
-            if (this.yjsglegacy == 1) {
-                YjsgSite.setHeadersize();
-            }
-            YjsgSite.yjsgScroll();
-            YjsgSite.yjsgAccordion();
-            YjsgSite.yjsgSimpleTabs();
-            YjsgSite.customChrome();
-            YjsgSite.ajaxRecompile();
-            YjsgSite.siteTypo();
-            YjsgSite.conflictsFix();
-            YjsgSite.bootstrapJs();
-            YjsgSite.ieNotices();
-            prettyPrint();
-
-            if (this.yjsglegacy == 0) {
-                YjsgSite.animateMenus();
-            }
-
-            window.yjsgCloseModal = function (getElem) {
-                SqueezeBox.close();
-            };
-            YjsgSite.yjsgRating();
-            YjsgSite.yjsgMedia();
-            YjsgSite.yjsgLightbox();
-            YjsgSite.yjsgSticky();
-
         },
-
+		
         yjsgSticky: function () {
 
             var self = this;
@@ -1060,7 +1134,7 @@
             });
 
             // image fade
-            fadeParent = $('.yjt_fade');
+            var fadeParent = $('.yjt_fade');
             fadeParent.each(function (el) {
 
                 var opacity = $(this).data('yjt_fadeto');
@@ -1117,6 +1191,122 @@
             });
 
         },
+		
+		yjsgRunAnimationsEffect: function($element){
+			
+			var self 		= this;
+			var $effect 	= $element.data('anim-effect');
+			
+			$element.addClass('yjsg-animated ' + $effect);
+			
+			if($effect == 'yjsg-anim-draw-svg'){
+				var $svg = $element.find('svg'); 
+				if($svg.length > 0){
+					var $duration 	= parseInt($element.data('anim-duration'));
+					var $svg_id 	= $svg.attr('id');
+					new Vivus($svg_id, {
+					  duration: $duration / 10,
+					  pathTimingFunction: Vivus.EASE_OUT, 
+					  animTimingFunction: Vivus.LINEAR, 
+					});
+				}
+
+			}
+
+			$element.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(e) {
+				$element.trigger('yjsg:animation:done').removeClass('yjsg-animated yjsg-animate ' + $effect).addClass('yjsg-animate-done');
+				$element.parents('.yjsg-animate-parent').addClass('yjsg-animate-parent-done');
+			});	
+			
+			// Ken Burns
+			if( $element.data('anim-kbe') ){
+
+				$element
+				.removeClass( 'yjsg-anim-kenburns-'+ $element.data('anim-kbe') )
+				.css({
+					'animation-duration' : '',
+					'-webkit-animation-duration' :  '',
+					'-moz-animation-duration' :  '',
+					'-o-animation-duration' : ''
+				})
+				.on('yjsg:animation:done',function(){
+
+						$element.css({
+							'animation-duration' : parseFloat($element.data('anim-kbd')) + 's',
+							'-webkit-animation-duration' : parseFloat($element.data('anim-kbd')) + 's',
+							'-moz-animation-duration' : parseFloat($element.data('anim-kbd')) + 's',
+							'-o-animation-duration' : parseFloat($element.data('anim-kbd')) + 's'
+						}).addClass( 'yjsg-anim-kenburns-'+ $element.data('anim-kbe') );
+						
+						$element.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(e) {
+							$element.trigger('yjsg:kb:done').css({
+								'animation-duration' : '',
+								'-webkit-animation-duration' :  '',
+								'-moz-animation-duration' :  '',
+								'-o-animation-duration' : ''
+							});
+						});
+					//}
+				});
+					
+			}		
+		},
+		
+		
+        yjsgAnimations: function(elements) {
+
+            var self = this;
+
+            var animate = '.yjsg-animate';
+
+            if (elements) {
+
+                animate = elements;
+            }
+
+            var $hasindexed = 0;
+
+            $(animate).each(function(index, element) {
+
+                var $this = $(this),
+               		$index = index + 1,
+					$horiz =  false;
+					
+				$this.waypoint(function() {
+					var $element 	= $(this),
+						$elindex 	= $index,
+						$delay 		= parseInt($element.data('anim-delay'));
+
+					if (isNaN($delay)) {
+						$delay = 100;
+					}
+					
+					$elindex -= $hasindexed;
+
+					if ($elindex == 0 && !$element.parents('.yjsg-animate-parent').length == 0) {
+						$elindex = 1;
+					}
+					
+					if($element.parents('.yjsg-items-grid').length == 0 && $element.parents('.yjsg-anim-auto-delay').length == 0) {
+						
+						$elindex = 1;
+					}
+					
+					YjsgSetTimeout(function() {
+
+						self.yjsgRunAnimationsEffect( $element );
+							
+						$hasindexed = $index;
+
+					}, $elindex * $delay);
+				}, {
+				  triggerOnce: true,
+				  offset: '99%'
+				});
+
+            });
+
+        },
 
         roundNumber: function (num, dec) {
 
@@ -1129,8 +1319,13 @@
         setHeadersize: function () {
 
             var self = this;
-            var logo_out = YjsgSite.roundNumber(logo_w / $('#header').width() * 100, 2);
-            var grid_w = YjsgSite.roundNumber(100 - logo_out, 2);
+			
+			if (self.yjsglegacy == 0) {
+				return;
+			}
+			
+            var logo_out = self.roundNumber(logo_w / $('#header').width() * 100, 2);
+            var grid_w = self.roundNumber(100 - logo_out, 2);
             if (typeof site_w_is_per != 'undefined') {
 
                 $('#logo').css('width', logo_out + '%');
@@ -1192,17 +1387,36 @@
             });
 
         }
+	  
 
-    }
 
-    //empty tooltip in case bs is off
-    if (typeof ($.fn.tooltip) == 'undefined') {
-        $.fn.tooltip = function () {};
-    }
 
-    $(document).on('ready', YjsgSite.initialize);
-    if (this.yjsglegacy == 1) {
-        $(window).on('resize', YjsgSite.setHeadersize);
-    }
+   });
 
-})(jQuery);
+   $.fn[pluginName] = function(options) {
+         return this.each(function() {
+            if (!$.data(this, 'plugin_' + pluginName)) {
+               $.data(this, 'plugin_' + pluginName, new Plugin(this, options));
+            } else if (Plugin.prototype[options]) {
+               $.data(this, 'plugin_' + pluginName)[options]();
+            }
+         });
+      }
+     
+})(jQuery, window, document); // JavaScript Document
+
+(function($) {
+
+    $(document).on('ready', function(){
+        $(document).YjsgSite();
+    });
+
+    $(window).on('load',function() {
+       $(document).YjsgSite('yjsgInitOnLoad');
+    });
+	
+	$(window).on('resize', function() {
+		$(document).YjsgSite('setHeadersize');
+	});
+
+}(jQuery));	
