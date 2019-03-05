@@ -45,5 +45,5 @@ Have a bug or a request? Please open an issue here https://github.com/YJSGframew
 
 ## License, Copyright
 
-  * Copyright (C) 2007 - 2014 Youjoomla.com. All rights reserved.
+  * Copyright (C) since 2007 Youjoomla.com. All rights reserved.
   * Distributed under the GNU General Public License version 2 or later.
