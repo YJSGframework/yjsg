@@ -71,3 +71,50 @@ if ( ! function_exists( 'yjsg_minify_css' ) ){
 		return trim( $css );
 	}
 }
+
+
+/**
+* Module animation options
+*/
+function yjsg_module_animation_options($params){
+	
+	return array(
+		'animate'	=> $params->get('animate',0),
+		'effect'	=> $params->get('animation_effect','yjsg-anim-fadeIn'),
+		'duration' 	=> (int) $params->get('animation_duration',400),	
+		'delay'		=> (int) $params->get('animation_delay', 0)
+	);	
+	
+}
+
+/**
+* Animations data and class
+*/
+function yjsg_print_animation($options = array(),$class = false,$add_class = false){
+	
+	if( empty($options) ) {
+		return;
+	}
+	
+	$animate 	= $options['animate'];
+
+	if( !$animate ) {
+		return;
+	}
+	
+	$effect 		= $options['effect'];
+	$duration 		= (int) $options['duration'];	
+	$delay 			= (int) $options['delay'];
+	$data			= $animate ? ' data-anim-effect="'.$effect.'" data-anim-duration="'.$duration.'" data-anim-delay="'.$delay.'"' : '';
+
+	$add_class		= $add_class ? ' '.$add_class :'';
+	$print_class	= $animate ? ' yjsg-animate'.$add_class : '';
+	
+	if($class){
+		return $print_class;
+	}	
+	
+	if(!empty($data)){
+		return $data;
+	}	
+}
