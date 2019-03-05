@@ -17,6 +17,29 @@
 				<option value="show">Show</option>
 				<option value="hide">Hide</option>
 			</field>
+			<field name="animate" type="list" default="0" label="YJSG_MODULE_ANIMATE" description="YJSG_MODULE_ANIMATE_DESC">
+				<option value="1">YJSG_YES</option>
+				<option value="0">YJSG_NO</option>
+			</field>
+			<field name="animation_effect" type="list" default="yjsg-anim-fadeIn" label="YJSG_MODULE_ANIMATE_EFFECT" showon="animate:1" description="YJSG_MODULE_ANIMATE_EFFECT_DESC">
+				<option value="yjsg-anim-fadeIn">Fade in</option>
+				<option value="yjsg-anim-slideIn-up">Slide in from Bottom</option>
+				<option value="yjsg-anim-slideIn-down">Slide in from Top</option>
+				<option value="yjsg-anim-slideIn-left">Slide in from Right</option>
+				<option value="yjsg-anim-slideIn-right">Slide in from Left</option>
+				<option value="yjsg-anim-zoomIn">Zoom In</option>
+				<option value="yjsg-anim-zoomOut">Zoom Out</option>
+				<option value="yjsg-anim-zoomIn-up">Zoom in from Bottom</option>
+				<option value="yjsg-anim-zoomIn-down">Zoom in from Top</option>
+				<option value="yjsg-anim-zoomIn-left">Zoom in from Right</option>
+				<option value="yjsg-anim-zoomIn-right">Zoom in from Left</option>
+				<option value="yjsg-anim-newspaper">Newspaper</option>
+				<option value="yjsg-anim-flipIn">Flip In</option>
+				<option value="yjsg-anim-unfold">Unfold</option>
+				<option value="yjsg-anim-spiral">Spiral</option>
+			</field>
+			<field name="animation_duration" type="number" default="400" label="YJSG_MODULE_ANIMATE_DURATION" showon="animate:1" description="YJSG_MODULE_ANIMATE_DURATION_DESC" min="0" step="100" />
+			<field name="animation_delay" type="number" default="0" label="YJSG_MODULE_ANIMATE_DELAY" showon="animate:1" description="YJSG_MODULE_ANIMATE_DELAY_DESC" min="0" step="100" />
 		</fieldset>
 	</fields>
 </form>

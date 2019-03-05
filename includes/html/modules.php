@@ -60,6 +60,9 @@ function modChrome_YJsgxhtml($module, &$params, &$attribs){
 	$yjsg_suffix_class			='';
 	$before_module				= $params->get('before_module','');
 	$after_module				= $params->get('after_module','');
+	$module_animation_options	= yjsg_module_animation_options($params);
+	$animation_data				= yjsg_print_animation($module_animation_options);
+	$animation_class			= yjsg_print_animation($module_animation_options,true);
 	
 	// yjsg suffix
 	if($yjsg_module_style !='default'){
@@ -115,7 +118,7 @@ function modChrome_YJsgxhtml($module, &$params, &$attribs){
 
 	// output
 	$module_output   = $before_module;
-	$module_output  .= '<'.$module_tag.' class="yjsquare'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
+	$module_output  .= '<'.$module_tag.' class="yjsquare'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.$animation_class.'"'.$animation_data.'>';
 	
 	if ($module->showtitle){
 		
@@ -164,6 +167,9 @@ function modChrome_YJsground($module, &$params, &$attribs){
 	$yjsg_suffix_class			='';
 	$before_module				= $params->get('before_module','');
 	$after_module				= $params->get('after_module','');
+	$module_animation_options	= yjsg_module_animation_options($params);
+	$animation_data				= yjsg_print_animation($module_animation_options);
+	$animation_class			= yjsg_print_animation($module_animation_options,true);	
 	
 	// yjsg suffix
 	if($yjsg_module_style !='default'){
@@ -221,7 +227,7 @@ function modChrome_YJsground($module, &$params, &$attribs){
 
 	// output
 	$module_output   = $before_module;
-	$module_output  .= '<'.$module_tag.' class="yjsquare addround'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
+	$module_output  .= '<'.$module_tag.' class="yjsquare addround'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.$animation_class.'"'.$animation_data.'>';
 	
 	if ($module->showtitle){
 		
@@ -260,6 +266,9 @@ function modChrome_YJsgplain($module, &$params, &$attribs){
 	$yjsg_suffix_class			='';
 	$before_module				= $params->get('before_module','');
 	$after_module				= $params->get('after_module','');
+	$module_animation_options	= yjsg_module_animation_options($params);
+	$animation_data				= yjsg_print_animation($module_animation_options);
+	$animation_class			= yjsg_print_animation($module_animation_options,true);	
 	
 	
 	// yjsg suffix
@@ -281,7 +290,7 @@ function modChrome_YJsgplain($module, &$params, &$attribs){
 
 	// output
 	$module_output  = $before_module;
-	$module_output .= '<'.$module_tag.' class="yjplain'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.'">';
+	$module_output .= '<'.$module_tag.' class="yjplain'.$module_suffix_class.$yjsg_suffix_class.$bootstrap_size_class.$moduleid.$animation_class.'"'.$animation_data.'>';
 	$module_output .= $module->content;
 	$module_output .= '</'.$module_tag.'>';
 	$module_output .= $after_module;
@@ -309,7 +318,6 @@ function modChrome_yjsg_module_positions($module, &$params, &$attribs){
 	$module_output .= $module->position;
 	$module_output .= '</div>';
 	
-	//print_r($module);
 	if(($module->module =='mod_menu' && $module->position =='') 
 	||($module->module =='mod_menu' && $module->position =='topmenupoz') 
 	){
