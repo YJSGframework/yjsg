@@ -589,7 +589,20 @@ class Less_Parser{
 	public function SetInput( $file_path ){
 
 		if( $file_path ){
+			
 			$this->input = file_get_contents( $file_path );
+			
+			// escape calc in CSS files
+			if ( strpos($file_path, '.css') !== false ) {
+				$re = '/calc(\(.*?)\)/m';
+				preg_match_all($re, $this->input, $matches, PREG_SET_ORDER, 0);
+				
+				if(!empty($matches)){
+					foreach($matches as $calc){
+						$this->input = str_replace($calc[0], '~"'.$calc[0].'"', $this->input);
+					}
+				}
+			}
 		}
 
 		$this->pos = $this->furthest = 0;
