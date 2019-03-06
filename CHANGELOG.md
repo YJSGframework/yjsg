@@ -1,3 +1,28 @@
+## Version: 2.3.5 (March 06, 2019)
+
+### Code improvement
+ - Added module CSS animations
+ - Improved yjsg.site.js
+ - Improved yjsg.responsive.js
+ - Use max-width for site width
+ - Added support for page builders. Quix,SP,Blox.
+ - Added auto out containers for yjsg_print_grid_area function
+ - Added yj_print function for easier dev
+ - Added show/hide module in article view
+ - Added ability to add custom menu item params from template
+ - Disabled options in template admin are now hidden unless switched to
+ - Updated Less compiler
+ - Added helper functions file
+
+### Bug fix
+ - Fix for mobile menu use default title if item is hidden
+ - Fixed hide hidden item in mobile menu
+ - Fixed Chrome and Vimeo magnific auto play
+ - Fixed switch continue notice for php 7.3
+ - Fixed search title html print issue
+ - Added fix to Less compiler to skip calc() values from CSS files
+
+ 
 ## Version: 2.3.4 (August 02, 2018)
 
 ### Bug fix
