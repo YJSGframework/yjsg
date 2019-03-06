@@ -3,6 +3,10 @@ html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-width: 100%;
+	box-sizing: border-box;
 }
 body {
   margin: 0;
