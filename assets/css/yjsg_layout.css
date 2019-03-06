@@ -1204,7 +1204,14 @@ ul.yjsgsliderPaginationTabs:after,
 	-moz-border-radius-bottomright: 4px;
 	border-bottom-right-radius: 4px;
 }
-
+/* clear */
+#yjsgheadergrid:before,
+#yjsgheadergrid:after{
+	content:'';
+	display:table;
+	width:100%;
+	clear:both;
+}
 /* Page builders support */
 .com_quix .holders,
 .com_sppagebuilder .holders,
