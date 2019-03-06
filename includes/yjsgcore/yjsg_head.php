@@ -94,7 +94,6 @@ if ($text_direction == 1 && $bootstrap_here) {
 /*responsive layout*/
 if($responsive_on == 1) {
 	
-  $document->addScript(YJSG_ASSETS.'src/yjsg.responsive.js');
   if(!$compiled_css_on && $responsive_on   == 1){	
  	 $document->addStyleSheet(YJSG_ASSETS.'css/yjresponsive.css'); 
 	 $document->addStyleSheet(YJSGSITE_BASEPATH.'css/custom_responsive.css');
@@ -134,6 +133,10 @@ if($selectors_override == 1){
 // site scripts
 	$document->addScript(YJSG_ASSETS.'src/yjsg.site.plugins.js');
 	$document->addScript($yjsg->filePath('src/yjsg.site.js'));
+	
+	if( $responsive_on == 1 ) {
+		$document->addScript(YJSG_ASSETS.'src/yjsg.responsive.js');
+	}
 
 	$menuanimation ='';
 	$menuanimationspeed ='';
