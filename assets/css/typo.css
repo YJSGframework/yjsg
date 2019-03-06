@@ -6,12 +6,18 @@
  * @websites     http://www.youjoomla.com | http://www.yjsimplegrid.com
  */
 /* a transition */
-a {
-	-o-transition:color .2s ease-in-out;
-	-ms-transition:color .2s ease-in-out;
-	-moz-transition:color .2s ease-in-out;
-	-webkit-transition:color .2s ease-in-out;
-	transition:color .2s ease-in-out;
+a,
+button,
+input[type="submit"] {
+	-o-transition: color .2s ease-in-out, background .2s ease-in-out;
+	-ms-transition: color .2s ease-in-out, background .2s ease-in-out;
+	-moz-transition: color .2s ease-in-out, background .2s ease-in-out;
+	-webkit-transition: color .2s ease-in-out, background .2s ease-in-out;
+	transition: color .2s ease-in-out, background .2s ease-in-out;
+}
+a:hover,
+a:focus {
+	text-decoration: none;
 }
 /* image */
 img {
