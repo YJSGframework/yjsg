@@ -1412,11 +1412,11 @@
     });
 
     $(window).on('load',function() {
-       $(document).YjsgSite('yjsgInitOnLoad');
+        $(document).YjsgSite('yjsgInitOnLoad');
+	   
+		$(window).on('resize', function() {
+			$(document).YjsgSite('setHeadersize');
+		});
     });
-	
-	$(window).on('resize', function() {
-		$(document).YjsgSite('setHeadersize');
-	});
 
-}(jQuery));	
+}(jQuery));
