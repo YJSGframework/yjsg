@@ -967,12 +967,23 @@
             // fix tooltip/popover html output
 
             if (self.bsversion == 'bootstrap3') {
-
-                $.fn.tooltip.Constructor.DEFAULTS.html = true;
-                $.fn.popover.Constructor.DEFAULTS.html = true;
-                $.fn.tooltip.Constructor.DEFAULTS.container = 'body';
-                $.fn.popover.Constructor.DEFAULTS.container = 'body';
+				
+				if (typeof ($.fn.tooltip) != 'undefined') {
+					$.fn.tooltip.Constructor.DEFAULTS.html = true;
+					$.fn.tooltip.Constructor.DEFAULTS.container = 'body';
+					
+				}
+				
+				if (typeof ($.fn.popover) != 'undefined') {
+					$.fn.popover.Constructor.DEFAULTS.html = true;
+					$.fn.popover.Constructor.DEFAULTS.container = 'body';
+				}
             }
+			
+			//empty tooltip in case bs is off
+			if (typeof ($.fn.tooltip) == 'undefined') {
+				$.fn.tooltip = function () {};
+			}
 
         },
 
