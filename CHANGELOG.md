@@ -1,3 +1,13 @@
+## Version: 2.3.6 (April 03, 2019)
+
+### Code improvement
+ - Check for popover
+ - Run resize after page load
+
+### Bug fix
+ - Use width instead max-width for .yjsgsitew
+
+ 
 ## Version: 2.3.5 (March 06, 2019)
 
 ### Code improvement
